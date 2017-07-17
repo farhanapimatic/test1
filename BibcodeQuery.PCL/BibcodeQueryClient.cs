@@ -42,6 +42,14 @@ namespace BibcodeQuery.PCL
         /// Default constructor
         /// </summary>
         public BibcodeQueryClient() { }
+
+        /// <summary>
+        /// Client initialization constructor
+        /// </summary>
+        public BibcodeQueryClient(string oAuthAccessToken)
+        {
+            Configuration.OAuthAccessToken = oAuthAccessToken;
+        }
         #endregion
     }
 }

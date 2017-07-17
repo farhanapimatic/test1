@@ -19,6 +19,10 @@ namespace BibcodeQuery.PCL
         //The current environment being used
         public static Environments Environment = Environments.PRODUCTION;
 
+        //OAuth 2.0 Access Token
+        //TODO: Replace the OAuthAccessToken with an appropriate value
+        public static string OAuthAccessToken = "TODO: Replace";
+
         //A map of environments and their corresponding servers/baseurls
         public static Dictionary<Environments, Dictionary<Servers, string>> EnvironmentsMap =
             new Dictionary<Environments, Dictionary<Servers, string>>

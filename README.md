@@ -62,13 +62,22 @@ Here, you can click *Run All* to execute these test cases.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthAccessToken | OAuth 2.0 Access Token |
+
+
 
 API client can be initialized as following.
 
 ```csharp
+// Configuration parameters and credentials
+string oAuthAccessToken = "oAuthAccessToken"; // OAuth 2.0 Access Token
 
-BibcodeQueryPCLClient client = new BibcodeQueryPCLClient();
+BibcodeQueryPCLClient client = new BibcodeQueryPCLClient(oAuthAccessToken);
 ```
 
 
@@ -90,8 +99,6 @@ BibcodeQueryBindingController bibcodeQueryBinding = client.BibcodeQueryBinding;
 ```
 
 ### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png "BibcodeQuery.PCL.Controllers.BibcodeQueryBindingController.GetBibcode") GetBibcode
-
-> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 

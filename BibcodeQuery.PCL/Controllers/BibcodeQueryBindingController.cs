@@ -98,6 +98,7 @@ namespace BibcodeQuery.PCL.Controllers
                 { "user-agent", "APIMATIC 2.0" },
                 { "accept", "application/json" }
             };
+            _headers.Add("Authorization", string.Format("Bearer {0}", Configuration.OAuthAccessToken));
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.Get(_queryUrl,_headers);

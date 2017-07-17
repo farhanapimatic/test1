@@ -10,7 +10,7 @@
     <AssemblyName>BibcodeQuery.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{de72ea7e-16d5-4ff2-8d0d-259d8b8bbc15}</ProjectGuid>
+    <ProjectGuid>{71434c99-b5df-4a3f-937c-525ab6a33bc2}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
