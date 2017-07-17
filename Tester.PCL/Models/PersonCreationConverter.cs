@@ -3,6 +3,7 @@
  *
  * This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://apimatic.io )
  */
+using APIMATIC.SDK.Common;
 using System;
 using System.Collections.Generic;
 
