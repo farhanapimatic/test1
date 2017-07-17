@@ -10,7 +10,7 @@
     <AssemblyName>Tester.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{a7ae80d8-216c-41b8-bf75-7ee77aa170bf}</ProjectGuid>
+    <ProjectGuid>{725734f1-f2e8-4553-a421-7ec6d7068e76}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
