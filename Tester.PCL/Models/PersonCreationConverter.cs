@@ -11,6 +11,7 @@ namespace Tester.PCL.Models
 {
     class PersonCreationConverter : JsonCreationConverter<Person>
     {
+        //int i;
         public PersonCreationConverter()
         {
             typeName = "personType";
