@@ -40,6 +40,243 @@ namespace Tester.Tests
         }
 
         /// <summary>
+        /// TODO: Add description for test TestGetUnixDateTime 
+        /// </summary>
+        [Test]
+        public async Task TestGetUnixDateTime() 
+        {
+
+            // Perform API call
+            DateTime? result = null;
+
+            try
+            {
+                result = await controller.GetUnixDateTimeAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+ 
+            Assert.AreEqual(
+                    new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(double.Parse("1484719381")), result,
+                    "Response should match expected value");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetBooleanArray 
+        /// </summary>
+        [Test]
+        public async Task TestGetBooleanArray() 
+        {
+
+            // Perform API call
+            List<bool> result = null;
+
+            try
+            {
+                result = await controller.GetBooleanArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<bool> expected = APIHelper.JsonDeserialize<List<bool>>(
+                    "[true, false, true, true, false]");
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetHeadersAllowExtra 
+        /// </summary>
+        [Test]
+        public async Task TestGetHeadersAllowExtra() 
+        {
+
+            // Perform API call
+
+            try
+            {
+                await controller.GetHeadersAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test headers
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("NauManAli", null);
+            headers.Add("WaseemHasAn", null);
+
+            Assert.IsTrue(TestHelper.AreHeadersProperSubsetOf (
+                    headers, httpCallBackHandler.Response.Headers),
+                    "Headers should match");
+
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGet3339DatetimeArray 
+        /// </summary>
+        [Test]
+        public async Task TestGet3339DatetimeArray() 
+        {
+
+            // Perform API call
+            List<DateTime> result = null;
+
+            try
+            {
+                result = await controller.Get3339DatetimeArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
+                    "[\"2016-03-13T12:52:32.123Z\",\"2016-03-13T12:52:32.123Z\",\"2016-03-13T12:52:32.123Z\"]", new IsoDateTimeConverter());
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetBoolean 
+        /// </summary>
+        [Test]
+        public async Task TestGetBoolean() 
+        {
+
+            // Perform API call
+            bool? result = null;
+
+            try
+            {
+                result = await controller.GetBooleanAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+ 
+            Assert.AreEqual(
+                    true, result,
+                    "Response should match expected value");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetDynamicArray 
+        /// </summary>
+        [Test]
+        public async Task TestGetDynamicArray() 
+        {
+
+            // Perform API call
+            dynamic result = null;
+
+            try
+            {
+                result = await controller.GetDynamicArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
+                    "{\"method\":\"GET\",\"body\":{},\"uploadCount\":0}", 
+                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
+                    true, true, false),
+                    "Response body should have matching keys");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGet3339Datetime 
+        /// </summary>
+        [Test]
+        public async Task TestGet3339Datetime() 
+        {
+
+            // Perform API call
+            DateTime? result = null;
+
+            try
+            {
+                result = await controller.Get3339DatetimeAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+ 
+            Assert.AreEqual(
+                    DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind), result,
+                    "Response should match expected value");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetIntegerArray 
+        /// </summary>
+        [Test]
+        public async Task TestGetIntegerArray() 
+        {
+
+            // Perform API call
+            List<int> result = null;
+
+            try
+            {
+                result = await controller.GetIntegerArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<int> expected = APIHelper.JsonDeserialize<List<int>>(
+                    "[1,2,3,4,5]");
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
         /// TODO: Add description for test TestGetDate 
         /// </summary>
         [Test]
@@ -99,6 +336,96 @@ namespace Tester.Tests
         }
 
         /// <summary>
+        /// TODO: Add description for test TestGetUnixDateTimeArray 
+        /// </summary>
+        [Test]
+        public async Task TestGetUnixDateTimeArray() 
+        {
+
+            // Perform API call
+            List<DateTime> result = null;
+
+            try
+            {
+                result = await controller.GetUnixDateTimeArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
+                    "[1484719381,1484719381]", new UnixDateTimeConverter());
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGet1123DateTimeArray 
+        /// </summary>
+        [Test]
+        public async Task TestGet1123DateTimeArray() 
+        {
+
+            // Perform API call
+            List<DateTime> result = null;
+
+            try
+            {
+                result = await controller.Get1123DateTimeArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
+                    "[\"Sun, 06 Nov 1994 08:49:37 GMT\",\"Sun, 06 Nov 1994 08:49:37 GMT\"]", new CustomDateTimeConverter("r"));
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
+        /// TODO: Add description for test TestGetIntEnumArray 
+        /// </summary>
+        [Test]
+        public async Task TestGetIntEnumArray() 
+        {
+
+            // Perform API call
+            List<SuiteCodeEnum> result = null;
+
+            try
+            {
+                result = await controller.GetIntEnumArrayAsync();
+            }
+            catch(APIException) {};
+
+            // Test response code
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
+
+            // Test whether the captured response is as we expected
+            Assert.IsNotNull(result, "Result should exist");
+
+            // Deserialize expected output
+                        List<SuiteCodeEnum> expected = APIHelper.JsonDeserialize<List<SuiteCodeEnum>>(
+                    "[1, 3, 4, 2, 3]");
+
+            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
+        }
+
+        /// <summary>
         /// TODO: Add description for test TestGetStringEnumArray 
         /// </summary>
         [Test]
@@ -106,7 +433,7 @@ namespace Tester.Tests
         {
 
             // Perform API call
-            List<Days> result = null;
+            List<DaysEnum> result = null;
 
             try
             {
@@ -122,25 +449,25 @@ namespace Tester.Tests
             Assert.IsNotNull(result, "Result should exist");
 
             // Deserialize expected output
-                        List<Days> expected = APIHelper.JsonDeserialize<List<Days>>(
+                        List<DaysEnum> expected = APIHelper.JsonDeserialize<List<DaysEnum>>(
                     "[\"Tuesday\", \"Saturday\", \"Wednesday\", \"Monday\", \"Sunday\"]");
 
             Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
         }
 
         /// <summary>
-        /// TODO: Add description for test TestGet3339Datetime 
+        /// TODO: Add description for test TestGetInteger 
         /// </summary>
         [Test]
-        public async Task TestGet3339Datetime() 
+        public async Task TestGetInteger() 
         {
 
             // Perform API call
-            DateTime? result = null;
+            int? result = null;
 
             try
             {
-                result = await controller.Get3339DatetimeAsync();
+                result = await controller.GetIntegerAsync();
             }
             catch(APIException) {};
 
@@ -153,98 +480,8 @@ namespace Tester.Tests
 
  
             Assert.AreEqual(
-                    DateTime.ParseExact("2016-03-13T12:52:32.123Z", "yyyy'-'MM'-'dd'T'HH':'mm':'ss.FFFFFFFK", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind), result,
+                    4, result,
                     "Response should match expected value");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetDynamicArray 
-        /// </summary>
-        [Test]
-        public async Task TestGetDynamicArray() 
-        {
-
-            // Perform API call
-            dynamic result = null;
-
-            try
-            {
-                result = await controller.GetDynamicArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
-                    "{\"method\":\"GET\",\"body\":{},\"uploadCount\":0}", 
-                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
-                    true, true, false),
-                    "Response body should have matching keys");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetDynamic 
-        /// </summary>
-        [Test]
-        public async Task TestGetDynamic() 
-        {
-
-            // Perform API call
-            dynamic result = null;
-
-            try
-            {
-                result = await controller.GetDynamicAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
-                    "{\"method\":\"GET\",\"body\":{},\"uploadCount\":0}", 
-                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
-                    true, true, false),
-                    "Response body should have matching keys");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetIntegerArray 
-        /// </summary>
-        [Test]
-        public async Task TestGetIntegerArray() 
-        {
-
-            // Perform API call
-            List<int> result = null;
-
-            try
-            {
-                result = await controller.GetIntegerArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<int> expected = APIHelper.JsonDeserialize<List<int>>(
-                    "[1,2,3,4,5]");
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
         }
 
         /// <summary>
@@ -311,7 +548,7 @@ namespace Tester.Tests
         {
 
             // Perform API call
-            SuiteCode? result = null;
+            SuiteCodeEnum? result = null;
 
             try
             {
@@ -340,7 +577,7 @@ namespace Tester.Tests
         {
 
             // Perform API call
-            List<Person> result = null;
+            List<PersonModel> result = null;
 
             try
             {
@@ -370,7 +607,7 @@ namespace Tester.Tests
         {
 
             // Perform API call
-            Days? result = null;
+            DaysEnum? result = null;
 
             try
             {
@@ -399,7 +636,7 @@ namespace Tester.Tests
         {
 
             // Perform API call
-            Person result = null;
+            PersonModel result = null;
 
             try
             {
@@ -419,65 +656,6 @@ namespace Tester.Tests
                     TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
                     true, true, false),
                     "Response body should have matching keys");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetIntEnumArray 
-        /// </summary>
-        [Test]
-        public async Task TestGetIntEnumArray() 
-        {
-
-            // Perform API call
-            List<SuiteCode> result = null;
-
-            try
-            {
-                result = await controller.GetIntEnumArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<SuiteCode> expected = APIHelper.JsonDeserialize<List<SuiteCode>>(
-                    "[1, 3, 4, 2, 3]");
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetInteger 
-        /// </summary>
-        [Test]
-        public async Task TestGetInteger() 
-        {
-
-            // Perform API call
-            int? result = null;
-
-            try
-            {
-                result = await controller.GetIntegerAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
- 
-            Assert.AreEqual(
-                    4, result,
-                    "Response should match expected value");
         }
 
         /// <summary>
@@ -510,95 +688,6 @@ namespace Tester.Tests
         }
 
         /// <summary>
-        /// TODO: Add description for test TestGetUnixDateTimeArray 
-        /// </summary>
-        [Test]
-        public async Task TestGetUnixDateTimeArray() 
-        {
-
-            // Perform API call
-            List<DateTime> result = null;
-
-            try
-            {
-                result = await controller.GetUnixDateTimeArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
-                    "[1484719381,1484719381]", new UnixDateTimeConverter());
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGet1123DateTimeArray 
-        /// </summary>
-        [Test]
-        public async Task TestGet1123DateTimeArray() 
-        {
-
-            // Perform API call
-            List<DateTime> result = null;
-
-            try
-            {
-                result = await controller.Get1123DateTimeArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
-                    "[\"Sun, 06 Nov 1994 08:49:37 GMT\",\"Sun, 06 Nov 1994 08:49:37 GMT\"]", new CustomDateTimeConverter("r"));
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetUnixDateTime 
-        /// </summary>
-        [Test]
-        public async Task TestGetUnixDateTime() 
-        {
-
-            // Perform API call
-            DateTime? result = null;
-
-            try
-            {
-                result = await controller.GetUnixDateTimeAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
- 
-            Assert.AreEqual(
-                    new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc).AddSeconds(double.Parse("1484719381")), result,
-                    "Response should match expected value");
-        }
-
-        /// <summary>
         /// TODO: Add description for test TestGet1123DateTime 
         /// </summary>
         [Test]
@@ -625,125 +714,6 @@ namespace Tester.Tests
             Assert.AreEqual(
                     DateTime.ParseExact("Sun, 06 Nov 1994 08:49:37 GMT", "r", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind), result,
                     "Response should match expected value");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetHeadersAllowExtra 
-        /// </summary>
-        [Test]
-        public async Task TestGetHeadersAllowExtra() 
-        {
-
-            // Perform API call
-
-            try
-            {
-                await controller.GetHeadersAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test headers
-            Dictionary<string, string> headers = new Dictionary<string, string>();
-            headers.Add("NauManAli", null);
-            headers.Add("WaseemHasAn", null);
-
-            Assert.IsTrue(TestHelper.AreHeadersProperSubsetOf (
-                    headers, httpCallBackHandler.Response.Headers),
-                    "Headers should match");
-
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetBooleanArray 
-        /// </summary>
-        [Test]
-        public async Task TestGetBooleanArray() 
-        {
-
-            // Perform API call
-            List<bool> result = null;
-
-            try
-            {
-                result = await controller.GetBooleanArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<bool> expected = APIHelper.JsonDeserialize<List<bool>>(
-                    "[true, false, true, true, false]");
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGetBoolean 
-        /// </summary>
-        [Test]
-        public async Task TestGetBoolean() 
-        {
-
-            // Perform API call
-            bool? result = null;
-
-            try
-            {
-                result = await controller.GetBooleanAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
- 
-            Assert.AreEqual(
-                    true, result,
-                    "Response should match expected value");
-        }
-
-        /// <summary>
-        /// TODO: Add description for test TestGet3339DatetimeArray 
-        /// </summary>
-        [Test]
-        public async Task TestGet3339DatetimeArray() 
-        {
-
-            // Perform API call
-            List<DateTime> result = null;
-
-            try
-            {
-                result = await controller.Get3339DatetimeArrayAsync();
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            // Deserialize expected output
-                        List<DateTime> expected = APIHelper.JsonDeserialize<List<DateTime>>(
-                    "[\"2016-03-13T12:52:32.123Z\",\"2016-03-13T12:52:32.123Z\",\"2016-03-13T12:52:32.123Z\"]", new IsoDateTimeConverter());
-
-            Assert.IsTrue(result.IsSuperSetOf(expected), "Response array should have matching values");
         }
 
     }

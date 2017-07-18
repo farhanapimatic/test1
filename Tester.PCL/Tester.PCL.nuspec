@@ -6,7 +6,7 @@ This file was automatically generated for Stamplay by APIMATIC v2.0 ( https://ap
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Tester.PCL</id>
-    <version>1.1.0</version>
+    <version>1.4.0</version>
     <title>Tester.PCL</title>
     <authors>APIMATIC 2.0</authors>
     <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>

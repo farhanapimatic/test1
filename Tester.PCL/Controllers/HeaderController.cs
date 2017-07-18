@@ -54,10 +54,10 @@ namespace Tester.PCL.Controllers
         /// </summary>
         /// <param name="customHeader">Required parameter: Example: </param>
         /// <param name="mvalue">Required parameter: Represents the value of the custom header</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendHeaders(string customHeader, string mvalue)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendHeaders(string customHeader, string mvalue)
         {
-            Task<Models.ServerResponse> t = SendHeadersAsync(customHeader, mvalue);
+            Task<Models.ServerResponseModel> t = CreateSendHeadersAsync(customHeader, mvalue);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -67,8 +67,8 @@ namespace Tester.PCL.Controllers
         /// </summary>
         /// <param name="customHeader">Required parameter: Example: </param>
         /// <param name="mvalue">Required parameter: Represents the value of the custom header</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendHeadersAsync(string customHeader, string mvalue)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendHeadersAsync(string customHeader, string mvalue)
         {
             //validating required parameters
             if (null == customHeader)
@@ -120,7 +120,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {

@@ -23,226 +23,226 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendUnixDateTimeArray(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendUnixDateTimeArrayAsync(List<DateTime> datetimes);
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendRfc3339DateTime(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendRfc3339DateTime(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendRfc3339DateTimeAsync(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendRfc3339DateTimeAsync(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendRfc1123DateTime(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendRfc1123DateTime(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendRfc1123DateTimeAsync(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendRfc1123DateTimeAsync(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendUnixDateTime(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendUnixDateTime(DateTime datetime);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendUnixDateTimeAsync(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendUnixDateTimeAsync(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendDate(DateTime date);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendDate(DateTime date);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendDateAsync(DateTime date);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendDateArray(List<DateTime> dates);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendDateArrayAsync(List<DateTime> dates);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendRfc1123DateTimeArray(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendRfc1123DateTimeArrayAsync(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendIntegerEnumArray(List<Models.SuiteCode> suites);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendIntegerEnumArrayAsync(List<Models.SuiteCode> suites);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendStringEnumArray(List<Models.Days> days);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendStringEnumArrayAsync(List<Models.Days> days);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="models">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendModelArray(List<Models.Employee> models);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="models">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendModelArrayAsync(List<Models.Employee> models);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendIntegerArray(List<int> integers);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendIntegerArrayAsync(List<int> integers);
-
-        /// <summary>
-        /// sends a string body param
-        /// </summary>
-        /// <param name="sarray">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendStringArray(List<string> sarray);
-
-        /// <summary>
-        /// sends a string body param
-        /// </summary>
-        /// <param name="sarray">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendStringArrayAsync(List<string> sarray);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendRfc3339DateTimeArray(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendRfc3339DateTimeArrayAsync(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="mdynamic">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendDynamic(object mdynamic);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="mdynamic">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendDynamicAsync(object mdynamic);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="model">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendModel(Models.Employee model);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="model">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendModelAsync(Models.Employee model);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendDateAsync(DateTime date);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendString(string mvalue);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendString(string mvalue);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendStringAsync(string mvalue);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendStringAsync(string mvalue);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="suites">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendIntegerEnumArray(List<Models.SuiteCodeEnum> suites);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="suites">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendIntegerEnumArrayAsync(List<Models.SuiteCodeEnum> suites);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="days">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendStringEnumArray(List<Models.DaysEnum> days);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="days">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendStringEnumArrayAsync(List<Models.DaysEnum> days);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="models">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendModelArray(List<Models.EmployeeModel> models);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="models">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendModelArrayAsync(List<Models.EmployeeModel> models);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="integers">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendIntegerArray(List<int> integers);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="integers">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendIntegerArrayAsync(List<int> integers);
+
+        /// <summary>
+        /// sends a string body param
+        /// </summary>
+        /// <param name="sarray">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendStringArray(List<string> sarray);
+
+        /// <summary>
+        /// sends a string body param
+        /// </summary>
+        /// <param name="sarray">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendStringArrayAsync(List<string> sarray);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendRfc3339DateTimeArray(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendRfc3339DateTimeArrayAsync(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendRfc1123DateTimeArray(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendRfc1123DateTimeArrayAsync(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendUnixDateTimeArray(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendUnixDateTimeArrayAsync(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="dates">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendDateArray(List<DateTime> dates);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="dates">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendDateArrayAsync(List<DateTime> dates);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="mdynamic">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendDynamic(object mdynamic);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="mdynamic">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendDynamicAsync(object mdynamic);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="model">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendModel(Models.EmployeeModel model);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="model">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendModelAsync(Models.EmployeeModel model);
 
     }
 } 

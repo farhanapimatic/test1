@@ -20,7 +20,7 @@ using APIMATIC.SDK.Common;
 
 namespace Tester.PCL.Exceptions
 {
-    public class LocalTestException : GlobalTestException 
+    public class LocalTestException : GlobalTestExceptionModel 
     {
         // These fields hold the values for the public properties.
         private string secretMessageForEndpoint;

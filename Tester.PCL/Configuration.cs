@@ -25,7 +25,15 @@ namespace Tester.PCL
         public static string Port = "80";
 
         //TODO: Replace the Suites with an appropriate value
-        public static Models.SuiteCode? Suites = SuiteCode.HEARTS;
+        public static Models.SuiteCodeEnum? Suites = SuiteCodeEnum.HEARTS;
+
+        //OAuth 2 Client ID
+        //TODO: Replace the OAuthClientId with an appropriate value
+        public static string OAuthClientId = "TODO: Replace";
+
+        //OAuth 2 Redirection endpoint or Callback Uri
+        //TODO: Replace the OAuthRedirectUri with an appropriate value
+        public static string OAuthRedirectUri = "TODO: Replace";
 
         //A map of environments and their corresponding servers/baseurls
         public static Dictionary<Environments, Dictionary<Servers, string>> EnvironmentsMap =
@@ -64,9 +72,9 @@ namespace Tester.PCL
         /// <summary>
         /// Gets the URL for a particular alias in the current environment and appends it with template parameters
         /// </summary>
-        /// <param name="alias">Default value:DEFAULT</param>
+        /// <param name="alias">Default value:AUTH SERVER</param>
         /// <return>Returns the baseurl</return>
-        internal static string GetBaseURI(Servers alias = Servers.DEFAULT)
+        internal static string GetBaseURI(Servers alias = Servers.AUTH_SERVER)
         {
             StringBuilder Url =  new StringBuilder(EnvironmentsMap[Environment][alias]);
             APIHelper.AppendUrlWithTemplateParameters(Url, GetBaseURIParameters());

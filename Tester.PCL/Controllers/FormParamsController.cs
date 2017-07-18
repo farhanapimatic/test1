@@ -52,11 +52,11 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendDateArray(List<DateTime> dates)
+        /// <param name="date">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendDate(DateTime date)
         {
-            Task<Models.ServerResponse> t = SendDateArrayAsync(dates);
+            Task<Models.ServerResponseModel> t = CreateSendDateAsync(date);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -64,26 +64,16 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendDateArrayAsync(List<DateTime> dates)
+        /// <param name="date">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendDateAsync(DateTime date)
         {
-            //validating required parameters
-            if (null == dates)
-                throw new ArgumentNullException("dates", "The parameter \"dates\" is a required parameter and cannot be null.");
-
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
             _queryBuilder.Append("/form/date");
-
-            //process optional query parameters
-            APIHelper.AppendUrlWithQueryParameters(_queryBuilder, new Dictionary<string, object>()
-            {
-                { "array", "true" }
-            },ArrayDeserializationFormat,ParameterSeparator);
 
 
             //validate and preprocess url
@@ -97,8 +87,10 @@ namespace Tester.PCL.Controllers
             };
 
             //append form/field parameters
-            var _fields = new List<KeyValuePair<string, Object>>();
-            _fields.AddRange(APIHelper.PrepareFormFieldsFromObject("dates", dates.Select(x => x.ToString("yyyy'-'MM'-'dd")).ToList(), arrayDeserializationFormat: ArrayDeserializationFormat));
+            var _fields = new List<KeyValuePair<string, Object>>()
+            {
+                new KeyValuePair<string, object>( "date", date.ToString("yyyy'-'MM'-'dd") )
+            };
             //remove null parameters
             _fields = _fields.Where(kvp => kvp.Value != null).ToList();
 
@@ -118,7 +110,224 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="file">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendFile(FileStreamInfo file)
+        {
+            Task<Models.ServerResponseModel> t = CreateSendFileAsync(file);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="file">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendFileAsync(FileStreamInfo file)
+        {
+            //validating required parameters
+            if (null == file)
+                throw new ArgumentNullException("file", "The parameter \"file\" is a required parameter and cannot be null.");
+
+            //the base uri for api requests
+            string _baseUri = Configuration.GetBaseURI();
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/form/file");
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "Stamplay SDK" },
+                { "accept", "application/json" }
+            };
+
+            //append form/field parameters
+            var _fields = new List<KeyValuePair<string, Object>>()
+            {
+                new KeyValuePair<string, object>( "file", file)
+            };
+            //remove null parameters
+            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+
+            //return null on 404
+            if (_response.StatusCode == 404)
+                 return null;
+
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="mvalue">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendString(string mvalue)
+        {
+            Task<Models.ServerResponseModel> t = CreateSendStringAsync(mvalue);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="mvalue">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendStringAsync(string mvalue)
+        {
+            //validating required parameters
+            if (null == mvalue)
+                throw new ArgumentNullException("mvalue", "The parameter \"mvalue\" is a required parameter and cannot be null.");
+
+            //the base uri for api requests
+            string _baseUri = Configuration.GetBaseURI();
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/form/string");
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "Stamplay SDK" },
+                { "accept", "application/json" }
+            };
+
+            //append form/field parameters
+            var _fields = new List<KeyValuePair<string, Object>>()
+            {
+                new KeyValuePair<string, object>( "value", mvalue )
+            };
+            //remove null parameters
+            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+
+            //return null on 404
+            if (_response.StatusCode == 404)
+                 return null;
+
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="model">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendModel(Models.EmployeeModel model)
+        {
+            Task<Models.ServerResponseModel> t = CreateSendModelAsync(model);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="model">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendModelAsync(Models.EmployeeModel model)
+        {
+            //validating required parameters
+            if (null == model)
+                throw new ArgumentNullException("model", "The parameter \"model\" is a required parameter and cannot be null.");
+
+            //the base uri for api requests
+            string _baseUri = Configuration.GetBaseURI();
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/form/model");
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "Stamplay SDK" },
+                { "accept", "application/json" }
+            };
+
+            //append form/field parameters
+            var _fields = new List<KeyValuePair<string, Object>>();
+            _fields.AddRange(APIHelper.PrepareFormFieldsFromObject("model", model, arrayDeserializationFormat: ArrayDeserializationFormat));
+            //remove null parameters
+            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+
+            //return null on 404
+            if (_response.StatusCode == 404)
+                 return null;
+
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -130,10 +339,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendStringEnumArray(List<Models.Days> days)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendStringEnumArray(List<Models.DaysEnum> days)
         {
-            Task<Models.ServerResponse> t = SendStringEnumArrayAsync(days);
+            Task<Models.ServerResponseModel> t = CreateSendStringEnumArrayAsync(days);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -142,8 +351,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendStringEnumArrayAsync(List<Models.Days> days)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendStringEnumArrayAsync(List<Models.DaysEnum> days)
         {
             //validating required parameters
             if (null == days)
@@ -195,7 +404,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -207,10 +416,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendIntegerEnumArray(List<Models.SuiteCode> suites)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendIntegerEnumArray(List<Models.SuiteCodeEnum> suites)
         {
-            Task<Models.ServerResponse> t = SendIntegerEnumArrayAsync(suites);
+            Task<Models.ServerResponseModel> t = CreateSendIntegerEnumArrayAsync(suites);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -219,8 +428,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendIntegerEnumArrayAsync(List<Models.SuiteCode> suites)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendIntegerEnumArrayAsync(List<Models.SuiteCodeEnum> suites)
         {
             //validating required parameters
             if (null == suites)
@@ -272,7 +481,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -283,11 +492,11 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// Send a variety for form params. Returns file count and body params
         /// </summary>
-        /// <param name="SendMixedArrayInput">Object containing request parameters</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendMixedArray(SendMixedArrayInput input)
+        /// <param name="CreateSendMixedArrayInput">Object containing request parameters</param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendMixedArray(CreateSendMixedArrayInput input)
         {
-            Task<Models.ServerResponse> t = SendMixedArrayAsync(input);
+            Task<Models.ServerResponseModel> t = CreateSendMixedArrayAsync(input);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -295,9 +504,9 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// Send a variety for form params. Returns file count and body params
         /// </summary>
-        /// <param name="SendMixedArrayInput">Object containing request parameters</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendMixedArrayAsync(SendMixedArrayInput input)
+        /// <param name="CreateSendMixedArrayInput">Object containing request parameters</param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendMixedArrayAsync(CreateSendMixedArrayInput input)
         {
             //validating required parameters
             if (null == input.File)
@@ -357,7 +566,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -369,10 +578,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendRfc3339DateTimeArray(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendRfc3339DateTimeArray(List<DateTime> datetimes)
         {
-            Task<Models.ServerResponse> t = SendRfc3339DateTimeArrayAsync(datetimes);
+            Task<Models.ServerResponseModel> t = CreateSendRfc3339DateTimeArrayAsync(datetimes);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -381,8 +590,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendRfc3339DateTimeArrayAsync(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendRfc3339DateTimeArrayAsync(List<DateTime> datetimes)
         {
             //validating required parameters
             if (null == datetimes)
@@ -434,7 +643,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -446,10 +655,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="models">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendModelArray(List<Models.Employee> models)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendModelArray(List<Models.EmployeeModel> models)
         {
-            Task<Models.ServerResponse> t = SendModelArrayAsync(models);
+            Task<Models.ServerResponseModel> t = CreateSendModelArrayAsync(models);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -458,8 +667,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="models">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendModelArrayAsync(List<Models.Employee> models)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendModelArrayAsync(List<Models.EmployeeModel> models)
         {
             //validating required parameters
             if (null == models)
@@ -511,7 +720,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -523,10 +732,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendStringArray(List<string> strings)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendStringArray(List<string> strings)
         {
-            Task<Models.ServerResponse> t = SendStringArrayAsync(strings);
+            Task<Models.ServerResponseModel> t = CreateSendStringArrayAsync(strings);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -535,8 +744,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendStringArrayAsync(List<string> strings)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendStringArrayAsync(List<string> strings)
         {
             //validating required parameters
             if (null == strings)
@@ -588,7 +797,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -600,10 +809,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendIntegerArray(List<int> integers)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendIntegerArray(List<int> integers)
         {
-            Task<Models.ServerResponse> t = SendIntegerArrayAsync(integers);
+            Task<Models.ServerResponseModel> t = CreateSendIntegerArrayAsync(integers);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -612,8 +821,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendIntegerArrayAsync(List<int> integers)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendIntegerArrayAsync(List<int> integers)
         {
             //validating required parameters
             if (null == integers)
@@ -665,7 +874,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -677,10 +886,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendRfc1123DateTimeArray(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendRfc1123DateTimeArray(List<DateTime> datetimes)
         {
-            Task<Models.ServerResponse> t = SendRfc1123DateTimeArrayAsync(datetimes);
+            Task<Models.ServerResponseModel> t = CreateSendRfc1123DateTimeArrayAsync(datetimes);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -689,8 +898,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendRfc1123DateTimeArrayAsync(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendRfc1123DateTimeArrayAsync(List<DateTime> datetimes)
         {
             //validating required parameters
             if (null == datetimes)
@@ -742,7 +951,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -754,10 +963,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendUnixDateTimeArray(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendUnixDateTimeArray(List<DateTime> datetimes)
         {
-            Task<Models.ServerResponse> t = SendUnixDateTimeArrayAsync(datetimes);
+            Task<Models.ServerResponseModel> t = CreateSendUnixDateTimeArrayAsync(datetimes);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -766,8 +975,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendUnixDateTimeArrayAsync(List<DateTime> datetimes)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendUnixDateTimeArrayAsync(List<DateTime> datetimes)
         {
             //validating required parameters
             if (null == datetimes)
@@ -819,7 +1028,84 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
+            }
+            catch (Exception _ex)
+            {
+                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
+            }
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="dates">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendDateArray(List<DateTime> dates)
+        {
+            Task<Models.ServerResponseModel> t = CreateSendDateArrayAsync(dates);
+            APIHelper.RunTaskSynchronously(t);
+            return t.Result;
+        }
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="dates">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendDateArrayAsync(List<DateTime> dates)
+        {
+            //validating required parameters
+            if (null == dates)
+                throw new ArgumentNullException("dates", "The parameter \"dates\" is a required parameter and cannot be null.");
+
+            //the base uri for api requests
+            string _baseUri = Configuration.GetBaseURI();
+
+            //prepare query string for API call
+            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
+            _queryBuilder.Append("/form/date");
+
+            //process optional query parameters
+            APIHelper.AppendUrlWithQueryParameters(_queryBuilder, new Dictionary<string, object>()
+            {
+                { "array", "true" }
+            },ArrayDeserializationFormat,ParameterSeparator);
+
+
+            //validate and preprocess url
+            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
+
+            //append request with appropriate headers and parameters
+            var _headers = new Dictionary<string,string>()
+            {
+                { "user-agent", "Stamplay SDK" },
+                { "accept", "application/json" }
+            };
+
+            //append form/field parameters
+            var _fields = new List<KeyValuePair<string, Object>>();
+            _fields.AddRange(APIHelper.PrepareFormFieldsFromObject("dates", dates.Select(x => x.ToString("yyyy'-'MM'-'dd")).ToList(), arrayDeserializationFormat: ArrayDeserializationFormat));
+            //remove null parameters
+            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
+
+            //prepare the API call request to fetch the response
+            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
+
+            //invoke request and get response
+            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
+            HttpContext _context = new HttpContext(_request,_response);
+
+            //return null on 404
+            if (_response.StatusCode == 404)
+                 return null;
+
+            //handle errors defined at the API level
+            base.ValidateResponse(_response, _context);
+
+            try
+            {
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -831,10 +1117,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendLong(long mvalue)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendLong(long mvalue)
         {
-            Task<Models.ServerResponse> t = SendLongAsync(mvalue);
+            Task<Models.ServerResponseModel> t = CreateSendLongAsync(mvalue);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -843,8 +1129,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendLongAsync(long mvalue)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendLongAsync(long mvalue)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
@@ -888,7 +1174,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -900,10 +1186,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendRfc3339DateTime(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendRfc3339DateTime(DateTime datetime)
         {
-            Task<Models.ServerResponse> t = SendRfc3339DateTimeAsync(datetime);
+            Task<Models.ServerResponseModel> t = CreateSendRfc3339DateTimeAsync(datetime);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -912,8 +1198,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendRfc3339DateTimeAsync(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendRfc3339DateTimeAsync(DateTime datetime)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
@@ -957,7 +1243,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -969,10 +1255,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendRfc1123DateTime(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendRfc1123DateTime(DateTime datetime)
         {
-            Task<Models.ServerResponse> t = SendRfc1123DateTimeAsync(datetime);
+            Task<Models.ServerResponseModel> t = CreateSendRfc1123DateTimeAsync(datetime);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -981,8 +1267,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendRfc1123DateTimeAsync(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendRfc1123DateTimeAsync(DateTime datetime)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
@@ -1026,7 +1312,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -1038,10 +1324,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendUnixDateTime(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public Models.ServerResponseModel CreateSendUnixDateTime(DateTime datetime)
         {
-            Task<Models.ServerResponse> t = SendUnixDateTimeAsync(datetime);
+            Task<Models.ServerResponseModel> t = CreateSendUnixDateTimeAsync(datetime);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -1050,8 +1336,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendUnixDateTimeAsync(DateTime datetime)
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        public async Task<Models.ServerResponseModel> CreateSendUnixDateTimeAsync(DateTime datetime)
         {
             //the base uri for api requests
             string _baseUri = Configuration.GetBaseURI();
@@ -1095,293 +1381,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
-            }
-            catch (Exception _ex)
-            {
-                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
-            }
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendDate(DateTime date)
-        {
-            Task<Models.ServerResponse> t = SendDateAsync(date);
-            APIHelper.RunTaskSynchronously(t);
-            return t.Result;
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendDateAsync(DateTime date)
-        {
-            //the base uri for api requests
-            string _baseUri = Configuration.GetBaseURI();
-
-            //prepare query string for API call
-            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/form/date");
-
-
-            //validate and preprocess url
-            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
-
-            //append request with appropriate headers and parameters
-            var _headers = new Dictionary<string,string>()
-            {
-                { "user-agent", "Stamplay SDK" },
-                { "accept", "application/json" }
-            };
-
-            //append form/field parameters
-            var _fields = new List<KeyValuePair<string, Object>>()
-            {
-                new KeyValuePair<string, object>( "date", date.ToString("yyyy'-'MM'-'dd") )
-            };
-            //remove null parameters
-            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
-
-            //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
-
-            //invoke request and get response
-            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
-            HttpContext _context = new HttpContext(_request,_response);
-
-            //return null on 404
-            if (_response.StatusCode == 404)
-                 return null;
-
-            //handle errors defined at the API level
-            base.ValidateResponse(_response, _context);
-
-            try
-            {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
-            }
-            catch (Exception _ex)
-            {
-                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
-            }
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendString(string mvalue)
-        {
-            Task<Models.ServerResponse> t = SendStringAsync(mvalue);
-            APIHelper.RunTaskSynchronously(t);
-            return t.Result;
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="mvalue">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendStringAsync(string mvalue)
-        {
-            //validating required parameters
-            if (null == mvalue)
-                throw new ArgumentNullException("mvalue", "The parameter \"mvalue\" is a required parameter and cannot be null.");
-
-            //the base uri for api requests
-            string _baseUri = Configuration.GetBaseURI();
-
-            //prepare query string for API call
-            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/form/string");
-
-
-            //validate and preprocess url
-            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
-
-            //append request with appropriate headers and parameters
-            var _headers = new Dictionary<string,string>()
-            {
-                { "user-agent", "Stamplay SDK" },
-                { "accept", "application/json" }
-            };
-
-            //append form/field parameters
-            var _fields = new List<KeyValuePair<string, Object>>()
-            {
-                new KeyValuePair<string, object>( "value", mvalue )
-            };
-            //remove null parameters
-            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
-
-            //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
-
-            //invoke request and get response
-            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
-            HttpContext _context = new HttpContext(_request,_response);
-
-            //return null on 404
-            if (_response.StatusCode == 404)
-                 return null;
-
-            //handle errors defined at the API level
-            base.ValidateResponse(_response, _context);
-
-            try
-            {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
-            }
-            catch (Exception _ex)
-            {
-                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
-            }
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="file">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendFile(FileStreamInfo file)
-        {
-            Task<Models.ServerResponse> t = SendFileAsync(file);
-            APIHelper.RunTaskSynchronously(t);
-            return t.Result;
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="file">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendFileAsync(FileStreamInfo file)
-        {
-            //validating required parameters
-            if (null == file)
-                throw new ArgumentNullException("file", "The parameter \"file\" is a required parameter and cannot be null.");
-
-            //the base uri for api requests
-            string _baseUri = Configuration.GetBaseURI();
-
-            //prepare query string for API call
-            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/form/file");
-
-
-            //validate and preprocess url
-            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
-
-            //append request with appropriate headers and parameters
-            var _headers = new Dictionary<string,string>()
-            {
-                { "user-agent", "Stamplay SDK" },
-                { "accept", "application/json" }
-            };
-
-            //append form/field parameters
-            var _fields = new List<KeyValuePair<string, Object>>()
-            {
-                new KeyValuePair<string, object>( "file", file)
-            };
-            //remove null parameters
-            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
-
-            //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
-
-            //invoke request and get response
-            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
-            HttpContext _context = new HttpContext(_request,_response);
-
-            //return null on 404
-            if (_response.StatusCode == 404)
-                 return null;
-
-            //handle errors defined at the API level
-            base.ValidateResponse(_response, _context);
-
-            try
-            {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
-            }
-            catch (Exception _ex)
-            {
-                throw new APIException("Failed to parse the response: " + _ex.Message, _context);
-            }
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="model">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public Models.ServerResponse SendModel(Models.Employee model)
-        {
-            Task<Models.ServerResponse> t = SendModelAsync(model);
-            APIHelper.RunTaskSynchronously(t);
-            return t.Result;
-        }
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="model">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        public async Task<Models.ServerResponse> SendModelAsync(Models.Employee model)
-        {
-            //validating required parameters
-            if (null == model)
-                throw new ArgumentNullException("model", "The parameter \"model\" is a required parameter and cannot be null.");
-
-            //the base uri for api requests
-            string _baseUri = Configuration.GetBaseURI();
-
-            //prepare query string for API call
-            StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/form/model");
-
-
-            //validate and preprocess url
-            string _queryUrl = APIHelper.CleanUrl(_queryBuilder);
-
-            //append request with appropriate headers and parameters
-            var _headers = new Dictionary<string,string>()
-            {
-                { "user-agent", "Stamplay SDK" },
-                { "accept", "application/json" }
-            };
-
-            //append form/field parameters
-            var _fields = new List<KeyValuePair<string, Object>>();
-            _fields.AddRange(APIHelper.PrepareFormFieldsFromObject("model", model, arrayDeserializationFormat: ArrayDeserializationFormat));
-            //remove null parameters
-            _fields = _fields.Where(kvp => kvp.Value != null).ToList();
-
-            //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, _fields);
-
-            //invoke request and get response
-            HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
-            HttpContext _context = new HttpContext(_request,_response);
-
-            //return null on 404
-            if (_response.StatusCode == 404)
-                 return null;
-
-            //handle errors defined at the API level
-            base.ValidateResponse(_response, _context);
-
-            try
-            {
-                return APIHelper.JsonDeserialize<Models.ServerResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.ServerResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {

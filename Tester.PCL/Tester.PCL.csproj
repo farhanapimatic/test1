@@ -10,7 +10,7 @@
     <AssemblyName>Tester.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{725734f1-f2e8-4553-a421-7ec6d7068e76}</ProjectGuid>
+    <ProjectGuid>{87c7908b-7791-4ac0-b0e9-c7c568cd0b11}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -77,36 +77,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\SendMixedArrayInput.cs" />
-    <Compile Include="Models\QueryParameter.cs" />
-    <Compile Include="Models\ServerResponse.cs" />
-    <Compile Include="Models\Boss.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EchoResponse.cs" />
-    <Compile Include="Models\PersonCreationConverter.cs" />
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\CreateSendMixedArrayInput.cs" />
+    <Compile Include="Models\PersonModelCreationConverter.cs" />
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\ServerResponseModel.cs" />
+    <Compile Include="Models\EchoResponseModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\BossModel.cs" />
+    <Compile Include="Models\QueryParameterModel.cs" />
     <Compile Include="Exceptions\GlobalTestException.cs" />
+    <Compile Include="Models\SuiteCodeEnum.cs" />
+    <Compile Include="Models\DaysEnum.cs" />
     <Compile Include="Exceptions\LocalTestException.cs" />
-    <Compile Include="Models\Days.cs" />
-    <Compile Include="Models\SuiteCode.cs" />
+    <Compile Include="Models\OAuthScopeEnum.cs" />
+    <Compile Include="Controllers\FormParamsController.cs" />
+    <Compile Include="Controllers\IFormParamsController.cs" />
     <Compile Include="Controllers\BodyParamsController.cs" />
     <Compile Include="Controllers\IBodyParamsController.cs" />
     <Compile Include="Controllers\ResponseTypesController.cs" />
     <Compile Include="Controllers\IResponseTypesController.cs" />
-    <Compile Include="Controllers\FormParamsController.cs" />
-    <Compile Include="Controllers\IFormParamsController.cs" />
     <Compile Include="Controllers\QueryParamController.cs" />
     <Compile Include="Controllers\IQueryParamController.cs" />
-    <Compile Include="Controllers\HeaderController.cs" />
-    <Compile Include="Controllers\IHeaderController.cs" />
-    <Compile Include="Controllers\ErrorCodesController.cs" />
-    <Compile Include="Controllers\IErrorCodesController.cs" />
     <Compile Include="Controllers\EchoController.cs" />
     <Compile Include="Controllers\IEchoController.cs" />
     <Compile Include="Controllers\TemplateParamsController.cs" />
     <Compile Include="Controllers\ITemplateParamsController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
+    <Compile Include="Controllers\IHeaderController.cs" />
+    <Compile Include="Controllers\ErrorCodesController.cs" />
+    <Compile Include="Controllers\IErrorCodesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="AuthManager.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="TesterClient.cs" />
     <Compile Include="ITesterClient.cs" />

@@ -21,46 +21,46 @@ namespace Tester.PCL.Controllers
     public partial interface IEchoController
     {
         /// <summary>
-        /// Sends the request including any form params as JSON
+        /// Echo's back the request
         /// </summary>
         /// <param name="input">Required parameter: Example: </param>
         /// <return>Returns the dynamic response from the API call</return>
-        dynamic FormEcho(object input);
-
-        /// <summary>
-        /// Sends the request including any form params as JSON
-        /// </summary>
-        /// <param name="input">Required parameter: Example: </param>
-        /// <return>Returns the dynamic response from the API call</return>
-        Task<dynamic> FormEchoAsync(object input);
+        dynamic CreateJsonEcho(object input);
 
         /// <summary>
         /// Echo's back the request
         /// </summary>
         /// <param name="input">Required parameter: Example: </param>
         /// <return>Returns the dynamic response from the API call</return>
-        dynamic JsonEcho(object input);
+        Task<dynamic> CreateJsonEchoAsync(object input);
 
         /// <summary>
-        /// Echo's back the request
+        /// Sends the request including any form params as JSON
         /// </summary>
         /// <param name="input">Required parameter: Example: </param>
         /// <return>Returns the dynamic response from the API call</return>
-        Task<dynamic> JsonEchoAsync(object input);
+        dynamic CreateFormEcho(object input);
+
+        /// <summary>
+        /// Sends the request including any form params as JSON
+        /// </summary>
+        /// <param name="input">Required parameter: Example: </param>
+        /// <return>Returns the dynamic response from the API call</return>
+        Task<dynamic> CreateFormEchoAsync(object input);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="queryParameters">Additional optional query parameters are supported by this endpoint</param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Models.EchoResponse QueryEcho(Dictionary<string, object> queryParameters = null);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Models.EchoResponseModel GetQueryEcho(Dictionary<string, object> queryParameters = null);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="queryParameters">Additional optional query parameters are supported by this endpoint</param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Task<Models.EchoResponse> QueryEchoAsync(Dictionary<string, object> queryParameters = null);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Task<Models.EchoResponseModel> GetQueryEchoAsync(Dictionary<string, object> queryParameters = null);
 
     }
 } 

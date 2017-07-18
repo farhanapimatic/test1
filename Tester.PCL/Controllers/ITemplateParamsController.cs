@@ -24,29 +24,29 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Models.EchoResponse SendIntegerArray(List<int> integers);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Models.EchoResponseModel GetSendIntegerArray(List<int> integers);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Task<Models.EchoResponse> SendIntegerArrayAsync(List<int> integers);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Task<Models.EchoResponseModel> GetSendIntegerArrayAsync(List<int> integers);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Models.EchoResponse SendStringArray(List<string> strings);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Models.EchoResponseModel GetSendStringArray(List<string> strings);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        Task<Models.EchoResponse> SendStringArrayAsync(List<string> strings);
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        Task<Models.EchoResponseModel> GetSendStringArrayAsync(List<string> strings);
 
     }
 } 

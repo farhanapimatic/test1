@@ -50,11 +50,11 @@ namespace Tester.Tests
             string mvalue = "TestString";
 
             // Perform API call
-            ServerResponse result = null;
+            ServerResponseModel result = null;
 
             try
             {
-                result = await controller.SendHeadersAsync(customHeader, mvalue);
+                result = await controller.CreateSendHeadersAsync(customHeader, mvalue);
             }
             catch(APIException) {};
 

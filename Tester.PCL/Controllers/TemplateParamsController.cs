@@ -53,10 +53,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        public Models.EchoResponse SendIntegerArray(List<int> integers)
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        public Models.EchoResponseModel GetSendIntegerArray(List<int> integers)
         {
-            Task<Models.EchoResponse> t = SendIntegerArrayAsync(integers);
+            Task<Models.EchoResponseModel> t = GetSendIntegerArrayAsync(integers);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -65,8 +65,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        public async Task<Models.EchoResponse> SendIntegerArrayAsync(List<int> integers)
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        public async Task<Models.EchoResponseModel> GetSendIntegerArrayAsync(List<int> integers)
         {
             //validating required parameters
             if (null == integers)
@@ -112,7 +112,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.EchoResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.EchoResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -124,10 +124,10 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        public Models.EchoResponse SendStringArray(List<string> strings)
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        public Models.EchoResponseModel GetSendStringArray(List<string> strings)
         {
-            Task<Models.EchoResponse> t = SendStringArrayAsync(strings);
+            Task<Models.EchoResponseModel> t = GetSendStringArrayAsync(strings);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -136,8 +136,8 @@ namespace Tester.PCL.Controllers
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.EchoResponse response from the API call</return>
-        public async Task<Models.EchoResponse> SendStringArrayAsync(List<string> strings)
+        /// <return>Returns the Models.EchoResponseModel response from the API call</return>
+        public async Task<Models.EchoResponseModel> GetSendStringArrayAsync(List<string> strings)
         {
             //validating required parameters
             if (null == strings)
@@ -183,7 +183,7 @@ namespace Tester.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<Models.EchoResponse>(_response.Body);
+                return APIHelper.JsonDeserialize<Models.EchoResponseModel>(_response.Body);
             }
             catch (Exception _ex)
             {

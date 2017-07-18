@@ -53,7 +53,7 @@ namespace Tester.Tests
 
             try
             {
-                result = await controller.JsonEchoAsync(input);
+                result = await controller.CreateJsonEchoAsync(input);
             }
             catch(APIException) {};
 

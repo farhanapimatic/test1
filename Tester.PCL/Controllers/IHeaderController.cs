@@ -25,16 +25,16 @@ namespace Tester.PCL.Controllers
         /// </summary>
         /// <param name="customHeader">Required parameter: Example: </param>
         /// <param name="mvalue">Required parameter: Represents the value of the custom header</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SendHeaders(string customHeader, string mvalue);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel CreateSendHeaders(string customHeader, string mvalue);
 
         /// <summary>
         /// Sends a single header params
         /// </summary>
         /// <param name="customHeader">Required parameter: Example: </param>
         /// <param name="mvalue">Required parameter: Represents the value of the custom header</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SendHeadersAsync(string customHeader, string mvalue);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> CreateSendHeadersAsync(string customHeader, string mvalue);
 
     }
 } 

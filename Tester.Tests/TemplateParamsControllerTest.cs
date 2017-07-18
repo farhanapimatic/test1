@@ -40,38 +40,6 @@ namespace Tester.Tests
         }
 
         /// <summary>
-        /// TODO: Add description for test TestSendIntegerArray 
-        /// </summary>
-        [Test]
-        public async Task TestSendIntegerArray() 
-        {
-            // Parameters for the API call
-            List<int> integers = APIHelper.JsonDeserialize<List<int>>("[1,2,3,4,5]");
-
-            // Perform API call
-            EchoResponse result = null;
-
-            try
-            {
-                result = await controller.SendIntegerArrayAsync(integers);
-            }
-            catch(APIException) {};
-
-            // Test response code
-            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 200");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
-                    "{\"path\":\"/1/2/3/4/5\"}", 
-                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
-                    true, true, false),
-                    "Response body should have matching keys");
-        }
-
-        /// <summary>
         /// TODO: Add description for test TestSendStringArray 
         /// </summary>
         [Test]
@@ -81,11 +49,11 @@ namespace Tester.Tests
             List<string> strings = APIHelper.JsonDeserialize<List<string>>("[\"abc\", \"def\"]");
 
             // Perform API call
-            EchoResponse result = null;
+            EchoResponseModel result = null;
 
             try
             {
-                result = await controller.SendStringArrayAsync(strings);
+                result = await controller.GetSendStringArrayAsync(strings);
             }
             catch(APIException) {};
 

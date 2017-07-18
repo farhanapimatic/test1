@@ -23,30 +23,98 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="mstring">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse StringParam(string mstring);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetNoParams();
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetNoParamsAsync();
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="suites">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetIntegerEnumArray(List<Models.SuiteCodeEnum> suites);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="suites">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetIntegerEnumArrayAsync(List<Models.SuiteCodeEnum> suites);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="days">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetStringEnumArray(List<Models.DaysEnum> days);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="days">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetStringEnumArrayAsync(List<Models.DaysEnum> days);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="strings">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetStringArray(List<string> strings);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="strings">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetStringArrayAsync(List<string> strings);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="integers">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetNumberArray(List<int> integers);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="integers">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetNumberArrayAsync(List<int> integers);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="url">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetUrlParam(string url);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="url">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetUrlParamAsync(string url);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="mstring">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> StringParamAsync(string mstring);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetStringParam(string mstring);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse Rfc3339DateTime(DateTime datetime);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> Rfc3339DateTimeAsync(DateTime datetime);
+        /// <param name="mstring">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetStringParamAsync(string mstring);
 
         /// <summary>
         /// TODO: type endpoint description here
@@ -55,8 +123,8 @@ namespace Tester.PCL.Controllers
         /// <param name="precision">Required parameter: Example: </param>
         /// <param name="mstring">Required parameter: Example: </param>
         /// <param name="url">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse MultipleParams(
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetMultipleParams(
                 int number,
                 double precision,
                 string mstring,
@@ -69,8 +137,8 @@ namespace Tester.PCL.Controllers
         /// <param name="precision">Required parameter: Example: </param>
         /// <param name="mstring">Required parameter: Example: </param>
         /// <param name="url">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> MultipleParamsAsync(
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetMultipleParamsAsync(
                 int number,
                 double precision,
                 string mstring,
@@ -83,8 +151,8 @@ namespace Tester.PCL.Controllers
         /// <param name="number">Required parameter: Example: </param>
         /// <param name="mstring">Required parameter: Example: </param>
         /// <param name="queryParameters">Additional optional query parameters are supported by this endpoint</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse SimpleQuery(
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetSimpleQuery(
                 bool boolean,
                 int number,
                 string mstring,
@@ -97,8 +165,8 @@ namespace Tester.PCL.Controllers
         /// <param name="number">Required parameter: Example: </param>
         /// <param name="mstring">Required parameter: Example: </param>
         /// <param name="queryParameters">Additional optional query parameters are supported by this endpoint</param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> SimpleQueryAsync(
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetSimpleQueryAsync(
                 bool boolean,
                 int number,
                 string mstring,
@@ -107,182 +175,114 @@ namespace Tester.PCL.Controllers
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse Rfc3339DateTimeArray(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> Rfc3339DateTimeArrayAsync(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse Rfc1123DateTimeArray(List<DateTime> datetimes);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> Rfc1123DateTimeArrayAsync(List<DateTime> datetimes);
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetRfc3339DateTime(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse Rfc1123DateTime(DateTime datetime);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> Rfc1123DateTimeAsync(DateTime datetime);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse UnixDateTime(DateTime datetime);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="datetime">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> UnixDateTimeAsync(DateTime datetime);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetRfc3339DateTimeAsync(DateTime datetime);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse UnixDateTimeArray(List<DateTime> datetimes);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetRfc3339DateTimeArray(List<DateTime> datetimes);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="datetimes">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> UnixDateTimeArrayAsync(List<DateTime> datetimes);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetRfc3339DateTimeArrayAsync(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetRfc1123DateTimeArray(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetRfc1123DateTimeArrayAsync(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetRfc1123DateTime(DateTime datetime);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetRfc1123DateTimeAsync(DateTime datetime);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetUnixDateTime(DateTime datetime);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetime">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetUnixDateTimeAsync(DateTime datetime);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetUnixDateTimeArray(List<DateTime> datetimes);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="datetimes">Required parameter: Example: </param>
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetUnixDateTimeArrayAsync(List<DateTime> datetimes);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse Date(DateTime date);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetDate(DateTime date);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="date">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> DateAsync(DateTime date);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetDateAsync(DateTime date);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse DateArray(List<DateTime> dates);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Models.ServerResponseModel GetDateArray(List<DateTime> dates);
 
         /// <summary>
         /// TODO: type endpoint description here
         /// </summary>
         /// <param name="dates">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> DateArrayAsync(List<DateTime> dates);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse NoParams();
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> NoParamsAsync();
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse IntegerEnumArray(List<Models.SuiteCode> suites);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="suites">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> IntegerEnumArrayAsync(List<Models.SuiteCode> suites);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse StringEnumArray(List<Models.Days> days);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="days">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> StringEnumArrayAsync(List<Models.Days> days);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse StringArray(List<string> strings);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="strings">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> StringArrayAsync(List<string> strings);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse NumberArray(List<int> integers);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="integers">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> NumberArrayAsync(List<int> integers);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="url">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Models.ServerResponse UrlParam(string url);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="url">Required parameter: Example: </param>
-        /// <return>Returns the Models.ServerResponse response from the API call</return>
-        Task<Models.ServerResponse> UrlParamAsync(string url);
+        /// <return>Returns the Models.ServerResponseModel response from the API call</return>
+        Task<Models.ServerResponseModel> GetDateArrayAsync(List<DateTime> dates);
 
     }
 } 

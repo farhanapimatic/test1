@@ -56,7 +56,7 @@ namespace Tester.Tests
         {
             // Set Configuration parameters for test execution
             Configuration.Port = "3000";
-            Configuration.Suites = SuiteCode.DIAMONDS;
+            Configuration.Suites = SuiteCodeEnum.DIAMONDS;
             Configuration.Environment = Configuration.Environments.TESTING;
         }
     }
