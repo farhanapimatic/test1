@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 The generated SDK requires AngularJS framework to work. If you do not already have angular downloaded, please go ahead and do it from [here](https://angularjs.org/).
@@ -15,10 +13,10 @@ The following section describes how to use the generated SDK in an existing/new 
 Perform the following steps to configure angular and the SDK:
 + Make a `scripts` folder inside the root folder of the project. If you already have a `scripts` folder, skip to the next step.
 + Move the `angular.min.js` file inside the scripts folder. 
-+ Move the `APITitleLib` folder inside the scripts folder.
++ Move the `BibcodeQueryLib` folder inside the scripts folder.
 + If any of the Custom Types in your API have `Date`/`Datetime` type fields or any endpoint has `Date`/`Datetime` response, you will need to download angular-moment and moment.js. Move these 2 files into the `scripts` folder as well.
 
-![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=API%20Title-Angular&projectName=APITitleLib)
+![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=BibcodeQuery-Angular&projectName=BibcodeQueryLib)
 
 ### 2. Open Project Folder
 Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
@@ -26,7 +24,7 @@ Click on `File` and select `Open Folder`
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=API%20Title-Angular)
+![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=BibcodeQuery-Angular)
 
 ### 3. Create an Angular Application
 Since Angular JS is used for client-side web development, in order to use the generated library, you will have to develop an application first.
@@ -63,7 +61,7 @@ Skip to the next step if you are working with an existing project and already ha
 </html>
 ```
 
-![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=API%20Title-Angular)
+![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=BibcodeQuery-Angular)
 
 ### 5. Including links to Angular in HTML file
 Your HTML file needs to have a link to `angular.min.js` file to use Angular-JS. Add the link using `script` tags inside the `head` section of `index.html` like:
@@ -83,32 +81,32 @@ Import the reference to the generated SDK files inside your html file like:
 <head>
     ...
     <!-- Helper files -->
-    <script src="scripts/APITitleLib/Module.js"></script>
-    <script src="scripts/APITitleLib/Configuration.js"></script>
-    <script src="scripts/APITitleLib/ModelFactory.js"></script>
-    <script src="scripts/APITitleLib/ObjectMapper.js"></script>
-    <script src="scripts/APITitleLib/APIHelper.js"></script>
-    <script src="scripts/APITitleLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/APITitleLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/APITitleLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/APITitleLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/BibcodeQueryLib/Module.js"></script>
+    <script src="scripts/BibcodeQueryLib/Configuration.js"></script>
+    <script src="scripts/BibcodeQueryLib/ModelFactory.js"></script>
+    <script src="scripts/BibcodeQueryLib/ObjectMapper.js"></script>
+    <script src="scripts/BibcodeQueryLib/APIHelper.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/RequestClient.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Response/HttpResponse.js"></script>
 
     <!-- API Controllers -->
-    <script src="scripts/APITitleLib/Controllers/BaseController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/NotesController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/UsersGggController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/TagsAndTaggingLongTitleController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BaseController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BibcodeQueryBindingController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/APIController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/OAuthAuthorizationController.js"></script>
 
 
     <!-- Models -->
-    <script src="scripts/APITitleLib/Models/BaseModel.js"></script>
-    <script src="scripts/APITitleLib/Models/NoteData.js"></script>
-    <script src="scripts/APITitleLib/Models/CreateNewNoteRequest.js"></script>
-    <script src="scripts/APITitleLib/Models/CreateNewNoteRequest3.js"></script>
-    <script src="scripts/APITitleLib/Models/UpdateANoteRequest.js"></script>
-    <script src="scripts/APITitleLib/Models/UpdateANoteRequest7.js"></script>
-    <script src="scripts/APITitleLib/Models/SortEnum.js"></script>
-    <script src="scripts/APITitleLib/Models/GetUsersResponse.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/BaseModel.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/ReturnBibcode.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/TestRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/New.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
 
     ...
 </head>
@@ -149,7 +147,7 @@ In order to use the generated SDK's modules, controllers and factories, the proj
 Add the dependency like this:
 
 ```js
-var app = angular.module('myApp', ['APITitleLib']);
+var app = angular.module('myApp', ['BibcodeQueryLib']);
 ```
 At this point, the SDK has been successfully included in your project. Further steps include using a service/factory from the generated SDK. To see working example of this, please head on [over here](#list-of-controllers) and choose any class to see its functions and example usage.  
 
@@ -163,7 +161,7 @@ To run the app, simply open up the `index.html` file in a browser.
 
 The Angular Application can be initialized as following:
 ```JavaScript
-var app = angular.module('myApp', [APITitleLib]);
+var app = angular.module('myApp', [BibcodeQueryLib]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
@@ -172,22 +170,199 @@ In order to setup authentication and initialization of the Angular App, you need
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthUsername | OAuth 2 Resource Owner Username |
+| oAuthPassword | OAuth 2 Resource Owner Password |
 
 
 
 ```JavaScript
-var app = angular.module('myApp', [APITitleLib]);
+var app = angular.module('myApp', [BibcodeQueryLib]);
 app.factory('config', function($scope, Configuration) 
 {
     return {
         setConfigVars: function() {
             // Configuration parameters and credentials
-            Configuration.oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
+            Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+            Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+            Configuration.oAuthUsername = 'oAuthUsername'; // OAuth 2 Resource Owner Username
+            Configuration.oAuthPassword = 'oAuthPassword'; // OAuth 2 Resource Owner Password
             
         }
     };
 });
+```
+
+You must now authorize the client.
+
+### Authorizing your client
+
+
+Your application must obtain user authorization before it can execute an endpoint call.
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the user's credentials for an *access token*.
+The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager) {
+    var scopes = [];
+    var promise = OAuthManager.authorize(scopes);
+    promise.then(function(success) {
+        // client successfully authorized
+    });
+});
+```
+
+The client can now make authorized endpoint calls.
+
+
+
+### Refreshing token
+
+Access tokens may expire after sometime. To extend its lifetime, you must refresh the token.
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager) {
+    var refreshPromise = OAuthManager.refreshToken();
+    promise.then(function(success) {
+        // token refreshed
+    });
+});
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call which requires authentication.
+
+
+
+
+### Watching for access token updates
+
+Since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a **token update callback** to detect any change to the access token.
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, Configuration) {
+    Configuration.oAuthTokenUpdateCallback = function(token) {
+        // token passed here is the Configuration.oAuthToken
+    }
+});
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from an existing token
+
+To authorize a client from an existing access token, just set the access token in `Configuration` along with the other configuration parameters:
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('config', function($scope, Configuration) {
+    Configuration.oAuthToken = sessionStorage.getItem('token'); // the existing token stored in sessionStorage of browser
+});
+```
+
+
+### Complete example
+In this example, `app.js` will check if the access token has been obtained. If it hasn't been, the client needs to be authorized first.
+After authorization, endpoint calls can be made.
+
+#### `app.js`
+
+```JavaScript
+var app = angular.module('OAuthTest', ['BibcodeQueryLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager, Configuration) {
+    Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+    Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+    Configuration.oAuthUsername = 'oAuthUsername'; // OAuth 2 Resource Owner Username
+    Configuration.oAuthPassword = 'oAuthPassword'; // OAuth 2 Resource Owner Password
+
+    Configuration.oAuthTokenUpdateCallback = function(token) {
+        sessionStorage.setItem('token', token);
+    }
+
+    if (OAuthManager.isTokenSet()) {
+        // token was already set, make API calls as required
+    } else {
+        // since token is not set, client needs to obtain
+        // an access token first
+        var scopes = [];
+        var promise = OAuthManager.authorize(scopes);
+        promise.then(function(success) {
+            // client successfully authorized
+            // make endpoint calls as required
+            // client will automatically refresh the token when it expires and
+            // call the token update callback
+        });
+    }
+
+});
+```
+
+#### `index.html`
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OAuthTest</title>
+    <meta charset="UTF8">
+
+    <script src="scripts/angular.min.js"></script>
+
+    <script src="scripts/BibcodeQueryLib/Module.js"></script>
+    <script src="scripts/BibcodeQueryLib/Configuration.js"></script>
+    <script src="scripts/BibcodeQueryLib/ModelFactory.js"></script>
+    <script src="scripts/BibcodeQueryLib/ObjectMapper.js"></script>
+    <script src="scripts/BibcodeQueryLib/APIHelper.js"></script>
+    <script src="scripts/BibcodeQueryLib/Servers.js"></script>
+    <script src="scripts/BibcodeQueryLib/Environments.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/BibcodeQueryLib/Http/Client/RequestClient.js"></script>
+
+    <!-- API Controllers -->
+    <script src="scripts/BibcodeQueryLib/Controllers/BaseController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/BibcodeQueryBindingController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/APIController.js"></script>
+    <script src="scripts/BibcodeQueryLib/Controllers/OAuthAuthorizationController.js"></script>
+
+
+    <!-- Models -->
+    <script src="scripts/BibcodeQueryLib/Models/BaseModel.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/ReturnBibcode.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/TestRequest.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/New.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthToken.js"></script>
+    <script src="scripts/BibcodeQueryLib/Models/OAuthProviderErrorEnum.js"></script>
+
+
+    <script src="scripts/BibcodeQueryLib/OAuthManager.js"></script>
+    <script src="scripts/app.js"></script>
+
+</head>
+
+
+<body ng-app="OAuthTest">
+    <div ng-controller="oauthClientController">
+
+    </div>
+</body>
+
+</html>
 ```
 
 
@@ -196,39 +371,53 @@ app.factory('config', function($scope, Configuration)
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [NotesController](#notes_controller)
-* [UsersGggController](#users_ggg_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
+* [APIController](#api_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` NotesController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, NotesController, NoteData){
+	app.controller("testController", function($scope, BibcodeQueryBindingController, ReturnBibcode){
 	});
 ```
 
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes") getNotes
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
 
-> Get a list of notes.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> getBibcode
 
 
 ```javascript
-function getNotes()
+function getBibcode(bibcode, dbKey, dataType)
 ```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```javascript
 
 
-	app.controller("testController", function($scope, NotesController, NoteData){
+	app.controller("testController", function($scope, BibcodeQueryBindingController, ReturnBibcode){
+        var bibcode = 'bibcode';
+        var dbKey = db_key;
+        var dataType = data_type;
 
 
-		var result = NotesController.getNotes();
+		var result = BibcodeQueryBindingController.getBibcode(bibcode, dbKey, dataType);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -243,19 +432,35 @@ function getNotes()
 
 
 
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNote") createNewNote
+[Back to List of Controllers](#list_of_controllers)
 
-> Create a new note using a title and an optional content body.
+## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
+
+### Get singleton instance
+
+The singleton instance of the ``` APIController ``` class can be accessed via Dependency Injection.
+
+```js
+	app.controller("testController", function($scope, APIController){
+	});
+```
+
+### <a name="create_test"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createTest") createTest
+
+> TODO: Add a method description
 
 
 ```javascript
-function createNewNote(body)
+function createTest(body, cacheControl, contentType, postmanToken)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | body |  ``` Required ```  | TODO: Add a parameter description |
+| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
+| contentType |  ``` Required ```  | TODO: Add a parameter description |
+| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -264,233 +469,14 @@ function createNewNote(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, NotesController){
-        var body = new CreateNewNoteRequest({    "title": "My new note",    "body": "This is the body"});
+	app.controller("testController", function($scope, APIController){
+        var body = new TestRequest({"key":"value"});
+        var cacheControl = 'cache-control';
+        var contentType = 'content-type';
+        var postmanToken = 'postman-token';
 
 
-		var result = NotesController.createNewNote(body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNote") getNote
-
-> Get a single note.
-
-
-```javascript
-function getNote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-        var id = '68a5sdf67';
-        var body = false;
-
-
-		var result = NotesController.getNote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANote") updateANote
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```javascript
-function updateANote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-        var id = '68a5sdf67';
-        var body = 'body';
-
-
-		var result = NotesController.updateANote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANote") deleteANote
-
-> Delete a single note
-
-
-```javascript
-function deleteANote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController){
-        var id = '68a5sdf67';
-        var body = 'body';
-
-
-		var result = NotesController.deleteANote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
-
-### Get singleton instance
-
-The singleton instance of the ``` UsersGggController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, UsersGggController, GetUsersResponse){
-	});
-```
-
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersGggController.getUsers") getUsers
-
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
-
-
-```javascript
-function getUsers(name, joinedBefore, joinedAfter, sort, limit)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, UsersGggController, GetUsersResponse){
-        var name = 'name';
-        var joinedBefore = 'joinedBefore';
-        var joinedAfter = 'joinedAfter';
-        var sort = Object.keys(SortEnum)[0];
-        var limit = 0;
-
-
-		var result = UsersGggController.getUsers(name, joinedBefore, joinedAfter, sort, limit);
+		var result = APIController.createTest(body, cacheControl, contentType, postmanToken);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -507,62 +493,36 @@ function getUsers(name, joinedBefore, joinedAfter, sort, limit)
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
 
 ### Get singleton instance
 
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
 	});
 ```
 
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTags") getTags
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
 
-> Get a list of bars
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```javascript
-function getTags()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
-
-
-		var result = TagsAndTaggingLongTitleController.getTags();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTag") getGetOneTag
-
-> Get a single tag
+> Create a new OAuth 2 token.
 
 
 ```javascript
-function getGetOneTag(id)
+function createRequestToken(authorization, username, password, scope, formParams)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
@@ -571,11 +531,16 @@ function getGetOneTag(id)
 ```javascript
 
 
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
-        var id = 'id';
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var username = 'username';
+        var password = 'password';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
 
 
-		var result = TagsAndTaggingLongTitleController.getGetOneTag(id);
+		var result = OAuthAuthorizationController.createRequestToken(authorization, username, password, scope, formParams);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -587,6 +552,187 @@ function getGetOneTag(id)
 
 	});
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken") createRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```javascript
+function createRefreshToken(authorization, refreshToken, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var refreshToken = refresh_token;
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRefreshToken(authorization, refreshToken, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, username, password, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var username = 'username';
+        var password = 'password';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRequestToken(authorization, username, password, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken") createRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```javascript
+function createRefreshToken(authorization, refreshToken, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var refreshToken = refresh_token;
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRefreshToken(authorization, refreshToken, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 
