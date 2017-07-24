@@ -1,6 +1,6 @@
 # Getting started
 
-TODO: Add a description
+new
 
 ## How to Build
 
@@ -13,50 +13,50 @@ Open command prompt and type ```pod --version```. This should display the curren
 Using command line, navigate to the directory containing the generated files (including ```PodFile```) for the SDK. 
 Run the command ```pod install```. This should install all the required dependencies and create the ```pods``` directory in your project directory.
 
-![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
-Open the project workspace using the (APITitle.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
+Open the project workspace using the (BibcodeQuery.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## How to Use
 
 The generated code is a Cocoa Touch Static Library which can be used in any iOS project. The support for these generated libraries go all the way back to iOS 6.
 
-The following section explains how to use the APITitle library in a new iOS project.     
+The following section explains how to use the BibcodeQuery library in a new iOS project.     
 ### 1. Starting a new project
 To start a new project, left-click on the ```Create a new Xcode project```.
-![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Next, choose **Single View Application** and click ```Next```.
-![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Provide **Test-Project** as the product name click ```Next```.
-![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Choose the desired location of your project folder and click ```Create```.
-![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 ### 2. Adding the static library dependency
 To add this dependency open a terminal and navigate to your project folder. Next, input ```pod init``` and press enter.
-![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
-Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'APITitle', :path => 'Vendor/APITitle'
-![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'BibcodeQuery', :path => 'Vendor/BibcodeQuery'
+![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 Execute `pod install` from terminal to install the dependecy in your project. This would add the dependency to the newly created test project.
-![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## How to Test
 
 Unit tests in this SDK can be run using Xcode. 
 
-First build the SDK as shown in the steps above and naivgate to the project directory and open the APITitle.xcworkspace file.
+First build the SDK as shown in the steps above and naivgate to the project directory and open the BibcodeQuery.xcworkspace file.
 
 Go to the test explorer in Xcode as shown in the picture below and click on `run tests` from the menu. 
-![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=API%20Title-ObjC&workspaceName=APITitle&projectName=APITitle&rootNamespace=APITitle)
+![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=BibcodeQuery-ObjC&workspaceName=BibcodeQuery&projectName=BibcodeQuery&rootNamespace=BibcodeQuery)
 
 
 ## Initialization
@@ -81,349 +81,7 @@ Configuration_OAuthAccessToken = "Configuration_OAuthAccessToken"; // OAuth 2.0 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [NotesController](#notes_controller)
-* [UsersGggController](#users_ggg_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
 * [APIController](#api_controller)
-
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
-
-### Get singleton instance
-```objc
-Notes* notes = [[Notes alloc]init] ;
-```
-
-### <a name="get_notes_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotesWithCompletionBlock") getNotesWithCompletionBlock
-
-> Get a list of notes.
-
-
-```objc
-function getNotesWithCompletionBlock:(CompletedGetNotes) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.notes getNotesWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<NoteData> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_new_note_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNoteAsyncWithBody") createNewNoteAsyncWithBody
-
-> Create a new note using a title and an optional content body.
-
-
-```objc
-function createNewNoteAsyncWithBody:(CreateNewNoteRequest*) body
-                completionBlock:(CompletedPostCreateNewNote) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    CreateNewNoteRequest* body = (CreateNewNoteRequest*) [APIHelper jsonDeserialize: @"{    \"title\": \"My new note\",    \"body\": \"This is the body\"}"
-                toClass: CreateNewNoteRequest.class];
-
-    [self.notes createNewNoteAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_note_async_with_id"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNoteAsyncWithId") getNoteAsyncWithId
-
-> Get a single note.
-
-
-```objc
-function getNoteAsyncWithId:(NSString*) mid
-                body:(BOOL) body
-                completionBlock:(CompletedGetNote) onCompleted(mid body : body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mid |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mid = @"68a5sdf67";
-    BOOL body = [@"false" boolValue];
-
-    [self.notes getNoteAsyncWithId: mid body : body  completionBlock:^(BOOL success, HttpContext* context, NoteData* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note_async_with_id"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANoteAsyncWithId") updateANoteAsyncWithId
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```objc
-function updateANoteAsyncWithId:(NSString*) mid
-                body:(NSString*) body
-                completionBlock:(CompletedPutUpdateANote) onCompleted(mid body : body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mid |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mid = @"68a5sdf67";
-    NSString* body = @"body";
-
-    [self.notes updateANoteAsyncWithId: mid body : body  completionBlock:^(BOOL success, HttpContext* context, NoteData* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note_async_with_id"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANoteAsyncWithId") deleteANoteAsyncWithId
-
-> Delete a single note
-
-
-```objc
-function deleteANoteAsyncWithId:(NSString*) mid
-                body:(NSString*) body
-                completionBlock:(CompletedDeleteANote) onCompleted(mid body : body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mid |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mid = @"68a5sdf67";
-    NSString* body = @"body";
-
-    [self.notes deleteANoteAsyncWithId: mid body : body  completionBlock:^(BOOL success, HttpContext* context, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_notes1_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1WithCompletionBlock") getNotes1WithCompletionBlock
-
-> Get a list of notes.
-
-
-```objc
-function getNotes1WithCompletionBlock:(CompletedGetNotes1) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.notes getNotes1WithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<NoteData> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
-
-### Get singleton instance
-```objc
-UsersGgg* usersGgg = [[UsersGgg alloc]init] ;
-```
-
-### <a name="get_users_async_with_name"></a>![Method: ](https://apidocs.io/img/method.png ".UsersGggController.getUsersAsyncWithName") getUsersAsyncWithName
-
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
-
-
-```objc
-function getUsersAsyncWithName:(NSString*) name
-                joinedBefore:(NSString*) joinedBefore
-                joinedAfter:(NSString*) joinedAfter
-                sort:(enum SortEnum) sort
-                limit:(NSNumber*) limit
-                completionBlock:(CompletedGetUsers) onCompleted(name joinedBefore : joinedBefore joinedAfter : joinedAfter sort : sort limit : limit)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* name = @"name";
-    NSString* joinedBefore = @"joinedBefore";
-    NSString* joinedAfter = @"joinedAfter";
-    SortEnum sort = NAME;
-    NSNumber* limit = 178;
-
-    [self.usersGgg getUsersAsyncWithName: name joinedBefore : joinedBefore joinedAfter : joinedAfter sort : sort limit : limit  completionBlock:^(BOOL success, HttpContext* context, NSArray<GetUsersResponse> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-```objc
-TagsAndTaggingLongTitle* tagsAndTaggingLongTitle = [[TagsAndTaggingLongTitle alloc]init] ;
-```
-
-### <a name="get_tags_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTagsWithCompletionBlock") getTagsWithCompletionBlock
-
-> Get a list of bars
-
-
-```objc
-function getTagsWithCompletionBlock:(CompletedGetTags) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.tagsAndTaggingLongTitle getTagsWithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="get_get_one_tag_async_with_id"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTagAsyncWithId") getGetOneTagAsyncWithId
-
-> Get a single tag
-
-
-```objc
-function getGetOneTagAsyncWithId:(NSString*) mid
-                completionBlock:(CompletedGetGetOneTag) onCompleted(mid)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mid |  ``` Required ```  | Unique tag identifier |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mid = @"id";
-
-    [self.tagsAndTaggingLongTitle getGetOneTagAsyncWithId: mid  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
 
 ## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
 
@@ -432,27 +90,27 @@ function getGetOneTagAsyncWithId:(NSString*) mid
 Client* client = [[Client alloc]init] ;
 ```
 
-### <a name="mnew_async_with_m_testing"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.mnewAsyncWithMTesting") mnewAsyncWithMTesting
+### <a name="get_bibcode_async_with_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.getBibcodeAsyncWithBibcode") getBibcodeAsyncWithBibcode
+
+> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
 
 ```objc
-function mnewAsyncWithMTesting:(NSString*) mTesting
-                cacheControl:(NSString*) cacheControl
-                contentType:(NSString*) contentType
-                postmanToken:(NSString*) postmanToken
-                completionBlock:(CompletedPostNew) onCompleted(mTesting cacheControl : cacheControl contentType : contentType postmanToken : postmanToken)
+function getBibcodeAsyncWithBibcode:(NSString*) bibcode
+                dbKey:(NSString*) dbKey
+                dataType:(NSString*) dataType
+                completionBlock:(CompletedGetBibcode) onCompleted(bibcode dbKey : dbKey dataType : dataType)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -462,53 +120,11 @@ function mnewAsyncWithMTesting:(NSString*) mTesting
 
 ```objc
     // Parameters for the API call
-    NSString* mTesting = @"{ \"testing\"";
-    NSString* cacheControl = @"cache-control";
-    NSString* contentType = @"content-type";
-    NSString* postmanToken = @"postman-token";
+    NSString* bibcode = @"bibcode";
+    NSString* dbKey = @"db_key";
+    NSString* dataType = @"data_type";
 
-    [self.client mnewAsyncWithMTesting: mTesting cacheControl : cacheControl contentType : contentType postmanToken : postmanToken  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_sample2_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2AsyncWithBody") createSample2AsyncWithBody
-
-> TODO: Add a method description
-
-
-```objc
-function createSample2AsyncWithBody:(Sample2Request*) body
-                cacheControl:(NSString*) cacheControl
-                contentType:(NSString*) contentType
-                postmanToken:(NSString*) postmanToken
-                completionBlock:(CompletedPostSample2) onCompleted(body cacheControl : cacheControl contentType : contentType postmanToken : postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    Sample2Request* body = [[Sample2Request alloc]init];
-    NSString* cacheControl = @"cache-control";
-    NSString* contentType = @"content-type";
-    NSString* postmanToken = @"postman-token";
-
-    [self.client createSample2AsyncWithBody: body cacheControl : cacheControl contentType : contentType postmanToken : postmanToken  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
+    [self.client getBibcodeAsyncWithBibcode: bibcode dbKey : dbKey dataType : dataType  completionBlock:^(BOOL success, HttpContext* context, ReturnBibcode* response, NSError* error) { 
        //Add code here
     }];
 ```
