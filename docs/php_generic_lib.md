@@ -382,7 +382,7 @@ $name = 'name';
 $joinedBefore = 'joinedBefore';
 $joinedAfter = 'joinedAfter';
 $sort = string::NAME;
-$limit = 239;
+$limit = 56;
 
 $result = $usersGgg->getUsers($name, $joinedBefore, $joinedAfter, $sort, $limit);
 

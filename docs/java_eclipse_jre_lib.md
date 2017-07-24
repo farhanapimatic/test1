@@ -402,7 +402,7 @@ String name = "name";
 String joinedBefore = "joinedBefore";
 String joinedAfter = "joinedAfter";
 SortEnum sort = SortEnum.fromString("name");
-Integer limit = 147;
+Integer limit = 56;
 // Invoking the API call with sample inputs
 usersGgg.getUsersAsync(name, joinedBefore, joinedAfter, sort, limit, new APICallBack<List<GetUsersResponse>>() {
     public void onSuccess(HttpContext context, List<GetUsersResponse> response) {

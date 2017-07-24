@@ -357,7 +357,7 @@ name = 'name'
 joined_before = 'joinedBefore'
 joined_after = 'joinedAfter'
 sort = SortEnum.NAME
-limit = 197
+limit = 148
 
 result = users_ggg_client.get_users(name, joined_before, joined_after, sort, limit)
 
