@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
@@ -12,7 +10,7 @@ Open command prompt and type ```composer --version```. This should display the c
 * Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
 * Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=API%20Title-PHP)
+![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=BibcodeQuery-PHP)
 
 ### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
 
@@ -30,35 +28,35 @@ CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs.
 
 ## How to Use
 
-The following section explains how to use the APITitle library in a new project.
+The following section explains how to use the BibcodeQuery library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=API%20Title-PHP)
+![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=BibcodeQuery-PHP)
 
 Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=API%20Title-PHP)     
+![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=BibcodeQuery-PHP)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=BibcodeQuery-PHP)
 
 Name the directory as "test"
 
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=BibcodeQuery-PHP)
    
 Add a PHP file to this project
 
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=BibcodeQuery-PHP)
 
 Name it "testSDK"
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=BibcodeQuery-PHP)
 
 Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
 
@@ -68,7 +66,7 @@ require_once "../vendor/autoload.php";
 
 It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=BibcodeQuery-PHP)
 
 After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
@@ -78,23 +76,23 @@ To run your project you must set the Interpreter for your project. Interpreter i
 
 Open ```Settings``` from ```File``` menu.
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=BibcodeQuery-PHP)
 
 Select ```PHP``` from within ```Languages & Frameworks```
 
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=BibcodeQuery-PHP)
 
 Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
 
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=BibcodeQuery-PHP)
 
 Once the interpreter is selected, click ```OK```
 
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=BibcodeQuery-PHP)
 
 To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=BibcodeQuery-PHP)
 
 ## How to Test
 
@@ -113,335 +111,186 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthUsername | OAuth 2 Resource Owner Username |
+| oAuthPassword | OAuth 2 Resource Owner Password |
 
 
 
 API client can be initialized as following.
 
 ```php
-$oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
+$oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+$oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+$oAuthUsername = 'oAuthUsername'; // OAuth 2 Resource Owner Username
+$oAuthPassword = 'oAuthPassword'; // OAuth 2 Resource Owner Password
 
-$client = new APITitleLib\APITitleClient($oAuthAccessToken);
+$client = new BibcodeQueryLib\BibcodeQueryClient($oAuthClientId, $oAuthClientSecret, $oAuthUsername, $oAuthPassword);
 ```
+
+You must authorize now authorize the client.
+
+### Authorizing your client
+
+Your application must obtain user authorization before it can execute an endpoint call.
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the user's credentials for an *access token*.
+The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+
+```php
+try {
+    $client->auth()->authorize();
+} catch (BibcodeQueryLib\Exceptions\OAuthProviderException $ex) {
+    // handle exception
+}
+```
+
+The client can now make authorized endpoint calls.
+
+### Refreshing token
+
+An access token may expire after sometime. To extend its lifetime, you must refresh the token.
+
+```php
+if ($client->auth()->isTokenExpired()) {
+    try {
+        $client->auth()->refreshToken();
+    } catch (BibcodeQueryLib\Exceptions\OAuthProviderException $ex) {
+        // handle exception
+    }
+}
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in the `$_SESSION` global:
+
+```php
+// store token
+$_SESSION['access_token'] = BibcodeQueryLib\Configuration::$oAuthToken;
+```
+
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```php
+BibcodeQueryLib\Configuration::$oAuthTokenUpdateCallback = function($token) {
+    // use session or some other way to persist the $token
+    $_SESSION['access_token'] = $token;
+};
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
+
+```php
+// load token later...
+BibcodeQueryLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+
+// Set other configuration, then instantiate client
+$client = new BibcodeQueryLib\BibcodeQueryClient();
+```
+
+### Complete example
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+session_start();
+
+// Client configuration
+$oAuthClientId = 'oAuthClientId';
+$oAuthClientSecret = 'oAuthClientSecret';
+$oAuthUsername = 'oAuthUsername';
+$oAuthPassword = 'oAuthPassword';
+
+$client = new BibcodeQueryLib\BibcodeQueryClient($oAuthClientId, $oAuthClientSecret, $oAuthUsername, $oAuthPassword);
+
+// callback stores token for reuse when token is updated
+BibcodeQueryLib\Configuration::$oAuthTokenUpdateCallback = function($token) {
+    $_SESSION['access_token'] = $token;
+};
+
+// obtain access token, needed for client to be authorized
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+    // restore access token from session
+    BibcodeQueryLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+} else {
+    // obtain new access token
+    try {
+        $client->auth()->authorize();
+    } catch (BibcodeQueryLib\Exceptions\OAuthProviderException $ex) {
+        // handle exception
+        die();
+    }
+}
+
+// the client is now authorized; you can use $client to make endpoint calls
+// client will automatically refresh the token when it expires and call the token update callback
+```
+
 
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [NotesController](#notes_controller)
-* [UsersGggController](#users_ggg_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 * [APIController](#api_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` NotesController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```php
-$notes = $client->getNotes();
+$bibcodeQueryBinding = $client->getBibcodeQueryBinding();
 ```
 
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes") getNotes
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
 
-> Get a list of notes.
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```php
-function getNotes()
-```
-
-#### Example Usage
-
-```php
-
-$result = $notes->getNotes();
-
-```
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNote") createNewNote
-
-> Create a new note using a title and an optional content body.
+> getBibcode
 
 
 ```php
-function createNewNote($body)
+function getBibcode(
+        $bibcode,
+        $dbKey,
+        $dataType)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$bodyValue = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}";
-$body = APIHelper::deserialize($bodyValue);
-
-$notes->createNewNote($body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNote") getNote
-
-> Get a single note.
-
-
-```php
-function getNote(
-        $id,
-        $body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = false;
-
-$result = $notes->getNote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANote") updateANote
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```php
-function updateANote(
-        $id,
-        $body = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = 'body';
-
-$result = $notes->updateANote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANote") deleteANote
-
-> Delete a single note
-
-
-```php
-function deleteANote(
-        $id,
-        $body = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = 'body';
-
-$notes->deleteANote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1") getNotes1
-
-> Get a list of notes.
-
-
-```php
-function getNotes1()
-```
-
-#### Example Usage
-
-```php
-
-$result = $notes->getNotes1();
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
-
-### Get singleton instance
-
-The singleton instance of the ``` UsersGggController ``` class can be accessed from the API Client.
-
-```php
-$usersGgg = $client->getUsersGgg();
-```
-
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersGggController.getUsers") getUsers
-
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
-
-
-```php
-function getUsers(
-        $name = null,
-        $joinedBefore = null,
-        $joinedAfter = null,
-        $sort = Models\SortEnum::NAME,
-        $limit = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-#### Example Usage
-
-```php
-$name = 'name';
-$joinedBefore = 'joinedBefore';
-$joinedAfter = 'joinedAfter';
-$sort = string::NAME;
-$limit = 238;
-
-$result = $usersGgg->getUsers($name, $joinedBefore, $joinedAfter, $sort, $limit);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
-
-```php
-$tagsAndTaggingLongTitle = $client->getTagsAndTaggingLongTitle();
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTags") getTags
-
-> Get a list of bars
-
-
-```php
-function getTags()
-```
-
-#### Example Usage
-
-```php
-
-$result = $tagsAndTaggingLongTitle->getTags();
-
-```
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTag") getGetOneTag
-
-> Get a single tag
-
-
-```php
-function getGetOneTag($id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-
-#### Example Usage
-
-```php
-$id = 'id';
-
-$result = $tagsAndTaggingLongTitle->getGetOneTag($id);
+$bibcode = 'bibcode';
+$dbKey = 'db_key';
+$dataType = 'data_type';
+
+$result = $bibcodeQueryBinding->getBibcode($bibcode, $dbKey, $dataType);
 
 ```
 
@@ -458,50 +307,13 @@ The singleton instance of the ``` APIController ``` class can be accessed from t
 $client = $client->getClient();
 ```
 
-### <a name="mnew"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.mnew") mnew
+### <a name="create_test"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createTest") createTest
 
 > TODO: Add a method description
 
 
 ```php
-function mnew(
-        $mTesting,
-        $cacheControl,
-        $contentType,
-        $postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$mTesting = '{ "testing"';
-$cacheControl = 'cache-control';
-$contentType = 'content-type';
-$postmanToken = 'postman-token';
-
-$result = $client->mnew($mTesting, $cacheControl, $contentType, $postmanToken);
-
-```
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2") createSample2
-
-> TODO: Add a method description
-
-
-```php
-function createSample2(
+function createTest(
         $body,
         $cacheControl,
         $contentType,
@@ -522,14 +334,935 @@ function createSample2(
 #### Example Usage
 
 ```php
-$body = new Sample2Request();
+$body = new TestRequest();
 $cacheControl = 'cache-control';
 $contentType = 'content-type';
 $postmanToken = 'postman-token';
 
-$result = $client->createSample2($body, $cacheControl, $contentType, $postmanToken);
+$result = $client->createTest($body, $cacheControl, $contentType, $postmanToken);
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```php
+$oAuthAuthorization = $client->getOAuthAuthorization();
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken") createRefreshToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken1") createRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken1(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken1($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken2") createRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken2(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken2($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken11") createRefreshToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken11(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken11($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken21") createRequestToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken21(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken21($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken21") createRefreshToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken21(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken21($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken11") createRefreshToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken11(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken11($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken1") createRefreshToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken1(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken1($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken2") createRefreshToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken2(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken2($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken3") createRequestToken3
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken3(
+        $authorization,
+        $username,
+        $password,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$username = 'username';
+$password = 'password';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken3($authorization, $username, $password, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken3") createRefreshToken3
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```php
+function createRefreshToken3(
+        $authorization,
+        $refreshToken,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$refreshToken = 'refresh_token';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRefreshToken3($authorization, $refreshToken, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

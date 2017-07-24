@@ -1,60 +1,58 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 This client library is a Ruby gem which can be compiled and used in your Ruby and Ruby on Rails project. This library requires a few gems from the RubyGems repository.
 
 1. Open the command line interface or the terminal and navigate to the folder containing the source code.
-2. Run ``` gem build api_title.gemspec ``` to build the gem.
-3. Once built, the gem can be installed on the current work environment using ``` gem install api_title-1.0.0.gem ```
+2. Run ``` gem build bibcode_query.gemspec ``` to build the gem.
+3. Once built, the gem can be installed on the current work environment using ``` gem install bibcode_query-1.0.0.gem ```
 
-![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=API%20Title-Ruby&workspaceName=API%20Title-Ruby&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery-Ruby&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 ## How to Use
 
-The following section explains how to use the ApiTitle Ruby Gem in a new Rails project using RubyMine&trade;. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
+The following section explains how to use the BibcodeQuery Ruby Gem in a new Rails project using RubyMine&trade;. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
 ### 1. Starting a new project
 
 Close any existing projects in RubyMine&trade; by selecting ``` File -> Close Project ```. Next, click on ``` Create New Project ``` to create a new project from scratch.
 
-![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 Next, provide ``` TestApp ``` as the project name, choose ``` Rails Application ``` as the project type, and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 In the next dialog make sure that correct *Ruby SDK* is being used (minimum 2.0.0) and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 This will create a new Rails Application project with an existing set of files and folder.
 
 ### 2. Add reference of the gem
 
-In order to use the ApiTitle gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'api_title', '~> 1.0.0' ```
+In order to use the BibcodeQuery gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'bibcode_query', '~> 1.0.0' ```
 
-![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 ### 3. Adding a new Rails Controller
 
 Once the ``` TestApp ``` project is created, a folder named ``` controllers ``` will be visible in the *Project Explorer* under the following path: ``` TestApp > app > controllers ```. Right click on this folder and select ``` New -> Run Rails Generator... ```.
 
-![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 Selecting the said option will popup a small window where the generator names are displayed. Here, select the ``` controller ``` template.
 
-![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 Next, a popup window will ask you for a Controller name and included Actions. For controller name provide ``` Hello ``` and include an action named ``` Index ``` and click ``` OK ```.
 
-![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 A new controller class anmed ``` HelloController ``` will be created in a file named ``` hello_controller.rb ``` containing a method named ``` Index ```. In this method, add code for initialization and a sample for its usage.
 
-![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0)
 
 ## How to Test
 
@@ -71,7 +69,10 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| o_auth_access_token | OAuth 2.0 Access Token |
+| o_auth_client_id | OAuth 2 Client ID |
+| o_auth_client_secret | OAuth 2 Client Secret |
+| o_auth_username | OAuth 2 Resource Owner Username |
+| o_auth_password | OAuth 2 Resource Owner Password |
 
 
 
@@ -79,325 +80,189 @@ API client can be initialized as following.
 
 ```ruby
 # Configuration parameters and credentials
-o_auth_access_token = 'o_auth_access_token' # OAuth 2.0 Access Token
+o_auth_client_id = 'o_auth_client_id' # OAuth 2 Client ID
+o_auth_client_secret = 'o_auth_client_secret' # OAuth 2 Client Secret
+o_auth_username = 'o_auth_username' # OAuth 2 Resource Owner Username
+o_auth_password = 'o_auth_password' # OAuth 2 Resource Owner Password
 
-client = ApiTitle::ApiTitleClient.new(
-  o_auth_access_token: o_auth_access_token
+client = BibcodeQuery::BibcodeQueryClient.new(
+  o_auth_client_id: o_auth_client_id,
+  o_auth_client_secret: o_auth_client_secret,
+  o_auth_username: o_auth_username,
+  o_auth_password: o_auth_password
 )
 ```
 
 The added initlization code can be debugged by putting a breakpoint in the ``` Index ``` method and running the project in debug mode by selecting ``` Run -> Debug 'Development: TestApp' ```.
 
-![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0&initLine=client%2520%253D%2520ApiTitleClient.new%2528%2527o_auth_access_token%2527%2529)
+![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=BibcodeQuery-Ruby&workspaceName=BibcodeQuery&projectName=bibcode_query&gemName=bibcode_query&gemVer=1.0.0&initLine=client%2520%253D%2520BibcodeQueryClient.new%2528%2527o_auth_client_id%2527%252C%2520%2527o_auth_client_secret%2527%252C%2520%2527o_auth_username%2527%252C%2520%2527o_auth_password%2527%2529)
 
+
+You must now authorize the client.
+
+### Authorizing your client
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the user's credentials for an *access token*.
+The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+
+```ruby
+begin
+  client.auth.authorize()
+rescue BibcodeQuery::OAuthProviderException => ex
+  # handle exception
+end
+```
+
+The client can now make authorized endpoint calls.
+
+### Refreshing token
+
+An access token may expire after some time. To extend its lifetime, you must refresh the token.
+
+```ruby
+if client.auth.is_token_expired
+  begin
+    client.auth.refresh_token
+  rescue BibcodeQuery::OAuthProviderException => ex
+    # handle exception
+  end
+end
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in a file or a database.
+
+```ruby
+# store token
+save_token_to_database(client.config.o_auth_token)
+```
+ 
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```ruby
+client.config.o_auth_callback = Proc.new { |token| save_token_to_database(token) }
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token after creating the client:
+
+```ruby
+client = BibcodeQuery::BibcodeQueryClient.new
+client.config.o_auth_token = load_token_from_database
+```
+
+### Complete example
+
+```ruby
+require 'bibcode_query'
+
+include BibcodeQuery
+
+# function for storing token to database
+def save_token_to_database(token)
+  # code to save the token to database
+end
+
+# function for loading token from database
+def load_token_from_database
+  # load token from database and return it (return nil if no token exists)
+end
+
+# Configuration parameters and credentials
+o_auth_client_id = 'o_auth_client_id' # OAuth 2 Client ID
+o_auth_client_secret = 'o_auth_client_secret' # OAuth 2 Client Secret
+o_auth_username = 'o_auth_username' # OAuth 2 Resource Owner Username
+o_auth_password = 'o_auth_password' # OAuth 2 Resource Owner Password
+
+#  create a new client
+client = BibcodeQuery::BibcodeQueryClient.new(
+  o_auth_client_id: o_auth_client_id,
+  o_auth_client_secret: o_auth_client_secret,
+  o_auth_username: o_auth_username,
+  o_auth_password: o_auth_password
+)
+
+# callback for storing token for reuse when token is updated
+client.config.o_auth_callback =  Proc.new { |token| save_token_to_database(token) }
+
+# obtain access token, needed for client to be authorized
+previous_token = load_token_from_database
+if previous_token
+  # restore previous access token
+  client.config.o_auth_token = previous_token
+else
+  # obtain new access token
+  begin
+    client.auth.authorize()
+  rescue OAuthProviderException => ex
+    # handle exception
+  end
+end
+
+# the client is now authorized and you can use controllers to make endpoint calls
+# client will automatically refresh the token when it expires and call the token update callback
+```
 
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [NotesController](#notes_controller)
-* [UsersGggController](#users_ggg_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 * [APIController](#api_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` NotesController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```ruby
-notes = client.notes
+bibcodeQueryBinding = client.bibcode_query_binding
 ```
 
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_notes") get_notes
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.get_bibcode") get_bibcode
 
-> Get a list of notes.
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```ruby
-def get_notes; end
-```
-
-#### Example Usage
-
-```ruby
-
-result = notes.get_notes()
-
-```
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.create_new_note") create_new_note
-
-> Create a new note using a title and an optional content body.
+> getBibcode
 
 
 ```ruby
-def create_new_note(body); end
+def get_bibcode(bibcode,
+                    db_key,
+                    data_type); end
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| db_key |  ``` Required ```  | TODO: Add a parameter description |
+| data_type |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```ruby
-body_value = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}";
-body = JSON.parse(body_value);
-
-notes.create_new_note(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_note") get_note
-
-> Get a single note.
-
-
-```ruby
-def get_note(id,
-                 body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-#### Example Usage
-
-```ruby
-id = '68a5sdf67'
-body = false
-
-result = notes.get_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.update_a_note") update_a_note
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```ruby
-def update_a_note(id,
-                      body = nil); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-id = '68a5sdf67'
-body = 'body'
-
-result = notes.update_a_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.delete_a_note") delete_a_note
-
-> Delete a single note
-
-
-```ruby
-def delete_a_note(id,
-                      body = nil); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-id = '68a5sdf67'
-body = 'body'
-
-notes.delete_a_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_notes_1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_notes_1") get_notes_1
-
-> Get a list of notes.
-
-
-```ruby
-def get_notes_1; end
-```
-
-#### Example Usage
-
-```ruby
-
-result = notes.get_notes_1()
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
-
-### Get singleton instance
-
-The singleton instance of the ``` UsersGggController ``` class can be accessed from the API Client.
-
-```ruby
-usersGgg = client.users_ggg
-```
-
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersGggController.get_users") get_users
-
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
-
-
-```ruby
-def get_users(name = nil,
-                  joined_before = nil,
-                  joined_after = nil,
-                  sort = SortEnum::NAME,
-                  limit = nil); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joined_before |  ``` Optional ```  | Search by join date |
-| joined_after |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-#### Example Usage
-
-```ruby
-name = 'name'
-joined_before = 'joinedBefore'
-joined_after = 'joinedAfter'
-sort = ApiTitle::SortEnum::NAME
-limit = 166
-
-result = usersGgg.get_users(name, joined_before, joined_after, sort, limit)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
-
-```ruby
-tagsAndTaggingLongTitle = client.tags_and_tagging_long_title
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.get_tags") get_tags
-
-> Get a list of bars
-
-
-```ruby
-def get_tags; end
-```
-
-#### Example Usage
-
-```ruby
-
-result = tagsAndTaggingLongTitle.get_tags()
-
-```
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.get_get_one_tag") get_get_one_tag
-
-> Get a single tag
-
-
-```ruby
-def get_get_one_tag(id); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-#### Example Usage
-
-```ruby
-id = 'id'
-
-result = tagsAndTaggingLongTitle.get_get_one_tag(id)
+bibcode = 'bibcode'
+db_key = 'db_key'
+data_type = 'data_type'
+
+result = bibcodeQueryBinding.get_bibcode(bibcode, db_key, data_type)
 
 ```
 
@@ -414,51 +279,16 @@ The singleton instance of the ``` APIController ``` class can be accessed from t
 client = client.client
 ```
 
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.new") new
+### <a name="create_test"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.create_test") create_test
 
 > TODO: Add a method description
 
 
 ```ruby
-def new(testing,
-            cache_control,
-            content_type,
-            postman_token); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| testing |  ``` Required ```  | TODO: Add a parameter description |
-| cache_control |  ``` Required ```  | TODO: Add a parameter description |
-| content_type |  ``` Required ```  | TODO: Add a parameter description |
-| postman_token |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-testing = '{ "testing"'
-cache_control = 'cache-control'
-content_type = 'content-type'
-postman_token = 'postman-token'
-
-result = client.new(testing, cache_control, content_type, postman_token)
-
-```
-
-
-### <a name="create_sample_2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.create_sample_2") create_sample_2
-
-> TODO: Add a method description
-
-
-```ruby
-def create_sample_2(body,
-                        cache_control,
-                        content_type,
-                        postman_token); end
+def create_test(body,
+                    cache_control,
+                    content_type,
+                    postman_token); end
 ```
 
 #### Parameters
@@ -474,14 +304,501 @@ def create_sample_2(body,
 #### Example Usage
 
 ```ruby
-body = Sample2Request.new
+body = TestRequest.new
 cache_control = 'cache-control'
 content_type = 'content-type'
 postman_token = 'postman-token'
 
-result = client.create_sample_2(body, cache_control, content_type, postman_token)
+result = client.create_test(body, cache_control, content_type, postman_token)
 
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```ruby
+oAuthAuthorization = client.o_auth_authorization
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token") create_request_token
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```ruby
+def create_request_token(authorization,
+                             username,
+                             password,
+                             scope = nil,
+                             _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+username = 'username'
+password = 'password'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_request_token(authorization, username, password, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token") create_refresh_token
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```ruby
+def create_refresh_token(authorization,
+                             refresh_token,
+                             scope = nil,
+                             _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refresh_token |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+refresh_token = 'refresh_token'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_refresh_token(authorization, refresh_token, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```ruby
+def create_request_token_1(authorization,
+                               username,
+                               password,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+username = 'username'
+password = 'password'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_request_token_1(authorization, username, password, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_1") create_refresh_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```ruby
+def create_refresh_token_1(authorization,
+                               refresh_token,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refresh_token |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+refresh_token = 'refresh_token'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_refresh_token_1(authorization, refresh_token, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_2") create_request_token_2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```ruby
+def create_request_token_2(authorization,
+                               username,
+                               password,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+username = 'username'
+password = 'password'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_request_token_2(authorization, username, password, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_2") create_refresh_token_2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```ruby
+def create_refresh_token_2(authorization,
+                               refresh_token,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refresh_token |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+refresh_token = 'refresh_token'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_refresh_token_2(authorization, refresh_token, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```ruby
+def create_request_token_1(authorization,
+                               username,
+                               password,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+username = 'username'
+password = 'password'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_request_token_1(authorization, username, password, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_1") create_refresh_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```ruby
+def create_refresh_token_1(authorization,
+                               refresh_token,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refresh_token |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+refresh_token = 'refresh_token'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_refresh_token_1(authorization, refresh_token, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_2") create_request_token_2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```ruby
+def create_request_token_2(authorization,
+                               username,
+                               password,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+username = 'username'
+password = 'password'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_request_token_2(authorization, username, password, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_2") create_refresh_token_2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```ruby
+def create_refresh_token_2(authorization,
+                               refresh_token,
+                               scope = nil,
+                               _field_parameters = nil); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refresh_token |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _field_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```ruby
+authorization = 'Authorization'
+refresh_token = 'refresh_token'
+scope = 'scope'
+# key-value map for optional form parameters
+formParams = { 'key' => 'value' }
+
+result = oAuthAuthorization.create_refresh_token_2(authorization, refresh_token, scope, formParams)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

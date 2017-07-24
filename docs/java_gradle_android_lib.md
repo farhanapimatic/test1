@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 The generated code uses a few Gradle dependencies e.g., Jackson, Volley,
@@ -11,67 +9,67 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Android Studio click on ``` Open an Existing Android Project ```.
 
-![Importing SDK into Android Studio - Step 1](https://apidocs.io/illustration/android?step=import1&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Importing SDK into Android Studio - Step 1](https://apidocs.io/illustration/android?step=import1&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
-* Browse to locate the folder containing the source code. Select the location of the APITitle gradle project and click ``` Ok ```.
+* Browse to locate the folder containing the source code. Select the location of the BibcodeQuery gradle project and click ``` Ok ```.
 
-![Importing SDK into Android Studio - Step 2](https://apidocs.io/illustration/android?step=import2&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Importing SDK into Android Studio - Step 2](https://apidocs.io/illustration/android?step=import2&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 * Upon successful import, the project can be built by clicking on ``` Build > Make Project ``` or  pressing ``` Ctrl + F9 ```.
 
-![Importing SDK into Android Studio - Step 3](https://apidocs.io/illustration/android?step=import3&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Importing SDK into Android Studio - Step 3](https://apidocs.io/illustration/android?step=import3&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 ## How to Use
 
-The following section explains how to use the APITitle library in a new project.
+The following section explains how to use the BibcodeQuery library in a new project.
 
 ### 1. Starting a new project 
 
 For starting a new project, click on ``` Create New Android Studio Project ```.
 
-![Add a new project in Android Studio - Step 1](https://apidocs.io/illustration/android?step=createNewProject0&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Add a new project in Android Studio - Step 1](https://apidocs.io/illustration/android?step=createNewProject0&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Here, configure the new project by adding the name, domain and location of the sample application followed by clicking ``` Next ```.
 
-![Create a new Android Studio Project - Step 2](https://apidocs.io/illustration/android?step=createNewProject1&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Create a new Android Studio Project - Step 2](https://apidocs.io/illustration/android?step=createNewProject1&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Following this, select the ``` Phone and Tablet ```` option as shown in the illustration below and click ``` Next ```. 
 
-![Create a new Android Studio Project - Step 3](https://apidocs.io/illustration/android?step=createNewProject2&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Create a new Android Studio Project - Step 3](https://apidocs.io/illustration/android?step=createNewProject2&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 In the following step, choose ``` Empty Activity ``` as the activity type and click ``` Next ```.
 
-![Create a new Android Studio Project - Step 4](https://apidocs.io/illustration/android?step=createNewProject3&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Create a new Android Studio Project - Step 4](https://apidocs.io/illustration/android?step=createNewProject3&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 In this step, provide an ``` Activity Name ``` and ``` Layout Name ``` and click ``` Finish ```.  This would take you to the newly created project.
 
-![Create a new Android Studio Project - Step 4](https://apidocs.io/illustration/android?step=createNewProject4&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Create a new Android Studio Project - Step 4](https://apidocs.io/illustration/android?step=createNewProject4&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 ### 2. Add reference of the library project
 
 In order to add a dependency to this sample application, click on the android button shown in the project explorer on the left side as shown in the picture. Click on ``` Project ``` in the drop down that emerges.  
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/android?step=testProject0&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/android?step=testProject0&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Right click the sample application in the project explorer and click on ``` New > Module ```  as shown in the picture.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/android?step=testProject1&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/android?step=testProject1&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Choose ``` Import Gradle Project ``` and click ``` Next ```.
 
-![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/android?step=testProject2&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/android?step=testProject2&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Click on ``` Finish ``` which would take you back to the sample application with the refernced SDK. 
 
-![Adding dependency to the client library - Step 4](https://apidocs.io/illustration/android?step=testProject3&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 4](https://apidocs.io/illustration/android?step=testProject3&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
-In the following step naigate to the ``` SampleApplication >  app > build.gradle ``` file and add the following line ```compile project(path: ':APITitle')``` to the dependencies section as shown in the illustration below.
+In the following step naigate to the ``` SampleApplication >  app > build.gradle ``` file and add the following line ```compile project(path: ':BibcodeQuery')``` to the dependencies section as shown in the illustration below.
 
-![Adding dependency to the client library - Step 5](https://apidocs.io/illustration/android?step=testProject4&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 5](https://apidocs.io/illustration/android?step=testProject4&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 Finally, press ``` Sync Now ``` in the warning visible as shown in the picture below.
 
-![Adding dependency to the client library - Step 6](https://apidocs.io/illustration/android?step=testProject5&workspaceFolder=API%20Title&workspaceName=APITitle&projectName=APITitleLib&rootNamespace=com.example.api)
+![Adding dependency to the client library - Step 6](https://apidocs.io/illustration/android?step=testProject5&workspaceFolder=BibcodeQuery&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
 
 ### 3. Write sample code
 
@@ -85,7 +83,7 @@ JUnit is used as the testing framework and test runner.
 
 In Android Studio, for running the tests do the following:
 
-1. Right click on *SampleApplication > APITitleLib > androidTest > java)* from the project explorer.
+1. Right click on *SampleApplication > BibcodeQueryLib > androidTest > java)* from the project explorer.
 2. Select "Run All Tests" or use "Ctrl + Shift + F10" to run the Tests.
 
 ## Initialization
@@ -95,7 +93,10 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+| oAuthUsername | OAuth 2 Resource Owner Username |
+| oAuthPassword | OAuth 2 Resource Owner Password |
 
 
 
@@ -103,10 +104,98 @@ API client can be initialized as following. The `appContext` being passed is the
 
 ```java
 // Configuration parameters and credentials
-String oAuthAccessToken = "oAuthAccessToken"; // OAuth 2.0 Access Token
+String oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+String oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
+String oAuthUsername = "oAuthUsername"; // OAuth 2 Resource Owner Username
+String oAuthPassword = "oAuthPassword"; // OAuth 2 Resource Owner Password
 
-com.example.api.Configuration.initialize(appContext);
-APITitleClient client = new APITitleClient(oAuthAccessToken);
+edu.harvard.adsabs.Configuration.initialize(appContext);
+BibcodeQueryClient client = new BibcodeQueryClient(oAuthClientId, oAuthClientSecret, oAuthUsername, oAuthPassword);
+```
+
+You must authorize now authorize the client.
+
+### Authorizing your client
+
+Your application must obtain user authorization before it can execute an endpoint call.
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the user's credentials for an *access token*.
+The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+
+```java
+client.auth().authorize(null, new APICallBack<OAuthToken>() {
+                    
+    @Override
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO Do something after the client is authorized
+    }
+                    
+    @Override
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO Handle failure
+    }
+});
+```
+
+The client can now make authorized endpoint calls.
+
+### Refreshing token
+
+An access token may expire after sometime. To extend its lifetime, you must refresh the token.
+
+```java
+if(client.auth().isTokenExpired()) {
+    client.auth().refreshToken(new APICallBack<OAuthToken>() {
+                    
+        @Override
+        public void onSuccess(HttpContext context, OAuthToken response) {
+            // TODO Do something after the token is refreshed
+        }
+                    
+        @Override
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO Handle failure
+        }
+    });
+}
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+```java
+// store token in some way
+storeAccessToken(edu.harvard.adsabs.Configuration.oAuthToken);
+```
+
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```java
+edu.harvard.adsabs.Configuration.oAuthTokenUpdateCallBack = new edu.harvard.adsabs.OAuthTokenUpdateCallBack() {
+    public void tokenUpdate(OAuthToken oAuthToken) {
+        // store access token in some way
+        storeAccessToken(oAuthToken);
+    }
+};
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
+
+```java
+// load token later...
+edu.harvard.adsabs.Configuration.oAuthToken = loadAccessToken();
+
+// Set other configuration, then instantiate client
+BibcodeQueryClient client = new BibcodeQueryClient();
 ```
 
 
@@ -114,247 +203,53 @@ APITitleClient client = new APITitleClient(oAuthAccessToken);
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [NotesController](#notes_controller)
-* [UsersGggController](#users_ggg_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 * [APIController](#api_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.NotesController") NotesController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` NotesController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```java
-NotesController notes = client.getNotes();
+BibcodeQueryBindingController bibcodeQueryBinding = client.getBibcodeQueryBinding();
 ```
 
-### <a name="get_notes_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.getNotesAsync") getNotesAsync
+### <a name="get_bibcode_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.BibcodeQueryBindingController.getBibcodeAsync") getBibcodeAsync
 
-> Get a list of notes.
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```java
-void getNotesAsync(final APICallBack<List<NoteData>> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-notes.getNotesAsync(new APICallBack<List<NoteData>>() {
-    public void onSuccess(HttpContext context, List<NoteData> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="create_new_note_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.createNewNoteAsync") createNewNoteAsync
-
-> Create a new note using a title and an optional content body.
+> getBibcode
 
 
 ```java
-void createNewNoteAsync(
-        final CreateNewNoteRequest body,
-        final APICallBack<Object> callBack)
+void getBibcodeAsync(
+        final String bibcode,
+        final String dbKey,
+        final String dataType,
+        final APICallBack<ReturnBibcode> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-try {
-    String bodyValue = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}";
-    CreateNewNoteRequest body = mapper.readValue(bodyValue,new TypeReference<CreateNewNoteRequest> (){});
-    // Invoking the API call with sample inputs
-    notes.createNewNoteAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_note_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.getNoteAsync") getNoteAsync
-
-> Get a single note.
-
-
-```java
-void getNoteAsync(
-        final String id,
-        final boolean body,
-        final APICallBack<NoteData> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-#### Example Usage
-
-```java
-String id = "68a5sdf67";
-boolean body = false;
+String bibcode = "bibcode";
+String dbKey = "db_key";
+String dataType = "data_type";
 // Invoking the API call with sample inputs
-notes.getNoteAsync(id, body, new APICallBack<NoteData>() {
-    public void onSuccess(HttpContext context, NoteData response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.updateANoteAsync") updateANoteAsync
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```java
-void updateANoteAsync(
-        final String id,
-        final String body,
-        final APICallBack<NoteData> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String id = "68a5sdf67";
-String body = "body";
-// Invoking the API call with sample inputs
-notes.updateANoteAsync(id, body, new APICallBack<NoteData>() {
-    public void onSuccess(HttpContext context, NoteData response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.deleteANoteAsync") deleteANoteAsync
-
-> Delete a single note
-
-
-```java
-void deleteANoteAsync(
-        final String id,
-        final String body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String id = "68a5sdf67";
-String body = "body";
-// Invoking the API call with sample inputs
-notes.deleteANoteAsync(id, body, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="get_notes1_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.getNotes1Async") getNotes1Async
-
-> Get a list of notes.
-
-
-```java
-void getNotes1Async(final APICallBack<List<NoteData>> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-notes.getNotes1Async(new APICallBack<List<NoteData>>() {
-    public void onSuccess(HttpContext context, List<NoteData> response) {
+bibcodeQueryBinding.getBibcodeAsync(bibcode, dbKey, dataType, new APICallBack<ReturnBibcode>() {
+    public void onSuccess(HttpContext context, ReturnBibcode response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -367,141 +262,7 @@ notes.getNotes1Async(new APICallBack<List<NoteData>>() {
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.UsersGggController") UsersGggController
-
-### Get singleton instance
-
-The singleton instance of the ``` UsersGggController ``` class can be accessed from the API Client.
-
-```java
-UsersGggController usersGgg = client.getUsersGgg();
-```
-
-### <a name="get_users_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.UsersGggController.getUsersAsync") getUsersAsync
-
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
-
-
-```java
-void getUsersAsync(
-        final String name,
-        final String joinedBefore,
-        final String joinedAfter,
-        final SortEnum sort,
-        final Integer limit,
-        final APICallBack<List<GetUsersResponse>> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-#### Example Usage
-
-```java
-String name = "name";
-String joinedBefore = "joinedBefore";
-String joinedAfter = "joinedAfter";
-SortEnum sort = SortEnum.fromString("name");
-Integer limit = 74;
-// Invoking the API call with sample inputs
-usersGgg.getUsersAsync(name, joinedBefore, joinedAfter, sort, limit, new APICallBack<List<GetUsersResponse>>() {
-    public void onSuccess(HttpContext context, List<GetUsersResponse> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
-
-```java
-TagsAndTaggingLongTitleController tagsAndTaggingLongTitle = client.getTagsAndTaggingLongTitle();
-```
-
-### <a name="get_tags_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.TagsAndTaggingLongTitleController.getTagsAsync") getTagsAsync
-
-> Get a list of bars
-
-
-```java
-void getTagsAsync(final APICallBack<List<String>> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-tagsAndTaggingLongTitle.getTagsAsync(new APICallBack<List<String>>() {
-    public void onSuccess(HttpContext context, List<String> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="get_get_one_tag_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.TagsAndTaggingLongTitleController.getGetOneTagAsync") getGetOneTagAsync
-
-> Get a single tag
-
-
-```java
-void getGetOneTagAsync(
-        final String id,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-#### Example Usage
-
-```java
-String id = "id";
-// Invoking the API call with sample inputs
-tagsAndTaggingLongTitle.getGetOneTagAsync(id, new APICallBack<DynamicResponse>() {
-    public void onSuccess(HttpContext context, DynamicResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.APIController") APIController
+## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.APIController") APIController
 
 ### Get singleton instance
 
@@ -511,58 +272,14 @@ The singleton instance of the ``` APIController ``` class can be accessed from t
 APIController client = client.getClient();
 ```
 
-### <a name="new_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.APIController.newAsync") newAsync
+### <a name="create_test_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.APIController.createTestAsync") createTestAsync
 
 > TODO: Add a method description
 
 
 ```java
-void newAsync(
-        final String mTesting,
-        final String cacheControl,
-        final String contentType,
-        final String postmanToken,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String mTesting = "{ \"testing\"";
-String cacheControl = "cache-control";
-String contentType = "content-type";
-String postmanToken = "postman-token";
-// Invoking the API call with sample inputs
-client.newAsync(mTesting, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
-    public void onSuccess(HttpContext context, DynamicResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="create_sample2_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.APIController.createSample2Async") createSample2Async
-
-> TODO: Add a method description
-
-
-```java
-void createSample2Async(
-        final Sample2Request body,
+void createTestAsync(
+        final TestRequest body,
         final String cacheControl,
         final String contentType,
         final String postmanToken,
@@ -583,12 +300,12 @@ void createSample2Async(
 
 ```java
 try {
-    Sample2Request body = new Sample2Request();
+    TestRequest body = new TestRequest();
     String cacheControl = "cache-control";
     String contentType = "content-type";
     String postmanToken = "postman-token";
     // Invoking the API call with sample inputs
-    client.createSample2Async(body, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
+    client.createTestAsync(body, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
         public void onSuccess(HttpContext context, DynamicResponse response) {
             // TODO success callback handler
         }
@@ -601,6 +318,922 @@ try {
     e.printStackTrace();
 }
 ```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```java
+OAuthAuthorizationController oAuthAuthorization = client.getOAuthAuthorization();
+```
+
+### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestTokenAsync(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestTokenAsync(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshTokenAsync(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken1Async") createRequestToken1Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestToken1Async(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestToken1Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken1Async") createRefreshToken1Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshToken1Async(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken2Async") createRequestToken2Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestToken2Async(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestToken2Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken2Async") createRefreshToken2Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshToken2Async(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshToken2Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken11Async") createRequestToken11Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestToken11Async(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestToken11Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken11Async") createRefreshToken11Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshToken11Async(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshToken11Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken21Async") createRequestToken21Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestToken21Async(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestToken21Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token21_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken21Async") createRefreshToken21Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshToken21Async(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshToken21Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken1Async") createRequestToken1Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestToken1Async(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestToken1Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken1Async") createRefreshToken1Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshToken1Async(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestTokenAsync(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestTokenAsync(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshTokenAsync(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```java
+void createRequestTokenAsync(
+        final String authorization,
+        final String username,
+        final String password,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| username |  ``` Required ```  | Resource owner username |
+| password |  ``` Required ```  | Resource owner password |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String username = "username";
+String password = "password";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestTokenAsync(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+
+```java
+void createRefreshTokenAsync(
+        final String authorization,
+        final String refreshToken,
+        final String scope,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthToken> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```java
+String authorization = "Authorization";
+String refreshToken = "refresh_token";
+String scope = "scope";
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
+    public void onSuccess(HttpContext context, OAuthToken response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)
