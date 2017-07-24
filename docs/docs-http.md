@@ -33,6 +33,8 @@ The type of authentication used by this API is: `OAuth v2 Bearer Token / Persona
 > Get a list of notes.
 
 
+#### Base URL
+This endpoint uses server `default`.
 
 #### Responses
 **200** 
@@ -210,7 +212,7 @@ Body (_NoteData_)
 ```
 [
   {
-    "id": 82.4627313518257,
+    "id": 147.545990421225,
     "title": "title",
     "body": "body"
   }
@@ -374,7 +376,7 @@ Raw
  Example 
 ``` 
 {
-  "arrayCount": 82
+  "arrayCount": 147
 }
 ``` 
 
