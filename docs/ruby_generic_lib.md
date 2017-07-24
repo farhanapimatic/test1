@@ -339,7 +339,7 @@ name = 'name'
 joined_before = 'joinedBefore'
 joined_after = 'joinedAfter'
 sort = ApiTitle::SortEnum::NAME
-limit = 106
+limit = 200
 
 result = usersGgg.get_users(name, joined_before, joined_after, sort, limit)
 
