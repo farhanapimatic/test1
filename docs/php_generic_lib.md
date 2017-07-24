@@ -133,7 +133,6 @@ $client = new APITitleLib\APITitleClient($oAuthAccessToken);
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -316,24 +315,6 @@ $notes->deleteANote($id, $body);
 
 
 
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1") getNotes1
-
-> Get a list of notes.
-
-
-```php
-function getNotes1()
-```
-
-#### Example Usage
-
-```php
-
-$result = $notes->getNotes1();
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -382,7 +363,7 @@ $name = 'name';
 $joinedBefore = 'joinedBefore';
 $joinedAfter = 'joinedAfter';
 $sort = string::NAME;
-$limit = 238;
+$limit = 64;
 
 $result = $usersGgg->getUsers($name, $joinedBefore, $joinedAfter, $sort, $limit);
 
@@ -442,92 +423,6 @@ function getGetOneTag($id)
 $id = 'id';
 
 $result = $tagsAndTaggingLongTitle->getGetOneTag($id);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```php
-$client = $client->getClient();
-```
-
-### <a name="mnew"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.mnew") mnew
-
-> TODO: Add a method description
-
-
-```php
-function mnew(
-        $mTesting,
-        $cacheControl,
-        $contentType,
-        $postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$mTesting = '{ "testing"';
-$cacheControl = 'cache-control';
-$contentType = 'content-type';
-$postmanToken = 'postman-token';
-
-$result = $client->mnew($mTesting, $cacheControl, $contentType, $postmanToken);
-
-```
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2") createSample2
-
-> TODO: Add a method description
-
-
-```php
-function createSample2(
-        $body,
-        $cacheControl,
-        $contentType,
-        $postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new Sample2Request();
-$cacheControl = 'cache-control';
-$contentType = 'content-type';
-$postmanToken = 'postman-token';
-
-$result = $client->createSample2($body, $cacheControl, $contentType, $postmanToken);
 
 ```
 

@@ -84,7 +84,6 @@ Configuration_OAuthAccessToken = "Configuration_OAuthAccessToken"; // OAuth 2.0 
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -284,27 +283,6 @@ function deleteANoteAsyncWithId:(NSString*) mid
 
 
 
-### <a name="get_notes1_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1WithCompletionBlock") getNotes1WithCompletionBlock
-
-> Get a list of notes.
-
-
-```objc
-function getNotes1WithCompletionBlock:(CompletedGetNotes1) onCompleted()
-```
-
-
-
-#### Example Usage
-
-```objc
-
-    [self.notes getNotes1WithCompletionBlock:  ^(BOOL success, HttpContext* context, NSArray<NoteData> * response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -353,7 +331,7 @@ function getUsersAsyncWithName:(NSString*) name
     NSString* joinedBefore = @"joinedBefore";
     NSString* joinedAfter = @"joinedAfter";
     SortEnum sort = NAME;
-    NSNumber* limit = 10;
+    NSNumber* limit = 0;
 
     [self.usersGgg getUsersAsyncWithName: name joinedBefore : joinedBefore joinedAfter : joinedAfter sort : sort limit : limit  completionBlock:^(BOOL success, HttpContext* context, NSArray<GetUsersResponse> * response, NSError* error) { 
        //Add code here
@@ -418,97 +396,6 @@ function getGetOneTagAsyncWithId:(NSString*) mid
     NSString* mid = @"id";
 
     [self.tagsAndTaggingLongTitle getGetOneTagAsyncWithId: mid  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get singleton instance
-```objc
-Client* client = [[Client alloc]init] ;
-```
-
-### <a name="mnew_async_with_m_testing"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.mnewAsyncWithMTesting") mnewAsyncWithMTesting
-
-> TODO: Add a method description
-
-
-```objc
-function mnewAsyncWithMTesting:(NSString*) mTesting
-                cacheControl:(NSString*) cacheControl
-                contentType:(NSString*) contentType
-                postmanToken:(NSString*) postmanToken
-                completionBlock:(CompletedPostNew) onCompleted(mTesting cacheControl : cacheControl contentType : contentType postmanToken : postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mTesting = @"{ \"testing\"";
-    NSString* cacheControl = @"cache-control";
-    NSString* contentType = @"content-type";
-    NSString* postmanToken = @"postman-token";
-
-    [self.client mnewAsyncWithMTesting: mTesting cacheControl : cacheControl contentType : contentType postmanToken : postmanToken  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-
-### <a name="create_sample2_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2AsyncWithBody") createSample2AsyncWithBody
-
-> TODO: Add a method description
-
-
-```objc
-function createSample2AsyncWithBody:(Sample2Request*) body
-                cacheControl:(NSString*) cacheControl
-                contentType:(NSString*) contentType
-                postmanToken:(NSString*) postmanToken
-                completionBlock:(CompletedPostSample2) onCompleted(body cacheControl : cacheControl contentType : contentType postmanToken : postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    Sample2Request* body = [[Sample2Request alloc]init];
-    NSString* cacheControl = @"cache-control";
-    NSString* contentType = @"content-type";
-    NSString* postmanToken = @"postman-token";
-
-    [self.client createSample2AsyncWithBody: body cacheControl : cacheControl contentType : contentType postmanToken : postmanToken  completionBlock:^(BOOL success, HttpContext* context, id response, NSError* error) { 
        //Add code here
     }];
 ```

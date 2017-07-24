@@ -119,7 +119,6 @@ To configure these for your generated code, open the file "Configuration.go" and
 * [notes_pkg](#notes_pkg)
 * [usersggg_pkg](#usersggg_pkg)
 * [tagsandtagginglongtitle_pkg](#tagsandtagginglongtitle_pkg)
-* [api_pkg](#api_pkg)
 
 ## <a name="notes_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".notes_pkg") notes_pkg
 
@@ -304,25 +303,6 @@ result,_ = notes.DeleteANote(id, body)
 
 
 
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.GetNotes1") GetNotes1
-
-> Get a list of notes.
-
-
-```go
-func (me *NOTES_IMPL) GetNotes1()([]*models_pkg.NoteData,error)
-```
-
-#### Example Usage
-
-```go
-
-var result []*models_pkg.NoteData
-result,_ = notes.GetNotes1()
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="usersggg_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".usersggg_pkg") usersggg_pkg
@@ -370,7 +350,7 @@ name := "name"
 joinedBefore := "joinedBefore"
 joinedAfter := "joinedAfter"
 sort := models_pkg.sort_NAME
-limit,_ := strconv.ParseInt("74", 10, 8)
+limit,_ := strconv.ParseInt("22", 10, 8)
 
 var result []*models_pkg.GetUsersResponse
 result,_ = usersGgg.GetUsers(name, joinedBefore, joinedAfter, sort, limit)
@@ -432,92 +412,6 @@ id := "id"
 
 var result interface{}
 result,_ = tagsAndTaggingLongTitle.GetGetOneTag(id)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".api_pkg") api_pkg
-
-### Get instance
-
-Factory for the ``` API ``` interface can be accessed from the package api_pkg.
-
-```go
-aPI := api_pkg.NewAPI()
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".api_pkg.New") New
-
-> TODO: Add a method description
-
-
-```go
-func (me *API_IMPL) New(
-            mTesting string,
-            cacheControl string,
-            contentType string,
-            postmanToken string)(interface{},error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-mTesting := "{ \"testing\""
-cacheControl := "cache-control"
-contentType := "content-type"
-postmanToken := "postman-token"
-
-var result interface{}
-result,_ = aPI.New(mTesting, cacheControl, contentType, postmanToken)
-
-```
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png ".api_pkg.CreateSample2") CreateSample2
-
-> TODO: Add a method description
-
-
-```go
-func (me *API_IMPL) CreateSample2(
-            body *models_pkg.Sample2Request,
-            cacheControl string,
-            contentType string,
-            postmanToken string)(interface{},error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.Sample2Request
-cacheControl := "cache-control"
-contentType := "content-type"
-postmanToken := "postman-token"
-
-var result interface{}
-result,_ = aPI.CreateSample2(body, cacheControl, contentType, postmanToken)
 
 ```
 

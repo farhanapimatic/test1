@@ -108,7 +108,6 @@ lib.Configuration.oAuthAccessToken = "oAuthAccessToken"; // OAuth 2.0 Access Tok
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -300,28 +299,6 @@ function deleteANote(id, body, callback)
 
 
 
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1") getNotes1
-
-> Get a list of notes.
-
-
-```javascript
-function getNotes1(callback)
-```
-
-#### Example Usage
-
-```javascript
-
-
-    controller.getNotes1(function(error, response, context) {
-
-    
-	});
-```
-
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -365,7 +342,7 @@ function getUsers(name, joinedBefore, joinedAfter, sort, limit, callback)
     var joinedBefore = 'joinedBefore';
     var joinedAfter = 'joinedAfter';
     var sort = Object.keys(sort)[0];
-    var limit = 174;
+    var limit = 0;
 
     controller.getUsers(name, joinedBefore, joinedAfter, sort, limit, function(error, response, context) {
 
@@ -432,90 +409,6 @@ function getGetOneTag(id, callback)
     var id = 'id';
 
     controller.getGetOneTag(id, function(error, response, context) {
-
-    
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.APIController;
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.new") new
-
-> TODO: Add a method description
-
-
-```javascript
-function new(mTesting, cacheControl, contentType, postmanToken, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var mTesting = { "testing";
-    var cacheControl = 'cache-control';
-    var contentType = 'content-type';
-    var postmanToken = 'postman-token';
-
-    controller.new(mTesting, cacheControl, contentType, postmanToken, function(error, response, context) {
-
-    
-	});
-```
-
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2") createSample2
-
-> TODO: Add a method description
-
-
-```javascript
-function createSample2(body, cacheControl, contentType, postmanToken, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new Sample2Request({"key":"value"});
-    var cacheControl = 'cache-control';
-    var contentType = 'content-type';
-    var postmanToken = 'postman-token';
-
-    controller.createSample2(body, cacheControl, contentType, postmanToken, function(error, response, context) {
 
     
 	});

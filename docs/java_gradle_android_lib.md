@@ -117,7 +117,6 @@ APITitleClient client = new APITitleClient(oAuthAccessToken);
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.NotesController") NotesController
 
@@ -340,31 +339,6 @@ notes.deleteANoteAsync(id, body, new APICallBack<void>() {
 
 
 
-### <a name="get_notes1_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.NotesController.getNotes1Async") getNotes1Async
-
-> Get a list of notes.
-
-
-```java
-void getNotes1Async(final APICallBack<List<NoteData>> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-notes.getNotes1Async(new APICallBack<List<NoteData>>() {
-    public void onSuccess(HttpContext context, List<NoteData> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.UsersGggController") UsersGggController
@@ -413,7 +387,7 @@ String name = "name";
 String joinedBefore = "joinedBefore";
 String joinedAfter = "joinedAfter";
 SortEnum sort = SortEnum.fromString("name");
-Integer limit = 74;
+Integer limit = 22;
 // Invoking the API call with sample inputs
 usersGgg.getUsersAsync(name, joinedBefore, joinedAfter, sort, limit, new APICallBack<List<GetUsersResponse>>() {
     public void onSuccess(HttpContext context, List<GetUsersResponse> response) {
@@ -496,110 +470,6 @@ tagsAndTaggingLongTitle.getGetOneTagAsync(id, new APICallBack<DynamicResponse>()
     }
 });
 
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.example.api.controllers.APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```java
-APIController client = client.getClient();
-```
-
-### <a name="new_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.APIController.newAsync") newAsync
-
-> TODO: Add a method description
-
-
-```java
-void newAsync(
-        final String mTesting,
-        final String cacheControl,
-        final String contentType,
-        final String postmanToken,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-String mTesting = "{ \"testing\"";
-String cacheControl = "cache-control";
-String contentType = "content-type";
-String postmanToken = "postman-token";
-// Invoking the API call with sample inputs
-client.newAsync(mTesting, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
-    public void onSuccess(HttpContext context, DynamicResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="create_sample2_async"></a>![Method: ](https://apidocs.io/img/method.png "com.example.api.controllers.APIController.createSample2Async") createSample2Async
-
-> TODO: Add a method description
-
-
-```java
-void createSample2Async(
-        final Sample2Request body,
-        final String cacheControl,
-        final String contentType,
-        final String postmanToken,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    Sample2Request body = new Sample2Request();
-    String cacheControl = "cache-control";
-    String contentType = "content-type";
-    String postmanToken = "postman-token";
-    // Invoking the API call with sample inputs
-    client.createSample2Async(body, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
-        public void onSuccess(HttpContext context, DynamicResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
 ```
 
 

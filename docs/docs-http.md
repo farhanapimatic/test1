@@ -20,7 +20,6 @@ The type of authentication used by this API is: `OAuth v2 Bearer Token / Persona
 * [Notes](#notes)
 * [Users ggg](#users_ggg)
 * [Tags and Tagging Long Title](#tags_and_tagging_long_title)
-* [API](#api)
 
 ## <a name="notes"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Notes") Notes
 
@@ -33,8 +32,6 @@ The type of authentication used by this API is: `OAuth v2 Bearer Token / Persona
 > Get a list of notes.
 
 
-#### Base URL
-This endpoint uses server `default`.
 
 #### Responses
 **200** 
@@ -196,30 +193,6 @@ Body (_NoteData_)
 > Unexpected error in API call. See HTTP response body for details.
 
 
-### <a name="get_notes1"></a>![Endpoint: ](https://apidocs.io/img/method.png "Get Notes1") Get Notes1
-
-
-**`GET`** `/notes`
-
-> Get a list of notes.
-
-
-
-#### Responses
-**200** 
-
-Body (_NoteData_) 
-```
-[
-  {
-    "id": 238.116449556833,
-    "title": "title",
-    "body": "body"
-  }
-]
-```
-
-
 [Back to API Reference](#api_reference)
 
 ## <a name="users_ggg"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Users ggg") Users ggg
@@ -306,79 +279,6 @@ Body (_string_)
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
 | id | `string` |  ``` Required ```  | Unique tag identifier | `"id"` | 
-
-#### Responses
-**200** 
-
-Body
-
-
-[Back to API Reference](#api_reference)
-
-## <a name="api"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "API") API
-
-
-### <a name="new"></a>![Endpoint: ](https://apidocs.io/img/method.png "new") new
-
-
-**`POST`** `/notes`
-
-> TODO: Add a method description
-
-
-#### Base URL
-This endpoint uses server ``.
-
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->cache-control="cache-control";
->content-type="content-type";
->postman-token="postman-token";
-
-#### Request Body
-Url Encoded
-
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| { "testing" | `string` |  ``` Required ```  | TODO: Add a parameter description | `"{ "testing""` | 
-
-#### Responses
-**200** 
-
-Body
-
-
-### <a name="sample_2"></a>![Endpoint: ](https://apidocs.io/img/method.png "sample 2") sample 2
-
-
-**`POST`** `/'/1.1/test.php`
-
-> TODO: Add a method description
-
-
-#### Base URL
-This endpoint uses server ``.
-
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
->cache-control="cache-control";
->content-type="content-type";
->postman-token="postman-token";
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `sample 2 request` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "arrayCount": 238
-}
-``` 
 
 #### Responses
 **200** 

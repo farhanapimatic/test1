@@ -8,9 +8,9 @@ This client library is a Ruby gem which can be compiled and used in your Ruby an
 
 1. Open the command line interface or the terminal and navigate to the folder containing the source code.
 2. Run ``` gem build api_title.gemspec ``` to build the gem.
-3. Once built, the gem can be installed on the current work environment using ``` gem install api_title-1.0.0.gem ```
+3. Once built, the gem can be installed on the current work environment using ``` gem install api_title-5.1.0.gem ```
 
-![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=API%20Title-Ruby&workspaceName=API%20Title-Ruby&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Building Gem](https://apidocs.io/illustration/ruby?step=buildSDK&workspaceFolder=API%20Title-Ruby&workspaceName=API%20Title-Ruby&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 ## How to Use
 
@@ -20,41 +20,41 @@ The following section explains how to use the ApiTitle Ruby Gem in a new Rails p
 
 Close any existing projects in RubyMine&trade; by selecting ``` File -> Close Project ```. Next, click on ``` Create New Project ``` to create a new project from scratch.
 
-![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new project in RubyMine](https://apidocs.io/illustration/ruby?step=createNewProject0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 Next, provide ``` TestApp ``` as the project name, choose ``` Rails Application ``` as the project type, and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 1](https://apidocs.io/illustration/ruby?step=createNewProject1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 In the next dialog make sure that correct *Ruby SDK* is being used (minimum 2.0.0) and click ``` OK ```.
 
-![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Rails Application in RubyMine - step 2](https://apidocs.io/illustration/ruby?step=createNewProject2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 This will create a new Rails Application project with an existing set of files and folder.
 
 ### 2. Add reference of the gem
 
-In order to use the ApiTitle gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'api_title', '~> 1.0.0' ```
+In order to use the ApiTitle gem in the new project we must add a gem reference. Locate the ```Gemfile``` in the *Project Explorer* window under the ``` TestApp ``` project node. The file contains references to all gems being used in the project. Here, add the reference to the library gem by adding the following line: ``` gem 'api_title', '~> 5.1.0' ```
 
-![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Add references of the Gemfile](https://apidocs.io/illustration/ruby?step=addReference&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 ### 3. Adding a new Rails Controller
 
 Once the ``` TestApp ``` project is created, a folder named ``` controllers ``` will be visible in the *Project Explorer* under the following path: ``` TestApp > app > controllers ```. Right click on this folder and select ``` New -> Run Rails Generator... ```.
 
-![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Run Rails Generator on Controllers Folder](https://apidocs.io/illustration/ruby?step=addCode0&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 Selecting the said option will popup a small window where the generator names are displayed. Here, select the ``` controller ``` template.
 
-![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Create a new Controller](https://apidocs.io/illustration/ruby?step=addCode1&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 Next, a popup window will ask you for a Controller name and included Actions. For controller name provide ``` Hello ``` and include an action named ``` Index ``` and click ``` OK ```.
 
-![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Add a new Controller](https://apidocs.io/illustration/ruby?step=addCode2&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 A new controller class anmed ``` HelloController ``` will be created in a file named ``` hello_controller.rb ``` containing a method named ``` Index ```. In this method, add code for initialization and a sample for its usage.
 
-![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0)
+![Initialize the library](https://apidocs.io/illustration/ruby?step=addCode3&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0)
 
 ## How to Test
 
@@ -88,7 +88,7 @@ client = ApiTitle::ApiTitleClient.new(
 
 The added initlization code can be debugged by putting a breakpoint in the ``` Index ``` method and running the project in debug mode by selecting ``` Run -> Debug 'Development: TestApp' ```.
 
-![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=1.0.0&initLine=client%2520%253D%2520ApiTitleClient.new%2528%2527o_auth_access_token%2527%2529)
+![Debug the TestApp](https://apidocs.io/illustration/ruby?step=addCode4&workspaceFolder=API%20Title-Ruby&workspaceName=ApiTitle&projectName=api_title&gemName=api_title&gemVer=5.1.0&initLine=client%2520%253D%2520ApiTitleClient.new%2528%2527o_auth_access_token%2527%2529)
 
 
 
@@ -99,7 +99,6 @@ The added initlization code can be debugged by putting a breakpoint in the ``` I
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -275,24 +274,6 @@ notes.delete_a_note(id, body)
 
 
 
-### <a name="get_notes_1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_notes_1") get_notes_1
-
-> Get a list of notes.
-
-
-```ruby
-def get_notes_1; end
-```
-
-#### Example Usage
-
-```ruby
-
-result = notes.get_notes_1()
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -339,7 +320,7 @@ name = 'name'
 joined_before = 'joinedBefore'
 joined_after = 'joinedAfter'
 sort = ApiTitle::SortEnum::NAME
-limit = 166
+limit = 113
 
 result = usersGgg.get_users(name, joined_before, joined_after, sort, limit)
 
@@ -398,88 +379,6 @@ def get_get_one_tag(id); end
 id = 'id'
 
 result = tagsAndTaggingLongTitle.get_get_one_tag(id)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```ruby
-client = client.client
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.new") new
-
-> TODO: Add a method description
-
-
-```ruby
-def new(testing,
-            cache_control,
-            content_type,
-            postman_token); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| testing |  ``` Required ```  | TODO: Add a parameter description |
-| cache_control |  ``` Required ```  | TODO: Add a parameter description |
-| content_type |  ``` Required ```  | TODO: Add a parameter description |
-| postman_token |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-testing = '{ "testing"'
-cache_control = 'cache-control'
-content_type = 'content-type'
-postman_token = 'postman-token'
-
-result = client.new(testing, cache_control, content_type, postman_token)
-
-```
-
-
-### <a name="create_sample_2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.create_sample_2") create_sample_2
-
-> TODO: Add a method description
-
-
-```ruby
-def create_sample_2(body,
-                        cache_control,
-                        content_type,
-                        postman_token); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cache_control |  ``` Required ```  | TODO: Add a parameter description |
-| content_type |  ``` Required ```  | TODO: Add a parameter description |
-| postman_token |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = Sample2Request.new
-cache_control = 'cache-control'
-content_type = 'content-type'
-postman_token = 'postman-token'
-
-result = client.create_sample_2(body, cache_control, content_type, postman_token)
 
 ```
 

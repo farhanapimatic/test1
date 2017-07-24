@@ -91,7 +91,6 @@ APITitleClient client = new APITitleClient(oAuthAccessToken);
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png "APITitle.Tests.Controllers.NotesController") NotesController
 
@@ -260,24 +259,6 @@ await notes.DeleteANote(id, body);
 | 404 | Unexpected error in API call. See HTTP response body for details. |
 
 
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png "APITitle.Tests.Controllers.NotesController.GetNotes1") GetNotes1
-
-> Get a list of notes.
-
-
-```csharp
-Task<List<PCL.Models.NoteData>> GetNotes1()
-```
-
-#### Example Usage
-
-```csharp
-
-List<PCL.Models.NoteData> result = await notes.GetNotes1();
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png "APITitle.Tests.Controllers.UsersGggController") UsersGggController
@@ -325,7 +306,7 @@ string name = "name";
 string joinedBefore = "joinedBefore";
 string joinedAfter = "joinedAfter";
 var sort = PCL.Models.SortEnum?Helper.ParseString("name");
-int? limit = 215;
+int? limit = 163;
 
 List<PCL.Models.GetUsersResponse> result = await usersGgg.GetUsers(name, joinedBefore, joinedAfter, sort, limit);
 
@@ -384,90 +365,6 @@ Task<dynamic> GetGetOneTag(string id)
 string id = "id";
 
 dynamic result = await tagsAndTaggingLongTitle.GetGetOneTag(id);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "APITitle.Tests.Controllers.APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```csharp
-APIController client = client.Client;
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png "APITitle.Tests.Controllers.APIController.New") New
-
-> TODO: Add a method description
-
-
-```csharp
-Task<dynamic> New(
-        string mTesting,
-        string cacheControl,
-        string contentType,
-        string postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string mTesting = "{ \"testing\"";
-string cacheControl = "cache-control";
-string contentType = "content-type";
-string postmanToken = "postman-token";
-
-dynamic result = await client.New(mTesting, cacheControl, contentType, postmanToken);
-
-```
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png "APITitle.Tests.Controllers.APIController.CreateSample2") CreateSample2
-
-> TODO: Add a method description
-
-
-```csharp
-Task<dynamic> CreateSample2(
-        PCL.Models.Sample2Request body,
-        string cacheControl,
-        string contentType,
-        string postmanToken)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new PCL.Models.Sample2Request();
-string cacheControl = "cache-control";
-string contentType = "content-type";
-string postmanToken = "postman-token";
-
-dynamic result = await client.CreateSample2(body, cacheControl, contentType, postmanToken);
 
 ```
 

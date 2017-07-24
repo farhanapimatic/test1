@@ -98,7 +98,6 @@ Import the reference to the generated SDK files inside your html file like:
     <script src="scripts/APITitleLib/Controllers/NotesController.js"></script>
     <script src="scripts/APITitleLib/Controllers/UsersGggController.js"></script>
     <script src="scripts/APITitleLib/Controllers/TagsAndTaggingLongTitleController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/APIController.js"></script>
 
 
     <!-- Models -->
@@ -110,8 +109,6 @@ Import the reference to the generated SDK files inside your html file like:
     <script src="scripts/APITitleLib/Models/UpdateANoteRequest7.js"></script>
     <script src="scripts/APITitleLib/Models/SortEnum.js"></script>
     <script src="scripts/APITitleLib/Models/GetUsersResponse.js"></script>
-    <script src="scripts/APITitleLib/Models/Sample2Request.js"></script>
-    <script src="scripts/APITitleLib/Models/New.js"></script>
 
     ...
 </head>
@@ -202,7 +199,6 @@ app.factory('config', function($scope, Configuration)
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -445,38 +441,6 @@ function deleteANote(id, body)
 
 
 
-### <a name="get_notes1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes1") getNotes1
-
-> Get a list of notes.
-
-
-```javascript
-function getNotes1()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-
-
-		var result = NotesController.getNotes1();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -523,7 +487,7 @@ function getUsers(name, joinedBefore, joinedAfter, sort, limit)
         var joinedBefore = 'joinedBefore';
         var joinedAfter = 'joinedAfter';
         var sort = Object.keys(SortEnum)[0];
-        var limit = 10;
+        var limit = 0;
 
 
 		var result = UsersGggController.getUsers(name, joinedBefore, joinedAfter, sort, limit);
@@ -612,111 +576,6 @@ function getGetOneTag(id)
 
 
 		var result = TagsAndTaggingLongTitleController.getGetOneTag(id);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, APIController){
-	});
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.new") new
-
-> TODO: Add a method description
-
-
-```javascript
-function new(mTesting, cacheControl, contentType, postmanToken)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, APIController){
-        var mTesting = { "testing";
-        var cacheControl = 'cache-control';
-        var contentType = 'content-type';
-        var postmanToken = 'postman-token';
-
-
-		var result = APIController.new(mTesting, cacheControl, contentType, postmanToken);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-### <a name="create_sample2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createSample2") createSample2
-
-> TODO: Add a method description
-
-
-```javascript
-function createSample2(body, cacheControl, contentType, postmanToken)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, APIController){
-        var body = new Sample2Request({"key":"value"});
-        var cacheControl = 'cache-control';
-        var contentType = 'content-type';
-        var postmanToken = 'postman-token';
-
-
-		var result = APIController.createSample2(body, cacheControl, contentType, postmanToken);
         //Function call returns a promise
         result.then(function(success){
 			//success case

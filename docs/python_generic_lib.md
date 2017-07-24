@@ -110,7 +110,6 @@ client = ApititleClient(o_auth_access_token)
 * [NotesController](#notes_controller)
 * [UsersGggController](#users_ggg_controller)
 * [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
-* [APIController](#api_controller)
 
 ## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
 
@@ -293,23 +292,6 @@ notes_client.delete_a_note(id, body)
 
 
 
-### <a name="get_notes_1"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_notes_1") get_notes_1
-
-> Get a list of notes.
-
-```python
-def get_notes_1(self)
-```
-
-#### Example Usage
-
-```python
-
-result = notes_client.get_notes_1()
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="users_ggg_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersGggController") UsersGggController
@@ -357,7 +339,7 @@ name = 'name'
 joined_before = 'joinedBefore'
 joined_after = 'joinedAfter'
 sort = SortEnum.NAME
-limit = 166
+limit = 113
 
 result = users_ggg_client.get_users(name, joined_before, joined_after, sort, limit)
 
@@ -416,90 +398,6 @@ def get_get_one_tag(self,
 id = 'id'
 
 result = tags_and_tagging_long_title_client.get_get_one_tag(id)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
-
-### Get controller instance
-
-An instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```python
- client_client = client.client
-```
-
-### <a name="new"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.new") new
-
-> TODO: Add a method description
-
-```python
-def new(self,
-                testing,
-                cache_control,
-                content_type,
-                postman_token)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mTesting |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-testing = '{ "testing"'
-cache_control = 'cache-control'
-content_type = 'content-type'
-postman_token = 'postman-token'
-
-result = client_client.new(testing, cache_control, content_type, postman_token)
-
-```
-
-
-### <a name="create_sample_2"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.create_sample_2") create_sample_2
-
-> TODO: Add a method description
-
-```python
-def create_sample_2(self,
-                        body,
-                        cache_control,
-                        content_type,
-                        postman_token)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = Sample2Request()
-cache_control = 'cache-control'
-content_type = 'content-type'
-postman_token = 'postman-token'
-
-result = client_client.create_sample_2(body, cache_control, content_type, postman_token)
 
 ```
 
