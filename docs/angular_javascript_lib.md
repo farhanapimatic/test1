@@ -523,7 +523,7 @@ function getUsers(name, joinedBefore, joinedAfter, sort, limit)
         var joinedBefore = 'joinedBefore';
         var joinedAfter = 'joinedAfter';
         var sort = Object.keys(SortEnum)[0];
-        var limit = 181;
+        var limit = 18;
 
 
 		var result = UsersGggController.getUsers(name, joinedBefore, joinedAfter, sort, limit);

@@ -353,7 +353,7 @@ function getUsersAsyncWithName:(NSString*) name
     NSString* joinedBefore = @"joinedBefore";
     NSString* joinedAfter = @"joinedAfter";
     SortEnum sort = NAME;
-    NSNumber* limit = 17;
+    NSNumber* limit = 109;
 
     [self.usersGgg getUsersAsyncWithName: name joinedBefore : joinedBefore joinedAfter : joinedAfter sort : sort limit : limit  completionBlock:^(BOOL success, HttpContext* context, NSArray<GetUsersResponse> * response, NSError* error) { 
        //Add code here
