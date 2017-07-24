@@ -365,7 +365,7 @@ function getUsers(name, joinedBefore, joinedAfter, sort, limit, callback)
     var joinedBefore = 'joinedBefore';
     var joinedAfter = 'joinedAfter';
     var sort = Object.keys(sort)[0];
-    var limit = 110;
+    var limit = 181;
 
     controller.getUsers(name, joinedBefore, joinedAfter, sort, limit, function(error, response, context) {
 
