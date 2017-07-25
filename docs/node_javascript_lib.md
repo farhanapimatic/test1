@@ -1,5 +1,19 @@
 # Getting started
 
+The Marvel Comics API is a tool to help developers everywhere create amazing, uncanny and incredible web sites and applications using data from the 70-plus years of the Marvel age of comics.
+
+**Ready to get started?** Great!
+
+Here's the short version of what you need to do:
+
+* **Sign up**: [Get an API key](https://developer.marvel.com/account)
+* **Be a good API citizen**: read, understand, and abide by the [terms of use](https://developer.marvel.com/terms) for the Marvel Comics API
+* **Link back**: observe the [attribution and linking guidelines](https://developer.marvel.com/documentation/attribution) when displaying data from the API
+* **Keep in touch**: [tell us about what you're building](https://developer.marvel.com/community) and talk to other developers on our community page
+* **Build cool stuff**
+
+Finally, remember that the Marvel API suite and portal are in beta and this is an evolving project. To the extent that it is possible, we will try to communicate changes to the API before they occur and will try to limit any modifications which cause backwards incompatible changes to applications.
+
 ## How to Build
 
 The generated SDK relies on [Node Package Manager](https://www.npmjs.com/) (NPM) being available to resolve dependencies. If you don't already have NPM installed, please go ahead and follow instructions to install NPM from [here](https://nodejs.org/en/download/).
@@ -9,16 +23,16 @@ The SDK also requires Node to be installed. If Node isn't already installed, ple
 To check if node and npm have been successfully installed, write the following commands in command prompt:
 * `node --version`
 * `npm -version` 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=BibcodeQuery-Node)  
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=MarvelComics-Node)  
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 * `npm install`
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=BibcodeQuery-Node)
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=MarvelComics-Node)
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
 This will install all dependencies in the `node_modules` folder. 
 
-Once dependencies are resolved, you will need to move the folder `BibcodeQueryLib ` in to your `node_modules` folder.
+Once dependencies are resolved, you will need to move the folder `MarvelComicsLib ` in to your `node_modules` folder.
 
 ## How to Use
 
@@ -30,7 +44,7 @@ Click on `File` and select `Open Folder`
 ![Open Folder](https://apidocs.io/illustration/nodejs?step=openFolder)
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
-![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=BibcodeQuery-Node)
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=MarvelComics-Node)
 
 
 ### 2. Creating a Test File
@@ -40,13 +54,13 @@ var lib = require('lib');
 ```
 Save changes.
 
-![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=BibcodeQuery-Node)
-![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=BibcodeQuery-Node)
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=MarvelComics-Node)
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=MarvelComics-Node)
 
 ### 3. Running The Test File
 To run the `index.js` file, open up the command prompt and navigate to the Path where the SDK folder resides. Type the following command to run the file:  
 `node index.js`
-![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=BibcodeQuery-Node)
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=MarvelComics-Node)
 
 
 ## How to Test
@@ -70,11 +84,11 @@ Tests can be run in a number of ways:
 ###### (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
-2. Type `mocha  BibcodeQueryController`  to run all the tests in that controller file.
+2. Type `mocha  MarvelComicsController`  to run all the tests in that controller file.
 
 > To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.  
 
-![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=BibcodeQueryController)
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=MarvelComicsController)
 
 ## Initialization
 
@@ -83,10 +97,7 @@ In order to setup authentication in the API client, you need the following infor
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthClientSecret | OAuth 2 Client Secret |
-| oAuthUsername | OAuth 2 Resource Owner Username |
-| oAuthPassword | OAuth 2 Resource Owner Password |
+| apikey | Developer's API key |
 
 
 
@@ -96,147 +107,7 @@ API client can be initialized as following:
 const lib = require('lib');
 
 // Configuration parameters and credentials
-lib.Configuration.oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
-lib.Configuration.oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
-lib.Configuration.oAuthUsername = "oAuthUsername"; // OAuth 2 Resource Owner Username
-lib.Configuration.oAuthPassword = "oAuthPassword"; // OAuth 2 Resource Owner Password
-
-```
-
-You must now authorize the client.
-
-### Authorizing your client
-
-
-Your application must obtain user authorization before it can execute an endpoint call.
-This SDK uses *OAuth 2.0 authorization* to authorize the client.
-
-The `authorize()` method will exchange the user's credentials for an *access token*.
-The access token is an object containing information for authorizing client requests and refreshing the token itself.
-
-
-
-```JavaScript
-const tokenPromise = oAuthManager.authorize();
-```
-The Node.js SDK supports both callbacks and promises. So, the authorize call returns a promise and also returns response back in the callback (if one is provided)
-
-
-The client can now make authorized endpoint calls.
-
-
-
-### Refreshing token
-
-Access tokens may expire after sometime. To extend its lifetime, you must refresh the token.
-
-```JavaScript
-const refreshPromise = oAuthManager.refreshToken();
-refreshPromise.then(() => {
-    // token has been refreshed
-} , (exception) => {
-    // error occurred, exception will be of type lib/Exceptions/OAuthProviderException
-});
-```
-
-If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call which requires authentication.
-
-
-### Storing an access token for reuse
-
-It is recommended that you store the access token for reuse.
-
-This code snippet stores the access token in a session for an express application. It uses the [cookie-parser](https://www.npmjs.com/package/cookie-parser) and [cookie-session](https://www.npmjs.com/package/cookie-session) npm packages for storing the access token.
-```JavaScript
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const cookieSession = require('cookie-session');
-
-const app = express();
-app.use(cookieParser());
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1']
-}));
-
-const lib = require('lib');
-...
-// store token in the session
-req.session.token = lib.Configuration.oAuthToken;
-```
-However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a **token update callback** to detect any change to the access token.
-
-```JavaScript
-lib.Configuration.oAuthTokenUpdateCallback = function(token) {
-    // getting the updated token
-    req.session.token = token;
-}
-```
-
-The token update callback will be fired upon authorization as well as token refresh.
-
-### Creating a client from a stored token
-
-To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before making endpoint calls:
-
-
-```JavaScript
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const cookieSession = require('cookie-session');
-
-const app = express();
-app.use(cookieParser());
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1']
-}));
-
-const lib = require('lib');
-
-app.get('/', (req, res) => {
-    lib.Configuration.oAuthToken = req.session.token; // the access token stored in the session
-});
-```
-
-### Complete example
-In this example, `app.js` will check if the access token has been set in the SDK. If it has been, API calls can be made. Otherwise, client has to be authorized first before calling the API.  
-This example makes use of [node-localstorage](https://www.npmjs.com/package/node-localstorage) for handling data persistence.
-
-#### `app.js`
-
-```JavaScript
-
-const lib = require('lib');
-const oAuthManager = lib.OAuthManager;
-const LocalStorage = require('node-localstorage').LocalStorage;
-const localStorage = new LocalStorage('./scratch');
-
-lib.Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
-lib.Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
-lib.Configuration.oAuthUsername = 'oAuthUsername'; // OAuth 2 Resource Owner Username
-lib.Configuration.oAuthPassword = 'oAuthPassword'; // OAuth 2 Resource Owner Password
-
-const storedToken = localStorage.getItem('token');
-if (storedToken !== null && storedToken !== undefined) {
-    lib.Configuration.oAuthToken = storedToken;
-}
-lib.Configuration.oAuthTokenUpdateCallback = function(token) {
-    // token is the updated access_token
-    localStorage.setItem('token', token);
-};
-
-if (oAuthManager.isTokenSet()) {
-    // now make API calls as required
-} else {
-    const scopes = [];
-    const promise = oAuthManager.authorize(scopes);
-    promise.then((success) => {
-        // client authorized. API calls can be made
-    }, (exception) => {
-        // error occurred, exception will be of type lib/Exceptions/OAuthProviderException
-    });
-}
+lib.Configuration.apikey = "apikey"; // Developer's API key
 
 ```
 
@@ -246,37 +117,47 @@ if (oAuthManager.isTokenSet()) {
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
-* [APIController](#api_controller)
-* [OAuthAuthorizationController](#o_auth_authorization_controller)
+* [EventsController](#events_controller)
+* [CharactersController](#characters_controller)
+* [StoriesController](#stories_controller)
+* [CreatorsController](#creators_controller)
+* [ComicsController](#comics_controller)
+* [SeriesController](#series_controller)
 
-## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
+## <a name="events_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EventsController") EventsController
 
 ### Get singleton instance
 
-The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` EventsController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.BibcodeQueryBindingController;
+var controller = lib.EventsController;
 ```
 
-### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
+### <a name="get_events_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollectionByStoryId") getEventsCollectionByStoryId
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> getBibcode
+> getEventsCollectionByStoryId
 
 
 ```javascript
-function getBibcode(bibcode, dbKey, dataType, callback)
+function getEventsCollectionByStoryId(input, queryParams, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| bibcode |  ``` Required ```  | TODO: Add a parameter description |
-| dbKey |  ``` Required ```  | TODO: Add a parameter description |
-| dataType |  ``` Required ```  | TODO: Add a parameter description |
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 
@@ -284,46 +165,393 @@ function getBibcode(bibcode, dbKey, dataType, callback)
 
 ```javascript
 
-    var bibcode = 'bibcode';
-    var dbKey = db_key;
-    var dataType = data_type;
+    var input = [];
+        input['storyId'] = 'storyId';
+        input['characters'] = 'characters';
+        input['comics'] = 'comics';
+        input['creators'] = 'creators';
+        input['limit'] = 'limit';
+        input['modifiedSince'] = 'modifiedSince';
+        input['name'] = 'name';
+        input['nameStartsWith'] = 'nameStartsWith';
+        input['offset'] = 'offset';
+        input['orderBy'] = 'orderBy';
+        input['series'] = 'series';
 
-    controller.getBibcode(bibcode, dbKey, dataType, function(error, response, context) {
+    // key-value map for optional query parameters
+    var queryParams = [];
+
+    controller.getEventsCollectionByStoryId(input, queryParams, function(error, response, context) {
 
     
 	});
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_events_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollectionBySeriesId") getEventsCollectionBySeriesId
+
+> getEventsCollectionBySeriesId
+
+
+```javascript
+function getEventsCollectionBySeriesId(seriesId, characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var seriesId = 'seriesId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var stories = 'stories';
+
+    controller.getEventsCollectionBySeriesId(seriesId, characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getCreatorEventsCollection") getCreatorEventsCollection
+
+> getCreatorEventsCollection
+
+
+```javascript
+function getCreatorEventsCollection(creatorId, characters, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var creatorId = 'creatorId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getCreatorEventsCollection(creatorId, characters, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_issue_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getIssueEventsCollection") getIssueEventsCollection
+
+> getIssueEventsCollection
+
+
+```javascript
+function getIssueEventsCollection(comicId, characters, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comicId |  ``` Required ```  | The comic ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comicId = 'comicId';
+    var characters = 'characters';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getIssueEventsCollection(comicId, characters, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_character_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getCharacterEventsCollection") getCharacterEventsCollection
+
+> getCharacterEventsCollection
+
+
+```javascript
+function getCharacterEventsCollection(characterId, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character ID. |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characterId = 'characterId';
+    var comics = 'comics';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getCharacterEventsCollection(characterId, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_event_individual"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventIndividual") getEventIndividual
+
+> getEventIndividual
+
+
+```javascript
+function getEventIndividual(eventId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | A single event. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var eventId = 'eventId';
+
+    controller.getEventIndividual(eventId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Event not found. |
+
+
+
+
+### <a name="get_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollection") getEventsCollection
+
+> getEventsCollection
+
+
+```javascript
+function getEventsCollection(characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only events which match the specified name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which take place in the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characters = 'characters';
+    var comics = 'comics';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getEventsCollection(characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
 
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png ".APIController") APIController
+## <a name="characters_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CharactersController") CharactersController
 
 ### Get singleton instance
 
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
+The singleton instance of the ``` CharactersController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.APIController;
+var controller = lib.CharactersController;
 ```
 
-### <a name="create_test"></a>![Method: ](https://apidocs.io/img/method.png ".APIController.createTest") createTest
+### <a name="get_character_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterCollectionByStoryId") getCharacterCollectionByStoryId
 
-> TODO: Add a method description
+> getCharacterCollectionByStoryId
 
 
 ```javascript
-function createTest(body, cacheControl, contentType, postmanToken, callback)
+function getCharacterCollectionByStoryId(storyId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
+| storyId |  ``` Required ```  | The story ID. |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -331,50 +559,322 @@ function createTest(body, cacheControl, contentType, postmanToken, callback)
 
 ```javascript
 
-    var body = new TestRequest({"key":"value"});
-    var cacheControl = 'cache-control';
-    var contentType = 'content-type';
-    var postmanToken = 'postman-token';
+    var storyId = 'storyId';
+    var comics = 'comics';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createTest(body, cacheControl, contentType, postmanToken, function(error, response, context) {
+    controller.getCharacterCollectionByStoryId(storyId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, function(error, response, context) {
 
     
 	});
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_series_character_wrapper"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getSeriesCharacterWrapper") getSeriesCharacterWrapper
+
+> getSeriesCharacterWrapper
+
+
+```javascript
+function getSeriesCharacterWrapper(seriesId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series id. |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var seriesId = 'seriesId';
+    var comics = 'comics';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var stories = 'stories';
+
+    controller.getSeriesCharacterWrapper(seriesId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_event_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getEventCharacterCollection") getEventCharacterCollection
+
+> getEventCharacterCollection
+
+
+```javascript
+function getEventCharacterCollection(eventId, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event ID |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var eventId = 'eventId';
+    var comics = 'comics';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getEventCharacterCollection(eventId, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comic_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getComicCharacterCollection") getComicCharacterCollection
+
+> getComicCharacterCollection
+
+
+```javascript
+function getComicCharacterCollection(comicId, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comicId |  ``` Required ```  | The comic id. |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comicId = 'comicId';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getComicCharacterCollection(comicId, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_character_individual"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterIndividual") getCharacterIndividual
+
+> getCharacterIndividual
+
+
+```javascript
+function getCharacterIndividual(characterId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | A single character id. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characterId = 'characterId';
+
+    controller.getCharacterIndividual(characterId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Character not found. |
+
+
+
+
+### <a name="get_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterCollection") getCharacterCollection
+
+> getCharacterCollection
+
+
+```javascript
+function getCharacterCollection(comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comics = 'comics';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var name = 'name';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+
+    controller.getCharacterCollection(comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
 
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+## <a name="stories_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoriesController") StoriesController
 
 ### Get singleton instance
 
-The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+The singleton instance of the ``` StoriesController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.OAuthAuthorizationController;
+var controller = lib.StoriesController;
 ```
 
-### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+### <a name="get_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getStoryCollection") getStoryCollection
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getStoryCollection
 
 
 ```javascript
-function createRequestToken(authorization, username, password, scope, formParams, callback)
+function getStoryCollection(characters, comics, creators, events, limit, modifiedSince, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -382,14 +882,17 @@ function createRequestToken(authorization, username, password, scope, formParams
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var username = 'username';
-    var password = 'password';
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var characters = 'characters';
+    var comics = 'comics';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createRequestToken(authorization, username, password, scope, formParams, function(error, response, context) {
+    controller.getStoryCollection(characters, comics, creators, events, limit, modifiedSince, offset, orderBy, series, function(error, response, context) {
 
     
 	});
@@ -399,30 +902,32 @@ function createRequestToken(authorization, username, password, scope, formParams
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
 
-### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken") createRefreshToken
+### <a name="get_series_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getSeriesStoryCollection") getSeriesStoryCollection
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getSeriesStoryCollection
 
 
 ```javascript
-function createRefreshToken(authorization, refreshToken, scope, formParams, callback)
+function getSeriesStoryCollection(seriesId, characters, comics, creators, events, limit, modifiedSince, offset, orderBy, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
 
 
 
@@ -430,13 +935,17 @@ function createRefreshToken(authorization, refreshToken, scope, formParams, call
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var refreshToken = refresh_token;
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var seriesId = 'seriesId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
 
-    controller.createRefreshToken(authorization, refreshToken, scope, formParams, function(error, response, context) {
+    controller.getSeriesStoryCollection(seriesId, characters, comics, creators, events, limit, modifiedSince, offset, orderBy, function(error, response, context) {
 
     
 	});
@@ -446,31 +955,32 @@ function createRefreshToken(authorization, refreshToken, scope, formParams, call
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
 
-### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+### <a name="get_event_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getEventStoryCollection") getEventStoryCollection
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getEventStoryCollection
 
 
 ```javascript
-function createRequestToken1(authorization, username, password, scope, formParams, callback)
+function getEventStoryCollection(eventId, characters, comics, creators, limit, modifiedSince, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| eventId |  ``` Required ```  | The ID of the event. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -478,14 +988,17 @@ function createRequestToken1(authorization, username, password, scope, formParam
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var username = 'username';
-    var password = 'password';
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var eventId = 'eventId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createRequestToken1(authorization, username, password, scope, formParams, function(error, response, context) {
+    controller.getEventStoryCollection(eventId, characters, comics, creators, limit, modifiedSince, offset, orderBy, series, function(error, response, context) {
 
     
 	});
@@ -495,30 +1008,32 @@ function createRequestToken1(authorization, username, password, scope, formParam
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
 
-### <a name="create_refresh_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken1") createRefreshToken1
+### <a name="get_creator_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getCreatorStoryCollection") getCreatorStoryCollection
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorStoryCollection
 
 
 ```javascript
-function createRefreshToken1(authorization, refreshToken, scope, formParams, callback)
+function getCreatorStoryCollection(creatorId, characters, comics, events, limit, modifiedSince, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| creatorId |  ``` Required ```  | The ID of the creator. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -526,13 +1041,17 @@ function createRefreshToken1(authorization, refreshToken, scope, formParams, cal
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var refreshToken = refresh_token;
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var creatorId = 'creatorId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createRefreshToken1(authorization, refreshToken, scope, formParams, function(error, response, context) {
+    controller.getCreatorStoryCollection(creatorId, characters, comics, events, limit, modifiedSince, offset, orderBy, series, function(error, response, context) {
 
     
 	});
@@ -542,31 +1061,32 @@ function createRefreshToken1(authorization, refreshToken, scope, formParams, cal
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
 
-### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+### <a name="get_comic_story_collection_by_comic_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getComicStoryCollectionByComicId") getComicStoryCollectionByComicId
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicStoryCollectionByComicId
 
 
 ```javascript
-function createRequestToken2(authorization, username, password, scope, formParams, callback)
+function getComicStoryCollectionByComicId(comicId, characters, creators, events, limit, modifiedSince, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comicId |  ``` Required ```  | The comic ID. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -574,14 +1094,17 @@ function createRequestToken2(authorization, username, password, scope, formParam
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var username = 'username';
-    var password = 'password';
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var comicId = 'comicId';
+    var characters = 'characters';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createRequestToken2(authorization, username, password, scope, formParams, function(error, response, context) {
+    controller.getComicStoryCollectionByComicId(comicId, characters, creators, events, limit, modifiedSince, offset, orderBy, series, function(error, response, context) {
 
     
 	});
@@ -591,30 +1114,32 @@ function createRequestToken2(authorization, username, password, scope, formParam
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
 
-### <a name="create_refresh_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRefreshToken2") createRefreshToken2
+### <a name="get_character_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getCharacterStoryCollection") getCharacterStoryCollection
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCharacterStoryCollection
 
 
 ```javascript
-function createRefreshToken2(authorization, refreshToken, scope, formParams, callback)
+function getCharacterStoryCollection(characterId, comics, creators, events, limit, modifiedSince, offset, orderBy, series, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| characterId |  ``` Required ```  | The character ID. |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 
@@ -622,13 +1147,17 @@ function createRefreshToken2(authorization, refreshToken, scope, formParams, cal
 
 ```javascript
 
-    var authorization = 'Authorization';
-    var refreshToken = refresh_token;
-    var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
+    var characterId = 'characterId';
+    var comics = 'comics';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
 
-    controller.createRefreshToken2(authorization, refreshToken, scope, formParams, function(error, response, context) {
+    controller.getCharacterStoryCollection(characterId, comics, creators, events, limit, modifiedSince, offset, orderBy, series, function(error, response, context) {
 
     
 	});
@@ -638,8 +1167,1377 @@ function createRefreshToken2(authorization, refreshToken, scope, formParams, cal
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_story_individual"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getStoryIndividual") getStoryIndividual
+
+> getStoryIndividual
+
+
+```javascript
+function getStoryIndividual(storyId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | Filter by story id. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var storyId = 'storyId';
+
+    controller.getStoryIndividual(storyId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Story not found. |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="creators_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CreatorsController") CreatorsController
+
+### Get singleton instance
+
+The singleton instance of the ``` CreatorsController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.CreatorsController;
+```
+
+### <a name="get_creator_individual"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorIndividual") getCreatorIndividual
+
+> getCreatorIndividual
+
+
+```javascript
+function getCreatorIndividual(creatorId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | A single creator id. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var creatorId = 'creatorId';
+
+    controller.getCreatorIndividual(creatorId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Creator not found. |
+
+
+
+
+### <a name="get_creator_collection_by_comic_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByComicId") getCreatorCollectionByComicId
+
+> getCreatorCollectionByComicId
+
+
+```javascript
+function getCreatorCollectionByComicId(comicId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comicId |  ``` Required ```  | The comic id. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comicId = 'comicId';
+    var comics = 'comics';
+    var firstName = 'firstName';
+    var firstNameStartsWith = 'firstNameStartsWith';
+    var lastName = 'lastName';
+    var lastNameStartsWith = 'lastNameStartsWith';
+    var limit = 'limit';
+    var middleName = 'middleName';
+    var middleNameStartsWith = 'middleNameStartsWith';
+    var modifiedSince = 'modifiedSince';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+    var suffix = 'suffix';
+
+    controller.getCreatorCollectionByComicId(comicId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollection") getCreatorCollection
+
+> getCreatorCollection
+
+
+```javascript
+function getCreatorCollection(comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. Brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comics = 'comics';
+    var events = 'events';
+    var firstName = 'firstName';
+    var firstNameStartsWith = 'firstNameStartsWith';
+    var lastName = 'lastName';
+    var lastNameStartsWith = 'lastNameStartsWith';
+    var limit = 'limit';
+    var middleName = 'middleName';
+    var middleNameStartsWith = 'middleNameStartsWith';
+    var modifiedSince = 'modifiedSince';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+    var suffix = 'suffix';
+
+    controller.getCreatorCollection(comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_collection_by_event_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByEventId") getCreatorCollectionByEventId
+
+> getCreatorCollectionByEventId
+
+
+```javascript
+function getCreatorCollectionByEventId(eventId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var eventId = 'eventId';
+    var comics = 'comics';
+    var firstName = 'firstName';
+    var firstNameStartsWith = 'firstNameStartsWith';
+    var lastName = 'lastName';
+    var lastNameStartsWith = 'lastNameStartsWith';
+    var limit = 'limit';
+    var middleName = 'middleName';
+    var middleNameStartsWith = 'middleNameStartsWith';
+    var modifiedSince = 'modifiedSince';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var stories = 'stories';
+    var suffix = 'suffix';
+
+    controller.getCreatorCollectionByEventId(eventId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionBySeriesId") getCreatorCollectionBySeriesId
+
+> getCreatorCollectionBySeriesId
+
+
+```javascript
+function getCreatorCollectionBySeriesId(seriesId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, stories, suffix, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var seriesId = 'seriesId';
+    var comics = 'comics';
+    var events = 'events';
+    var firstName = 'firstName';
+    var firstNameStartsWith = 'firstNameStartsWith';
+    var lastName = 'lastName';
+    var lastNameStartsWith = 'lastNameStartsWith';
+    var limit = 'limit';
+    var middleName = 'middleName';
+    var middleNameStartsWith = 'middleNameStartsWith';
+    var modifiedSince = 'modifiedSince';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var stories = 'stories';
+    var suffix = 'suffix';
+
+    controller.getCreatorCollectionBySeriesId(seriesId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, stories, suffix, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByStoryId") getCreatorCollectionByStoryId
+
+> getCreatorCollectionByStoryId
+
+
+```javascript
+function getCreatorCollectionByStoryId(storyId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, suffix, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | The story ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var storyId = 'storyId';
+    var comics = 'comics';
+    var events = 'events';
+    var firstName = 'firstName';
+    var firstNameStartsWith = 'firstNameStartsWith';
+    var lastName = 'lastName';
+    var lastNameStartsWith = 'lastNameStartsWith';
+    var limit = 'limit';
+    var middleName = 'middleName';
+    var middleNameStartsWith = 'middleNameStartsWith';
+    var modifiedSince = 'modifiedSince';
+    var nameStartsWith = 'nameStartsWith';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var suffix = 'suffix';
+
+    controller.getCreatorCollectionByStoryId(storyId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, suffix, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="comics_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ComicsController") ComicsController
+
+### Get singleton instance
+
+The singleton instance of the ``` ComicsController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.ComicsController;
+```
+
+### <a name="get_comic_individual"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicIndividual") getComicIndividual
+
+> getComicIndividual
+
+
+```javascript
+function getComicIndividual(comicId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comicId |  ``` Required ```  | A single comic. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var comicId = 'comicId';
+
+    controller.getComicIndividual(comicId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Comic not found. |
+
+
+
+
+### <a name="get_comics_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCharacterCollection") getComicsCharacterCollection
+
+> getComicsCharacterCollection
+
+
+```javascript
+function getComicsCharacterCollection(characterId, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character id. |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characterId = 'characterId';
+    var collaborators = 'collaborators';
+    var creators = 'creators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCharacterCollection(characterId, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comics_collection"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollection") getComicsCollection
+
+> getComicsCollection
+
+
+```javascript
+function getComicsCollection(characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). Accepts a comma-separated list of ids. |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). Accepts a comma-separated list of ids. |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characters = 'characters';
+    var collaborators = 'collaborators';
+    var creators = 'creators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCollection(characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comics_collection_by_creator_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByCreatorId") getComicsCollectionByCreatorId
+
+> getComicsCollectionByCreatorId
+
+
+```javascript
+function getComicsCollectionByCreatorId(creatorId, characters, collaborators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var creatorId = 'creatorId';
+    var characters = 'characters';
+    var collaborators = 'collaborators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCollectionByCreatorId(creatorId, characters, collaborators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comics_collection_by_event_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByEventId") getComicsCollectionByEventId
+
+> getComicsCollectionByEventId
+
+
+```javascript
+function getComicsCollectionByEventId(eventId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event id. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var eventId = 'eventId';
+    var characters = 'characters';
+    var collaborators = 'collaborators';
+    var creators = 'creators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCollectionByEventId(eventId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comics_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionBySeriesId") getComicsCollectionBySeriesId
+
+> getComicsCollectionBySeriesId
+
+
+```javascript
+function getComicsCollectionBySeriesId(seriesId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, sharedAppearances, startYear, stories, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var seriesId = 'seriesId';
+    var characters = 'characters';
+    var collaborators = 'collaborators';
+    var creators = 'creators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCollectionBySeriesId(seriesId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, sharedAppearances, startYear, stories, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_comics_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByStoryId") getComicsCollectionByStoryId
+
+> getComicsCollectionByStoryId
+
+
+```javascript
+function getComicsCollectionByStoryId(storyId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, title, titleStartsWith, upc, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var storyId = 'storyId';
+    var characters = 'characters';
+    var collaborators = 'collaborators';
+    var creators = 'creators';
+    var dateDescriptor = Object.keys(dateDescriptor)[0];
+    var dateRange = 'dateRange';
+    var diamondCode = 'diamondCode';
+    var digitalId = 'digitalId';
+    var ean = 'ean';
+    var events = 'events';
+    var format = 'format';
+    var formatType = Object.keys(formatType)[0];
+    var hasDigitalIssue = 'hasDigitalIssue';
+    var isbn = 'isbn';
+    var issn = 'issn';
+    var issueNumber = 'issueNumber';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var noVariants = 'noVariants';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var series = 'series';
+    var sharedAppearances = 'sharedAppearances';
+    var startYear = 'startYear';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+    var upc = 'upc';
+
+    controller.getComicsCollectionByStoryId(storyId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, title, titleStartsWith, upc, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="series_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SeriesController") SeriesController
+
+### Get singleton instance
+
+The singleton instance of the ``` SeriesController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.SeriesController;
+```
+
+### <a name="get_series_individual"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getSeriesIndividual") getSeriesIndividual
+
+> getSeriesIndividual
+
+
+```javascript
+function getSeriesIndividual(seriesId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | Filter by series title. |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var seriesId = 'seriesId';
+
+    controller.getSeriesIndividual(seriesId, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Series not found. |
+
+
+
+
+### <a name="get_character_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getCharacterSeriesCollection") getCharacterSeriesCollection
+
+> getCharacterSeriesCollection
+
+
+```javascript
+function getCharacterSeriesCollection(characterId, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character ID |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characterId = 'characterId';
+    var comics = 'comics';
+    var contains = 'contains';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var seriesType = 'seriesType';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+
+    controller.getCharacterSeriesCollection(characterId, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_creator_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getCreatorSeriesCollection") getCreatorSeriesCollection
+
+> getCreatorSeriesCollection
+
+
+```javascript
+function getCreatorSeriesCollection(creatorId, characters, comics, contains, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var creatorId = 'creatorId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var contains = 'contains';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var seriesType = 'seriesType';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+
+    controller.getCreatorSeriesCollection(creatorId, characters, comics, contains, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_event_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getEventSeriesCollection") getEventSeriesCollection
+
+> getEventSeriesCollection
+
+
+```javascript
+function getEventSeriesCollection(eventId, characters, comics, contains, creators, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var eventId = 'eventId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var contains = 'contains';
+    var creators = 'creators';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var seriesType = 'seriesType';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+
+    controller.getEventSeriesCollection(eventId, characters, comics, contains, creators, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getSeriesCollection") getSeriesCollection
+
+> getSeriesCollection
+
+
+```javascript
+function getSeriesCollection(characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only series matching the specified title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var characters = 'characters';
+    var comics = 'comics';
+    var contains = 'contains';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var seriesType = 'seriesType';
+    var startYear = 'startYear';
+    var stories = 'stories';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+
+    controller.getSeriesCollection(characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+
+### <a name="get_story_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getStorySeriesCollection") getStorySeriesCollection
+
+> getStorySeriesCollection
+
+
+```javascript
+function getStorySeriesCollection(storyId, characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, title, titleStartsWith, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var storyId = 'storyId';
+    var characters = 'characters';
+    var comics = 'comics';
+    var contains = 'contains';
+    var creators = 'creators';
+    var events = 'events';
+    var limit = 'limit';
+    var modifiedSince = 'modifiedSince';
+    var offset = 'offset';
+    var orderBy = 'orderBy';
+    var seriesType = 'seriesType';
+    var startYear = 'startYear';
+    var title = 'title';
+    var titleStartsWith = 'titleStartsWith';
+
+    controller.getStorySeriesCollection(storyId, characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, title, titleStartsWith, function(error, response, context) {
+
+    
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
 
 
 

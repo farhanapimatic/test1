@@ -1,5 +1,19 @@
 # Getting started
 
+The Marvel Comics API is a tool to help developers everywhere create amazing, uncanny and incredible web sites and applications using data from the 70-plus years of the Marvel age of comics.
+
+**Ready to get started?** Great!
+
+Here's the short version of what you need to do:
+
+* **Sign up**: [Get an API key](https://developer.marvel.com/account)
+* **Be a good API citizen**: read, understand, and abide by the [terms of use](https://developer.marvel.com/terms) for the Marvel Comics API
+* **Link back**: observe the [attribution and linking guidelines](https://developer.marvel.com/documentation/attribution) when displaying data from the API
+* **Keep in touch**: [tell us about what you're building](https://developer.marvel.com/community) and talk to other developers on our community page
+* **Build cool stuff**
+
+Finally, remember that the Marvel API suite and portal are in beta and this is an evolving project. To the extent that it is possible, we will try to communicate changes to the API before they occur and will try to limit any modifications which cause backwards incompatible changes to applications.
+
 ## How to Build
 
 The generated code uses a few Maven dependencies e.g., Jackson, UniRest,
@@ -9,62 +23,62 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 ## How to Use
 
-The following section explains how to use the BibcodeQuery library in a new console project.
+The following section explains how to use the MarvelComics library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 ### 2. Add reference of the library project
 
-The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *BibcodeQueryLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
+The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *MarvelComicsLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
-Clicking the ``` Add ``` button will open a dialog where you need to specify BibcodeQuery in ``` Group Id ``` and BibcodeQueryLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
+Clicking the ``` Add ``` button will open a dialog where you need to specify MarvelComics in ``` Group Id ``` and MarvelComicsLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=BibcodeQuery-Java&workspaceName=BibcodeQuery&projectName=BibcodeQueryLib&rootNamespace=edu.harvard.adsabs)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=MarvelComics-Java&workspaceName=MarvelComics&projectName=MarvelComicsLib&rootNamespace=com.acme.corp.api)
 
 ## How to Test
 
@@ -73,7 +87,7 @@ JUnit is used as the testing framework and test runner.
 
 In Eclipse, for running the tests do the following:
 
-1. Select the project *BibcodeQueryLib* from the package explorer.
+1. Select the project *MarvelComicsLib* from the package explorer.
 2. Select "Run -> Run as -> JUnit Test" or use "Alt + Shift + X" followed by "T" to run the Tests.
 
 ## Initialization
@@ -83,10 +97,7 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthClientSecret | OAuth 2 Client Secret |
-| oAuthUsername | OAuth 2 Resource Owner Username |
-| oAuthPassword | OAuth 2 Resource Owner Password |
+| apikey | Developer's API key |
 
 
 
@@ -94,328 +105,590 @@ API client can be initialized as following.
 
 ```java
 // Configuration parameters and credentials
-String oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
-String oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
-String oAuthUsername = "oAuthUsername"; // OAuth 2 Resource Owner Username
-String oAuthPassword = "oAuthPassword"; // OAuth 2 Resource Owner Password
+String apikey = "apikey"; // Developer's API key
 
-BibcodeQueryClient client = new BibcodeQueryClient(oAuthClientId, oAuthClientSecret, oAuthUsername, oAuthPassword);
+MarvelComicsClient client = new MarvelComicsClient(apikey);
 ```
-
-You must authorize now authorize the client.
-
-### Authorizing your client
-
-Your application must obtain user authorization before it can execute an endpoint call.
-This SDK uses *OAuth 2.0 authorization* to authorize the client.
-
-The `authorize()` method will exchange the user's credentials for an *access token*.
-The access token is an object containing information for authorizing client requests and refreshing the token itself.
-
-
-```java
-try {
-    client.auth().authorize();
-} catch (Throwable e) {
-    // TODO Handle exception
-}
-```
-
-The client can now make authorized endpoint calls.
-
-### Refreshing token
-
-An access token may expire after sometime. To extend its lifetime, you must refresh the token.
-
-```java
-if(client.auth().isTokenExpired()) {
-    try {
-        client.auth().refreshToken();
-    } catch (Throwable e) {
-        // TODO Handle exception
-    }
-}
-```
-
-If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
-
-### Storing an access token for reuse
-
-It is recommended that you store the access token for reuse.
-
-You can store the access token in the session if it is a web application:
-
-```java
-// store token
-httpSession.setAttribute("access_token", edu.harvard.adsabs.Configuration.oAuthToken);
-```
-
-However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
-
-```java
-edu.harvard.adsabs.Configuration.oAuthTokenUpdateCallBack = new edu.harvard.adsabs.OAuthTokenUpdateCallBack() {
-    public void tokenUpdate(OAuthToken oAuthToken) {
-        // use session or some other way to persist the $token
-        httpSession.setAttribute("access_token", oAuthToken);
-    }
-};
-```
-
-The token update callback will be fired upon authorization as well as token refresh.
-
-### Creating a client from a stored token
-
-To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
-
-```java
-// load token later...
-edu.harvard.adsabs.Configuration.oAuthToken = (OAuthToken) httpSession.getAttribute("access_token");
-
-// Set other configuration, then instantiate client
-client = new BibcodeQueryClient();
-```
-
-### Complete example
-
-This example uses Spring framework. The `/callapi` route will first try to restore the access token from the session; otherwise it falls back to
-fetching a new access token. If the token is expired, then it will be refreshed before making any API call.
-
-```java
-package com.example;
-
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import edu.harvard.adsabs.BibcodeQueryClient;
-import edu.harvard.adsabs.models.OAuthToken;
-
-@Controller
-@RequestMapping("/")
-public class MainController {
-    private final BibcodeQueryClient client;
-
-    public MainController() {
-        // Configuration parameters and credentials
-        String oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
-        String oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
-        String oAuthUsername = "oAuthUsername"; // OAuth 2 Resource Owner Username
-        String oAuthPassword = "oAuthPassword"; // OAuth 2 Resource Owner Password
-        
-        this.client = new BibcodeQueryClient(oAuthClientId, oAuthClientSecret, oAuthUsername, oAuthPassword);
-    }
-
-    @RequestMapping(value = "/callapi", method = RequestMethod.GET, produces = "application/json")
-    public String callApi(HttpSession session, HttpServletResponse response) throws Throwable {
-        // redirect if access token is not set
-        if (session.getAttribute("access_token") == null) {
-            synchronized (client) {
-                OAuthToken token = client.auth().authorize();
-                session.setAttribute("access_token", token);
-            }
-        }
-
-        synchronized (client) {
-            edu.harvard.adsabs.Configuration.oAuthToken = (OAuthToken) session.getAttribute("access_token");
-
-            // refresh the token if it is expired
-            if(client.auth().isTokenExpired()) {
-                try {
-                    session.setAttribute("access_token", client.auth().refreshToken());
-                } catch (Throwable e) {
-                    // TODO Handle exception
-                }
-            }
-
-            // now you can use client to make endpoint calls
-            // client will automatically refresh the token when it expires
-            return "someView";
-        }
-    }
-}
-```
-
 
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
-* [APIController](#api_controller)
-* [OAuthAuthorizationController](#o_auth_authorization_controller)
+* [EventsController](#events_controller)
+* [CharactersController](#characters_controller)
+* [StoriesController](#stories_controller)
+* [CreatorsController](#creators_controller)
+* [ComicsController](#comics_controller)
+* [SeriesController](#series_controller)
 
-## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.BibcodeQueryBindingController") BibcodeQueryBindingController
+## <a name="events_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.EventsController") EventsController
 
 ### Get singleton instance
 
-The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
+The singleton instance of the ``` EventsController ``` class can be accessed from the API Client.
 
 ```java
-BibcodeQueryBindingController bibcodeQueryBinding = client.getBibcodeQueryBinding();
+EventsController events = client.getEvents();
 ```
 
-### <a name="get_bibcode_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.BibcodeQueryBindingController.getBibcodeAsync") getBibcodeAsync
+### <a name="get_events_collection_by_story_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getEventsCollectionByStoryIdAsync") getEventsCollectionByStoryIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> getBibcode
+> getEventsCollectionByStoryId
 
 
 ```java
-void getBibcodeAsync(
-        final String bibcode,
-        final String dbKey,
-        final String dataType,
-        final APICallBack<ReturnBibcode> callBack)
+void getEventsCollectionByStoryIdAsync(
+        final GetEventsCollectionByStoryIdInput input,
+        Map<String, Object> queryParameters,
+        final APICallBack<EventDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| bibcode |  ``` Required ```  | TODO: Add a parameter description |
-| dbKey |  ``` Required ```  | TODO: Add a parameter description |
-| dataType |  ``` Required ```  | TODO: Add a parameter description |
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
 
 
 #### Example Usage
 
 ```java
-String bibcode = "bibcode";
-String dbKey = "db_key";
-String dataType = "data_type";
+GetEventsCollectionByStoryIdInput collect = new GetEventsCollectionByStoryIdInput();
+
+String storyId = "storyId";
+collect.setStoryId(storyId);
+
+String characters = "characters";
+collect.setCharacters(characters);
+
+String comics = "comics";
+collect.setComics(comics);
+
+String creators = "creators";
+collect.setCreators(creators);
+
+String limit = "limit";
+collect.setLimit(limit);
+
+String modifiedSince = "modifiedSince";
+collect.setModifiedSince(modifiedSince);
+
+String name = "name";
+collect.setName(name);
+
+String nameStartsWith = "nameStartsWith";
+collect.setNameStartsWith(nameStartsWith);
+
+String offset = "offset";
+collect.setOffset(offset);
+
+String orderBy = "name";
+collect.setOrderBy(orderBy);
+
+String series = "series";
+collect.setSeries(series);
+
+// key-value map for optional query parameters
+Map<String, Object> queryParams = new LinkedHashMap<String, Object>();
 // Invoking the API call with sample inputs
-bibcodeQueryBinding.getBibcodeAsync(bibcode, dbKey, dataType, new APICallBack<ReturnBibcode>() {
-    public void onSuccess(HttpContext context, ReturnBibcode response) {
+events.getEventsCollectionByStoryIdAsync(collect, , queryParams, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.APIController") APIController
-
-### Get singleton instance
-
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
-
-```java
-APIController client = client.getClient();
-```
-
-### <a name="create_test_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.APIController.createTestAsync") createTestAsync
-
-> TODO: Add a method description
-
-
-```java
-void createTestAsync(
-        final TestRequest body,
-        final String cacheControl,
-        final String contentType,
-        final String postmanToken,
-        final APICallBack<DynamicResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-| cacheControl |  ``` Required ```  | TODO: Add a parameter description |
-| contentType |  ``` Required ```  | TODO: Add a parameter description |
-| postmanToken |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    TestRequest body = new TestRequest();
-    String cacheControl = "cache-control";
-    String contentType = "content-type";
-    String postmanToken = "postman-token";
-    // Invoking the API call with sample inputs
-    client.createTestAsync(body, cacheControl, contentType, postmanToken, new APICallBack<DynamicResponse>() {
-        public void onSuccess(HttpContext context, DynamicResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
 }
+);
+
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_events_collection_by_series_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getEventsCollectionBySeriesIdAsync") getEventsCollectionBySeriesIdAsync
+
+> getEventsCollectionBySeriesId
+
+
+```java
+void getEventsCollectionBySeriesIdAsync(
+        final String seriesId,
+        final String characters,
+        final String comics,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String stories,
+        final APICallBack<EventDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+#### Example Usage
+
+```java
+String seriesId = "seriesId";
+String characters = "characters";
+String comics = "comics";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String stories = "stories";
+// Invoking the API call with sample inputs
+events.getEventsCollectionBySeriesIdAsync(seriesId, characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_creator_events_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getCreatorEventsCollectionAsync") getCreatorEventsCollectionAsync
+
+> getCreatorEventsCollection
+
+
+```java
+void getCreatorEventsCollectionAsync(
+        final String creatorId,
+        final String characters,
+        final String comics,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<EventDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+#### Example Usage
+
+```java
+String creatorId = "creatorId";
+String characters = "characters";
+String comics = "comics";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
+// Invoking the API call with sample inputs
+events.getCreatorEventsCollectionAsync(creatorId, characters, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_issue_events_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getIssueEventsCollectionAsync") getIssueEventsCollectionAsync
+
+> getIssueEventsCollection
+
+
+```java
+void getIssueEventsCollectionAsync(
+        final String comicId,
+        final String characters,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<EventDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| comicId |  ``` Required ```  | The comic ID. |
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+#### Example Usage
+
+```java
+String comicId = "comicId";
+String characters = "characters";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
+// Invoking the API call with sample inputs
+events.getIssueEventsCollectionAsync(comicId, characters, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_character_events_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getCharacterEventsCollectionAsync") getCharacterEventsCollectionAsync
+
+> getCharacterEventsCollection
+
+
+```java
+void getCharacterEventsCollectionAsync(
+        final String characterId,
+        final String comics,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<EventDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character ID. |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Filter the event list by name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+
+
+#### Example Usage
+
+```java
+String characterId = "characterId";
+String comics = "comics";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
+// Invoking the API call with sample inputs
+events.getCharacterEventsCollectionAsync(characterId, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_event_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getEventIndividualAsync") getEventIndividualAsync
+
+> getEventIndividual
+
+
+```java
+void getEventIndividualAsync(
+        final String eventId,
+        final APICallBack<EventModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | A single event. |
+
+
+#### Example Usage
+
+```java
+String eventId = "eventId";
+// Invoking the API call with sample inputs
+events.getEventIndividualAsync(eventId, new APICallBack<EventModel>() {
+    public void onSuccess(HttpContext context, EventModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Event not found. |
+
+
+
+### <a name="get_events_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.EventsController.getEventsCollectionAsync") getEventsCollectionAsync
+
+> getEventsCollection
+
+
+```java
+void getEventsCollectionAsync(
+        final String characters,
+        final String comics,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<EventDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only events which match the specified name. |
+| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
+| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only events which take place in the specified stories (accepts a comma-separated list of ids). |
+
+
+#### Example Usage
+
+```java
+String characters = "characters";
+String comics = "comics";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
+// Invoking the API call with sample inputs
+events.getEventsCollectionAsync(characters, comics, creators, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<EventDataWrapperModel>() {
+    public void onSuccess(HttpContext context, EventDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController") OAuthAuthorizationController
+## <a name="characters_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.CharactersController") CharactersController
 
 ### Get singleton instance
 
-The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+The singleton instance of the ``` CharactersController ``` class can be accessed from the API Client.
 
 ```java
-OAuthAuthorizationController oAuthAuthorization = client.getOAuthAuthorization();
+CharactersController characters = client.getCharacters();
 ```
 
-### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
+### <a name="get_character_collection_by_story_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getCharacterCollectionByStoryIdAsync") getCharacterCollectionByStoryIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCharacterCollectionByStoryId
 
 
 ```java
-void createRequestTokenAsync(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCharacterCollectionByStoryIdAsync(
+        final String storyId,
+        final String comics,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<CharacterDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| storyId |  ``` Required ```  | The story ID. |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String storyId = "storyId";
+String comics = "comics";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestTokenAsync(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getCharacterCollectionByStoryIdAsync(storyId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, new APICallBack<CharacterDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CharacterDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -429,48 +702,62 @@ oAuthAuthorization.createRequestTokenAsync(authorization, username, password, sc
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
+### <a name="get_series_character_wrapper_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getSeriesCharacterWrapperAsync") getSeriesCharacterWrapperAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getSeriesCharacterWrapper
 
 
 ```java
-void createRefreshTokenAsync(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getSeriesCharacterWrapperAsync(
+        final String seriesId,
+        final String comics,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String stories,
+        final APICallBack<CharacterDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| seriesId |  ``` Required ```  | The series id. |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String seriesId = "seriesId";
+String comics = "comics";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String stories = "stories";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getSeriesCharacterWrapperAsync(seriesId, comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, stories, new APICallBack<CharacterDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CharacterDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -484,51 +771,62 @@ oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, f
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken1Async") createRequestToken1Async
+### <a name="get_event_character_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getEventCharacterCollectionAsync") getEventCharacterCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getEventCharacterCollection
 
 
 ```java
-void createRequestToken1Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getEventCharacterCollectionAsync(
+        final String eventId,
+        final String comics,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<CharacterDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| eventId |  ``` Required ```  | The event ID |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String eventId = "eventId";
+String comics = "comics";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken1Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getEventCharacterCollectionAsync(eventId, comics, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<CharacterDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CharacterDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -542,48 +840,62 @@ oAuthAuthorization.createRequestToken1Async(authorization, username, password, s
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken1Async") createRefreshToken1Async
+### <a name="get_comic_character_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getComicCharacterCollectionAsync") getComicCharacterCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getComicCharacterCollection
 
 
 ```java
-void createRefreshToken1Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getComicCharacterCollectionAsync(
+        final String comicId,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<CharacterDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comicId |  ``` Required ```  | The comic id. |
+| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comicId = "comicId";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getComicCharacterCollectionAsync(comicId, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<CharacterDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CharacterDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -597,51 +909,35 @@ oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken2Async") createRequestToken2Async
+### <a name="get_character_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getCharacterIndividualAsync") getCharacterIndividualAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCharacterIndividual
 
 
 ```java
-void createRequestToken2Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCharacterIndividualAsync(
+        final String characterId,
+        final APICallBack<MCharacterModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| characterId |  ``` Required ```  | A single character id. |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String characterId = "characterId";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken2Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getCharacterIndividualAsync(characterId, new APICallBack<MCharacterModel>() {
+    public void onSuccess(HttpContext context, MCharacterModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -655,48 +951,62 @@ oAuthAuthorization.createRequestToken2Async(authorization, username, password, s
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 404 | Character not found. |
 
 
 
-### <a name="create_refresh_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken2Async") createRefreshToken2Async
+### <a name="get_character_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CharactersController.getCharacterCollectionAsync") getCharacterCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCharacterCollection
 
 
 ```java
-void createRefreshToken2Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCharacterCollectionAsync(
+        final String comics,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String name,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final APICallBack<CharacterDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only characters which appear in the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
+| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
+| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
+| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comics = "comics";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String name = "name";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "name";
+String series = "series";
+String stories = "stories";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken2Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+characters.getCharacterCollectionAsync(comics, events, limit, modifiedSince, name, nameStartsWith, offset, orderBy, series, stories, new APICallBack<CharacterDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CharacterDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -710,51 +1020,71 @@ oAuthAuthorization.createRefreshToken2Async(authorization, refreshToken, scope, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken11Async") createRequestToken11Async
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="stories_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.StoriesController") StoriesController
 
-> Create a new OAuth 2 token.
+### Get singleton instance
+
+The singleton instance of the ``` StoriesController ``` class can be accessed from the API Client.
+
+```java
+StoriesController stories = client.getStories();
+```
+
+### <a name="get_story_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getStoryCollectionAsync") getStoryCollectionAsync
+
+> getStoryCollection
 
 
 ```java
-void createRequestToken11Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getStoryCollectionAsync(
+        final String characters,
+        final String comics,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String characters = "characters";
+String comics = "comics";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken11Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getStoryCollectionAsync(characters, comics, creators, events, limit, modifiedSince, offset, orderBy, series, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -768,48 +1098,59 @@ oAuthAuthorization.createRequestToken11Async(authorization, username, password, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken11Async") createRefreshToken11Async
+### <a name="get_series_story_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getSeriesStoryCollectionAsync") getSeriesStoryCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getSeriesStoryCollection
 
 
 ```java
-void createRefreshToken11Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getSeriesStoryCollectionAsync(
+        final String seriesId,
+        final String characters,
+        final String comics,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String seriesId = "seriesId";
+String characters = "characters";
+String comics = "comics";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken11Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getSeriesStoryCollectionAsync(seriesId, characters, comics, creators, events, limit, modifiedSince, offset, orderBy, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -823,51 +1164,59 @@ oAuthAuthorization.createRefreshToken11Async(authorization, refreshToken, scope,
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token21_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken21Async") createRequestToken21Async
+### <a name="get_event_story_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getEventStoryCollectionAsync") getEventStoryCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getEventStoryCollection
 
 
 ```java
-void createRequestToken21Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getEventStoryCollectionAsync(
+        final String eventId,
+        final String characters,
+        final String comics,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| eventId |  ``` Required ```  | The ID of the event. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String eventId = "eventId";
+String characters = "characters";
+String comics = "comics";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken21Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getEventStoryCollectionAsync(eventId, characters, comics, creators, limit, modifiedSince, offset, orderBy, series, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -881,48 +1230,59 @@ oAuthAuthorization.createRequestToken21Async(authorization, username, password, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token21_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken21Async") createRefreshToken21Async
+### <a name="get_creator_story_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getCreatorStoryCollectionAsync") getCreatorStoryCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorStoryCollection
 
 
 ```java
-void createRefreshToken21Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorStoryCollectionAsync(
+        final String creatorId,
+        final String characters,
+        final String comics,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| creatorId |  ``` Required ```  | The ID of the creator. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only stories contained in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String creatorId = "creatorId";
+String characters = "characters";
+String comics = "comics";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken21Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getCreatorStoryCollectionAsync(creatorId, characters, comics, events, limit, modifiedSince, offset, orderBy, series, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -936,51 +1296,59 @@ oAuthAuthorization.createRefreshToken21Async(authorization, refreshToken, scope,
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken11Async") createRequestToken11Async
+### <a name="get_comic_story_collection_by_comic_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getComicStoryCollectionByComicIdAsync") getComicStoryCollectionByComicIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicStoryCollectionByComicId
 
 
 ```java
-void createRequestToken11Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getComicStoryCollectionByComicIdAsync(
+        final String comicId,
+        final String characters,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comicId |  ``` Required ```  | The comic ID. |
+| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comicId = "comicId";
+String characters = "characters";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken11Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getComicStoryCollectionByComicIdAsync(comicId, characters, creators, events, limit, modifiedSince, offset, orderBy, series, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -994,48 +1362,59 @@ oAuthAuthorization.createRequestToken11Async(authorization, username, password, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token11_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken11Async") createRefreshToken11Async
+### <a name="get_character_story_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getCharacterStoryCollectionAsync") getCharacterStoryCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCharacterStoryCollection
 
 
 ```java
-void createRefreshToken11Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCharacterStoryCollectionAsync(
+        final String characterId,
+        final String comics,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final APICallBack<StoryDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| characterId |  ``` Required ```  | The character ID. |
+| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
+| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
+| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String characterId = "characterId";
+String comics = "comics";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "id";
+String series = "series";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken11Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getCharacterStoryCollectionAsync(characterId, comics, creators, events, limit, modifiedSince, offset, orderBy, series, new APICallBack<StoryDataWrapperModel>() {
+    public void onSuccess(HttpContext context, StoryDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1049,51 +1428,35 @@ oAuthAuthorization.createRefreshToken11Async(authorization, refreshToken, scope,
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken1Async") createRequestToken1Async
+### <a name="get_story_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.StoriesController.getStoryIndividualAsync") getStoryIndividualAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getStoryIndividual
 
 
 ```java
-void createRequestToken1Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getStoryIndividualAsync(
+        final String storyId,
+        final APICallBack<StoryModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| storyId |  ``` Required ```  | Filter by story id. |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String storyId = "storyId";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken1Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+stories.getStoryIndividualAsync(storyId, new APICallBack<StoryModel>() {
+    public void onSuccess(HttpContext context, StoryModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1107,48 +1470,47 @@ oAuthAuthorization.createRequestToken1Async(authorization, username, password, s
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 404 | Story not found. |
 
 
 
-### <a name="create_refresh_token1_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken1Async") createRefreshToken1Async
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="creators_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.CreatorsController") CreatorsController
 
-> Obtain a new access token using a refresh token
+### Get singleton instance
+
+The singleton instance of the ``` CreatorsController ``` class can be accessed from the API Client.
+
+```java
+CreatorsController creators = client.getCreators();
+```
+
+### <a name="get_creator_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorIndividualAsync") getCreatorIndividualAsync
+
+> getCreatorIndividual
 
 
 ```java
-void createRefreshToken1Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorIndividualAsync(
+        final String creatorId,
+        final APICallBack<CreatorModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| creatorId |  ``` Required ```  | A single creator id. |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String creatorId = "creatorId";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorIndividualAsync(creatorId, new APICallBack<CreatorModel>() {
+    public void onSuccess(HttpContext context, CreatorModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1162,51 +1524,80 @@ oAuthAuthorization.createRefreshToken1Async(authorization, refreshToken, scope, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 404 | Creator not found. |
 
 
 
-### <a name="create_request_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken2Async") createRequestToken2Async
+### <a name="get_creator_collection_by_comic_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorCollectionByComicIdAsync") getCreatorCollectionByComicIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByComicId
 
 
 ```java
-void createRequestToken2Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorCollectionByComicIdAsync(
+        final String comicId,
+        final String comics,
+        final String firstName,
+        final String firstNameStartsWith,
+        final String lastName,
+        final String lastNameStartsWith,
+        final String limit,
+        final String middleName,
+        final String middleNameStartsWith,
+        final String modifiedSince,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final String suffix,
+        final APICallBack<CreatorDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comicId |  ``` Required ```  | The comic id. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comicId = "comicId";
+String comics = "comics";
+String firstName = "firstName";
+String firstNameStartsWith = "firstNameStartsWith";
+String lastName = "lastName";
+String lastNameStartsWith = "lastNameStartsWith";
+String limit = "limit";
+String middleName = "middleName";
+String middleNameStartsWith = "middleNameStartsWith";
+String modifiedSince = "modifiedSince";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "lastName";
+String series = "series";
+String stories = "stories";
+String suffix = "suffix";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken2Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorCollectionByComicIdAsync(comicId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, new APICallBack<CreatorDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CreatorDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1220,48 +1611,80 @@ oAuthAuthorization.createRequestToken2Async(authorization, username, password, s
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token2_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken2Async") createRefreshToken2Async
+### <a name="get_creator_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorCollectionAsync") getCreatorCollectionAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorCollection
 
 
 ```java
-void createRefreshToken2Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorCollectionAsync(
+        final String comics,
+        final String events,
+        final String firstName,
+        final String firstNameStartsWith,
+        final String lastName,
+        final String lastNameStartsWith,
+        final String limit,
+        final String middleName,
+        final String middleNameStartsWith,
+        final String modifiedSince,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final String suffix,
+        final APICallBack<CreatorDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. Brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comics = "comics";
+String events = "events";
+String firstName = "firstName";
+String firstNameStartsWith = "firstNameStartsWith";
+String lastName = "lastName";
+String lastNameStartsWith = "lastNameStartsWith";
+String limit = "limit";
+String middleName = "middleName";
+String middleNameStartsWith = "middleNameStartsWith";
+String modifiedSince = "modifiedSince";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "lastName";
+String series = "series";
+String stories = "stories";
+String suffix = "suffix";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken2Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorCollectionAsync(comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, new APICallBack<CreatorDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CreatorDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1275,51 +1698,80 @@ oAuthAuthorization.createRefreshToken2Async(authorization, refreshToken, scope, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token3_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestToken3Async") createRequestToken3Async
+### <a name="get_creator_collection_by_event_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorCollectionByEventIdAsync") getCreatorCollectionByEventIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByEventId
 
 
 ```java
-void createRequestToken3Async(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorCollectionByEventIdAsync(
+        final String eventId,
+        final String comics,
+        final String firstName,
+        final String firstNameStartsWith,
+        final String lastName,
+        final String lastNameStartsWith,
+        final String limit,
+        final String middleName,
+        final String middleNameStartsWith,
+        final String modifiedSince,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String stories,
+        final String suffix,
+        final APICallBack<CreatorDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| eventId |  ``` Required ```  | The event ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String eventId = "eventId";
+String comics = "comics";
+String firstName = "firstName";
+String firstNameStartsWith = "firstNameStartsWith";
+String lastName = "lastName";
+String lastNameStartsWith = "lastNameStartsWith";
+String limit = "limit";
+String middleName = "middleName";
+String middleNameStartsWith = "middleNameStartsWith";
+String modifiedSince = "modifiedSince";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "lastName";
+String series = "series";
+String stories = "stories";
+String suffix = "suffix";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestToken3Async(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorCollectionByEventIdAsync(eventId, comics, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, stories, suffix, new APICallBack<CreatorDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CreatorDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1333,48 +1785,80 @@ oAuthAuthorization.createRequestToken3Async(authorization, username, password, s
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token3_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshToken3Async") createRefreshToken3Async
+### <a name="get_creator_collection_by_series_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorCollectionBySeriesIdAsync") getCreatorCollectionBySeriesIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorCollectionBySeriesId
 
 
 ```java
-void createRefreshToken3Async(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorCollectionBySeriesIdAsync(
+        final String seriesId,
+        final String comics,
+        final String events,
+        final String firstName,
+        final String firstNameStartsWith,
+        final String lastName,
+        final String lastNameStartsWith,
+        final String limit,
+        final String middleName,
+        final String middleNameStartsWith,
+        final String modifiedSince,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String stories,
+        final String suffix,
+        final APICallBack<CreatorDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| seriesId |  ``` Required ```  | The series ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String seriesId = "seriesId";
+String comics = "comics";
+String events = "events";
+String firstName = "firstName";
+String firstNameStartsWith = "firstNameStartsWith";
+String lastName = "lastName";
+String lastNameStartsWith = "lastNameStartsWith";
+String limit = "limit";
+String middleName = "middleName";
+String middleNameStartsWith = "middleNameStartsWith";
+String modifiedSince = "modifiedSince";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "lastName";
+String stories = "stories";
+String suffix = "suffix";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshToken3Async(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorCollectionBySeriesIdAsync(seriesId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, stories, suffix, new APICallBack<CreatorDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CreatorDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1388,51 +1872,80 @@ oAuthAuthorization.createRefreshToken3Async(authorization, refreshToken, scope, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
+### <a name="get_creator_collection_by_story_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.CreatorsController.getCreatorCollectionByStoryIdAsync") getCreatorCollectionByStoryIdAsync
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByStoryId
 
 
 ```java
-void createRequestTokenAsync(
-        final String authorization,
-        final String username,
-        final String password,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getCreatorCollectionByStoryIdAsync(
+        final String storyId,
+        final String comics,
+        final String events,
+        final String firstName,
+        final String firstNameStartsWith,
+        final String lastName,
+        final String lastNameStartsWith,
+        final String limit,
+        final String middleName,
+        final String middleNameStartsWith,
+        final String modifiedSince,
+        final String nameStartsWith,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String suffix,
+        final APICallBack<CreatorDataWrapperModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| username |  ``` Required ```  | Resource owner username |
-| password |  ``` Required ```  | Resource owner password |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| storyId |  ``` Required ```  | The story ID. |
+| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
+| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
+| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
+| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
+| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
+| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
+| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
+| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
+| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
+| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String username = "username";
-String password = "password";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String storyId = "storyId";
+String comics = "comics";
+String events = "events";
+String firstName = "firstName";
+String firstNameStartsWith = "firstNameStartsWith";
+String lastName = "lastName";
+String lastNameStartsWith = "lastNameStartsWith";
+String limit = "limit";
+String middleName = "middleName";
+String middleNameStartsWith = "middleNameStartsWith";
+String modifiedSince = "modifiedSince";
+String nameStartsWith = "nameStartsWith";
+String offset = "offset";
+String orderBy = "lastName";
+String series = "series";
+String suffix = "suffix";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRequestTokenAsync(authorization, username, password, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+creators.getCreatorCollectionByStoryIdAsync(storyId, comics, events, firstName, firstNameStartsWith, lastName, lastNameStartsWith, limit, middleName, middleNameStartsWith, modifiedSince, nameStartsWith, offset, orderBy, series, suffix, new APICallBack<CreatorDataWrapperModel>() {
+    public void onSuccess(HttpContext context, CreatorDataWrapperModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1446,48 +1959,47 @@ oAuthAuthorization.createRequestTokenAsync(authorization, username, password, sc
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 409 | Limit greater than 100. |
 
 
 
-### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "edu.harvard.adsabs.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
+[Back to List of Controllers](#list_of_controllers)
 
-> *Tags:*  ``` Skips Authentication ``` 
+## <a name="comics_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.ComicsController") ComicsController
 
-> Obtain a new access token using a refresh token
+### Get singleton instance
+
+The singleton instance of the ``` ComicsController ``` class can be accessed from the API Client.
+
+```java
+ComicsController comics = client.getComics();
+```
+
+### <a name="get_comic_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicIndividualAsync") getComicIndividualAsync
+
+> getComicIndividual
 
 
 ```java
-void createRefreshTokenAsync(
-        final String authorization,
-        final String refreshToken,
-        final String scope,
-        Map<String, Object> fieldParameters,
-        final APICallBack<OAuthToken> callBack)
+void getComicIndividualAsync(
+        final String comicId,
+        final APICallBack<ComicModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| refreshToken |  ``` Required ```  | Refresh token |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+| comicId |  ``` Required ```  | A single comic. |
 
 
 #### Example Usage
 
 ```java
-String authorization = "Authorization";
-String refreshToken = "refresh_token";
-String scope = "scope";
-// key-value map for optional form parameters
-Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+String comicId = "comicId";
 // Invoking the API call with sample inputs
-oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, formParams, new APICallBack<OAuthToken>() {
-    public void onSuccess(HttpContext context, OAuthToken response) {
+comics.getComicIndividualAsync(comicId, new APICallBack<ComicModel>() {
+    public void onSuccess(HttpContext context, ComicModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
@@ -1501,8 +2013,1189 @@ oAuthAuthorization.createRefreshTokenAsync(authorization, refreshToken, scope, f
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
+| 404 | Comic not found. |
+
+
+
+### <a name="get_comics_character_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCharacterCollectionAsync") getComicsCharacterCollectionAsync
+
+> getComicsCharacterCollection
+
+
+```java
+void getComicsCharacterCollectionAsync(
+        final String characterId,
+        final String collaborators,
+        final String creators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String sharedAppearances,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character id. |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String characterId = "characterId";
+String collaborators = "collaborators";
+String creators = "creators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String series = "series";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCharacterCollectionAsync(characterId, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_comics_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCollectionAsync") getComicsCollectionAsync
+
+> getComicsCollection
+
+
+```java
+void getComicsCollectionAsync(
+        final String characters,
+        final String collaborators,
+        final String creators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String sharedAppearances,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). Accepts a comma-separated list of ids. |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). Accepts a comma-separated list of ids. |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String characters = "characters";
+String collaborators = "collaborators";
+String creators = "creators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String series = "series";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCollectionAsync(characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_comics_collection_by_creator_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCollectionByCreatorIdAsync") getComicsCollectionByCreatorIdAsync
+
+> getComicsCollectionByCreatorId
+
+
+```java
+void getComicsCollectionByCreatorIdAsync(
+        final String creatorId,
+        final String characters,
+        final String collaborators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String sharedAppearances,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String creatorId = "creatorId";
+String characters = "characters";
+String collaborators = "collaborators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String series = "series";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCollectionByCreatorIdAsync(creatorId, characters, collaborators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_comics_collection_by_event_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCollectionByEventIdAsync") getComicsCollectionByEventIdAsync
+
+> getComicsCollectionByEventId
+
+
+```java
+void getComicsCollectionByEventIdAsync(
+        final String eventId,
+        final String characters,
+        final String collaborators,
+        final String creators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String sharedAppearances,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event id. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String eventId = "eventId";
+String characters = "characters";
+String collaborators = "collaborators";
+String creators = "creators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String series = "series";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCollectionByEventIdAsync(eventId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, stories, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_comics_collection_by_series_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCollectionBySeriesIdAsync") getComicsCollectionBySeriesIdAsync
+
+> getComicsCollectionBySeriesId
+
+
+```java
+void getComicsCollectionBySeriesIdAsync(
+        final String seriesId,
+        final String characters,
+        final String collaborators,
+        final String creators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String sharedAppearances,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | The series ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String seriesId = "seriesId";
+String characters = "characters";
+String collaborators = "collaborators";
+String creators = "creators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCollectionBySeriesIdAsync(seriesId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, sharedAppearances, startYear, stories, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_comics_collection_by_story_id_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.ComicsController.getComicsCollectionByStoryIdAsync") getComicsCollectionByStoryIdAsync
+
+> getComicsCollectionByStoryId
+
+
+```java
+void getComicsCollectionByStoryIdAsync(
+        final String storyId,
+        final String characters,
+        final String collaborators,
+        final String creators,
+        final DateDescriptorEnum dateDescriptor,
+        final String dateRange,
+        final String diamondCode,
+        final String digitalId,
+        final String ean,
+        final String events,
+        final String format,
+        final FormatTypeEnum formatType,
+        final String hasDigitalIssue,
+        final String isbn,
+        final String issn,
+        final String issueNumber,
+        final String limit,
+        final String modifiedSince,
+        final String noVariants,
+        final String offset,
+        final String orderBy,
+        final String series,
+        final String sharedAppearances,
+        final String startYear,
+        final String title,
+        final String titleStartsWith,
+        final String upc,
+        final APICallBack<ComicDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
+| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
+| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
+| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
+| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
+| diamondCode |  ``` Optional ```  | Filter by diamond code. |
+| digitalId |  ``` Optional ```  | Filter by digital comic id. |
+| ean |  ``` Optional ```  | Filter by EAN. |
+| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
+| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
+| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
+| isbn |  ``` Optional ```  | Filter by ISBN. |
+| issn |  ``` Optional ```  | Filter by ISSN. |
+| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
+| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
+| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
+| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
+| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
+| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
+| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
+| upc |  ``` Optional ```  | Filter by UPC. |
+
+
+#### Example Usage
+
+```java
+String storyId = "storyId";
+String characters = "characters";
+String collaborators = "collaborators";
+String creators = "creators";
+DateDescriptorEnum dateDescriptor = DateDescriptorEnum.fromString("lastWeek");
+String dateRange = "dateRange";
+String diamondCode = "diamondCode";
+String digitalId = "digitalId";
+String ean = "ean";
+String events = "events";
+String format = "comic";
+FormatTypeEnum formatType = FormatTypeEnum.fromString("collection");
+String hasDigitalIssue = "true";
+String isbn = "isbn";
+String issn = "issn";
+String issueNumber = "issueNumber";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String noVariants = "true";
+String offset = "offset";
+String orderBy = "focDate";
+String series = "series";
+String sharedAppearances = "sharedAppearances";
+String startYear = "startYear";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+String upc = "upc";
+// Invoking the API call with sample inputs
+comics.getComicsCollectionByStoryIdAsync(storyId, characters, collaborators, creators, dateDescriptor, dateRange, diamondCode, digitalId, ean, events, format, formatType, hasDigitalIssue, isbn, issn, issueNumber, limit, modifiedSince, noVariants, offset, orderBy, series, sharedAppearances, startYear, title, titleStartsWith, upc, new APICallBack<ComicDataWrapperModel>() {
+    public void onSuccess(HttpContext context, ComicDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="series_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.acme.corp.api.controllers.SeriesController") SeriesController
+
+### Get singleton instance
+
+The singleton instance of the ``` SeriesController ``` class can be accessed from the API Client.
+
+```java
+SeriesController series = client.getSeries();
+```
+
+### <a name="get_series_individual_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getSeriesIndividualAsync") getSeriesIndividualAsync
+
+> getSeriesIndividual
+
+
+```java
+void getSeriesIndividualAsync(
+        final String seriesId,
+        final APICallBack<SeriesModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| seriesId |  ``` Required ```  | Filter by series title. |
+
+
+#### Example Usage
+
+```java
+String seriesId = "seriesId";
+// Invoking the API call with sample inputs
+series.getSeriesIndividualAsync(seriesId, new APICallBack<SeriesModel>() {
+    public void onSuccess(HttpContext context, SeriesModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 404 | Series not found. |
+
+
+
+### <a name="get_character_series_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getCharacterSeriesCollectionAsync") getCharacterSeriesCollectionAsync
+
+> getCharacterSeriesCollection
+
+
+```java
+void getCharacterSeriesCollectionAsync(
+        final String characterId,
+        final String comics,
+        final String contains,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String seriesType,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final APICallBack<SeriesDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characterId |  ``` Required ```  | The character ID |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+#### Example Usage
+
+```java
+String characterId = "characterId";
+String comics = "comics";
+String contains = "comic";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "title";
+String seriesType = "collection";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+// Invoking the API call with sample inputs
+series.getCharacterSeriesCollectionAsync(characterId, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, new APICallBack<SeriesDataWrapperModel>() {
+    public void onSuccess(HttpContext context, SeriesDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_creator_series_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getCreatorSeriesCollectionAsync") getCreatorSeriesCollectionAsync
+
+> getCreatorSeriesCollection
+
+
+```java
+void getCreatorSeriesCollectionAsync(
+        final String creatorId,
+        final String characters,
+        final String comics,
+        final String contains,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String seriesType,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final APICallBack<SeriesDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| creatorId |  ``` Required ```  | The creator ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+#### Example Usage
+
+```java
+String creatorId = "creatorId";
+String characters = "characters";
+String comics = "comics";
+String contains = "comic";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "title";
+String seriesType = "collection";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+// Invoking the API call with sample inputs
+series.getCreatorSeriesCollectionAsync(creatorId, characters, comics, contains, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, new APICallBack<SeriesDataWrapperModel>() {
+    public void onSuccess(HttpContext context, SeriesDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_event_series_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getEventSeriesCollectionAsync") getEventSeriesCollectionAsync
+
+> getEventSeriesCollection
+
+
+```java
+void getEventSeriesCollectionAsync(
+        final String eventId,
+        final String characters,
+        final String comics,
+        final String contains,
+        final String creators,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String seriesType,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final APICallBack<SeriesDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| eventId |  ``` Required ```  | The event ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+#### Example Usage
+
+```java
+String eventId = "eventId";
+String characters = "characters";
+String comics = "comics";
+String contains = "comic";
+String creators = "creators";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "title";
+String seriesType = "collection";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+// Invoking the API call with sample inputs
+series.getEventSeriesCollectionAsync(eventId, characters, comics, contains, creators, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, new APICallBack<SeriesDataWrapperModel>() {
+    public void onSuccess(HttpContext context, SeriesDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_series_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getSeriesCollectionAsync") getSeriesCollectionAsync
+
+> getSeriesCollection
+
+
+```java
+void getSeriesCollectionAsync(
+        final String characters,
+        final String comics,
+        final String contains,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String seriesType,
+        final String startYear,
+        final String stories,
+        final String title,
+        final String titleStartsWith,
+        final APICallBack<SeriesDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
+| title |  ``` Optional ```  | Return only series matching the specified title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+#### Example Usage
+
+```java
+String characters = "characters";
+String comics = "comics";
+String contains = "comic";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "title";
+String seriesType = "collection";
+String startYear = "startYear";
+String stories = "stories";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+// Invoking the API call with sample inputs
+series.getSeriesCollectionAsync(characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, stories, title, titleStartsWith, new APICallBack<SeriesDataWrapperModel>() {
+    public void onSuccess(HttpContext context, SeriesDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
+
+
+
+### <a name="get_story_series_collection_async"></a>![Method: ](https://apidocs.io/img/method.png "com.acme.corp.api.controllers.SeriesController.getStorySeriesCollectionAsync") getStorySeriesCollectionAsync
+
+> getStorySeriesCollection
+
+
+```java
+void getStorySeriesCollectionAsync(
+        final String storyId,
+        final String characters,
+        final String comics,
+        final String contains,
+        final String creators,
+        final String events,
+        final String limit,
+        final String modifiedSince,
+        final String offset,
+        final String orderBy,
+        final String seriesType,
+        final String startYear,
+        final String title,
+        final String titleStartsWith,
+        final APICallBack<SeriesDataWrapperModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| storyId |  ``` Required ```  | The story ID. |
+| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
+| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
+| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
+| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
+| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
+| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
+| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
+| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
+| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
+| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
+| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
+| title |  ``` Optional ```  | Filter by series title. |
+| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
+
+
+#### Example Usage
+
+```java
+String storyId = "storyId";
+String characters = "characters";
+String comics = "comics";
+String contains = "comic";
+String creators = "creators";
+String events = "events";
+String limit = "limit";
+String modifiedSince = "modifiedSince";
+String offset = "offset";
+String orderBy = "title";
+String seriesType = "collection";
+String startYear = "startYear";
+String title = "title";
+String titleStartsWith = "titleStartsWith";
+// Invoking the API call with sample inputs
+series.getStorySeriesCollectionAsync(storyId, characters, comics, contains, creators, events, limit, modifiedSince, offset, orderBy, seriesType, startYear, title, titleStartsWith, new APICallBack<SeriesDataWrapperModel>() {
+    public void onSuccess(HttpContext context, SeriesDataWrapperModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
+});
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 409 | Limit greater than 100. |
 
 
 

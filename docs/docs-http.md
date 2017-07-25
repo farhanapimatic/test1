@@ -1,1490 +1,5448 @@
 # 
 
+The Marvel Comics API is a tool to help developers everywhere create amazing, uncanny and incredible web sites and applications using data from the 70-plus years of the Marvel age of comics.
+
+**Ready to get started?** Great!
+
+Here's the short version of what you need to do:
+
+* **Sign up**: [Get an API key](https://developer.marvel.com/account)
+* **Be a good API citizen**: read, understand, and abide by the [terms of use](https://developer.marvel.com/terms) for the Marvel Comics API
+* **Link back**: observe the [attribution and linking guidelines](https://developer.marvel.com/documentation/attribution) when displaying data from the API
+* **Keep in touch**: [tell us about what you're building](https://developer.marvel.com/community) and talk to other developers on our community page
+* **Build cool stuff**
+
+Finally, remember that the Marvel API suite and portal are in beta and this is an evolving project. To the extent that it is possible, we will try to communicate changes to the API before they occur and will try to limit any modifications which cause backwards incompatible changes to applications.
 
 
-## Server Configuration for Base URLs
 
-This section provides details on the environments available and lists down the servers in each of the environment. The default environment for this API is set to `production` while the default server is set to `default`.
-### Environments
+## Base URL
 
-An environment consists of a set of servers with base URL values. The environment can be changed programatically allowing rapid switching between different environments e.g.the user can specify a Production and Testing Environment.The available environments for this API are: 
-
-#### production
-The environment comprises of the following servers: 
-
-| Name | Base URL | 
-|-----------|-------------|
-| default | http://adsabs.harvard.edu/ |
-
-#### new
-The environment comprises of the following servers: 
-
-| Name | Base URL | 
-|-----------|-------------|
-| default | WWW.FOOFLE.COM |
-
+The Base URL for this API is `http://gateway.marvel.com/`
 
 
 
 ## Authentication
-The type of authentication used by this API is: `OAuth v2 Resource Owner Password Credentials Grant`
+The type of authentication used by this API is: `Custom Query Parameter`
+### Authentication Parameters
+
+The parameters required for authentication are listed below:
+
+| Parameter | Description | Example | 
+|-----------|-------------| ------- |
+| apikey | Developer's API key | 4d883edc9e6eba86bf1cc2dd4024d612 |
+
+
 
 
 
 # <a name="api_reference"></a>API Reference
 
-* [BibcodeQueryBinding](#bibcode_query_binding)
-* [API](#api)
-* [OAuth Authorization](#o_auth_authorization)
+* [Events](#events)
+* [Characters](#characters)
+* [Stories](#stories)
+* [Creators](#creators)
+* [Comics](#comics)
+* [Series](#series)
 
-## <a name="bibcode_query_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "BibcodeQueryBinding") BibcodeQueryBinding
+## <a name="events"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Events") Events
 
 
-### <a name="get_bibcode"></a>![Endpoint: ](https://apidocs.io/img/method.png "getBibcode") getBibcode
+### <a name="get_events_collection_by_story_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventsCollectionByStoryId") getEventsCollectionByStoryId
 
 
-**`GET`** `/cgi-bin/nph-bib_query`
+**`GET`** `/v1/public/stories/{storyId}/events`
 
-> *Tags:*  ``` Skips Authentication ``` 
+> getEventsCollectionByStoryId
 
-> getBibcode
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| storyId | `string` |  ``` Required ```  | The story ID. | `"storyId"` | 
+
+#### Query Parameters
+> Additional optional query parameters are allowed
+
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Filter the event list by name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+
+#### Responses
+**200** 
+
+Body (_EventDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 11,
+  "copyright": "copyright",
+  "data": {
+    "count": 11,
+    "limit": 11,
+    "offset": 11,
+    "results": [
+      {
+        "characters": {
+          "available": 11,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 52
+        },
+        "comics": {
+          "available": 216,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 216
+        },
+        "creators": {
+          "available": 216,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 216
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.8757132Z",
+        "id": 75,
+        "modified": "2017-07-25T07:09:47.922589Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 75,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 75
+        },
+        "start": "2017-07-25T07:09:47.922589Z",
+        "stories": {
+          "available": 75,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 75
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 75
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_events_collection_by_series_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventsCollectionBySeriesId") getEventsCollectionBySeriesId
+
+
+**`GET`** `/v1/public/series/{seriesId}/events`
+
+> getEventsCollectionBySeriesId
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| seriesId | `string` |  ``` Required ```  | The series ID. | `"seriesId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Filter the event list by name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| stories | `string` |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_EventDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 75,
+  "copyright": "copyright",
+  "data": {
+    "count": 75,
+    "limit": 75,
+    "offset": 75,
+    "results": [
+      {
+        "characters": {
+          "available": 75,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 75
+        },
+        "comics": {
+          "available": 75,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 75
+        },
+        "creators": {
+          "available": 75,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 75
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.922589Z",
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "start": "2017-07-25T07:09:47.9382194Z",
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_creator_events_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorEventsCollection") getCreatorEventsCollection
+
+
+**`GET`** `/v1/public/creators/{creatorId}/events`
+
+> getCreatorEventsCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| creatorId | `string` |  ``` Required ```  | The creator ID. | `"creatorId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Filter the event list by name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_EventDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 238,
+    "offset": 238,
+    "results": [
+      {
+        "characters": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "comics": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "creators": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.9382194Z",
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "start": "2017-07-25T07:09:47.9382194Z",
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_issue_events_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getIssueEventsCollection") getIssueEventsCollection
+
+
+**`GET`** `/v1/public/comics/{comicId}/events`
+
+> getIssueEventsCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comicId | `string` |  ``` Required ```  | The comic ID. | `"comicId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| creators | `string` |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Filter the event list by name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_EventDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 238,
+    "offset": 238,
+    "results": [
+      {
+        "characters": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "comics": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "creators": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.9382194Z",
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "start": "2017-07-25T07:09:47.9382194Z",
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_character_events_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterEventsCollection") getCharacterEventsCollection
+
+
+**`GET`** `/v1/public/characters/{characterId}/events`
+
+> getCharacterEventsCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characterId | `string` |  ``` Required ```  | The character ID. | `"characterId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Filter the event list by name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_EventDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 238,
+    "offset": 238,
+    "results": [
+      {
+        "characters": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "comics": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "creators": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.9382194Z",
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "start": "2017-07-25T07:09:47.9382194Z",
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_event_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventIndividual") getEventIndividual
+
+
+**`GET`** `/v1/public/events/{eventId}`
+
+> getEventIndividual
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| eventId | `string` |  ``` Required ```  | A single event. | `"eventId"` | 
+
+#### Responses
+**200** 
+
+Body (_Event_) 
+```
+{
+  "characters": {
+    "available": 238,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 238
+  },
+  "comics": {
+    "available": 238,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 238
+  },
+  "creators": {
+    "available": 238,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 238
+  },
+  "description": "description",
+  "end": "2017-07-25T07:09:47.9382194Z",
+  "id": 238,
+  "modified": "2017-07-25T07:09:47.9382194Z",
+  "next": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "previous": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "resourceURI": "resourceURI",
+  "series": {
+    "available": 238,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 238
+  },
+  "start": "2017-07-25T07:09:47.9382194Z",
+  "stories": {
+    "available": 238,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "type": "type"
+      }
+    ],
+    "returned": 238
+  },
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "title": "title",
+  "urls": [
+    {
+      "type": "type",
+      "url": "url"
+    }
+  ]
+}
+```
+
+
+**404** 
+
+> Event not found.
+
+
+### <a name="get_events_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventsCollection") getEventsCollection
+
+
+**`GET`** `/v1/public/events`
+
+> getEventsCollection
 
 
 
 #### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| bibcode | `string` |  ``` Required ```  | TODO: Add a parameter description | `"bibcode"` | 
-| db_key | `string` |  ``` Required ```  | TODO: Add a parameter description | `"db_key"` | 
-| data_type | `string` |  ``` Required ```  | TODO: Add a parameter description | `"data_type"` | 
+| characters | `string` |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only events which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only events which match the specified name. | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only events which take place in the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
 
 #### Responses
 **200** 
 
-Body (_returnBibcode_) 
+Body (_EventDataWrapper_) 
 ```
 {
-  "body": "body"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 238,
+    "offset": 238,
+    "results": [
+      {
+        "characters": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "comics": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "creators": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 238
+        },
+        "description": "description",
+        "end": "2017-07-25T07:09:47.9382194Z",
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "start": "2017-07-25T07:09:47.9382194Z",
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
+
+
+**409** 
+
+> Limit greater than 100.
 
 
 [Back to API Reference](#api_reference)
 
-## <a name="api"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "API") API
+## <a name="characters"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Characters") Characters
 
 
-### <a name="test"></a>![Endpoint: ](https://apidocs.io/img/method.png "Test") Test
+### <a name="get_character_collection_by_story_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterCollectionByStoryId") getCharacterCollectionByStoryId
 
 
-**`POST`** `/1.1/test.php`
+**`GET`** `/v1/public/stories/{storyId}/characters`
 
-> TODO: Add a method description
+> getCharacterCollectionByStoryId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
->cache-control="cache-control";
->content-type="content-type";
->postman-token="postman-token";
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| storyId | `string` |  ``` Required ```  | The story ID. | `"storyId"` | 
 
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `test request` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "counter": 228
-}
-``` 
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only characters which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body
+Body (_CharacterDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 238,
+    "offset": 238,
+    "results": [
+      {
+        "comics": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "description": "description",
+        "events": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "id": 238,
+        "modified": "2017-07-25T07:09:47.9382194Z",
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 238
+        },
+        "stories": {
+          "available": 238,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 238
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 238
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_series_character_wrapper"></a>![Endpoint: ](https://apidocs.io/img/method.png "getSeriesCharacterWrapper") getSeriesCharacterWrapper
+
+
+**`GET`** `/v1/public/series/{seriesId}/characters`
+
+> getSeriesCharacterWrapper
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| seriesId | `string` |  ``` Required ```  | The series id. | `"seriesId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only characters which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") | `name` | 
+| stories | `string` |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_CharacterDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 238,
+  "copyright": "copyright",
+  "data": {
+    "count": 238,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "stories": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_event_character_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventCharacterCollection") getEventCharacterCollection
+
+
+**`GET`** `/v1/public/events/{eventId}/characters`
+
+> getEventCharacterCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| eventId | `string` |  ``` Required ```  | The event ID | `"eventId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only characters which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_CharacterDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "stories": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_comic_character_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicCharacterCollection") getComicCharacterCollection
+
+
+**`GET`** `/v1/public/comics/{comicId}/characters`
+
+> getComicCharacterCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comicId | `string` |  ``` Required ```  | The comic id. | `"comicId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| events | `string` |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only characters which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_CharacterDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "stories": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_character_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterIndividual") getCharacterIndividual
+
+
+**`GET`** `/v1/public/characters/{characterId}`
+
+> getCharacterIndividual
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characterId | `string` |  ``` Required ```  | A single character id. | `"characterId"` | 
+
+#### Responses
+**200** 
+
+Body (_Character_) 
+```
+{
+  "comics": {
+    "available": 25,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 25
+  },
+  "description": "description",
+  "events": {
+    "available": 25,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 25
+  },
+  "id": 25,
+  "modified": "2017-07-25T07:09:47.9538441Z",
+  "name": "name",
+  "resourceURI": "resourceURI",
+  "series": {
+    "available": 25,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 25
+  },
+  "stories": {
+    "available": 25,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "type": "type"
+      }
+    ],
+    "returned": 25
+  },
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "urls": [
+    {
+      "type": "type",
+      "url": "url"
+    }
+  ]
+}
+```
+
+
+**404** 
+
+> Character not found.
+
+
+### <a name="get_character_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterCollection") getCharacterCollection
+
+
+**`GET`** `/v1/public/characters`
+
+> getCharacterCollection
+
+
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only characters which appear in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only characters which have been modified since the specified date. | `"modifiedSince"` | 
+| name | `string` |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). | `"name"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") | `name` | 
+| series | `string` |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+
+#### Responses
+**200** 
+
+Body (_CharacterDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "stories": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
 
 
 [Back to API Reference](#api_reference)
 
-## <a name="o_auth_authorization"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "OAuth Authorization") OAuth Authorization
+## <a name="stories"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Stories") Stories
 
 
-### <a name="request_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token") request token
+### <a name="get_story_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getStoryCollection") getStoryCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getStoryCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| characters | `string` |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
+| series | `string` |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "characters": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "creators": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token") refresh token
+### <a name="get_series_story_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getSeriesStoryCollection") getSeriesStoryCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/series/{seriesId}/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getSeriesStoryCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| seriesId | `string` |  ``` Required ```  | The series ID. | `"seriesId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "characters": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "creators": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token1") request token1
+### <a name="get_event_story_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventStoryCollection") getEventStoryCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/events/{eventId}/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getEventStoryCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| eventId | `string` |  ``` Required ```  | The ID of the event. | `"eventId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
+| series | `string` |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "characters": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "creators": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 25
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token1") refresh token1
+### <a name="get_creator_story_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorStoryCollection") getCreatorStoryCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/creators/{creatorId}/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorStoryCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| creatorId | `string` |  ``` Required ```  | The ID of the creator. | `"creatorId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only stories contained in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
+| series | `string` |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 25,
+  "copyright": "copyright",
+  "data": {
+    "count": 25,
+    "limit": 25,
+    "offset": 25,
+    "results": [
+      {
+        "characters": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "comics": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "creators": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 25
+        },
+        "description": "description",
+        "events": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "id": 25,
+        "modified": "2017-07-25T07:09:47.9538441Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 25,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 25
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token2") request token2
+### <a name="get_comic_story_collection_by_comic_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicStoryCollectionByComicId") getComicStoryCollectionByComicId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/comics/{comicId}/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicStoryCollectionByComicId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| comicId | `string` |  ``` Required ```  | The comic ID. | `"comicId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| creators | `string` |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
+| series | `string` |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "characters": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 188
+        },
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "creators": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 188
+        },
+        "description": "description",
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "id": 188,
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token2") refresh token2
+### <a name="get_character_story_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterStoryCollection") getCharacterStoryCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/characters/{characterId}/stories`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCharacterStoryCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| characterId | `string` |  ``` Required ```  | The character ID. | `"characterId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). | `"comics"` | 
+| creators | `string` |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only stories which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") | `id` | 
+| series | `string` |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). | `"series"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_StoryDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "characters": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 188
+        },
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "creators": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 188
+        },
+        "description": "description",
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "id": 188,
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "originalissue": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "type": "type"
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token11") request token11
+### <a name="get_story_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getStoryIndividual") getStoryIndividual
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/stories/{storyId}`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getStoryIndividual
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| storyId | `string` |  ``` Required ```  | Filter by story id. | `"storyId"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_Story_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "characters": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 188
+  },
+  "comics": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "creators": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 188
+  },
+  "description": "description",
+  "events": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "id": 188,
+  "modified": "2017-07-25T07:09:47.9694688Z",
+  "originalissue": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "resourceURI": "resourceURI",
+  "series": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "title": "title",
+  "type": "type"
 }
 ```
 
 
-**400** 
+**404** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Story not found.
 
 
-### <a name="refresh_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token11") refresh token11
+[Back to API Reference](#api_reference)
+
+## <a name="creators"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Creators") Creators
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+### <a name="get_creator_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorIndividual") getCreatorIndividual
 
 
-#### Base URL
-This endpoint uses server ``.
+**`GET`** `/v1/public/creators/{creatorId}`
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
+> getCreatorIndividual
 
-#### Request Body
-Url Encoded
 
-> Additional optional form parameters are allowed
 
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| creatorId | `string` |  ``` Required ```  | A single creator id. | `"creatorId"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_Creator_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "comics": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "events": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "firstName": "firstName",
+  "fullName": "fullName",
+  "id": 188,
+  "lastName": "lastName",
+  "middleName": "middleName",
+  "modified": "2017-07-25T07:09:47.9694688Z",
+  "resourceURI": "resourceURI",
+  "series": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 188
+  },
+  "stories": {
+    "available": 188,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "type": "type"
+      }
+    ],
+    "returned": 188
+  },
+  "suffix": "suffix",
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "urls": [
+    {
+      "type": "type",
+      "url": "url"
+    }
+  ]
 }
 ```
 
 
-**400** 
+**404** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Creator not found.
 
 
-### <a name="request_token21"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token21") request token21
+### <a name="get_creator_collection_by_comic_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorCollectionByComicId") getCreatorCollectionByComicId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/comics/{comicId}/creators`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByComicId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| comicId | `string` |  ``` Required ```  | The comic id. | `"comicId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| firstName | `string` |  ``` Optional ```  | Filter by creator first name (e.g. brian). | `"firstName"` | 
+| firstNameStartsWith | `string` |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). | `"firstNameStartsWith"` | 
+| lastName | `string` |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). | `"lastName"` | 
+| lastNameStartsWith | `string` |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). | `"lastNameStartsWith"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| middleName | `string` |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). | `"middleName"` | 
+| middleNameStartsWith | `string` |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). | `"middleNameStartsWith"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only creators which have been modified since the specified date. | `"modifiedSince"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") | `lastName` | 
+| series | `string` |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| suffix | `string` |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). | `"suffix"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_CreatorDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "firstName": "firstName",
+        "fullName": "fullName",
+        "id": 188,
+        "lastName": "lastName",
+        "middleName": "middleName",
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "stories": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 188
+        },
+        "suffix": "suffix",
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token21"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token21") refresh token21
+### <a name="get_creator_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorCollection") getCreatorCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/creators`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| comics | `string` |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| firstName | `string` |  ``` Optional ```  | Filter by creator first name (e.g. Brian). | `"firstName"` | 
+| firstNameStartsWith | `string` |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). | `"firstNameStartsWith"` | 
+| lastName | `string` |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). | `"lastName"` | 
+| lastNameStartsWith | `string` |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). | `"lastNameStartsWith"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| middleName | `string` |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). | `"middleName"` | 
+| middleNameStartsWith | `string` |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). | `"middleNameStartsWith"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only creators which have been modified since the specified date. | `"modifiedSince"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") | `lastName` | 
+| series | `string` |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| suffix | `string` |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). | `"suffix"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_CreatorDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "firstName": "firstName",
+        "fullName": "fullName",
+        "id": 188,
+        "lastName": "lastName",
+        "middleName": "middleName",
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "stories": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 188
+        },
+        "suffix": "suffix",
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token11") request token11
+### <a name="get_creator_collection_by_event_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorCollectionByEventId") getCreatorCollectionByEventId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/events/{eventId}/creators`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByEventId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| eventId | `string` |  ``` Required ```  | The event ID. | `"eventId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| firstName | `string` |  ``` Optional ```  | Filter by creator first name (e.g. brian). | `"firstName"` | 
+| firstNameStartsWith | `string` |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). | `"firstNameStartsWith"` | 
+| lastName | `string` |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). | `"lastName"` | 
+| lastNameStartsWith | `string` |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). | `"lastNameStartsWith"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| middleName | `string` |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). | `"middleName"` | 
+| middleNameStartsWith | `string` |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). | `"middleNameStartsWith"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only creators which have been modified since the specified date. | `"modifiedSince"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") | `lastName` | 
+| series | `string` |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| stories | `string` |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| suffix | `string` |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). | `"suffix"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_CreatorDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "firstName": "firstName",
+        "fullName": "fullName",
+        "id": 188,
+        "lastName": "lastName",
+        "middleName": "middleName",
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "stories": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 188
+        },
+        "suffix": "suffix",
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token11"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token11") refresh token11
+### <a name="get_creator_collection_by_series_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorCollectionBySeriesId") getCreatorCollectionBySeriesId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/series/{seriesId}/creators`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getCreatorCollectionBySeriesId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| seriesId | `string` |  ``` Required ```  | The series ID. | `"seriesId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| firstName | `string` |  ``` Optional ```  | Filter by creator first name (e.g. brian). | `"firstName"` | 
+| firstNameStartsWith | `string` |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). | `"firstNameStartsWith"` | 
+| lastName | `string` |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). | `"lastName"` | 
+| lastNameStartsWith | `string` |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). | `"lastNameStartsWith"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| middleName | `string` |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). | `"middleName"` | 
+| middleNameStartsWith | `string` |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). | `"middleNameStartsWith"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only creators which have been modified since the specified date. | `"modifiedSince"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") | `lastName` | 
+| stories | `string` |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| suffix | `string` |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). | `"suffix"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_CreatorDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 188,
+  "copyright": "copyright",
+  "data": {
+    "count": 188,
+    "limit": 188,
+    "offset": 188,
+    "results": [
+      {
+        "comics": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "events": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "firstName": "firstName",
+        "fullName": "fullName",
+        "id": 188,
+        "lastName": "lastName",
+        "middleName": "middleName",
+        "modified": "2017-07-25T07:09:47.9694688Z",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 188
+        },
+        "stories": {
+          "available": 188,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 188
+        },
+        "suffix": "suffix",
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 188
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token1") request token1
+### <a name="get_creator_collection_by_story_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorCollectionByStoryId") getCreatorCollectionByStoryId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/stories/{storyId}/creators`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getCreatorCollectionByStoryId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| storyId | `string` |  ``` Required ```  | The story ID. | `"storyId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| events | `string` |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| firstName | `string` |  ``` Optional ```  | Filter by creator first name (e.g. brian). | `"firstName"` | 
+| firstNameStartsWith | `string` |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). | `"firstNameStartsWith"` | 
+| lastName | `string` |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). | `"lastName"` | 
+| lastNameStartsWith | `string` |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). | `"lastNameStartsWith"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| middleName | `string` |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). | `"middleName"` | 
+| middleNameStartsWith | `string` |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). | `"middleNameStartsWith"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only creators which have been modified since the specified date. | `"modifiedSince"` | 
+| nameStartsWith | `string` |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). | `"nameStartsWith"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") | `lastName` | 
+| series | `string` |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| suffix | `string` |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). | `"suffix"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_CreatorDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 230,
+  "copyright": "copyright",
+  "data": {
+    "count": 230,
+    "limit": 230,
+    "offset": 230,
+    "results": [
+      {
+        "comics": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "events": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "firstName": "firstName",
+        "fullName": "fullName",
+        "id": 230,
+        "lastName": "lastName",
+        "middleName": "middleName",
+        "modified": "2017-07-25T07:09:47.9850941Z",
+        "resourceURI": "resourceURI",
+        "series": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "stories": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 230
+        },
+        "suffix": "suffix",
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 230
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token1"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token1") refresh token1
+[Back to API Reference](#api_reference)
+
+## <a name="comics"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Comics") Comics
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+### <a name="get_comic_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicIndividual") getComicIndividual
 
 
-#### Base URL
-This endpoint uses server ``.
+**`GET`** `/v1/public/comics/{comicId}`
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
+> getComicIndividual
 
-#### Request Body
-Url Encoded
 
-> Additional optional form parameters are allowed
 
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| comicId | `string` |  ``` Required ```  | A single comic. | `"comicId"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_Comic_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "characters": {
+    "available": 230,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 230
+  },
+  "collectedIssues": [
+    {
+      "name": "name",
+      "resourceURI": "resourceURI"
+    }
+  ],
+  "collections": [
+    {
+      "name": "name",
+      "resourceURI": "resourceURI"
+    }
+  ],
+  "creators": {
+    "available": 230,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 230
+  },
+  "dates": [
+    {
+      "date": "2017-07-25T07:09:47.9850941Z",
+      "type": "type"
+    }
+  ],
+  "description": "description",
+  "diamondCode": "diamondCode",
+  "digitalId": 230,
+  "ean": "ean",
+  "events": {
+    "available": 230,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 230
+  },
+  "format": "format",
+  "id": 230,
+  "images": [
+    {
+      "extension": "extension",
+      "path": "path"
+    }
+  ],
+  "isbn": "isbn",
+  "issn": "issn",
+  "issueNumber": 230,
+  "modified": "2017-07-25T07:09:47.9850941Z",
+  "pageCount": 230,
+  "prices": [
+    {
+      "price": 230.533106222531,
+      "type": "type"
+    }
+  ],
+  "resourceURI": "resourceURI",
+  "series": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "stories": {
+    "available": 230,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "type": "type"
+      }
+    ],
+    "returned": 230
+  },
+  "textObjects": [
+    {
+      "language": "language",
+      "text": "text",
+      "type": "type"
+    }
+  ],
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "title": "title",
+  "upc": "upc",
+  "urls": [
+    {
+      "type": "type",
+      "url": "url"
+    }
+  ],
+  "variantDescription": "variantDescription",
+  "variants": [
+    {
+      "name": "name",
+      "resourceURI": "resourceURI"
+    }
+  ]
 }
 ```
 
 
-**400** 
+**404** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Comic not found.
 
 
-### <a name="request_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token2") request token2
+### <a name="get_comics_character_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCharacterCollection") getComicsCharacterCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/characters/{characterId}/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicsCharacterCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| characterId | `string` |  ``` Required ```  | The character id. | `"characterId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). | `"collaborators"` | 
+| creators | `string` |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| series | `string` |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 230,
+  "copyright": "copyright",
+  "data": {
+    "count": 230,
+    "limit": 230,
+    "offset": 230,
+    "results": [
+      {
+        "characters": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:47.9850941Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 230,
+        "ean": "ean",
+        "events": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "format": "format",
+        "id": 230,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 230,
+        "modified": "2017-07-25T07:09:47.9850941Z",
+        "pageCount": 230,
+        "prices": [
+          {
+            "price": 230.533106222531,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 230
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 230
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token2"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token2") refresh token2
+### <a name="get_comics_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCollection") getComicsCollection
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getComicsCollection
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| characters | `string` |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). Accepts a comma-separated list of ids. | `"collaborators"` | 
+| creators | `string` |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| series | `string` |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). Accepts a comma-separated list of ids. | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 230,
+  "copyright": "copyright",
+  "data": {
+    "count": 230,
+    "limit": 230,
+    "offset": 230,
+    "results": [
+      {
+        "characters": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:47.9850941Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 230,
+        "ean": "ean",
+        "events": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "format": "format",
+        "id": 230,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 230,
+        "modified": "2017-07-25T07:09:47.9850941Z",
+        "pageCount": 230,
+        "prices": [
+          {
+            "price": 230.533106222531,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 230
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 230
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token3"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token3") request token3
+### <a name="get_comics_collection_by_creator_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCollectionByCreatorId") getComicsCollectionByCreatorId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/creators/{creatorId}/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicsCollectionByCreatorId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| creatorId | `string` |  ``` Required ```  | The creator ID. | `"creatorId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). | `"collaborators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| series | `string` |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 230,
+  "copyright": "copyright",
+  "data": {
+    "count": 230,
+    "limit": 230,
+    "offset": 230,
+    "results": [
+      {
+        "characters": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:47.9850941Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 230,
+        "ean": "ean",
+        "events": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "format": "format",
+        "id": 230,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 230,
+        "modified": "2017-07-25T07:09:47.9850941Z",
+        "pageCount": 230,
+        "prices": [
+          {
+            "price": 230.533106222531,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 230
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 230
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token3"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token3") refresh token3
+### <a name="get_comics_collection_by_event_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCollectionByEventId") getComicsCollectionByEventId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/events/{eventId}/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getComicsCollectionByEventId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| eventId | `string` |  ``` Required ```  | The event id. | `"eventId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). | `"collaborators"` | 
+| creators | `string` |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| series | `string` |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 230,
+  "copyright": "copyright",
+  "data": {
+    "count": 230,
+    "limit": 230,
+    "offset": 230,
+    "results": [
+      {
+        "characters": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 230
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:47.9850941Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 230,
+        "ean": "ean",
+        "events": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 230
+        },
+        "format": "format",
+        "id": 230,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 230,
+        "modified": "2017-07-25T07:09:47.9850941Z",
+        "pageCount": 230,
+        "prices": [
+          {
+            "price": 230.533106222531,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 230,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="request_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "request token") request token
+### <a name="get_comics_collection_by_series_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCollectionBySeriesId") getComicsCollectionBySeriesId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/series/{seriesId}/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
+> getComicsCollectionBySeriesId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `password` | 
-| username | `string` |  ``` Required ```  | Resource owner username | `"username"` | 
-| password | `string` |  ``` Required ```  | Resource owner password | `"password"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| seriesId | `string` |  ``` Required ```  | The series ID. | `"seriesId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). | `"collaborators"` | 
+| creators | `string` |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 139,
+  "copyright": "copyright",
+  "data": {
+    "count": 139,
+    "limit": 139,
+    "offset": 139,
+    "results": [
+      {
+        "characters": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:48.000718Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 139,
+        "ean": "ean",
+        "events": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "format": "format",
+        "id": 139,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 139,
+        "modified": "2017-07-25T07:09:48.000718Z",
+        "pageCount": 139,
+        "prices": [
+          {
+            "price": 139.037824330869,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
-**401** 
-
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
-```
-{
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
-}
-```
+> Limit greater than 100.
 
 
-### <a name="refresh_token"></a>![Endpoint: ](https://apidocs.io/img/method.png "refresh token") refresh token
+### <a name="get_comics_collection_by_story_id"></a>![Endpoint: ](https://apidocs.io/img/method.png "getComicsCollectionByStoryId") getComicsCollectionByStoryId
 
 
-**`POST`** `/sdf242fgc4544g4vgg4v3sfsfv3`
+**`GET`** `/v1/public/stories/{storyId}/comics`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Obtain a new access token using a refresh token
+> getComicsCollectionByStoryId
 
 
-#### Base URL
-This endpoint uses server ``.
 
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
->Authorization="Authorization";
-
-#### Request Body
-Url Encoded
-
-> Additional optional form parameters are allowed
-
+#### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| grant_type | `string` |  ```Constant ```  ``` Required ```  ``` DefaultValue ```  | Grant Type | `refresh_token` | 
-| refresh_token | `string` |  ``` Required ```  | Refresh token | `"refresh_token"` | 
-| scope | `string` |  ``` Optional ```  | Requested scopes as a space-delimited list. | `"scope"` | 
+| storyId | `string` |  ``` Required ```  | The story ID. | `"storyId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| collaborators | `string` |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). | `"collaborators"` | 
+| creators | `string` |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| dateDescriptor | `dateDescriptor` |  ``` Optional ```  | Return comics within a predefined date range. | `"lastWeek"` | 
+| dateRange | `string` |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. | `"dateRange"` | 
+| diamondCode | `string` |  ``` Optional ```  | Filter by diamond code. | `"diamondCode"` | 
+| digitalId | `string` |  ``` Optional ```  | Filter by digital comic id. | `"digitalId"` | 
+| ean | `string` |  ``` Optional ```  | Filter by EAN. | `"ean"` | 
+| events | `string` |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| format | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| formatType | `formatType` |  ``` Optional ```  | Filter by the issue format type (comic or collection). | `"collection"` | 
+| hasDigitalIssue | `string` |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") | `true` | 
+| isbn | `string` |  ``` Optional ```  | Filter by ISBN. | `"isbn"` | 
+| issn | `string` |  ``` Optional ```  | Filter by ISSN. | `"issn"` | 
+| issueNumber | `string` |  ``` Optional ```  | Return only issues in series whose issue number matches the input. | `"issueNumber"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only comics which have been modified since the specified date. | `"modifiedSince"` | 
+| noVariants | `string` |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") | `true` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") | `focDate` | 
+| series | `string` |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). | `"series"` | 
+| sharedAppearances | `string` |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). | `"sharedAppearances"` | 
+| startYear | `string` |  ``` Optional ```  | Return only issues in series whose start year matches the input. | `"startYear"` | 
+| title | `string` |  ``` Optional ```  | Return only issues in series whose title matches the input. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return only issues in series whose title starts with the input. | `"titleStartsWith"` | 
+| upc | `string` |  ``` Optional ```  | Filter by UPC. | `"upc"` | 
 
 #### Responses
 **200** 
 
-Body (_OAuthToken_) 
+Body (_ComicDataWrapper_) 
 ```
 {
-  "access_token": "access_token",
-  "token_type": "token_type",
-  "expires_in": "228",
-  "scope": "scope",
-  "expiry": "228",
-  "refresh_token": "refresh_token"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 139,
+  "copyright": "copyright",
+  "data": {
+    "count": 139,
+    "limit": 139,
+    "offset": 139,
+    "results": [
+      {
+        "characters": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "collectedIssues": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "collections": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ],
+        "creators": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "dates": [
+          {
+            "date": "2017-07-25T07:09:48.000718Z",
+            "type": "type"
+          }
+        ],
+        "description": "description",
+        "diamondCode": "diamondCode",
+        "digitalId": 139,
+        "ean": "ean",
+        "events": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "format": "format",
+        "id": 139,
+        "images": [
+          {
+            "extension": "extension",
+            "path": "path"
+          }
+        ],
+        "isbn": "isbn",
+        "issn": "issn",
+        "issueNumber": 139,
+        "modified": "2017-07-25T07:09:48.000718Z",
+        "pageCount": 139,
+        "prices": [
+          {
+            "price": 139.037824330869,
+            "type": "type"
+          }
+        ],
+        "resourceURI": "resourceURI",
+        "series": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "stories": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "textObjects": [
+          {
+            "language": "language",
+            "text": "text",
+            "type": "type"
+          }
+        ],
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "upc": "upc",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ],
+        "variantDescription": "variantDescription",
+        "variants": [
+          {
+            "name": "name",
+            "resourceURI": "resourceURI"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
 
 
-**400** 
+**409** 
 
-> OAuth 2 provider returned an error.
-Body (_OAuthProvider_) 
+> Limit greater than 100.
+
+
+[Back to API Reference](#api_reference)
+
+## <a name="series"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Series") Series
+
+
+### <a name="get_series_individual"></a>![Endpoint: ](https://apidocs.io/img/method.png "getSeriesIndividual") getSeriesIndividual
+
+
+**`GET`** `/v1/public/series/{seriesId}`
+
+> getSeriesIndividual
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| seriesId | `string` |  ``` Required ```  | Filter by series title. | `"seriesId"` | 
+
+#### Responses
+**200** 
+
+Body (_Series_) 
 ```
 {
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
+  "characters": {
+    "available": 139,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 139
+  },
+  "comics": {
+    "available": 139,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 139
+  },
+  "creators": {
+    "available": 139,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "role": "role"
+      }
+    ],
+    "returned": 139
+  },
+  "description": "description",
+  "endYear": 139,
+  "events": {
+    "available": 139,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI"
+      }
+    ],
+    "returned": 139
+  },
+  "id": 139,
+  "modified": "2017-07-25T07:09:48.000718Z",
+  "next": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "previous": {
+    "name": "name",
+    "resourceURI": "resourceURI"
+  },
+  "rating": "rating",
+  "resourceURI": "resourceURI",
+  "startYear": 139,
+  "stories": {
+    "available": 139,
+    "collectionURI": "collectionURI",
+    "items": [
+      {
+        "name": "name",
+        "resourceURI": "resourceURI",
+        "type": "type"
+      }
+    ],
+    "returned": 139
+  },
+  "thumbnail": {
+    "extension": "extension",
+    "path": "path"
+  },
+  "title": "title",
+  "urls": [
+    {
+      "type": "type",
+      "url": "url"
+    }
+  ]
 }
 ```
-**401** 
 
-> OAuth 2 provider says client authentication failed.
-Body (_OAuthProvider_) 
+
+**404** 
+
+> Series not found.
+
+
+### <a name="get_character_series_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCharacterSeriesCollection") getCharacterSeriesCollection
+
+
+**`GET`** `/v1/public/characters/{characterId}/series`
+
+> getCharacterSeriesCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characterId | `string` |  ``` Required ```  | The character ID | `"characterId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| comics | `string` |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| contains | `string` |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| creators | `string` |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only series which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") | `title` | 
+| seriesType | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") | `collection` | 
+| startYear | `string` |  ``` Optional ```  | Return only series matching the specified start year. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Filter by series title. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). | `"titleStartsWith"` | 
+
+#### Responses
+**200** 
+
+Body (_SeriesDataWrapper_) 
 ```
 {
-  "error": "invalid_request",
-  "error_description": "error_description",
-  "error_uri": "error_uri"
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 139,
+  "copyright": "copyright",
+  "data": {
+    "count": 139,
+    "limit": 139,
+    "offset": 139,
+    "results": [
+      {
+        "characters": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "comics": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "creators": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "description": "description",
+        "endYear": 139,
+        "events": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "id": 139,
+        "modified": "2017-07-25T07:09:48.000718Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "rating": "rating",
+        "resourceURI": "resourceURI",
+        "startYear": 139,
+        "stories": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
 }
 ```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_creator_series_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getCreatorSeriesCollection") getCreatorSeriesCollection
+
+
+**`GET`** `/v1/public/creators/{creatorId}/series`
+
+> getCreatorSeriesCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| creatorId | `string` |  ``` Required ```  | The creator ID. | `"creatorId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| contains | `string` |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| events | `string` |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only series which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") | `title` | 
+| seriesType | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") | `collection` | 
+| startYear | `string` |  ``` Optional ```  | Return only series matching the specified start year. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Filter by series title. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). | `"titleStartsWith"` | 
+
+#### Responses
+**200** 
+
+Body (_SeriesDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 139,
+  "copyright": "copyright",
+  "data": {
+    "count": 139,
+    "limit": 139,
+    "offset": 139,
+    "results": [
+      {
+        "characters": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "comics": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "creators": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "description": "description",
+        "endYear": 139,
+        "events": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "id": 139,
+        "modified": "2017-07-25T07:09:48.000718Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "rating": "rating",
+        "resourceURI": "resourceURI",
+        "startYear": 139,
+        "stories": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_event_series_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getEventSeriesCollection") getEventSeriesCollection
+
+
+**`GET`** `/v1/public/events/{eventId}/series`
+
+> getEventSeriesCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| eventId | `string` |  ``` Required ```  | The event ID. | `"eventId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| contains | `string` |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| creators | `string` |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only series which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") | `title` | 
+| seriesType | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") | `collection` | 
+| startYear | `string` |  ``` Optional ```  | Return only series matching the specified start year. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Filter by series title. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). | `"titleStartsWith"` | 
+
+#### Responses
+**200** 
+
+Body (_SeriesDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 139,
+  "copyright": "copyright",
+  "data": {
+    "count": 139,
+    "limit": 139,
+    "offset": 139,
+    "results": [
+      {
+        "characters": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "comics": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "creators": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 139
+        },
+        "description": "description",
+        "endYear": 139,
+        "events": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 139
+        },
+        "id": 139,
+        "modified": "2017-07-25T07:09:48.000718Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "rating": "rating",
+        "resourceURI": "resourceURI",
+        "startYear": 139,
+        "stories": {
+          "available": 139,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 139
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 139
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_series_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getSeriesCollection") getSeriesCollection
+
+
+**`GET`** `/v1/public/series`
+
+> getSeriesCollection
+
+
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| contains | `string` |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| creators | `string` |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only series which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") | `title` | 
+| seriesType | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") | `collection` | 
+| startYear | `string` |  ``` Optional ```  | Return only series matching the specified start year. | `"startYear"` | 
+| stories | `string` |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). | `"stories"` | 
+| title | `string` |  ``` Optional ```  | Return only series matching the specified title. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). | `"titleStartsWith"` | 
+
+#### Responses
+**200** 
+
+Body (_SeriesDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 47,
+  "copyright": "copyright",
+  "data": {
+    "count": 47,
+    "limit": 47,
+    "offset": 47,
+    "results": [
+      {
+        "characters": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 47
+        },
+        "comics": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 47
+        },
+        "creators": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 47
+        },
+        "description": "description",
+        "endYear": 47,
+        "events": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 47
+        },
+        "id": 47,
+        "modified": "2017-07-25T07:09:48.0163432Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "rating": "rating",
+        "resourceURI": "resourceURI",
+        "startYear": 47,
+        "stories": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 47
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 47
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
+
+
+### <a name="get_story_series_collection"></a>![Endpoint: ](https://apidocs.io/img/method.png "getStorySeriesCollection") getStorySeriesCollection
+
+
+**`GET`** `/v1/public/stories/{storyId}/series`
+
+> getStorySeriesCollection
+
+
+
+#### Path Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| storyId | `string` |  ``` Required ```  | The story ID. | `"storyId"` | 
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| characters | `string` |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). | `"characters"` | 
+| comics | `string` |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). | `"comics"` | 
+| contains | `string` |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") | `comic` | 
+| creators | `string` |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). | `"creators"` | 
+| events | `string` |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). | `"events"` | 
+| limit | `string` |  ``` Optional ```  | Limit the result set to the specified number of resources. | `"limit"` | 
+| modifiedSince | `string` |  ``` Optional ```  | Return only series which have been modified since the specified date. | `"modifiedSince"` | 
+| offset | `string` |  ``` Optional ```  | Skip the specified number of resources in the result set. | `"offset"` | 
+| orderBy | `string` |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") | `title` | 
+| seriesType | `string` |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") | `collection` | 
+| startYear | `string` |  ``` Optional ```  | Return only series matching the specified start year. | `"startYear"` | 
+| title | `string` |  ``` Optional ```  | Filter by series title. | `"title"` | 
+| titleStartsWith | `string` |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). | `"titleStartsWith"` | 
+
+#### Responses
+**200** 
+
+Body (_SeriesDataWrapper_) 
+```
+{
+  "attributionHTML": "attributionHTML",
+  "attributionText": "attributionText",
+  "code": 47,
+  "copyright": "copyright",
+  "data": {
+    "count": 47,
+    "limit": 47,
+    "offset": 47,
+    "results": [
+      {
+        "characters": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 47
+        },
+        "comics": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 47
+        },
+        "creators": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "role": "role"
+            }
+          ],
+          "returned": 47
+        },
+        "description": "description",
+        "endYear": 47,
+        "events": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI"
+            }
+          ],
+          "returned": 47
+        },
+        "id": 47,
+        "modified": "2017-07-25T07:09:48.0163432Z",
+        "next": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "previous": {
+          "name": "name",
+          "resourceURI": "resourceURI"
+        },
+        "rating": "rating",
+        "resourceURI": "resourceURI",
+        "startYear": 47,
+        "stories": {
+          "available": 47,
+          "collectionURI": "collectionURI",
+          "items": [
+            {
+              "name": "name",
+              "resourceURI": "resourceURI",
+              "type": "type"
+            }
+          ],
+          "returned": 47
+        },
+        "thumbnail": {
+          "extension": "extension",
+          "path": "path"
+        },
+        "title": "title",
+        "urls": [
+          {
+            "type": "type",
+            "url": "url"
+          }
+        ]
+      }
+    ],
+    "total": 47
+  },
+  "etag": "etag",
+  "status": "status"
+}
+```
+
+
+**409** 
+
+> Limit greater than 100.
 
 
 [Back to API Reference](#api_reference)
