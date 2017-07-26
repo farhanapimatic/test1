@@ -1,18 +1,6 @@
 # Getting started
 
-The Marvel Comics API is a tool to help developers everywhere create amazing, uncanny and incredible web sites and applications using data from the 70-plus years of the Marvel age of comics.
-
-**Ready to get started?** Great!
-
-Here's the short version of what you need to do:
-
-* **Sign up**: [Get an API key](https://developer.marvel.com/account)
-* **Be a good API citizen**: read, understand, and abide by the [terms of use](https://developer.marvel.com/terms) for the Marvel Comics API
-* **Link back**: observe the [attribution and linking guidelines](https://developer.marvel.com/documentation/attribution) when displaying data from the API
-* **Keep in touch**: [tell us about what you're building](https://developer.marvel.com/community) and talk to other developers on our community page
-* **Build cool stuff**
-
-Finally, remember that the Marvel API suite and portal are in beta and this is an evolving project. To the extent that it is possible, we will try to communicate changes to the API before they occur and will try to limit any modifications which cause backwards incompatible changes to applications.
+TODO: Add a description
 
 ## How to Build
 
@@ -24,7 +12,7 @@ Open command prompt and type ```composer --version```. This should display the c
 * Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
 * Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=MarvelComics-PHP)
+![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=API%20Title-PHP)
 
 ### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
 
@@ -42,35 +30,35 @@ CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs.
 
 ## How to Use
 
-The following section explains how to use the MarvelComics library in a new project.
+The following section explains how to use the APITitle library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=MarvelComics-PHP)
+![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=API%20Title-PHP)
 
 Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=MarvelComics-PHP)     
+![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=API%20Title-PHP)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=MarvelComics-PHP)
+![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=API%20Title-PHP)
 
 Name the directory as "test"
 
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=MarvelComics-PHP)
+![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=API%20Title-PHP)
    
 Add a PHP file to this project
 
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=MarvelComics-PHP)
+![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=API%20Title-PHP)
 
 Name it "testSDK"
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=MarvelComics-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=API%20Title-PHP)
 
 Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
 
@@ -80,7 +68,7 @@ require_once "../vendor/autoload.php";
 
 It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=MarvelComics-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=API%20Title-PHP)
 
 After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
@@ -90,23 +78,23 @@ To run your project you must set the Interpreter for your project. Interpreter i
 
 Open ```Settings``` from ```File``` menu.
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=MarvelComics-PHP)
+![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=API%20Title-PHP)
 
 Select ```PHP``` from within ```Languages & Frameworks```
 
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=MarvelComics-PHP)
+![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=API%20Title-PHP)
 
 Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
 
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=MarvelComics-PHP)
+![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=API%20Title-PHP)
 
 Once the interpreter is selected, click ```OK```
 
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=MarvelComics-PHP)
+![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=API%20Title-PHP)
 
 To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=MarvelComics-PHP)
+![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=API%20Title-PHP)
 
 ## How to Test
 
@@ -125,16 +113,16 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| apikey | Developer's API key |
+| oAuthAccessToken | OAuth 2.0 Access Token |
 
 
 
 API client can be initialized as following.
 
 ```php
-$apikey = 'apikey'; // Developer's API key
+$oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
 
-$client = new MarvelComicsLib\MarvelComicsClient($apikey);
+$client = new APITitleLib\APITitleClient($oAuthAccessToken);
 ```
 
 
@@ -142,159 +130,117 @@ $client = new MarvelComicsLib\MarvelComicsClient($apikey);
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [EventsController](#events_controller)
-* [CharactersController](#characters_controller)
-* [StoriesController](#stories_controller)
-* [CreatorsController](#creators_controller)
-* [ComicsController](#comics_controller)
-* [SeriesController](#series_controller)
+* [UsersController](#users_controller)
+* [NotesController](#notes_controller)
+* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
 
-## <a name="events_controller"></a>![Class: ](https://apidocs.io/img/class.png ".EventsController") EventsController
+## <a name="users_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersController") UsersController
 
 ### Get singleton instance
 
-The singleton instance of the ``` EventsController ``` class can be accessed from the API Client.
+The singleton instance of the ``` UsersController ``` class can be accessed from the API Client.
 
 ```php
-$events = $client->getEvents();
+$users = $client->getUsers();
 ```
 
-### <a name="get_events_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollectionByStoryId") getEventsCollectionByStoryId
+### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersController.getUsers") getUsers
 
-> getEventsCollectionByStoryId
-
-
-```php
-function getEventsCollectionByStoryId(
-        $options,
-        $queryParameters = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| storyId |  ``` Required ```  | The story ID. |
-| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Filter the event list by name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
-| queryParameters | ``` Optional ``` | Additional optional query parameters are supported by this method |
-
-
-
-#### Example Usage
-
-```php
-$storyId = 'storyId';
-$collect['storyId'] = $storyId;
-
-$characters = 'characters';
-$collect['characters'] = $characters;
-
-$comics = 'comics';
-$collect['comics'] = $comics;
-
-$creators = 'creators';
-$collect['creators'] = $creators;
-
-$limit = 'limit';
-$collect['limit'] = $limit;
-
-$modifiedSince = 'modifiedSince';
-$collect['modifiedSince'] = $modifiedSince;
-
-$name = 'name';
-$collect['name'] = $name;
-
-$nameStartsWith = 'nameStartsWith';
-$collect['nameStartsWith'] = $nameStartsWith;
-
-$offset = 'offset';
-$collect['offset'] = $offset;
-
-$orderBy = 'name';
-$collect['orderBy'] = $orderBy;
-
-$series = 'series';
-$collect['series'] = $series;
-
-// key-value map for optional query parameters
-$queryParams = array('key' => 'value');
-
-
-$result = $events->getEventsCollectionByStoryId($collect, $queryParams, );
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_events_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollectionBySeriesId") getEventsCollectionBySeriesId
-
-> getEventsCollectionBySeriesId
+> Get a list of users. Example:
+> ```no-highlight
+> https://api.mywebsite.com/users?sort=joined&limit=5
+> ```
 
 
 ```php
-function getEventsCollectionBySeriesId(
-        $seriesId,
-        $characters = null,
-        $comics = null,
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
+function getUsers(
         $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $stories = null)
+        $joinedBefore = null,
+        $joinedAfter = null,
+        $sort = Models\SortEnum::NAME,
+        $limit = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| seriesId |  ``` Required ```  | The series ID. |
-| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Filter the event list by name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+| name |  ``` Optional ```  | Search for a user by name |
+| joinedBefore |  ``` Optional ```  | Search by join date |
+| joinedAfter |  ``` Optional ```  | Search by join date |
+| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
+| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
 
 
 
 #### Example Usage
 
 ```php
-$seriesId = 'seriesId';
-$characters = 'characters';
-$comics = 'comics';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$stories = 'stories';
+$name = 'alice';
+$joinedBefore = '2011-01-01';
+$joinedAfter = '2011-01-01';
+$sort = string::JOINED;
+$limit = 25;
 
-$result = $events->getEventsCollectionBySeriesId($seriesId, $characters, $comics, $creators, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $stories);
+$result = $users->getUsers($name, $joinedBefore, $joinedAfter, $sort, $limit);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
+
+### Get singleton instance
+
+The singleton instance of the ``` NotesController ``` class can be accessed from the API Client.
+
+```php
+$notes = $client->getNotes();
+```
+
+### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes") getNotes
+
+> Get a list of notes.
+
+
+```php
+function getNotes()
+```
+
+#### Example Usage
+
+```php
+
+$result = $notes->getNotes();
+
+```
+
+
+### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNote") createNewNote
+
+> Create a new note using a title and an optional content body.
+
+
+```php
+function createNewNote($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$bodyValue = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}";
+$body = APIHelper::deserialize($bodyValue);
+
+$notes->createNewNote($body);
 
 ```
 
@@ -302,64 +248,37 @@ $result = $events->getEventsCollectionBySeriesId($seriesId, $characters, $comics
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 409 | Limit greater than 100. |
+| 400 | Unexpected error in API call. See HTTP response body for details. |
 
 
 
-### <a name="get_creator_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getCreatorEventsCollection") getCreatorEventsCollection
+### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNote") getNote
 
-> getCreatorEventsCollection
+> Get a single note.
 
 
 ```php
-function getCreatorEventsCollection(
-        $creatorId,
-        $characters = null,
-        $comics = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
+function getNote(
+        $id,
+        $body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| creatorId |  ``` Required ```  | The creator ID. |
-| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Filter the event list by name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+| id |  ``` Required ```  | The note ID |
+| body |  ``` Required ```  | Set to `false` to exclude note body content. |
 
 
 
 #### Example Usage
 
 ```php
-$creatorId = 'creatorId';
-$characters = 'characters';
-$comics = 'comics';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
+$id = '68a5sdf67';
+$body = false;
 
-$result = $events->getCreatorEventsCollection($creatorId, $characters, $comics, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
+$result = $notes->getNote($id, $body);
 
 ```
 
@@ -367,64 +286,41 @@ $result = $events->getCreatorEventsCollection($creatorId, $characters, $comics, 
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 409 | Limit greater than 100. |
+| 404 | Unexpected error in API call. See HTTP response body for details. |
 
 
 
-### <a name="get_issue_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getIssueEventsCollection") getIssueEventsCollection
+### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANote") updateANote
 
-> getIssueEventsCollection
+> Update a single note by setting the title and/or body.
+> ::: warning
+> #### <i class="fa fa-warning"></i> Caution
+> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
+> :::
 
 
 ```php
-function getIssueEventsCollection(
-        $comicId,
-        $characters = null,
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
+function updateANote(
+        $id,
+        $body = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| comicId |  ``` Required ```  | The comic ID. |
-| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Filter the event list by name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+| id |  ``` Required ```  | The note ID |
+| body |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$comicId = 'comicId';
-$characters = 'characters';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
+$id = '68a5sdf67';
+$body = 'body';
 
-$result = $events->getIssueEventsCollection($comicId, $characters, $creators, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
+$result = $notes->updateANote($id, $body);
 
 ```
 
@@ -432,64 +328,37 @@ $result = $events->getIssueEventsCollection($comicId, $characters, $creators, $l
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 409 | Limit greater than 100. |
+| 404 | Unexpected error in API call. See HTTP response body for details. |
 
 
 
-### <a name="get_character_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getCharacterEventsCollection") getCharacterEventsCollection
+### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANote") deleteANote
 
-> getCharacterEventsCollection
+> Delete a single note
 
 
 ```php
-function getCharacterEventsCollection(
-        $characterId,
-        $comics = null,
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
+function deleteANote(
+        $id,
+        $body = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| characterId |  ``` Required ```  | The character ID. |
-| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Filter the event list by name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only events which contain the specified stories (accepts a comma-separated list of ids). |
+| id |  ``` Required ```  | The note ID |
+| body |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$characterId = 'characterId';
-$comics = 'comics';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
+$id = '68a5sdf67';
+$body = 'body';
 
-$result = $events->getCharacterEventsCollection($characterId, $comics, $creators, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
+$notes->deleteANote($id, $body);
 
 ```
 
@@ -497,2452 +366,65 @@ $result = $events->getCharacterEventsCollection($characterId, $comics, $creators
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_event_individual"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventIndividual") getEventIndividual
-
-> getEventIndividual
-
-
-```php
-function getEventIndividual($eventId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | A single event. |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-
-$result = $events->getEventIndividual($eventId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Event not found. |
-
-
-
-### <a name="get_events_collection"></a>![Method: ](https://apidocs.io/img/method.png ".EventsController.getEventsCollection") getEventsCollection
-
-> getEventsCollection
-
-
-```php
-function getEventsCollection(
-        $characters = null,
-        $comics = null,
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characters |  ``` Optional ```  | Return only events which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only events which take place in the specified comics (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only events which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only events which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only events which match the specified name. |
-| nameStartsWith |  ``` Optional ```  | Return events with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "startDate", "modified", "-name", "-startDate", "-modified") |
-| series |  ``` Optional ```  | Return only events which are part of the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only events which take place in the specified stories (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$characters = 'characters';
-$comics = 'comics';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
-
-$result = $events->getEventsCollection($characters, $comics, $creators, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
+| 404 | Unexpected error in API call. See HTTP response body for details. |
 
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="characters_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CharactersController") CharactersController
+## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
 
 ### Get singleton instance
 
-The singleton instance of the ``` CharactersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
 
 ```php
-$characters = $client->getCharacters();
+$tagsAndTaggingLongTitle = $client->getTagsAndTaggingLongTitle();
 ```
 
-### <a name="get_character_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterCollectionByStoryId") getCharacterCollectionByStoryId
+### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTags") getTags
 
-> getCharacterCollectionByStoryId
+> Get a list of bars
 
 
 ```php
-function getCharacterCollectionByStoryId(
-        $storyId,
-        $comics = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null)
+function getTags()
+```
+
+#### Example Usage
+
+```php
+
+$result = $tagsAndTaggingLongTitle->getTags();
+
+```
+
+
+### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTag") getGetOneTag
+
+> Get a single tag
+
+
+```php
+function getGetOneTag($id)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| storyId |  ``` Required ```  | The story ID. |
-| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
-| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
-| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
+| id |  ``` Required ```  | Unique tag identifier |
 
 
 
 #### Example Usage
 
 ```php
-$storyId = 'storyId';
-$comics = 'comics';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
+$id = 'id';
 
-$result = $characters->getCharacterCollectionByStoryId($storyId, $comics, $events, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series);
+$result = $tagsAndTaggingLongTitle->getGetOneTag($id);
 
 ```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_series_character_wrapper"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getSeriesCharacterWrapper") getSeriesCharacterWrapper
-
-> getSeriesCharacterWrapper
-
-
-```php
-function getSeriesCharacterWrapper(
-        $seriesId,
-        $comics = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $stories = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| seriesId |  ``` Required ```  | The series id. |
-| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
-| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
-| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$seriesId = 'seriesId';
-$comics = 'comics';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$stories = 'stories';
-
-$result = $characters->getSeriesCharacterWrapper($seriesId, $comics, $events, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $stories);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_event_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getEventCharacterCollection") getEventCharacterCollection
-
-> getEventCharacterCollection
-
-
-```php
-function getEventCharacterCollection(
-        $eventId,
-        $comics = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | The event ID |
-| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
-| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
-| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-$comics = 'comics';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
-
-$result = $characters->getEventCharacterCollection($eventId, $comics, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comic_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getComicCharacterCollection") getComicCharacterCollection
-
-> getComicCharacterCollection
-
-
-```php
-function getComicCharacterCollection(
-        $comicId,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comicId |  ``` Required ```  | The comic id. |
-| events |  ``` Optional ```  | Return only characters which appear comics that took place in the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
-| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
-| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$comicId = 'comicId';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
-
-$result = $characters->getComicCharacterCollection($comicId, $events, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_character_individual"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterIndividual") getCharacterIndividual
-
-> getCharacterIndividual
-
-
-```php
-function getCharacterIndividual($characterId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characterId |  ``` Required ```  | A single character id. |
-
-
-
-#### Example Usage
-
-```php
-$characterId = 'characterId';
-
-$result = $characters->getCharacterIndividual($characterId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Character not found. |
-
-
-
-### <a name="get_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CharactersController.getCharacterCollection") getCharacterCollection
-
-> getCharacterCollection
-
-
-```php
-function getCharacterCollection(
-        $comics = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $name = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'name',
-        $series = null,
-        $stories = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comics |  ``` Optional ```  | Return only characters which appear in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only characters which appear in the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only characters which have been modified since the specified date. |
-| name |  ``` Optional ```  | Return only characters matching the specified full character name (e.g. Spider-Man). |
-| nameStartsWith |  ``` Optional ```  | Return characters with names that begin with the specified string (e.g. Sp). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "name", "modified", "-name", "-modified") |
-| series |  ``` Optional ```  | Return only characters which appear the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only characters which appear the specified stories (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$comics = 'comics';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$name = 'name';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'name';
-$series = 'series';
-$stories = 'stories';
-
-$result = $characters->getCharacterCollection($comics, $events, $limit, $modifiedSince, $name, $nameStartsWith, $offset, $orderBy, $series, $stories);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="stories_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoriesController") StoriesController
-
-### Get singleton instance
-
-The singleton instance of the ``` StoriesController ``` class can be accessed from the API Client.
-
-```php
-$stories = $client->getStories();
-```
-
-### <a name="get_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getStoryCollection") getStoryCollection
-
-> getStoryCollection
-
-
-```php
-function getStoryCollection(
-        $characters = null,
-        $comics = null,
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id',
-        $series = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$characters = 'characters';
-$comics = 'comics';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-$series = 'series';
-
-$result = $stories->getStoryCollection($characters, $comics, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $series);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_series_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getSeriesStoryCollection") getSeriesStoryCollection
-
-> getSeriesStoryCollection
-
-
-```php
-function getSeriesStoryCollection(
-        $seriesId,
-        $characters = null,
-        $comics = null,
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id')
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| seriesId |  ``` Required ```  | The series ID. |
-| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-
-
-
-#### Example Usage
-
-```php
-$seriesId = 'seriesId';
-$characters = 'characters';
-$comics = 'comics';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-
-$result = $stories->getSeriesStoryCollection($seriesId, $characters, $comics, $creators, $events, $limit, $modifiedSince, $offset, $orderBy);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_event_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getEventStoryCollection") getEventStoryCollection
-
-> getEventStoryCollection
-
-
-```php
-function getEventStoryCollection(
-        $eventId,
-        $characters = null,
-        $comics = null,
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id',
-        $series = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | The ID of the event. |
-| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-$characters = 'characters';
-$comics = 'comics';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-$series = 'series';
-
-$result = $stories->getEventStoryCollection($eventId, $characters, $comics, $creators, $limit, $modifiedSince, $offset, $orderBy, $series);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getCreatorStoryCollection") getCreatorStoryCollection
-
-> getCreatorStoryCollection
-
-
-```php
-function getCreatorStoryCollection(
-        $creatorId,
-        $characters = null,
-        $comics = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id',
-        $series = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| creatorId |  ``` Required ```  | The ID of the creator. |
-| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only stories contained in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$creatorId = 'creatorId';
-$characters = 'characters';
-$comics = 'comics';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-$series = 'series';
-
-$result = $stories->getCreatorStoryCollection($creatorId, $characters, $comics, $events, $limit, $modifiedSince, $offset, $orderBy, $series);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comic_story_collection_by_comic_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getComicStoryCollectionByComicId") getComicStoryCollectionByComicId
-
-> getComicStoryCollectionByComicId
-
-
-```php
-function getComicStoryCollectionByComicId(
-        $comicId,
-        $characters = null,
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id',
-        $series = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comicId |  ``` Required ```  | The comic ID. |
-| characters |  ``` Optional ```  | Return only stories which feature the specified characters (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$comicId = 'comicId';
-$characters = 'characters';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-$series = 'series';
-
-$result = $stories->getComicStoryCollectionByComicId($comicId, $characters, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $series);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_character_story_collection"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getCharacterStoryCollection") getCharacterStoryCollection
-
-> getCharacterStoryCollection
-
-
-```php
-function getCharacterStoryCollection(
-        $characterId,
-        $comics = null,
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'id',
-        $series = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characterId |  ``` Required ```  | The character ID. |
-| comics |  ``` Optional ```  | Return only stories contained in the specified (accepts a comma-separated list of ids). |
-| creators |  ``` Optional ```  | Return only stories which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only stories which take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only stories which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "id", "modified", "-id", "-modified") |
-| series |  ``` Optional ```  | Return only stories contained the specified series (accepts a comma-separated list of ids). |
-
-
-
-#### Example Usage
-
-```php
-$characterId = 'characterId';
-$comics = 'comics';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'id';
-$series = 'series';
-
-$result = $stories->getCharacterStoryCollection($characterId, $comics, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $series);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_story_individual"></a>![Method: ](https://apidocs.io/img/method.png ".StoriesController.getStoryIndividual") getStoryIndividual
-
-> getStoryIndividual
-
-
-```php
-function getStoryIndividual($storyId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| storyId |  ``` Required ```  | Filter by story id. |
-
-
-
-#### Example Usage
-
-```php
-$storyId = 'storyId';
-
-$result = $stories->getStoryIndividual($storyId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Story not found. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="creators_controller"></a>![Class: ](https://apidocs.io/img/class.png ".CreatorsController") CreatorsController
-
-### Get singleton instance
-
-The singleton instance of the ``` CreatorsController ``` class can be accessed from the API Client.
-
-```php
-$creators = $client->getCreators();
-```
-
-### <a name="get_creator_individual"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorIndividual") getCreatorIndividual
-
-> getCreatorIndividual
-
-
-```php
-function getCreatorIndividual($creatorId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| creatorId |  ``` Required ```  | A single creator id. |
-
-
-
-#### Example Usage
-
-```php
-$creatorId = 'creatorId';
-
-$result = $creators->getCreatorIndividual($creatorId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Creator not found. |
-
-
-
-### <a name="get_creator_collection_by_comic_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByComicId") getCreatorCollectionByComicId
-
-> getCreatorCollectionByComicId
-
-
-```php
-function getCreatorCollectionByComicId(
-        $comicId,
-        $comics = null,
-        $firstName = null,
-        $firstNameStartsWith = null,
-        $lastName = null,
-        $lastNameStartsWith = null,
-        $limit = null,
-        $middleName = null,
-        $middleNameStartsWith = null,
-        $modifiedSince = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'lastName',
-        $series = null,
-        $stories = null,
-        $suffix = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comicId |  ``` Required ```  | The comic id. |
-| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
-| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
-| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
-| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
-| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
-| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
-| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
-| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
-| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
-| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
-
-
-
-#### Example Usage
-
-```php
-$comicId = 'comicId';
-$comics = 'comics';
-$firstName = 'firstName';
-$firstNameStartsWith = 'firstNameStartsWith';
-$lastName = 'lastName';
-$lastNameStartsWith = 'lastNameStartsWith';
-$limit = 'limit';
-$middleName = 'middleName';
-$middleNameStartsWith = 'middleNameStartsWith';
-$modifiedSince = 'modifiedSince';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'lastName';
-$series = 'series';
-$stories = 'stories';
-$suffix = 'suffix';
-
-$result = $creators->getCreatorCollectionByComicId($comicId, $comics, $firstName, $firstNameStartsWith, $lastName, $lastNameStartsWith, $limit, $middleName, $middleNameStartsWith, $modifiedSince, $nameStartsWith, $offset, $orderBy, $series, $stories, $suffix);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_collection"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollection") getCreatorCollection
-
-> getCreatorCollection
-
-
-```php
-function getCreatorCollection(
-        $comics = null,
-        $events = null,
-        $firstName = null,
-        $firstNameStartsWith = null,
-        $lastName = null,
-        $lastNameStartsWith = null,
-        $limit = null,
-        $middleName = null,
-        $middleNameStartsWith = null,
-        $modifiedSince = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'lastName',
-        $series = null,
-        $stories = null,
-        $suffix = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
-| firstName |  ``` Optional ```  | Filter by creator first name (e.g. Brian). |
-| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
-| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
-| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
-| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
-| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
-| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
-| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
-| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
-
-
-
-#### Example Usage
-
-```php
-$comics = 'comics';
-$events = 'events';
-$firstName = 'firstName';
-$firstNameStartsWith = 'firstNameStartsWith';
-$lastName = 'lastName';
-$lastNameStartsWith = 'lastNameStartsWith';
-$limit = 'limit';
-$middleName = 'middleName';
-$middleNameStartsWith = 'middleNameStartsWith';
-$modifiedSince = 'modifiedSince';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'lastName';
-$series = 'series';
-$stories = 'stories';
-$suffix = 'suffix';
-
-$result = $creators->getCreatorCollection($comics, $events, $firstName, $firstNameStartsWith, $lastName, $lastNameStartsWith, $limit, $middleName, $middleNameStartsWith, $modifiedSince, $nameStartsWith, $offset, $orderBy, $series, $stories, $suffix);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_collection_by_event_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByEventId") getCreatorCollectionByEventId
-
-> getCreatorCollectionByEventId
-
-
-```php
-function getCreatorCollectionByEventId(
-        $eventId,
-        $comics = null,
-        $firstName = null,
-        $firstNameStartsWith = null,
-        $lastName = null,
-        $lastNameStartsWith = null,
-        $limit = null,
-        $middleName = null,
-        $middleNameStartsWith = null,
-        $modifiedSince = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'lastName',
-        $series = null,
-        $stories = null,
-        $suffix = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | The event ID. |
-| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
-| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
-| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
-| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
-| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
-| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
-| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
-| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
-| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
-| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
-| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-$comics = 'comics';
-$firstName = 'firstName';
-$firstNameStartsWith = 'firstNameStartsWith';
-$lastName = 'lastName';
-$lastNameStartsWith = 'lastNameStartsWith';
-$limit = 'limit';
-$middleName = 'middleName';
-$middleNameStartsWith = 'middleNameStartsWith';
-$modifiedSince = 'modifiedSince';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'lastName';
-$series = 'series';
-$stories = 'stories';
-$suffix = 'suffix';
-
-$result = $creators->getCreatorCollectionByEventId($eventId, $comics, $firstName, $firstNameStartsWith, $lastName, $lastNameStartsWith, $limit, $middleName, $middleNameStartsWith, $modifiedSince, $nameStartsWith, $offset, $orderBy, $series, $stories, $suffix);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionBySeriesId") getCreatorCollectionBySeriesId
-
-> getCreatorCollectionBySeriesId
-
-
-```php
-function getCreatorCollectionBySeriesId(
-        $seriesId,
-        $comics = null,
-        $events = null,
-        $firstName = null,
-        $firstNameStartsWith = null,
-        $lastName = null,
-        $lastNameStartsWith = null,
-        $limit = null,
-        $middleName = null,
-        $middleNameStartsWith = null,
-        $modifiedSince = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'lastName',
-        $stories = null,
-        $suffix = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| seriesId |  ``` Required ```  | The series ID. |
-| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
-| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
-| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
-| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
-| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
-| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
-| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
-| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
-| stories |  ``` Optional ```  | Return only creators who worked on the specified stories (accepts a comma-separated list of ids). |
-| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
-
-
-
-#### Example Usage
-
-```php
-$seriesId = 'seriesId';
-$comics = 'comics';
-$events = 'events';
-$firstName = 'firstName';
-$firstNameStartsWith = 'firstNameStartsWith';
-$lastName = 'lastName';
-$lastNameStartsWith = 'lastNameStartsWith';
-$limit = 'limit';
-$middleName = 'middleName';
-$middleNameStartsWith = 'middleNameStartsWith';
-$modifiedSince = 'modifiedSince';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'lastName';
-$stories = 'stories';
-$suffix = 'suffix';
-
-$result = $creators->getCreatorCollectionBySeriesId($seriesId, $comics, $events, $firstName, $firstNameStartsWith, $lastName, $lastNameStartsWith, $limit, $middleName, $middleNameStartsWith, $modifiedSince, $nameStartsWith, $offset, $orderBy, $stories, $suffix);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".CreatorsController.getCreatorCollectionByStoryId") getCreatorCollectionByStoryId
-
-> getCreatorCollectionByStoryId
-
-
-```php
-function getCreatorCollectionByStoryId(
-        $storyId,
-        $comics = null,
-        $events = null,
-        $firstName = null,
-        $firstNameStartsWith = null,
-        $lastName = null,
-        $lastNameStartsWith = null,
-        $limit = null,
-        $middleName = null,
-        $middleNameStartsWith = null,
-        $modifiedSince = null,
-        $nameStartsWith = null,
-        $offset = null,
-        $orderBy = 'lastName',
-        $series = null,
-        $suffix = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| storyId |  ``` Required ```  | The story ID. |
-| comics |  ``` Optional ```  | Return only creators who worked on in the specified comics (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only creators who worked on comics that took place in the specified events (accepts a comma-separated list of ids). |
-| firstName |  ``` Optional ```  | Filter by creator first name (e.g. brian). |
-| firstNameStartsWith |  ``` Optional ```  | Filter by creator first names that match critera (e.g. B, St L). |
-| lastName |  ``` Optional ```  | Filter by creator last name (e.g. Bendis). |
-| lastNameStartsWith |  ``` Optional ```  | Filter by creator last names that match critera (e.g. Ben). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| middleName |  ``` Optional ```  | Filter by creator middle name (e.g. Michael). |
-| middleNameStartsWith |  ``` Optional ```  | Filter by creator middle names that match critera (e.g. Mi). |
-| modifiedSince |  ``` Optional ```  | Return only creators which have been modified since the specified date. |
-| nameStartsWith |  ``` Optional ```  | Filter by creator names that match critera (e.g. B, St L). |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "lastName", "firstName", "middleName", "suffix", "modified", "-lastName", "-firstName", "-middleName", "-suffix", "-modified") |
-| series |  ``` Optional ```  | Return only creators who worked on the specified series (accepts a comma-separated list of ids). |
-| suffix |  ``` Optional ```  | Filter by suffix or honorific (e.g. Jr., Sr.). |
-
-
-
-#### Example Usage
-
-```php
-$storyId = 'storyId';
-$comics = 'comics';
-$events = 'events';
-$firstName = 'firstName';
-$firstNameStartsWith = 'firstNameStartsWith';
-$lastName = 'lastName';
-$lastNameStartsWith = 'lastNameStartsWith';
-$limit = 'limit';
-$middleName = 'middleName';
-$middleNameStartsWith = 'middleNameStartsWith';
-$modifiedSince = 'modifiedSince';
-$nameStartsWith = 'nameStartsWith';
-$offset = 'offset';
-$orderBy = 'lastName';
-$series = 'series';
-$suffix = 'suffix';
-
-$result = $creators->getCreatorCollectionByStoryId($storyId, $comics, $events, $firstName, $firstNameStartsWith, $lastName, $lastNameStartsWith, $limit, $middleName, $middleNameStartsWith, $modifiedSince, $nameStartsWith, $offset, $orderBy, $series, $suffix);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="comics_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ComicsController") ComicsController
-
-### Get singleton instance
-
-The singleton instance of the ``` ComicsController ``` class can be accessed from the API Client.
-
-```php
-$comics = $client->getComics();
-```
-
-### <a name="get_comic_individual"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicIndividual") getComicIndividual
-
-> getComicIndividual
-
-
-```php
-function getComicIndividual($comicId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| comicId |  ``` Required ```  | A single comic. |
-
-
-
-#### Example Usage
-
-```php
-$comicId = 'comicId';
-
-$result = $comics->getComicIndividual($comicId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Comic not found. |
-
-
-
-### <a name="get_comics_character_collection"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCharacterCollection") getComicsCharacterCollection
-
-> getComicsCharacterCollection
-
-
-```php
-function getComicsCharacterCollection(
-        $characterId,
-        $collaborators = null,
-        $creators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $series = null,
-        $sharedAppearances = null,
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characterId |  ``` Required ```  | The character id. |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
-| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$characterId = 'characterId';
-$collaborators = 'collaborators';
-$creators = 'creators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$series = 'series';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCharacterCollection($characterId, $collaborators, $creators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $series, $sharedAppearances, $startYear, $stories, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comics_collection"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollection") getComicsCollection
-
-> getComicsCollection
-
-
-```php
-function getComicsCollection(
-        $characters = null,
-        $collaborators = null,
-        $creators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $series = null,
-        $sharedAppearances = null,
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). Accepts a comma-separated list of ids. |
-| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variants (alternate covers, secondary printings, director's cuts, etc.) from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). Accepts a comma-separated list of ids. |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$characters = 'characters';
-$collaborators = 'collaborators';
-$creators = 'creators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$series = 'series';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCollection($characters, $collaborators, $creators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $series, $sharedAppearances, $startYear, $stories, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comics_collection_by_creator_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByCreatorId") getComicsCollectionByCreatorId
-
-> getComicsCollectionByCreatorId
-
-
-```php
-function getComicsCollectionByCreatorId(
-        $creatorId,
-        $characters = null,
-        $collaborators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $series = null,
-        $sharedAppearances = null,
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| creatorId |  ``` Required ```  | The creator ID. |
-| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$creatorId = 'creatorId';
-$characters = 'characters';
-$collaborators = 'collaborators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$series = 'series';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCollectionByCreatorId($creatorId, $characters, $collaborators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $series, $sharedAppearances, $startYear, $stories, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comics_collection_by_event_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByEventId") getComicsCollectionByEventId
-
-> getComicsCollectionByEventId
-
-
-```php
-function getComicsCollectionByEventId(
-        $eventId,
-        $characters = null,
-        $collaborators = null,
-        $creators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $series = null,
-        $sharedAppearances = null,
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | The event id. |
-| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
-| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-$characters = 'characters';
-$collaborators = 'collaborators';
-$creators = 'creators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$series = 'series';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCollectionByEventId($eventId, $characters, $collaborators, $creators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $series, $sharedAppearances, $startYear, $stories, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comics_collection_by_series_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionBySeriesId") getComicsCollectionBySeriesId
-
-> getComicsCollectionBySeriesId
-
-
-```php
-function getComicsCollectionBySeriesId(
-        $seriesId,
-        $characters = null,
-        $collaborators = null,
-        $creators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $sharedAppearances = null,
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| seriesId |  ``` Required ```  | The series ID. |
-| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
-| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| stories |  ``` Optional ```  | Return only comics which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$seriesId = 'seriesId';
-$characters = 'characters';
-$collaborators = 'collaborators';
-$creators = 'creators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCollectionBySeriesId($seriesId, $characters, $collaborators, $creators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $sharedAppearances, $startYear, $stories, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_comics_collection_by_story_id"></a>![Method: ](https://apidocs.io/img/method.png ".ComicsController.getComicsCollectionByStoryId") getComicsCollectionByStoryId
-
-> getComicsCollectionByStoryId
-
-
-```php
-function getComicsCollectionByStoryId(
-        $storyId,
-        $characters = null,
-        $collaborators = null,
-        $creators = null,
-        $dateDescriptor = null,
-        $dateRange = null,
-        $diamondCode = null,
-        $digitalId = null,
-        $ean = null,
-        $events = null,
-        $format = 'comic',
-        $formatType = null,
-        $hasDigitalIssue = 'true',
-        $isbn = null,
-        $issn = null,
-        $issueNumber = null,
-        $limit = null,
-        $modifiedSince = null,
-        $noVariants = 'true',
-        $offset = null,
-        $orderBy = 'focDate',
-        $series = null,
-        $sharedAppearances = null,
-        $startYear = null,
-        $title = null,
-        $titleStartsWith = null,
-        $upc = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| storyId |  ``` Required ```  | The story ID. |
-| characters |  ``` Optional ```  | Return only comics which feature the specified characters (accepts a comma-separated list of ids). |
-| collaborators |  ``` Optional ```  | Return only comics in which the specified creators worked together (for example in which BOTH Stan Lee and Jack Kirby did work). |
-| creators |  ``` Optional ```  | Return only comics which feature work by the specified creators (accepts a comma-separated list of ids). |
-| dateDescriptor |  ``` Optional ```  | Return comics within a predefined date range. |
-| dateRange |  ``` Optional ```  | Return comics within a predefined date range.  Dates must be specified as date1,date2 (e.g. 2013-01-01,2013-01-02).  Dates are preferably formatted as YYYY-MM-DD but may be sent as any common date format. |
-| diamondCode |  ``` Optional ```  | Filter by diamond code. |
-| digitalId |  ``` Optional ```  | Filter by digital comic id. |
-| ean |  ``` Optional ```  | Filter by EAN. |
-| events |  ``` Optional ```  | Return only comics which take place in the specified events (accepts a comma-separated list of ids). |
-| format |  ``` Optional ```  ``` DefaultValue ```  | Filter by the issue format (e.g. comic, digital comic, hardcover). (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| formatType |  ``` Optional ```  | Filter by the issue format type (comic or collection). |
-| hasDigitalIssue |  ``` Optional ```  ``` DefaultValue ```  | Include only results which are available digitally. (Acceptable values are: "true") |
-| isbn |  ``` Optional ```  | Filter by ISBN. |
-| issn |  ``` Optional ```  | Filter by ISSN. |
-| issueNumber |  ``` Optional ```  | Return only issues in series whose issue number matches the input. |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only comics which have been modified since the specified date. |
-| noVariants |  ``` Optional ```  ``` DefaultValue ```  | Exclude variant comics from the result set. (Acceptable values are: "true") |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "focDate", "onsaleDate", "title", "issueNumber", "modified", "-focDate", "-onsaleDate", "-title", "-issueNumber", "-modified") |
-| series |  ``` Optional ```  | Return only comics which are part of the specified series (accepts a comma-separated list of ids). |
-| sharedAppearances |  ``` Optional ```  | Return only comics in which the specified characters appear together (for example in which BOTH Spider-Man and Wolverine appear). |
-| startYear |  ``` Optional ```  | Return only issues in series whose start year matches the input. |
-| title |  ``` Optional ```  | Return only issues in series whose title matches the input. |
-| titleStartsWith |  ``` Optional ```  | Return only issues in series whose title starts with the input. |
-| upc |  ``` Optional ```  | Filter by UPC. |
-
-
-
-#### Example Usage
-
-```php
-$storyId = 'storyId';
-$characters = 'characters';
-$collaborators = 'collaborators';
-$creators = 'creators';
-$dateDescriptor = string::LASTWEEK;
-$dateRange = 'dateRange';
-$diamondCode = 'diamondCode';
-$digitalId = 'digitalId';
-$ean = 'ean';
-$events = 'events';
-$format = 'comic';
-$formatType = string::COLLECTION;
-$hasDigitalIssue = 'true';
-$isbn = 'isbn';
-$issn = 'issn';
-$issueNumber = 'issueNumber';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$noVariants = 'true';
-$offset = 'offset';
-$orderBy = 'focDate';
-$series = 'series';
-$sharedAppearances = 'sharedAppearances';
-$startYear = 'startYear';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-$upc = 'upc';
-
-$result = $comics->getComicsCollectionByStoryId($storyId, $characters, $collaborators, $creators, $dateDescriptor, $dateRange, $diamondCode, $digitalId, $ean, $events, $format, $formatType, $hasDigitalIssue, $isbn, $issn, $issueNumber, $limit, $modifiedSince, $noVariants, $offset, $orderBy, $series, $sharedAppearances, $startYear, $title, $titleStartsWith, $upc);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="series_controller"></a>![Class: ](https://apidocs.io/img/class.png ".SeriesController") SeriesController
-
-### Get singleton instance
-
-The singleton instance of the ``` SeriesController ``` class can be accessed from the API Client.
-
-```php
-$series = $client->getSeries();
-```
-
-### <a name="get_series_individual"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getSeriesIndividual") getSeriesIndividual
-
-> getSeriesIndividual
-
-
-```php
-function getSeriesIndividual($seriesId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| seriesId |  ``` Required ```  | Filter by series title. |
-
-
-
-#### Example Usage
-
-```php
-$seriesId = 'seriesId';
-
-$result = $series->getSeriesIndividual($seriesId);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Series not found. |
-
-
-
-### <a name="get_character_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getCharacterSeriesCollection") getCharacterSeriesCollection
-
-> getCharacterSeriesCollection
-
-
-```php
-function getCharacterSeriesCollection(
-        $characterId,
-        $comics = null,
-        $contains = 'comic',
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'title',
-        $seriesType = 'collection',
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characterId |  ``` Required ```  | The character ID |
-| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
-| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
-| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
-| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
-| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Filter by series title. |
-| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
-
-
-
-#### Example Usage
-
-```php
-$characterId = 'characterId';
-$comics = 'comics';
-$contains = 'comic';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'title';
-$seriesType = 'collection';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-
-$result = $series->getCharacterSeriesCollection($characterId, $comics, $contains, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $seriesType, $startYear, $stories, $title, $titleStartsWith);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_creator_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getCreatorSeriesCollection") getCreatorSeriesCollection
-
-> getCreatorSeriesCollection
-
-
-```php
-function getCreatorSeriesCollection(
-        $creatorId,
-        $characters = null,
-        $comics = null,
-        $contains = 'comic',
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'title',
-        $seriesType = 'collection',
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| creatorId |  ``` Required ```  | The creator ID. |
-| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
-| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
-| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
-| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
-| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Filter by series title. |
-| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
-
-
-
-#### Example Usage
-
-```php
-$creatorId = 'creatorId';
-$characters = 'characters';
-$comics = 'comics';
-$contains = 'comic';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'title';
-$seriesType = 'collection';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-
-$result = $series->getCreatorSeriesCollection($creatorId, $characters, $comics, $contains, $events, $limit, $modifiedSince, $offset, $orderBy, $seriesType, $startYear, $stories, $title, $titleStartsWith);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_event_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getEventSeriesCollection") getEventSeriesCollection
-
-> getEventSeriesCollection
-
-
-```php
-function getEventSeriesCollection(
-        $eventId,
-        $characters = null,
-        $comics = null,
-        $contains = 'comic',
-        $creators = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'title',
-        $seriesType = 'collection',
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| eventId |  ``` Required ```  | The event ID. |
-| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
-| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
-| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
-| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
-| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Filter by series title. |
-| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
-
-
-
-#### Example Usage
-
-```php
-$eventId = 'eventId';
-$characters = 'characters';
-$comics = 'comics';
-$contains = 'comic';
-$creators = 'creators';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'title';
-$seriesType = 'collection';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-
-$result = $series->getEventSeriesCollection($eventId, $characters, $comics, $contains, $creators, $limit, $modifiedSince, $offset, $orderBy, $seriesType, $startYear, $stories, $title, $titleStartsWith);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getSeriesCollection") getSeriesCollection
-
-> getSeriesCollection
-
-
-```php
-function getSeriesCollection(
-        $characters = null,
-        $comics = null,
-        $contains = 'comic',
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'title',
-        $seriesType = 'collection',
-        $startYear = null,
-        $stories = null,
-        $title = null,
-        $titleStartsWith = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
-| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
-| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
-| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
-| stories |  ``` Optional ```  | Return only series which contain the specified stories (accepts a comma-separated list of ids). |
-| title |  ``` Optional ```  | Return only series matching the specified title. |
-| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
-
-
-
-#### Example Usage
-
-```php
-$characters = 'characters';
-$comics = 'comics';
-$contains = 'comic';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'title';
-$seriesType = 'collection';
-$startYear = 'startYear';
-$stories = 'stories';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-
-$result = $series->getSeriesCollection($characters, $comics, $contains, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $seriesType, $startYear, $stories, $title, $titleStartsWith);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
-
-
-### <a name="get_story_series_collection"></a>![Method: ](https://apidocs.io/img/method.png ".SeriesController.getStorySeriesCollection") getStorySeriesCollection
-
-> getStorySeriesCollection
-
-
-```php
-function getStorySeriesCollection(
-        $storyId,
-        $characters = null,
-        $comics = null,
-        $contains = 'comic',
-        $creators = null,
-        $events = null,
-        $limit = null,
-        $modifiedSince = null,
-        $offset = null,
-        $orderBy = 'title',
-        $seriesType = 'collection',
-        $startYear = null,
-        $title = null,
-        $titleStartsWith = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| storyId |  ``` Required ```  | The story ID. |
-| characters |  ``` Optional ```  | Return only series which feature the specified characters (accepts a comma-separated list of ids). |
-| comics |  ``` Optional ```  | Return only series which contain the specified comics (accepts a comma-separated list of ids). |
-| contains |  ``` Optional ```  ``` DefaultValue ```  | Return only series containing one or more comics with the specified format. (Acceptable values are: "comic", "magazine", "trade paperback", "hardcover", "digest", "graphic novel", "digital comic", "infinite comic") |
-| creators |  ``` Optional ```  | Return only series which feature work by the specified creators (accepts a comma-separated list of ids). |
-| events |  ``` Optional ```  | Return only series which have comics that take place during the specified events (accepts a comma-separated list of ids). |
-| limit |  ``` Optional ```  | Limit the result set to the specified number of resources. |
-| modifiedSince |  ``` Optional ```  | Return only series which have been modified since the specified date. |
-| offset |  ``` Optional ```  | Skip the specified number of resources in the result set. |
-| orderBy |  ``` Optional ```  ``` DefaultValue ```  | Order the result set by a field or fields. Add a "-" to the value sort in descending order. Multiple values are given priority in the order in which they are passed. (Acceptable values are: "title", "modified", "startYear", "-title", "-modified", "-startYear") |
-| seriesType |  ``` Optional ```  ``` DefaultValue ```  | Filter the series by publication frequency type. (Acceptable values are: "collection", "one shot", "limited", "ongoing") |
-| startYear |  ``` Optional ```  | Return only series matching the specified start year. |
-| title |  ``` Optional ```  | Filter by series title. |
-| titleStartsWith |  ``` Optional ```  | Return series with titles that begin with the specified string (e.g. Sp). |
-
-
-
-#### Example Usage
-
-```php
-$storyId = 'storyId';
-$characters = 'characters';
-$comics = 'comics';
-$contains = 'comic';
-$creators = 'creators';
-$events = 'events';
-$limit = 'limit';
-$modifiedSince = 'modifiedSince';
-$offset = 'offset';
-$orderBy = 'title';
-$seriesType = 'collection';
-$startYear = 'startYear';
-$title = 'title';
-$titleStartsWith = 'titleStartsWith';
-
-$result = $series->getStorySeriesCollection($storyId, $characters, $comics, $contains, $creators, $events, $limit, $modifiedSince, $offset, $orderBy, $seriesType, $startYear, $title, $titleStartsWith);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 409 | Limit greater than 100. |
-
 
 
 [Back to List of Controllers](#list_of_controllers)
