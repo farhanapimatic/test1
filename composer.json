@@ -1,8 +1,8 @@
 {
-    "name": "apimatic/marvelcomics",
+    "name": "apimatic/helloworld",
     "type": "library",
-    "description": "The Marvel Comics API is a tool to help developers everywhere create amazing, uncanny and incredible web sites and applications using data from the 70-plus years of the Marvel age of comics.  **Ready to get started?** Great!  Here's the short version of what you need to do:  * **Sign up**: [Get an API key](https://developer.marvel.com/account) * **Be a good API citizen**: read, understand, and abide by the [terms of use](https://developer.marvel.com/terms) for the Marvel Comics API * **Link back**: observe the [attribution and linking guidelines](https://developer.marvel.com/documentation/attribution) when displaying data from the API * **Keep in touch**: [tell us about what you're building](https://developer.marvel.com/community) and talk to other developers on our community page * **Build cool stuff**  Finally, remember that the Marvel API suite and portal are in beta and this is an evolving project. To the extent that it is possible, we will try to communicate changes to the API before they occur and will try to limit any modifications which cause backwards incompatible changes to applications.",
-    "keywords": ["MarvelComics","API","SDK"],
+    "description": "TODO: add library description",
+    "keywords": ["Hello world","API","SDK"],
     "homepage": "https://apimatic.io",
     "license": "MIT",
     "authors": [
@@ -22,11 +22,13 @@
         "apimatic/jsonmapper": "~1.2.0"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^2.7"
+        "squizlabs/php_codesniffer": "^2.7",
+        "phpunit/phpunit": "4.8.*"
+
     },
     "autoload": {
         "psr-4": {
-            "MarvelComicsLib\\": "src/"
+            "HelloWorldLib\\": "src/"
         }
     }
 }
