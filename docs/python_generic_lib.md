@@ -81,15 +81,112 @@ runner. You can run the tests as follows:
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| o_auth_client_id | OAuth 2 Client ID |
+| o_auth_client_secret | OAuth 2 Client Secret |
+
+
 
 API client can be initialized as following.
 
 ```python
+# Configuration parameters and credentials
+o_auth_client_id = 'o_auth_client_id' # OAuth 2 Client ID
+o_auth_client_secret = 'o_auth_client_secret' # OAuth 2 Client Secret
 
-client = PurchaseorderserviceClient()
+client = PurchaseorderserviceClient(o_auth_client_id, o_auth_client_secret)
 ```
 
+
+You must now authorize the client.
+
+### Authorizing your client
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```python
+try:
+    client.auth.authorize([OAuthScopeEnum.SF])
+except OAuthProviderException as ex:
+    # handle exception
+```
+
+The client can now make authorized endpoint calls.
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `purchaseorderservice.models.o_auth_scope_enum.OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `SF` |  |
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in a file or a database.
+
+```python
+# store token
+save_token_to_database(client.config.o_auth_token)
+```
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token after creating the client:
+
+```python
+client = PurchaseorderserviceClient()
+client.config.o_auth_token = load_token_from_database()
+```
+
+### Complete example
+
+```python
+from purchaseorderservice.purchaseorderservice_client import PurchaseorderserviceClient
+from purchaseorderservice.models.o_auth_scope_enum import OAuthScopeEnum
+from purchaseorderservice.exceptions.o_auth_provider_exception import OAuthProviderException
+
+# function for storing token to database
+def save_token_to_database(token):
+    # code to save the token to database
+
+# function for loading token from database
+def load_token_from_database():
+    # load token from database and return it (return None if no token exists)
+
+# Configuration parameters and credentials
+o_auth_client_id = 'o_auth_client_id' # OAuth 2 Client ID
+o_auth_client_secret = 'o_auth_client_secret' # OAuth 2 Client Secret
+
+#  create a new client
+client = PurchaseorderserviceClient(o_auth_client_id, o_auth_client_secret)
+
+# obtain access token, needed for client to be authorized
+previous_token = load_token_from_database()
+if previous_token:
+    # restore previous access token
+    client.config.o_auth_token = previous_token
+else:
+    # obtain new access token
+    try:
+        token = client.auth.authorize([OAuthScopeEnum.SF])
+        save_token_to_database(token)
+    except OAuthProviderException as ex:
+        # handle exception
+
+# the client is now authorized and you can use controllers to make endpoint calls
+```
 
 
 # Class Reference
@@ -97,6 +194,7 @@ client = PurchaseorderserviceClient()
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -107,35 +205,6 @@ An instance of the ``` PurchaseOrderBindingController ``` class can be accessed 
 ```python
  purchase_order_binding_client = client.purchase_order_binding
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order") create_order
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_order(self,
-                     body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = PurchaseOrder()
-
-result = purchase_order_binding_client.create_order(body)
-
-```
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
 
@@ -170,6 +239,323 @@ result = purchase_order_binding_client.create_order_status(body)
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order") create_order
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_order(self,
+                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = PurchaseOrder()
+
+result = purchase_order_binding_client.create_order(body)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get controller instance
+
+An instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```python
+ o_auth_authorization_client = client.o_auth_authorization
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token") create_request_token
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token(self,
+                             authorization,
+                             scope=None,
+                             _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_1(self,
+                               authorization,
+                               scope=None,
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_1(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_2") create_request_token_2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_2(self,
+                               authorization,
+                               scope=None,
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_2(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_11") create_request_token_11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_11(self,
+                                authorization,
+                                scope=None,
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_11(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_21") create_request_token_21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_21(self,
+                                authorization,
+                                scope=None,
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_21(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_1(self,
+                               authorization,
+                               scope=None,
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+authorization = 'Authorization'
+scope = 'scope'
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_1(authorization, scope, optional_form_parameters)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 

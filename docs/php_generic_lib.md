@@ -106,14 +106,110 @@ You can change the PHPUnit test configuration in the `phpunit.xml` file.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
 
 API client can be initialized as following.
 
 ```php
+$oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+$oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
 
+$client = new PurchaseOrderServiceLib\PurchaseOrderServiceClient($oAuthClientId, $oAuthClientSecret);
+```
+
+You must authorize now authorize the client.
+
+### Authorizing your client
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```php
+try {
+    $client->auth()->authorize([OAuthScopeEnum::SF]);
+} catch (PurchaseOrderServiceLib\Exceptions\OAuthProviderException $ex) {
+    // handle exception
+}
+```
+
+The client can now make authorized endpoint calls.
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `PurchaseOrderServiceLib\Models\OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `SF` |  |
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in the `$_SESSION` global:
+
+```php
+// store token
+$_SESSION['access_token'] = PurchaseOrderServiceLib\Configuration::$oAuthToken;
+```
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
+
+```php
+// load token later...
+PurchaseOrderServiceLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+
+// Set other configuration, then instantiate client
 $client = new PurchaseOrderServiceLib\PurchaseOrderServiceClient();
 ```
+
+### Complete example
+
+```php
+<?php
+require_once __DIR__.'/vendor/autoload.php';
+
+use PurchaseOrderServiceLib\Models\OAuthScopeEnum;
+
+session_start();
+
+// Client configuration
+$oAuthClientId = 'oAuthClientId';
+$oAuthClientSecret = 'oAuthClientSecret';
+
+$client = new PurchaseOrderServiceLib\PurchaseOrderServiceClient($oAuthClientId, $oAuthClientSecret);
+
+// try to restore access token from session
+if (isset($_SESSION['access_token']) && $_SESSION['access_token']) {
+    PurchaseOrderServiceLib\Configuration::$oAuthToken = $_SESSION['access_token'];
+} else {
+    try {
+        // obtain a new access token
+        $token = $client->auth()->authorize([OAuthScopeEnum::SF]);
+        $_SESSION['access_token'] = $token;
+    } catch (PurchaseOrderServiceLib\Exceptions\OAuthProviderException $ex) {
+        // handle exception
+        die();
+    }
+}
+
+// the client is now authorized; you can use $client to make endpoint calls
+```
+
 
 
 # Class Reference
@@ -121,6 +217,7 @@ $client = new PurchaseOrderServiceLib\PurchaseOrderServiceClient();
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -131,35 +228,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 ```php
 $purchaseOrderBinding = $client->getPurchaseOrderBinding();
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createOrder($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new PurchaseOrder();
-
-$result = $purchaseOrderBinding->createOrder($body);
-
-```
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
 
@@ -194,6 +262,461 @@ $result = $purchaseOrderBinding->createOrderStatus($body);
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createOrder($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new PurchaseOrder();
+
+$result = $purchaseOrderBinding->createOrder($body);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```php
+$oAuthAuthorization = $client->getOAuthAuthorization();
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken21") createRequestToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken21(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken21($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken11") createRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken11(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken11($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken1(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken1($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken2(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken2($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken3") createRequestToken3
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```php
+function createRequestToken3(
+        $authorization,
+        $scope = null,
+        $fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```php
+$authorization = 'Authorization';
+$scope = 'scope';
+// key-value map for optional form parameters
+$formParams = array('key' => 'value');
+
+
+$result = $oAuthAuthorization->createRequestToken3($authorization, $scope, $formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 

@@ -59,10 +59,21 @@ Go to the test explorer in Xcode as shown in the picture below and click on `run
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
 
 Configuration variables can be set as following.
 ```Objc
+// Configuration parameters and credentials
+Configuration_OAuthClientId = "Configuration_OAuthClientId"; // OAuth 2 Client ID
+Configuration_OAuthClientSecret = "Configuration_OAuthClientSecret"; // OAuth 2 Client Secret
 
 ```
 
@@ -71,6 +82,7 @@ Configuration variables can be set as following.
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -78,40 +90,6 @@ Configuration variables can be set as following.
 ```objc
 PurchaseOrderBinding* purchaseOrderBinding = [[PurchaseOrderBinding alloc]init] ;
 ```
-
-### <a name="create_order_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderAsyncWithBody") createOrderAsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createOrderAsyncWithBody:(PurchaseOrder*) body
-                completionBlock:(CompletedPostOrder) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    PurchaseOrder* body = [[PurchaseOrder alloc]init];
-
-    [self.purchaseOrderBinding createOrderAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, OrderConfirmation* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
 
 ### <a name="create_order_status_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatusAsyncWithBody") createOrderStatusAsyncWithBody
 
@@ -151,6 +129,99 @@ function createOrderStatusAsyncWithBody:(GetOrderStatus*) body
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+### <a name="create_order_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderAsyncWithBody") createOrderAsyncWithBody
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createOrderAsyncWithBody:(PurchaseOrder*) body
+                completionBlock:(CompletedPostOrder) onCompleted(body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    PurchaseOrder* body = [[PurchaseOrder alloc]init];
+
+    [self.purchaseOrderBinding createOrderAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, OrderConfirmation* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+```objc
+OAuthAuthorization* oAuthAuthorization = [[OAuthAuthorization alloc]init] ;
+```
+
+### <a name="create_request_token_async_with_authorization"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestTokenAsyncWithAuthorization") createRequestTokenAsyncWithAuthorization
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```objc
+function createRequestTokenAsyncWithAuthorization:(NSString*) authorization
+                scope:(NSString*) scope
+                fieldParameters:(NSDictionary*) fieldParameters
+                completionBlock:(CompletedPostRequestToken) onCompleted(authorization scope : scope  formParameters : formParams)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    NSString* authorization = @"Authorization";
+    NSString* scope = @"scope";
+    // Dictionary for optional form parameters
+    NSMutableDictionary* formParamsMutable = [[NSMutableDictionary alloc] init];
+    NSDictionary *formParams= [formParamsMutable copy];
+
+    [self.oAuthAuthorization createRequestTokenAsyncWithAuthorization: authorization scope : scope  formParameters : formParams  completionBlock:^(BOOL success, HttpContext* context, OAuthToken* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 

@@ -93,15 +93,132 @@ Tests can be run in a number of ways:
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication in the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
 
 API client can be initialized as following:
 
 ```JavaScript
 const lib = require('lib');
 
+// Configuration parameters and credentials
+lib.Configuration.oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+lib.Configuration.oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
 
 ```
+
+You must now authorize the client.
+
+### Authorizing your client
+
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```JavaScript
+const tokenPromise = oAuthManager.authorize([lib.OAuthScopeEnum.SF]);
+```
+The Node.js SDK supports both callbacks and promises. So, the authorize call returns a promise and also returns response back in the callback (if one is provided)
+
+The client can now make authorized endpoint calls.
+
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `lib/Models/OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `SF` |  |
+
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+This code snippet stores the access token in a data store. For this example, [node-localstorage](https://www.npmjs.com/package/node-localstorage) is being used as the data store.
+```JavaScript
+const lib = require('lib');
+const LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./scratch');
+
+localStorage.setItem('token', lib.Configuration.oAuthToken);
+```
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before making endpoint calls:
+
+```JavaScript
+// load token later...
+const lib = require('lib');
+const LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./scratch');
+
+lib.Configuration.oAuthToken = localStorage.getItem('token');
+```
+
+### Complete example
+In this example, `app.js` will check if the access token has been set in the SDK. If it has been, API calls can be made. Otherwise, client has to be authorized first before making API calls.  
+This example makes use of [node-localstorage](https://www.npmjs.com/package/node-localstorage) for handling data persistence.
+
+#### `app.js`
+
+```JavaScript
+const express = require('express');
+const app = express();
+
+const PORT = 1800;
+
+const lib = require('lib');
+const oAuthManager = lib.OAuthManager;
+const LocalStorage = require('node-localstorage').LocalStorage;
+const localStorage = new LocalStorage('./scratch');
+
+lib.Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+lib.Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+
+const storedToken = localStorage.getItem('token');
+if (storedToken !== null && storedToken !== undefined) {
+    lib.Configuration.oAuthToken = storedToken;
+}
+lib.Configuration.oAuthTokenUpdateCallback = function(token) {
+    // token is the updated access_token
+    localStorage.setItem('token', token);
+};
+
+app.listen(PORT, () => {
+    console.log('Listening on port ' + PORT);
+});
+
+app.get('/', (req, res) => {
+    if (oAuthManager.isTokenSet()) {
+        // token is already stored in the client
+        // make API calls as required
+    } else {
+        const scopes = [lib.OAuthScopeEnum.SF];
+        const promise = oAuthManager.authorize(scopes);
+        promise.then((success) => {
+            // client authorized. API calls can be made
+        }, (exception) => {
+            // error occurred, exception will be of type lib/Exceptions/OAuthProviderException
+        });
+    }
+});
+
+```
+
 
 
 
@@ -110,6 +227,7 @@ const lib = require('lib');
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -120,38 +238,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 ```javascript
 var controller = lib.PurchaseOrderBindingController;
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrder(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new PurchaseOrder({"key":"value"});
-
-    controller.createOrder(body, function(error, response, context) {
-
-    
-    });
-```
-
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
 
@@ -188,6 +274,185 @@ function createOrderStatus(body, callback)
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrder(body, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var body = new PurchaseOrder({"key":"value"});
+
+    controller.createOrder(body, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.OAuthAuthorizationController;
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, scope, formParams, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = 'Authorization';
+    var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+    controller.createRequestToken(authorization, scope, formParams, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken1") createRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken1(authorization, scope, formParams, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = 'Authorization';
+    var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+    controller.createRequestToken1(authorization, scope, formParams, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken2") createRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken2(authorization, scope, formParams, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = 'Authorization';
+    var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+    controller.createRequestToken2(authorization, scope, formParams, function(error, response, context) {
+
+    
+    });
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 

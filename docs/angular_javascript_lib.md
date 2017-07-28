@@ -94,6 +94,7 @@ Import the reference to the generated SDK files inside your html file like:
     <!-- API Controllers -->
     <script src="scripts/PurchaseOrderServiceLib/Controllers/BaseController.js"></script>
     <script src="scripts/PurchaseOrderServiceLib/Controllers/PurchaseOrderBindingController.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/OAuthAuthorizationController.js"></script>
 
 
     <!-- Models -->
@@ -107,6 +108,12 @@ Import the reference to the generated SDK files inside your html file like:
     <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponse.js"></script>
     <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrder.js"></script>
     <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatus.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
 
     ...
 </head>
@@ -165,8 +172,177 @@ var app = angular.module('myApp', [PurchaseOrderServiceLib]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
-### 
+### Authentication
+In order to setup authentication and initialization of the Angular App, you need the following information.
 
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
+
+```JavaScript
+var app = angular.module('myApp', [PurchaseOrderServiceLib]);
+app.factory('config', function($scope, Configuration) 
+{
+    return {
+        setConfigVars: function() {
+            // Configuration parameters and credentials
+            Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+            Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+            
+        }
+    };
+});
+```
+
+You must now authorize the client.
+
+### Authorizing your client
+
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```JavaScript
+var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager, OAuthScopeEnum) {
+    var scopes = [OAuthScopeEnum.SF];
+    var promise = OAuthManager.authorize(scopes);
+    promise.then(function(success) {
+        // client successfully authorized
+    });
+});
+```
+
+The client can now make authorized endpoint calls.
+
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `PurchaseOrderServiceLib/Models/OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `SF` |  |
+
+
+
+
+### Creating a client from an existing token
+
+To authorize a client from an existing access token, just set the access token in `Configuration` along with the other configuration parameters:
+
+```JavaScript
+var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
+
+app.controller('config', function($scope, Configuration) {
+    Configuration.oAuthToken = sessionStorage.getItem('token'); // the existing token stored in sessionStorage of browser
+});
+```
+
+
+### Complete example
+In this example, `app.js` will check if the access token has been obtained. If it hasn't been, the client needs to be authorized first.
+After authorization, endpoint calls can be made.
+
+#### `app.js`
+
+```JavaScript
+var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
+
+app.controller('oauthClientController', function($scope, OAuthManager, Configuration, OAuthScopeEnum) {
+    Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
+    Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+
+    Configuration.oAuthTokenUpdateCallback = function(token) {
+        sessionStorage.setItem('token', token);
+    }
+
+    if (OAuthManager.isTokenSet()) {
+        // token was already set, make API calls as required
+    } else {
+        // since token is not set, client needs to obtain
+        // an access token first
+        var scopes = [OAuthScopeEnum.SF];
+        var promise = OAuthManager.authorize(scopes);
+        promise.then(function(success) {
+            // client successfully authorized
+            // make endpoint calls as required
+        });
+    }
+
+});
+```
+
+#### `index.html`
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OAuthTest</title>
+    <meta charset="UTF8">
+
+    <script src="scripts/angular.min.js"></script>
+
+    <script src="scripts/PurchaseOrderServiceLib/Module.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Configuration.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/ModelFactory.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/ObjectMapper.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/APIHelper.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Servers.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Environments.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Client/RequestClient.js"></script>
+
+    <!-- API Controllers -->
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/BaseController.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/PurchaseOrderBindingController.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/OAuthAuthorizationController.js"></script>
+
+
+    <!-- Models -->
+    <script src="scripts/PurchaseOrderServiceLib/Models/BaseModel.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrderType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmationType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponseType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderNotFoundFaultType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmation.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponse.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrder.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatus.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
+
+
+    <script src="scripts/PurchaseOrderServiceLib/OAuthManager.js"></script>
+    <script src="scripts/app.js"></script>
+
+</head>
+
+
+<body ng-app="OAuthTest">
+    <div ng-controller="oauthClientController">
+
+    </div>
+</body>
+
+</html>
+```
 
 
 
@@ -175,6 +351,7 @@ var app = angular.module('myApp', [PurchaseOrderServiceLib]);
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -183,51 +360,9 @@ var app = angular.module('myApp', [PurchaseOrderServiceLib]);
 The singleton instance of the ``` PurchaseOrderBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation, GetOrderStatusResponse){
+	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse, OrderConfirmation){
 	});
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrder(body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation){
-        var body = new PurchaseOrder({"key":"value"});
-
-
-		var result = PurchaseOrderBindingController.createOrder(body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
 
@@ -274,6 +409,171 @@ function createOrderStatus(body)
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrder(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation){
+        var body = new PurchaseOrder({"key":"value"});
+
+
+		var result = PurchaseOrderBindingController.createOrder(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed via Dependency Injection.
+
+```js
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+	});
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```javascript
+function createRequestToken(authorization, scope, formParams)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
+        var authorization = 'Authorization';
+        var scope = 'scope';
+    // key-value map for optional form parameters
+    var formParams = [];
+
+
+		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 

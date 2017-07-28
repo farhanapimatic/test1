@@ -62,15 +62,139 @@ Here, you can click *Run All* to execute these test cases.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
 
 API client can be initialized as following.
 
 ```csharp
+// Configuration parameters and credentials
+string oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+string oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
 
-PurchaseOrderServiceClient client = new PurchaseOrderServiceClient();
+PurchaseOrderServiceClient client = new PurchaseOrderServiceClient(oAuthClientId, oAuthClientSecret);
 ```
 
+
+You must now authorize the client.
+
+### Authorizing your client
+
+This SDK uses *OAuth 2.0 authorization* to authorize the client.
+
+The `Authorize()` method will exchange the OAuth client credentials for an *access token*.
+The access token is an object containing information for authorizing client requests.
+
+ You must pass the *[scopes](#scopes)* for which you need permission to access.
+```csharp
+try
+{
+    client.Auth.Authorize(scope=new List<OAuthScopeEnum>(){OAuthScopeEnum.SF});
+}
+catch (OAuthProviderException e)
+{
+    //handle exception here
+}
+```
+
+The client can now make authorized endpoint calls.
+
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `PurchaseOrderService.PCL.Models.OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `SF` |  |
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in a file or a database.
+
+```csharp
+// store token
+SaveTokenToDatabase(Configuration.OAuthToken);
+```
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token after creating the client:
+
+```csharp
+client = PurchaseOrderServiceClient();
+Configuration.UpdateAccessToken(LoadTokenFromDatabase());
+```
+
+### Complete example
+```csharp
+using PurchaseOrderService.PCL;
+using PurchaseOrderService.PCL.Models;
+using PurchaseOrderService.PCL.Exceptions;
+using System.Collections.Generic;
+
+namespace OAuthTestApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Configuration parameters and credentials
+           string oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+           string oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
+           
+            PurchaseOrderServiceClient client = new PurchaseOrderServiceClient(oAuthClientId, oAuthClientSecret);
+
+            //callback for storing token for reuse when token is updated
+            Configuration.OAuthTokenUpdateCallback = SaveTokenToDatabase;
+
+            //obtain access token, needed for client to be authorized
+            OAuthToken storedToken = LoadTokenFromDatabase();
+            if (storedToken != null)
+            {
+                Configuration.OAuthToken = storedToken;
+            }
+            else
+            {
+                try
+                {
+                    storedToken = client.Auth.Authorize(new List<OAuthScopeEnum>(){OAuthScopeEnum.SF});
+                    SaveTokenToDatabase(storedToken);
+                }
+                catch (OAuthProviderException e)
+                {
+                    //Handle Exception here
+                }
+            }
+        }
+
+        //function for storing token to database
+        static void SaveTokenToDatabase(OAuthToken token)
+        {
+            //Save token here
+        }
+
+        //function for loading token from database
+        static OAuthToken LoadTokenFromDatabase()
+        {
+            OAuthToken token = null;
+            //token = Get token here
+            return token;
+        }
+    }
+}
+
+// the client is now authorized and you can use controllers to make endpoint calls
+```
 
 
 # Class Reference
@@ -78,6 +202,7 @@ PurchaseOrderServiceClient client = new PurchaseOrderServiceClient();
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [PurchaseOrderBindingController](#purchase_order_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
 ## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController") PurchaseOrderBindingController
 
@@ -88,34 +213,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 ```csharp
 PurchaseOrderBindingController purchaseOrderBinding = client.PurchaseOrderBinding;
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrder") CreateOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.OrderConfirmation> CreateOrder(Models.PurchaseOrder body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.PurchaseOrder();
-
-Models.OrderConfirmation result = await purchaseOrderBinding.CreateOrder(body);
-
-```
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrderStatus") CreateOrderStatus
 
@@ -149,6 +246,210 @@ Models.GetOrderStatusResponse result = await purchaseOrderBinding.CreateOrderSta
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrder") CreateOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.OrderConfirmation> CreateOrder(Models.PurchaseOrder body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.PurchaseOrder();
+
+Models.OrderConfirmation result = await purchaseOrderBinding.CreateOrder(body);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png "PurchaseOrderService.PCL.Controllers.OAuthAuthorizationController") OAuthAuthorizationController
+
+### Get singleton instance
+
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
+
+```csharp
+OAuthAuthorizationController oAuthAuthorization = client.OAuthAuthorization;
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken(string authorization, string scope = null, Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken(authorization, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken1(string authorization, string scope = null, Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken1(authorization, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken2") CreateRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken2(string authorization, string scope = null, Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken2(authorization, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.OAuthAuthorizationController.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```csharp
+Task<Models.OAuthToken> CreateRequestToken(string authorization, string scope = null, Dictionary<string, object> fieldParameters = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```csharp
+string authorization = "Authorization";
+string scope = "scope";
+// key-value map for optional form parameters
+var formParams = new Dictionary<string, object>();
+
+
+Models.OAuthToken result = await oAuthAuthorization.CreateRequestToken(authorization, scope, formParams);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 [Back to List of Controllers](#list_of_controllers)

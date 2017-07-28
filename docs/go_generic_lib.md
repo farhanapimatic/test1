@@ -97,11 +97,26 @@ If the build is successful, right click on your Go file and click on ```Run As``
 
 ![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=purchaseorderservice_lib)
 
+## Initialization
+
+### Authentication
+In order to setup authentication of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
+
+
+To configure these for your generated code, open the file "Configuration.go" and edit it's contents.
+
+
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [purchaseorderbinding_pkg](#purchaseorderbinding_pkg)
+* [oauthauthorization_pkg](#oauthauthorization_pkg)
 
 ## <a name="purchaseorderbinding_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".purchaseorderbinding_pkg") purchaseorderbinding_pkg
 
@@ -112,35 +127,6 @@ Factory for the ``` PURCHASEORDERBINDING ``` interface can be accessed from the 
 ```go
 purchaseOrderBinding := purchaseorderbinding_pkg.NewPURCHASEORDERBINDING()
 ```
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrder") CreateOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *PURCHASEORDERBINDING_IMPL) CreateOrder(body *models_pkg.PurchaseOrder)(*models_pkg.OrderConfirmation,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.PurchaseOrder
-
-var result *models_pkg.OrderConfirmation
-result,_ = purchaseOrderBinding.CreateOrder(body)
-
-```
-
 
 ### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrderStatus") CreateOrderStatus
 
@@ -175,6 +161,369 @@ result,_ = purchaseOrderBinding.CreateOrderStatus(body)
 | Error Code | Error Description |
 |------------|-------------------|
 | 500 | Error in retrieving response |
+
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrder") CreateOrder
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *PURCHASEORDERBINDING_IMPL) CreateOrder(body *models_pkg.PurchaseOrder)(*models_pkg.OrderConfirmation,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.PurchaseOrder
+
+var result *models_pkg.OrderConfirmation
+result,_ = purchaseOrderBinding.CreateOrder(body)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="oauthauthorization_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".oauthauthorization_pkg") oauthauthorization_pkg
+
+### Get instance
+
+Factory for the ``` OAUTHAUTHORIZATION ``` interface can be accessed from the package oauthauthorization_pkg.
+
+```go
+oAuthAuthorization := oauthauthorization_pkg.NewOAUTHAUTHORIZATION()
+```
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken1(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken1(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token2"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken2") CreateRequestToken2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken2(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken2(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token11"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken11") CreateRequestToken11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken11(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken11(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token21"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken21") CreateRequestToken21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken21(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken21(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token1"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken1") CreateRequestToken1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken1(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken1(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".oauthauthorization_pkg.CreateRequestToken") CreateRequestToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+
+```go
+func (me *OAUTHAUTHORIZATION_IMPL) CreateRequestToken(
+            authorization string,
+            scope *string,
+                fieldParameters map[string]interface{})(*models_pkg.OAuthToken,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+#### Example Usage
+
+```go
+authorization := "Authorization"
+scope := "scope"
+// key-value map for optional form parameters
+	formParams := map[string]interface{}{"key" : "value"}
+
+
+var result *models_pkg.OAuthToken
+result,_ = oAuthAuthorization.CreateRequestToken(authorization, scope, formParams)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
