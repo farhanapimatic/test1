@@ -214,40 +214,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 PurchaseOrderBindingController purchaseOrderBinding = client.PurchaseOrderBinding;
 ```
 
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrderStatus") CreateOrderStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetOrderStatusResponse> CreateOrderStatus(Models.GetOrderStatus body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.GetOrderStatus();
-
-Models.GetOrderStatusResponse result = await purchaseOrderBinding.CreateOrderStatus(body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrder") CreateOrder
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -274,6 +240,50 @@ var body = new Models.PurchaseOrder();
 Models.OrderConfirmation result = await purchaseOrderBinding.CreateOrder(body);
 
 ```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png "PurchaseOrderService.PCL.Controllers.PurchaseOrderBindingController.CreateOrderStatus") CreateOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetOrderStatusResponse> CreateOrderStatus(
+        string new2,
+        string new3,
+        string new1,
+        Models.GetOrderStatus body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string new2 = "new2";
+string new3 = "new3";
+string new1 = "new1";
+var body = new Models.GetOrderStatus();
+
+Models.GetOrderStatusResponse result = await purchaseOrderBinding.CreateOrderStatus(new2, new3, new1, body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
 
 
 [Back to List of Controllers](#list_of_controllers)

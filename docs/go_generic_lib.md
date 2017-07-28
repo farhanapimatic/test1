@@ -128,42 +128,6 @@ Factory for the ``` PURCHASEORDERBINDING ``` interface can be accessed from the 
 purchaseOrderBinding := purchaseorderbinding_pkg.NewPURCHASEORDERBINDING()
 ```
 
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrderStatus") CreateOrderStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```go
-func (me *PURCHASEORDERBINDING_IMPL) CreateOrderStatus(body *models_pkg.GetOrderStatus)(*models_pkg.GetOrderStatusResponse,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.GetOrderStatus
-
-var result *models_pkg.GetOrderStatusResponse
-result,_ = purchaseOrderBinding.CreateOrderStatus(body)
-
-```
-
-#### Errors
- 
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrder") CreateOrder
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -191,6 +155,52 @@ var result *models_pkg.OrderConfirmation
 result,_ = purchaseOrderBinding.CreateOrder(body)
 
 ```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrderStatus") CreateOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *PURCHASEORDERBINDING_IMPL) CreateOrderStatus(
+            new2 string,
+            new3 string,
+            new1 string,
+            body *models_pkg.GetOrderStatus)(*models_pkg.GetOrderStatusResponse,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+new2 := "new2"
+new3 := "new3"
+new1 := "new1"
+var body *models_pkg.GetOrderStatus
+
+var result *models_pkg.GetOrderStatusResponse
+result,_ = purchaseOrderBinding.CreateOrderStatus(new2, new3, new1, body)
+
+```
+
+#### Errors
+ 
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

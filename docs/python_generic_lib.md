@@ -206,43 +206,6 @@ An instance of the ``` PurchaseOrderBindingController ``` class can be accessed 
  purchase_order_binding_client = client.purchase_order_binding
 ```
 
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-```python
-def create_order_status(self,
-                            body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = GetOrderStatus()
-
-result = purchase_order_binding_client.create_order_status(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
-
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order") create_order
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -270,6 +233,52 @@ body = PurchaseOrder()
 result = purchase_order_binding_client.create_order(body)
 
 ```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_order_status(self,
+                            new_2,
+                            new_3,
+                            new_1,
+                            body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+new_2 = 'new2'
+new_3 = 'new3'
+new_1 = 'new1'
+body = GetOrderStatus()
+
+result = purchase_order_binding_client.create_order_status(new_2, new_3, new_1, body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
+
 
 
 [Back to List of Controllers](#list_of_controllers)

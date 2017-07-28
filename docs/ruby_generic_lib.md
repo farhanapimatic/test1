@@ -204,41 +204,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 purchaseOrderBinding = client.purchase_order_binding
 ```
 
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```ruby
-def create_order_status(body); end
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```ruby
-body = GetOrderStatus.new
-
-result = purchaseOrderBinding.create_order_status(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order") create_order
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -265,6 +230,50 @@ body = PurchaseOrder.new
 result = purchaseOrderBinding.create_order(body)
 
 ```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```ruby
+def create_order_status(new_2,
+                            new_3,
+                            new_1,
+                            body); end
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new_2 |  ``` Required ```  | TODO: Add a parameter description |
+| new_3 |  ``` Required ```  | TODO: Add a parameter description |
+| new_1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```ruby
+new_2 = 'new2'
+new_3 = 'new3'
+new_1 = 'new1'
+body = GetOrderStatus.new
+
+result = purchaseOrderBinding.create_order_status(new_2, new_3, new_1, body)
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

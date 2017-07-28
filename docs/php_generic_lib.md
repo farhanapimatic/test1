@@ -229,42 +229,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 $purchaseOrderBinding = $client->getPurchaseOrderBinding();
 ```
 
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```php
-function createOrderStatus($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new GetOrderStatus();
-
-$result = $purchaseOrderBinding->createOrderStatus($body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -292,6 +256,52 @@ $body = new PurchaseOrder();
 $result = $purchaseOrderBinding->createOrder($body);
 
 ```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createOrderStatus(
+        $new2,
+        $new3,
+        $new1,
+        $body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$new2 = 'new2';
+$new3 = 'new3';
+$new1 = 'new1';
+$body = new GetOrderStatus();
+
+$result = $purchaseOrderBinding->createOrderStatus($new2, $new3, $new1, $body);
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

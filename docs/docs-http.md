@@ -21,64 +21,6 @@ The type of authentication used by this API is: `OAuth v2 Client Credentials Gra
 ## <a name="purchase_order_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "PurchaseOrderBinding") PurchaseOrderBinding
 
 
-### <a name="order_status"></a>![Endpoint: ](https://apidocs.io/img/method.png "OrderStatus") OrderStatus
-
-
-**`POST`** `/OrderStatus`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `getorderstatus` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "parameters": {
-    "orderID": 115
-  }
-}
-``` 
-
-#### Responses
-**200** 
-
-Body (_GetOrderStatusResponse_) 
-```
-{
-  "parameters": {
-    "orderID": 66,
-    "status": "status"
-  }
-}
-```
-
-
-**500** 
-
-> Error in retrieving response
-Body (_OrderNotFoundFault_) 
-```
-{
-  "parameters": {
-    "orderID": 66
-  }
-}
-```
-
-
 ### <a name="order"></a>![Endpoint: ](https://apidocs.io/img/method.png "Order") Order
 
 
@@ -105,8 +47,9 @@ Raw
 ``` 
 {
   "parameters": {
-    "quantity": 66,
-    "productName": "productName"
+    "quantity": 130,
+    "productName": "productName",
+    "etyry": "etyry"
   }
 }
 ``` 
@@ -118,8 +61,73 @@ Body (_OrderConfirmation_)
 ```
 {
   "parameters": {
-    "orderID": 66,
+    "orderID": 171,
     "expectedShipDate": "expectedShipDate"
+  }
+}
+```
+
+
+### <a name="order_status"></a>![Endpoint: ](https://apidocs.io/img/method.png "OrderStatus") OrderStatus
+
+
+**`POST`** `/OrderStatus`
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| new2 | `string` |  ``` Required ```  | TODO: Add a parameter description | `"new2"` | 
+| new3 | `string` |  ``` Required ```  | TODO: Add a parameter description | `"new3"` | 
+| new1 | `string` |  ``` Required ```  | TODO: Add a parameter description | `"new1"` | 
+
+#### Request Headers
+>Accept=application/json;
+>Content-Type=application/json;
+
+#### Request Body
+Raw 
+
+|  Type | Tags | Description |
+| ------| ---- |-------------| 
+| `getorderstatus` |  ``` Required ```  | TODO: Add a parameter description | 
+
+ Example 
+``` 
+{
+  "parameters": {
+    "orderID": 171
+  }
+}
+``` 
+
+#### Responses
+**200** 
+
+Body (_GetOrderStatusResponse_) 
+```
+{
+  "parameters": {
+    "orderID": 171,
+    "status": "status"
+  }
+}
+```
+
+
+**500** 
+
+> Error in retrieving response
+Body (_OrderNotFoundFault_) 
+```
+{
+  "parameters": {
+    "orderID": 171
   }
 }
 ```
@@ -163,9 +171,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -227,9 +235,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -291,9 +299,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -355,9 +363,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -419,9 +427,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -483,9 +491,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -547,9 +555,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -611,9 +619,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -675,9 +683,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 
@@ -739,9 +747,9 @@ Body (_OAuthToken_)
 {
   "access_token": "access_token",
   "token_type": "token_type",
-  "expires_in": "66",
+  "expires_in": "171",
   "scope": "scope",
-  "expiry": "66"
+  "expiry": "171"
 }
 ```
 

@@ -91,47 +91,6 @@ Configuration_OAuthClientSecret = "Configuration_OAuthClientSecret"; // OAuth 2 
 PurchaseOrderBinding* purchaseOrderBinding = [[PurchaseOrderBinding alloc]init] ;
 ```
 
-### <a name="create_order_status_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatusAsyncWithBody") createOrderStatusAsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createOrderStatusAsyncWithBody:(GetOrderStatus*) body
-                completionBlock:(CompletedPostOrderStatus) onCompleted(body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    GetOrderStatus* body = [[GetOrderStatus alloc]init];
-
-    [self.purchaseOrderBinding createOrderStatusAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, GetOrderStatusResponse* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 ### <a name="create_order_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderAsyncWithBody") createOrderAsyncWithBody
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -164,6 +123,56 @@ function createOrderAsyncWithBody:(PurchaseOrder*) body
        //Add code here
     }];
 ```
+
+
+### <a name="create_order_status_async_with_new2"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatusAsyncWithNew2") createOrderStatusAsyncWithNew2
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```objc
+function createOrderStatusAsyncWithNew2:(NSString*) mnew2
+                mnew3:(NSString*) mnew3
+                mnew1:(NSString*) mnew1
+                body:(GetOrderStatus*) body
+                completionBlock:(CompletedPostOrderStatus) onCompleted(mnew2 mnew3 : mnew3 mnew1 : mnew1 body : body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| mnew2 |  ``` Required ```  | TODO: Add a parameter description |
+| mnew3 |  ``` Required ```  | TODO: Add a parameter description |
+| mnew1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+
+
+#### Example Usage
+
+```objc
+    // Parameters for the API call
+    NSString* mnew2 = @"new2";
+    NSString* mnew3 = @"new3";
+    NSString* mnew1 = @"new1";
+    GetOrderStatus* body = [[GetOrderStatus alloc]init];
+
+    [self.purchaseOrderBinding createOrderStatusAsyncWithNew2: mnew2 mnew3 : mnew3 mnew1 : mnew1 body : body  completionBlock:^(BOOL success, HttpContext* context, GetOrderStatusResponse* response, NSError* error) { 
+       //Add code here
+    }];
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

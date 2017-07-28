@@ -200,54 +200,6 @@ The singleton instance of the ``` PurchaseOrderBindingController ``` class can b
 PurchaseOrderBindingController purchaseOrderBinding = client.getPurchaseOrderBinding();
 ```
 
-### <a name="create_order_status_async"></a>![Method: ](https://apidocs.io/img/method.png "org.example.controllers.PurchaseOrderBindingController.createOrderStatusAsync") createOrderStatusAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```java
-void createOrderStatusAsync(
-        final GetOrderStatus body,
-        final APICallBack<GetOrderStatusResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-try {
-    GetOrderStatus body = new GetOrderStatus();
-    // Invoking the API call with sample inputs
-    purchaseOrderBinding.createOrderStatusAsync(body, new APICallBack<GetOrderStatusResponse>() {
-        public void onSuccess(HttpContext context, GetOrderStatusResponse response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 ### <a name="create_order_async"></a>![Method: ](https://apidocs.io/img/method.png "org.example.controllers.PurchaseOrderBindingController.createOrderAsync") createOrderAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
@@ -287,6 +239,63 @@ try {
     e.printStackTrace();
 }
 ```
+
+
+### <a name="create_order_status_async"></a>![Method: ](https://apidocs.io/img/method.png "org.example.controllers.PurchaseOrderBindingController.createOrderStatusAsync") createOrderStatusAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createOrderStatusAsync(
+        final String new2,
+        final String new3,
+        final String new1,
+        final GetOrderStatus body,
+        final APICallBack<GetOrderStatusResponse> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    String new2 = "new2";
+    String new3 = "new3";
+    String new1 = "new1";
+    GetOrderStatus body = new GetOrderStatus();
+    // Invoking the API call with sample inputs
+    purchaseOrderBinding.createOrderStatusAsync(new2, new3, new1, body, new APICallBack<GetOrderStatusResponse>() {
+        public void onSuccess(HttpContext context, GetOrderStatusResponse response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 [Back to List of Controllers](#list_of_controllers)

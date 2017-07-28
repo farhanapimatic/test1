@@ -360,58 +360,9 @@ app.controller('oauthClientController', function($scope, OAuthManager, Configura
 The singleton instance of the ``` PurchaseOrderBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse, OrderConfirmation){
+	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation, GetOrderStatusResponse){
 	});
 ```
-
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrderStatus(body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse){
-        var body = new GetOrderStatus({"key":"value"});
-
-
-		var result = PurchaseOrderBindingController.createOrderStatus(body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
 
 ### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
 
@@ -452,6 +403,61 @@ function createOrder(body)
 
 	});
 ```
+
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrderStatus(new2, new3, new1, body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| new2 |  ``` Required ```  | TODO: Add a parameter description |
+| new3 |  ``` Required ```  | TODO: Add a parameter description |
+| new1 |  ``` Required ```  | TODO: Add a parameter description |
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse){
+        var new2 = 'new2';
+        var new3 = 'new3';
+        var new1 = 'new1';
+        var body = new GetOrderStatus({"key":"value"});
+
+
+		var result = PurchaseOrderBindingController.createOrderStatus(new2, new3, new1, body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 500 | Error in retrieving response |
+
 
 
 
