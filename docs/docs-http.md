@@ -1,105 +1,31 @@
 # 
 
-TODO: Add a description
-
 
 
 ## Base URL
 
-The Base URL for this API is `https://api.example.com`
+The Base URL for this API is `http://example.org/IPurchaseOrder`
 
 
 
-## Authentication
-The type of authentication used by this API is: `OAuth v2 Bearer Token / Personal Access Token`
 
 
 
 # <a name="api_reference"></a>API Reference
 
-* [Users](#users)
-* [Notes](#notes)
-* [Tags and Tagging Long Title](#tags_and_tagging_long_title)
+* [PurchaseOrderBinding](#purchase_order_binding)
 
-## <a name="users"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Users") Users
+## <a name="purchase_order_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "PurchaseOrderBinding") PurchaseOrderBinding
 
 
-### <a name="get_users"></a>![Endpoint: ](https://apidocs.io/img/method.png "Get users") Get users
+### <a name="order"></a>![Endpoint: ](https://apidocs.io/img/method.png "Order") Order
 
 
-**`GET`** `/users`
+**`POST`** `/Order`
 
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-
-#### Query Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| name | `string` |  ``` Optional ```  | Search for a user by name | `alice` | 
-| joinedBefore | `string` |  ``` Optional ```  | Search by join date | `2011-01-01` | 
-| joinedAfter | `string` |  ``` Optional ```  | Search by join date | `2011-01-01` | 
-| sort | `sort` |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by | `name` | 
-| limit | `number` |  ``` Optional ```  | The maximum number of users to return, up to `50` | `25` | 
-
-#### Responses
-**200** 
-
-Body (_Get users response_) 
-```
-[
-  {
-    "name": "alice",
-    "image": "http://example.com/alice.jpg",
-    "joined": "2013-11-01"
-  },
-  {
-    "name": "bob",
-    "image": "http://example.com/bob.jpg",
-    "joined": "2013-11-02"
-  }
-]
-```
-
-
-[Back to API Reference](#api_reference)
-
-## <a name="notes"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Notes") Notes
-
-
-### <a name="get_notes"></a>![Endpoint: ](https://apidocs.io/img/method.png "Get Notes") Get Notes
-
-
-**`GET`** `/notes`
-
-> Get a list of notes.
-
-
-
-#### Responses
-**200** 
-
-Body (_NoteData_) 
-```
-[
-  {
-    "id": 1,
-    "title": "Grocery list",
-    "body": "Buy milk"
-  }
-]
-```
-
-
-### <a name="create_new_note"></a>![Endpoint: ](https://apidocs.io/img/method.png "Create New Note") Create New Note
-
-
-**`POST`** `/notes`
-
-> Create a new note using a title and an optional content body.
+> TODO: Add a method description
 
 
 
@@ -112,178 +38,88 @@ Raw
 
 |  Type | Tags | Description |
 | ------| ---- |-------------| 
-| `create new note request` |  ``` Required ```  | TODO: Add a parameter description | 
+| `purchaseorder` |  ``` Required ```  | TODO: Add a parameter description | 
 
  Example 
 ``` 
 {
-  "title": "My new note",
-  "body": "This is the body"
+  "parameters": {
+    "quantity": 85,
+    "productName": "productName"
+  }
 }
 ``` 
 
 #### Responses
 **200** 
 
-
-
-**400** 
-
-> Unexpected error in API call. See HTTP response body for details.
-
-
-### <a name="get_note"></a>![Endpoint: ](https://apidocs.io/img/method.png "Get Note") Get Note
-
-
-**`GET`** `/notes/{id}`
-
-> Get a single note.
-
-
-
-#### Path Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| id | `string` |  ``` Required ```  | The note ID | `68a5sdf67` | 
-
-#### Query Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| body | `boolean` |  ``` Required ```  | Set to `false` to exclude note body content. | `false` | 
-
-#### Responses
-**200** 
-
-Body (_NoteData_) 
+Body (_OrderConfirmation_) 
 ```
 {
-  "id": 1,
-  "title": "Grocery list",
-  "body": "Buy milk"
+  "parameters": {
+    "orderID": 248,
+    "expectedShipDate": "expectedShipDate"
+  }
 }
 ```
 
 
-**404** 
-
-> Unexpected error in API call. See HTTP response body for details.
+### <a name="order_status"></a>![Endpoint: ](https://apidocs.io/img/method.png "OrderStatus") OrderStatus
 
 
-### <a name="update_a_note"></a>![Endpoint: ](https://apidocs.io/img/method.png "Update a Note") Update a Note
+**`POST`** `/OrderStatus`
 
+> *Tags:*  ``` Skips Authentication ``` 
 
-**`PUT`** `/notes/{id}`
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
+> TODO: Add a method description
 
 
 
-#### Path Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| id | `string` |  ``` Required ```  | The note ID | `68a5sdf67` | 
+#### Request Headers
+>Accept=application/json;
+>Content-Type=application/json;
 
-#### Query Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| body | `string` |  ``` Optional ```  | TODO: Add a parameter description | `"body"` | 
+#### Request Body
+Raw 
+
+|  Type | Tags | Description |
+| ------| ---- |-------------| 
+| `getorderstatus` |  ``` Required ```  | TODO: Add a parameter description | 
+
+ Example 
+``` 
+{
+  "parameters": {
+    "orderID": 248
+  }
+}
+``` 
 
 #### Responses
 **200** 
 
-Body (_NoteData_) 
+Body (_GetOrderStatusResponse_) 
 ```
 {
-  "id": 1,
-  "title": "Grocery list",
-  "body": "Buy milk"
+  "parameters": {
+    "orderID": 248,
+    "status": "status"
+  }
 }
 ```
 
 
-**404** 
+**500** 
 
-> Unexpected error in API call. See HTTP response body for details.
-
-
-### <a name="delete_a_note"></a>![Endpoint: ](https://apidocs.io/img/method.png "Delete a Note") Delete a Note
-
-
-**`DELETE`** `/notes/{id}`
-
-> Delete a single note
-
-
-
-#### Path Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| id | `string` |  ``` Required ```  | The note ID | `68a5sdf67` | 
-
-#### Query Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| body | `string` |  ``` Optional ```  | TODO: Add a parameter description | `"body"` | 
-
-#### Responses
-**200** 
-
-
-
-**404** 
-
-> Unexpected error in API call. See HTTP response body for details.
-
-
-[Back to API Reference](#api_reference)
-
-## <a name="tags_and_tagging_long_title"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "Tags and Tagging Long Title") Tags and Tagging Long Title
-
-
-### <a name="tags"></a>![Endpoint: ](https://apidocs.io/img/method.png "Tags") Tags
-
-
-**`GET`** `/tags`
-
-> Get a list of bars
-
-
-
-#### Responses
-**200** 
-
-Body (_string_) 
+> Error in retrieving response
+Body (_OrderNotFoundFault_) 
 ```
-[
-  "tag1",
-  "tag2",
-  "tag3"
-]
+{
+  "parameters": {
+    "orderID": 248
+  }
+}
 ```
-
-
-### <a name="get_get_one_tag"></a>![Endpoint: ](https://apidocs.io/img/method.png "Get Get one tag") Get Get one tag
-
-
-**`GET`** `/tags/{id}`
-
-> Get a single tag
-
-
-
-#### Path Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| id | `string` |  ``` Required ```  | Unique tag identifier | `"id"` | 
-
-#### Responses
-**200** 
-
-Body
 
 
 [Back to API Reference](#api_reference)

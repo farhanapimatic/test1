@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 
@@ -15,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=API%20Title-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=PurchaseOrderService-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Apititle SDK package in a new project.
+The following section explains how to use the Purchaseorderservice SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -30,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=API%20Title-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=PurchaseOrderService-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=API%20Title-Python&projectName=apititle)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=PurchaseOrderService-Python&projectName=purchaseorderservice)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=API%20Title-Python&projectName=apititle)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=PurchaseOrderService-Python&projectName=purchaseorderservice)
 
 Name the directory as "test"
 
@@ -48,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=API%20Title-Python&projectName=apititle)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=PurchaseOrderService-Python&projectName=purchaseorderservice)
 
 Name it "testsdk"
 
@@ -57,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from apititle.apititle_client import ApititleClient
+from purchaseorderservice.purchaseorderservice_client import PurchaseorderserviceClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=API%20Title-Python&libraryName=apititle.apititle_client&projectName=apititle)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=PurchaseOrderService-Python&libraryName=purchaseorderservice.purchaseorderservice_client&projectName=purchaseorderservice)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -68,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=API%20Title-Python&libraryName=apititle.apititle_client&projectName=apititle)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=PurchaseOrderService-Python&libraryName=purchaseorderservice.purchaseorderservice_client&projectName=purchaseorderservice)
 
 
 ## How to Test
@@ -83,22 +81,13 @@ runner. You can run the tests as follows:
 
 ## Initialization
 
-### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| o_auth_access_token | OAuth 2.0 Access Token |
-
-
+### 
 
 API client can be initialized as following.
 
 ```python
-# Configuration parameters and credentials
-o_auth_access_token = 'o_auth_access_token' # OAuth 2.0 Access Token
 
-client = ApititleClient(o_auth_access_token)
+client = PurchaseorderserviceClient()
 ```
 
 
@@ -107,98 +96,27 @@ client = ApititleClient(o_auth_access_token)
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UsersController](#users_controller)
-* [NotesController](#notes_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [PurchaseOrderBindingController](#purchase_order_binding_controller)
 
-## <a name="users_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersController") UsersController
+## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
 ### Get controller instance
 
-An instance of the ``` UsersController ``` class can be accessed from the API Client.
+An instance of the ``` PurchaseOrderBindingController ``` class can be accessed from the API Client.
 
 ```python
- users_client = client.users
+ purchase_order_binding_client = client.purchase_order_binding
 ```
 
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersController.get_users") get_users
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order") create_order
 
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
+> *Tags:*  ``` Skips Authentication ``` 
 
-```python
-def get_users(self,
-                  name=None,
-                  joined_before=None,
-                  joined_after=None,
-                  sort='name',
-                  limit=None)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-#### Example Usage
+> TODO: Add a method description
 
 ```python
-name = 'alice'
-joined_before = '2011-01-01'
-joined_after = '2011-01-01'
-sort = SortEnum.JOINED
-limit = 25
-
-result = users_client.get_users(name, joined_before, joined_after, sort, limit)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
-
-### Get controller instance
-
-An instance of the ``` NotesController ``` class can be accessed from the API Client.
-
-```python
- notes_client = client.notes
-```
-
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_notes") get_notes
-
-> Get a list of notes.
-
-```python
-def get_notes(self)
-```
-
-#### Example Usage
-
-```python
-
-result = notes_client.get_notes()
-
-```
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.create_new_note") create_new_note
-
-> Create a new note using a title and an optional content body.
-
-```python
-def create_new_note(self,
-                        body)
+def create_order(self,
+                     body)
 ```
 
 #### Parameters
@@ -212,10 +130,38 @@ def create_new_note(self,
 #### Example Usage
 
 ```python
-body_value = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}"
-body = json.loads(body_value)
+body = PurchaseOrder()
 
-notes_client.create_new_note(body)
+result = purchase_order_binding_client.create_order(body)
+
+```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.create_order_status") create_order_status
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_order_status(self,
+                            body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = GetOrderStatus()
+
+result = purchase_order_binding_client.create_order_status(body)
 
 ```
 
@@ -223,183 +169,9 @@ notes_client.create_new_note(body)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
+| 500 | Error in retrieving response |
 
 
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.get_note") get_note
-
-> Get a single note.
-
-```python
-def get_note(self,
-                 id,
-                 body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-#### Example Usage
-
-```python
-id = '68a5sdf67'
-body = False
-
-result = notes_client.get_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.update_a_note") update_a_note
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-```python
-def update_a_note(self,
-                      id,
-                      body=None)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-id = '68a5sdf67'
-body = 'body'
-
-result = notes_client.update_a_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.delete_a_note") delete_a_note
-
-> Delete a single note
-
-```python
-def delete_a_note(self,
-                      id,
-                      body=None)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-id = '68a5sdf67'
-body = 'body'
-
-notes_client.delete_a_note(id, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get controller instance
-
-An instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
-
-```python
- tags_and_tagging_long_title_client = client.tags_and_tagging_long_title
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.get_tags") get_tags
-
-> Get a list of bars
-
-```python
-def get_tags(self)
-```
-
-#### Example Usage
-
-```python
-
-result = tags_and_tagging_long_title_client.get_tags()
-
-```
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.get_get_one_tag") get_get_one_tag
-
-> Get a single tag
-
-```python
-def get_get_one_tag(self,
-                        id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-
-#### Example Usage
-
-```python
-id = 'id'
-
-result = tags_and_tagging_long_title_client.get_get_one_tag(id)
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)

@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 
@@ -31,15 +29,15 @@ Now follow the steps mentioned below to build your SDK:
 
 3. In ```Select root directory```, provide path to the unzipped archive for the generated code. Once the path is set and the Project becomes visible under ```Projects``` click ```Finish```
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=API%20Title-GoLang&projectName=apititle_lib)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=PurchaseOrderService-GoLang&projectName=purchaseorderservice_lib)
 
 4. The Go library will be imported and its files will be visible in the Project Explorer
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=apititle_lib)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=purchaseorderservice_lib)
 
 ## How to Use
 
-The following section explains how to use the ApititleLib library in a new project.
+The following section explains how to use the PurchaseorderserviceLib library in a new project.
 
 ### 1. Add a new Test Project
 
@@ -53,19 +51,19 @@ Name the Project as ```Test``` and click ```Finish```
 
 Create a new directory in the ```src``` directory of this project
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=apititle_lib)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=purchaseorderservice_lib)
 
 Name it ```test.com```
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=apititle_lib)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=purchaseorderservice_lib)
 
 Now create a new file inside ```src/test.com```
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=apititle_lib)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=purchaseorderservice_lib)
 
 Name it ```testsdk.go```
 
-![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=apititle_lib)
+![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=purchaseorderservice_lib)
 
 In this Go file, you can start adding code to initialize the client library. Sample code to initialize the client library and using its methods is given in the subsequent sections.
 
@@ -75,7 +73,7 @@ You need to import your generated library in this project in order to make use o
 
 Right click on the project name and click on ```Properties```
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=apititle_lib)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=purchaseorderservice_lib)
 
 Choose ```Go Compiler``` from the side menu. Check ```Use project specific settings``` and uncheck ```Use same value as the GOPATH environment variable.```. By default, the GOPATH value from the environment variables will be visible in ```Eclipse GOPATH```. Do not remove this as this points to the unirest dependency.
 
@@ -83,7 +81,7 @@ Choose ```Go Compiler``` from the side menu. Check ```Use project specific setti
 
 Append the library path to this GOPATH
 
-![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=API%20Title-GoLang)
+![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=PurchaseOrderService-GoLang)
 
 Once the path is appended, click on ```OK```
 
@@ -91,126 +89,39 @@ Once the path is appended, click on ```OK```
 
 Right click on the project name and click on ```Build Project```
 
-![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=apititle_lib)
+![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=purchaseorderservice_lib)
 
 ### 4. Run the Test Project
 
 If the build is successful, right click on your Go file and click on ```Run As``` -> ```Go Application```
 
-![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=apititle_lib)
-
-## Initialization
-
-### Authentication
-In order to setup authentication of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
-
-
-To configure these for your generated code, open the file "Configuration.go" and edit it's contents.
-
+![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=purchaseorderservice_lib)
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [users_pkg](#users_pkg)
-* [notes_pkg](#notes_pkg)
-* [tagsandtagginglongtitle_pkg](#tagsandtagginglongtitle_pkg)
+* [purchaseorderbinding_pkg](#purchaseorderbinding_pkg)
 
-## <a name="users_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".users_pkg") users_pkg
+## <a name="purchaseorderbinding_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".purchaseorderbinding_pkg") purchaseorderbinding_pkg
 
 ### Get instance
 
-Factory for the ``` USERS ``` interface can be accessed from the package users_pkg.
+Factory for the ``` PURCHASEORDERBINDING ``` interface can be accessed from the package purchaseorderbinding_pkg.
 
 ```go
-users := users_pkg.NewUSERS()
+purchaseOrderBinding := purchaseorderbinding_pkg.NewPURCHASEORDERBINDING()
 ```
 
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".users_pkg.GetUsers") GetUsers
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrder") CreateOrder
 
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```go
-func (me *USERS_IMPL) GetUsers(
-            name *string,
-            joinedBefore *string,
-            joinedAfter *string,
-            sort models_pkg.SortEnum,
-            limit *int64)([]*models_pkg.GetUsersResponse,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-#### Example Usage
-
-```go
-name := "alice"
-joinedBefore := "2011-01-01"
-joinedAfter := "2011-01-01"
-sort := models_pkg.sort_JOINED
-limit,_ := strconv.ParseInt("25", 10, 8)
-
-var result []*models_pkg.GetUsersResponse
-result,_ = users.GetUsers(name, joinedBefore, joinedAfter, sort, limit)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="notes_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".notes_pkg") notes_pkg
-
-### Get instance
-
-Factory for the ``` NOTES ``` interface can be accessed from the package notes_pkg.
-
-```go
-notes := notes_pkg.NewNOTES()
-```
-
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.GetNotes") GetNotes
-
-> Get a list of notes.
+> TODO: Add a method description
 
 
 ```go
-func (me *NOTES_IMPL) GetNotes()([]*models_pkg.NoteData,error)
-```
-
-#### Example Usage
-
-```go
-
-var result []*models_pkg.NoteData
-result,_ = notes.GetNotes()
-
-```
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.CreateNewNote") CreateNewNote
-
-> Create a new note using a title and an optional content body.
-
-
-```go
-func (me *NOTES_IMPL) CreateNewNote(body *models_pkg.CreateNewNoteRequest)(,error)
+func (me *PURCHASEORDERBINDING_IMPL) CreateOrder(body *models_pkg.PurchaseOrder)(*models_pkg.OrderConfirmation,error)
 ```
 
 #### Parameters
@@ -223,12 +134,39 @@ func (me *NOTES_IMPL) CreateNewNote(body *models_pkg.CreateNewNoteRequest)(,erro
 #### Example Usage
 
 ```go
-bodyValue := []byte("{    \"title\": \"My new note\",    \"body\": \"This is the body\"}")
-var body *models_pkg.CreateNewNoteRequest
-json.Unmarshal(bodyValue,&body)
+var body *models_pkg.PurchaseOrder
 
-var result 
-result,_ = notes.CreateNewNote(body)
+var result *models_pkg.OrderConfirmation
+result,_ = purchaseOrderBinding.CreateOrder(body)
+
+```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".purchaseorderbinding_pkg.CreateOrderStatus") CreateOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```go
+func (me *PURCHASEORDERBINDING_IMPL) CreateOrderStatus(body *models_pkg.GetOrderStatus)(*models_pkg.GetOrderStatusResponse,error)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```go
+var body *models_pkg.GetOrderStatus
+
+var result *models_pkg.GetOrderStatusResponse
+result,_ = purchaseOrderBinding.CreateOrderStatus(body)
 
 ```
 
@@ -236,184 +174,8 @@ result,_ = notes.CreateNewNote(body)
  
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
+| 500 | Error in retrieving response |
 
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.GetNote") GetNote
-
-> Get a single note.
-
-
-```go
-func (me *NOTES_IMPL) GetNote(
-            id string,
-            body bool)(*models_pkg.NoteData,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-#### Example Usage
-
-```go
-id := "68a5sdf67"
-body := false
-
-var result *models_pkg.NoteData
-result,_ = notes.GetNote(id, body)
-
-```
-
-#### Errors
- 
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.UpdateANote") UpdateANote
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```go
-func (me *NOTES_IMPL) UpdateANote(
-            id string,
-            body *string)(*models_pkg.NoteData,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-id := "68a5sdf67"
-body := "body"
-
-var result *models_pkg.NoteData
-result,_ = notes.UpdateANote(id, body)
-
-```
-
-#### Errors
- 
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".notes_pkg.DeleteANote") DeleteANote
-
-> Delete a single note
-
-
-```go
-func (me *NOTES_IMPL) DeleteANote(
-            id string,
-            body *string)(,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-id := "68a5sdf67"
-body := "body"
-
-var result 
-result,_ = notes.DeleteANote(id, body)
-
-```
-
-#### Errors
- 
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tagsandtagginglongtitle_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".tagsandtagginglongtitle_pkg") tagsandtagginglongtitle_pkg
-
-### Get instance
-
-Factory for the ``` TAGSANDTAGGINGLONGTITLE ``` interface can be accessed from the package tagsandtagginglongtitle_pkg.
-
-```go
-tagsAndTaggingLongTitle := tagsandtagginglongtitle_pkg.NewTAGSANDTAGGINGLONGTITLE()
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".tagsandtagginglongtitle_pkg.GetTags") GetTags
-
-> Get a list of bars
-
-
-```go
-func (me *TAGSANDTAGGINGLONGTITLE_IMPL) GetTags()([]string,error)
-```
-
-#### Example Usage
-
-```go
-
-var result []string
-result,_ = tagsAndTaggingLongTitle.GetTags()
-
-```
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".tagsandtagginglongtitle_pkg.GetGetOneTag") GetGetOneTag
-
-> Get a single tag
-
-
-```go
-func (me *TAGSANDTAGGINGLONGTITLE_IMPL) GetGetOneTag(id string)(interface{},error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-#### Example Usage
-
-```go
-id := "id"
-
-var result interface{}
-result,_ = tagsAndTaggingLongTitle.GetGetOneTag(id)
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)

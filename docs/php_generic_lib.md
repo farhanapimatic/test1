@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
@@ -12,7 +10,7 @@ Open command prompt and type ```composer --version```. This should display the c
 * Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
 * Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=API%20Title-PHP)
+![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=PurchaseOrderService-PHP)
 
 ### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
 
@@ -30,35 +28,35 @@ CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs.
 
 ## How to Use
 
-The following section explains how to use the APITitle library in a new project.
+The following section explains how to use the PurchaseOrderService library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=API%20Title-PHP)
+![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=PurchaseOrderService-PHP)
 
 Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=API%20Title-PHP)     
+![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=PurchaseOrderService-PHP)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=PurchaseOrderService-PHP)
 
 Name the directory as "test"
 
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=PurchaseOrderService-PHP)
    
 Add a PHP file to this project
 
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=PurchaseOrderService-PHP)
 
 Name it "testSDK"
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=PurchaseOrderService-PHP)
 
 Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
 
@@ -68,7 +66,7 @@ require_once "../vendor/autoload.php";
 
 It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=API%20Title-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=PurchaseOrderService-PHP)
 
 After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
@@ -78,23 +76,23 @@ To run your project you must set the Interpreter for your project. Interpreter i
 
 Open ```Settings``` from ```File``` menu.
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=PurchaseOrderService-PHP)
 
 Select ```PHP``` from within ```Languages & Frameworks```
 
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=PurchaseOrderService-PHP)
 
 Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
 
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=PurchaseOrderService-PHP)
 
 Once the interpreter is selected, click ```OK```
 
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=PurchaseOrderService-PHP)
 
 To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=API%20Title-PHP)
+![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=PurchaseOrderService-PHP)
 
 ## How to Test
 
@@ -108,21 +106,13 @@ You can change the PHPUnit test configuration in the `phpunit.xml` file.
 
 ## Initialization
 
-### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
-
-
+### 
 
 API client can be initialized as following.
 
 ```php
-$oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
 
-$client = new APITitleLib\APITitleClient($oAuthAccessToken);
+$client = new PurchaseOrderServiceLib\PurchaseOrderServiceClient();
 ```
 
 
@@ -130,100 +120,27 @@ $client = new APITitleLib\APITitleClient($oAuthAccessToken);
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UsersController](#users_controller)
-* [NotesController](#notes_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [PurchaseOrderBindingController](#purchase_order_binding_controller)
 
-## <a name="users_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersController") UsersController
+## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` UsersController ``` class can be accessed from the API Client.
+The singleton instance of the ``` PurchaseOrderBindingController ``` class can be accessed from the API Client.
 
 ```php
-$users = $client->getUsers();
+$purchaseOrderBinding = $client->getPurchaseOrderBinding();
 ```
 
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersController.getUsers") getUsers
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
 
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```php
-function getUsers(
-        $name = null,
-        $joinedBefore = null,
-        $joinedAfter = null,
-        $sort = Models\SortEnum::NAME,
-        $limit = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-#### Example Usage
-
-```php
-$name = 'alice';
-$joinedBefore = '2011-01-01';
-$joinedAfter = '2011-01-01';
-$sort = string::JOINED;
-$limit = 25;
-
-$result = $users->getUsers($name, $joinedBefore, $joinedAfter, $sort, $limit);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
-
-### Get singleton instance
-
-The singleton instance of the ``` NotesController ``` class can be accessed from the API Client.
-
-```php
-$notes = $client->getNotes();
-```
-
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes") getNotes
-
-> Get a list of notes.
+> TODO: Add a method description
 
 
 ```php
-function getNotes()
-```
-
-#### Example Usage
-
-```php
-
-$result = $notes->getNotes();
-
-```
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNote") createNewNote
-
-> Create a new note using a title and an optional content body.
-
-
-```php
-function createNewNote($body)
+function createOrder($body)
 ```
 
 #### Parameters
@@ -237,10 +154,38 @@ function createNewNote($body)
 #### Example Usage
 
 ```php
-$bodyValue = "{    \"title\": \"My new note\",    \"body\": \"This is the body\"}";
-$body = APIHelper::deserialize($bodyValue);
+$body = new PurchaseOrder();
 
-$notes->createNewNote($body);
+$result = $purchaseOrderBinding->createOrder($body);
+
+```
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```php
+function createOrderStatus($body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```php
+$body = new GetOrderStatus();
+
+$result = $purchaseOrderBinding->createOrderStatus($body);
 
 ```
 
@@ -248,183 +193,8 @@ $notes->createNewNote($body);
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
+| 500 | Error in retrieving response |
 
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNote") getNote
-
-> Get a single note.
-
-
-```php
-function getNote(
-        $id,
-        $body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = false;
-
-$result = $notes->getNote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANote") updateANote
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```php
-function updateANote(
-        $id,
-        $body = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = 'body';
-
-$result = $notes->updateANote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANote") deleteANote
-
-> Delete a single note
-
-
-```php
-function deleteANote(
-        $id,
-        $body = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$id = '68a5sdf67';
-$body = 'body';
-
-$notes->deleteANote($id, $body);
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed from the API Client.
-
-```php
-$tagsAndTaggingLongTitle = $client->getTagsAndTaggingLongTitle();
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTags") getTags
-
-> Get a list of bars
-
-
-```php
-function getTags()
-```
-
-#### Example Usage
-
-```php
-
-$result = $tagsAndTaggingLongTitle->getTags();
-
-```
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTag") getGetOneTag
-
-> Get a single tag
-
-
-```php
-function getGetOneTag($id)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-
-#### Example Usage
-
-```php
-$id = 'id';
-
-$result = $tagsAndTaggingLongTitle->getGetOneTag($id);
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)

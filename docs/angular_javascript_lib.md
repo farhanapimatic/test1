@@ -1,7 +1,5 @@
 # Getting started
 
-TODO: Add a description
-
 ## How to Build
 
 The generated SDK requires AngularJS framework to work. If you do not already have angular downloaded, please go ahead and do it from [here](https://angularjs.org/).
@@ -15,10 +13,10 @@ The following section describes how to use the generated SDK in an existing/new 
 Perform the following steps to configure angular and the SDK:
 + Make a `scripts` folder inside the root folder of the project. If you already have a `scripts` folder, skip to the next step.
 + Move the `angular.min.js` file inside the scripts folder. 
-+ Move the `APITitleLib` folder inside the scripts folder.
++ Move the `PurchaseOrderServiceLib` folder inside the scripts folder.
 + If any of the Custom Types in your API have `Date`/`Datetime` type fields or any endpoint has `Date`/`Datetime` response, you will need to download angular-moment and moment.js. Move these 2 files into the `scripts` folder as well.
 
-![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=API%20Title-Angular&projectName=APITitleLib)
+![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=PurchaseOrderService-Angular&projectName=PurchaseOrderServiceLib)
 
 ### 2. Open Project Folder
 Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
@@ -26,7 +24,7 @@ Click on `File` and select `Open Folder`
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=API%20Title-Angular)
+![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=PurchaseOrderService-Angular)
 
 ### 3. Create an Angular Application
 Since Angular JS is used for client-side web development, in order to use the generated library, you will have to develop an application first.
@@ -63,7 +61,7 @@ Skip to the next step if you are working with an existing project and already ha
 </html>
 ```
 
-![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=API%20Title-Angular)
+![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=PurchaseOrderService-Angular)
 
 ### 5. Including links to Angular in HTML file
 Your HTML file needs to have a link to `angular.min.js` file to use Angular-JS. Add the link using `script` tags inside the `head` section of `index.html` like:
@@ -83,32 +81,32 @@ Import the reference to the generated SDK files inside your html file like:
 <head>
     ...
     <!-- Helper files -->
-    <script src="scripts/APITitleLib/Module.js"></script>
-    <script src="scripts/APITitleLib/Configuration.js"></script>
-    <script src="scripts/APITitleLib/ModelFactory.js"></script>
-    <script src="scripts/APITitleLib/ObjectMapper.js"></script>
-    <script src="scripts/APITitleLib/APIHelper.js"></script>
-    <script src="scripts/APITitleLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/APITitleLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/APITitleLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/APITitleLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Module.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Configuration.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/ModelFactory.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/ObjectMapper.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/APIHelper.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Client/HttpContext.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Client/RequestClient.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Http/Response/HttpResponse.js"></script>
 
     <!-- API Controllers -->
-    <script src="scripts/APITitleLib/Controllers/BaseController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/UsersController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/NotesController.js"></script>
-    <script src="scripts/APITitleLib/Controllers/TagsAndTaggingLongTitleController.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/BaseController.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Controllers/PurchaseOrderBindingController.js"></script>
 
 
     <!-- Models -->
-    <script src="scripts/APITitleLib/Models/BaseModel.js"></script>
-    <script src="scripts/APITitleLib/Models/NoteData.js"></script>
-    <script src="scripts/APITitleLib/Models/CreateNewNoteRequest.js"></script>
-    <script src="scripts/APITitleLib/Models/CreateNewNoteRequest3.js"></script>
-    <script src="scripts/APITitleLib/Models/UpdateANoteRequest.js"></script>
-    <script src="scripts/APITitleLib/Models/UpdateANoteRequest7.js"></script>
-    <script src="scripts/APITitleLib/Models/SortEnum.js"></script>
-    <script src="scripts/APITitleLib/Models/GetUsersResponse.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/BaseModel.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrderType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmationType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponseType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderNotFoundFaultType.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmation.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponse.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrder.js"></script>
+    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatus.js"></script>
 
     ...
 </head>
@@ -149,7 +147,7 @@ In order to use the generated SDK's modules, controllers and factories, the proj
 Add the dependency like this:
 
 ```js
-var app = angular.module('myApp', ['APITitleLib']);
+var app = angular.module('myApp', ['PurchaseOrderServiceLib']);
 ```
 At this point, the SDK has been successfully included in your project. Further steps include using a service/factory from the generated SDK. To see working example of this, please head on [over here](#list-of-controllers) and choose any class to see its functions and example usage.  
 
@@ -163,32 +161,12 @@ To run the app, simply open up the `index.html` file in a browser.
 
 The Angular Application can be initialized as following:
 ```JavaScript
-var app = angular.module('myApp', [APITitleLib]);
+var app = angular.module('myApp', [PurchaseOrderServiceLib]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
-### Authentication
-In order to setup authentication and initialization of the Angular App, you need the following information.
+### 
 
-| Parameter | Description |
-|-----------|-------------|
-| oAuthAccessToken | OAuth 2.0 Access Token |
-
-
-
-```JavaScript
-var app = angular.module('myApp', [APITitleLib]);
-app.factory('config', function($scope, Configuration) 
-{
-    return {
-        setConfigVars: function() {
-            // Configuration parameters and credentials
-            Configuration.oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
-            
-        }
-    };
-});
-```
 
 
 
@@ -196,124 +174,28 @@ app.factory('config', function($scope, Configuration)
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UsersController](#users_controller)
-* [NotesController](#notes_controller)
-* [TagsAndTaggingLongTitleController](#tags_and_tagging_long_title_controller)
+* [PurchaseOrderBindingController](#purchase_order_binding_controller)
 
-## <a name="users_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UsersController") UsersController
+## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` UsersController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` PurchaseOrderBindingController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, UsersController, GetUsersResponse){
+	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation, GetOrderStatusResponse){
 	});
 ```
 
-### <a name="get_users"></a>![Method: ](https://apidocs.io/img/method.png ".UsersController.getUsers") getUsers
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
 
-> Get a list of users. Example:
-> ```no-highlight
-> https://api.mywebsite.com/users?sort=joined&limit=5
-> ```
+> *Tags:*  ``` Skips Authentication ``` 
 
-
-```javascript
-function getUsers(name, joinedBefore, joinedAfter, sort, limit)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| name |  ``` Optional ```  | Search for a user by name |
-| joinedBefore |  ``` Optional ```  | Search by join date |
-| joinedAfter |  ``` Optional ```  | Search by join date |
-| sort |  ``` Optional ```  ``` DefaultValue ```  | Which field to sort by |
-| limit |  ``` Optional ```  | The maximum number of users to return, up to `50` |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, UsersController, GetUsersResponse){
-        var name = 'alice';
-        var joinedBefore = '2011-01-01';
-        var joinedAfter = '2011-01-01';
-        var sort = new SortEnum|null(joined);
-        var limit = 25;
-
-
-		var result = UsersController.getUsers(name, joinedBefore, joinedAfter, sort, limit);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="notes_controller"></a>![Class: ](https://apidocs.io/img/class.png ".NotesController") NotesController
-
-### Get singleton instance
-
-The singleton instance of the ``` NotesController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, NotesController, NoteData){
-	});
-```
-
-### <a name="get_notes"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNotes") getNotes
-
-> Get a list of notes.
+> TODO: Add a method description
 
 
 ```javascript
-function getNotes()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-
-
-		var result = NotesController.getNotes();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-### <a name="create_new_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.createNewNote") createNewNote
-
-> Create a new note using a title and an optional content body.
-
-
-```javascript
-function createNewNote(body)
+function createOrder(body)
 ```
 #### Parameters
 
@@ -328,11 +210,53 @@ function createNewNote(body)
 ```javascript
 
 
-	app.controller("testController", function($scope, NotesController){
-        var body = new CreateNewNoteRequest({    "title": "My new note",    "body": "This is the body"});
+	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation){
+        var body = new PurchaseOrder({"key":"value"});
 
 
-		var result = NotesController.createNewNote(body);
+		var result = PurchaseOrderBindingController.createOrder(body);
+        //Function call returns a promise
+        result.then(function(success){
+			//success case
+			//getting context of response
+			console.log(success.getContext());
+		},function(err){
+			//failure case
+		});
+
+	});
+```
+
+
+
+### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```javascript
+function createOrderStatus(body)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+
+	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse){
+        var body = new GetOrderStatus({"key":"value"});
+
+
+		var result = PurchaseOrderBindingController.createOrderStatus(body);
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -349,244 +273,8 @@ function createNewNote(body)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Unexpected error in API call. See HTTP response body for details. |
+| 500 | Error in retrieving response |
 
-
-
-
-### <a name="get_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.getNote") getNote
-
-> Get a single note.
-
-
-```javascript
-function getNote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Required ```  | Set to `false` to exclude note body content. |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-        var id = '68a5sdf67';
-        var body = false;
-
-
-		var result = NotesController.getNote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="update_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.updateANote") updateANote
-
-> Update a single note by setting the title and/or body.
-> ::: warning
-> #### <i class="fa fa-warning"></i> Caution
-> If the value for `title` or `body` is `null` or `undefined`, then the corresponding value is not modified on the server. However, if you send an empty string instead then it will **permanently overwrite** the original value.
-> :::
-
-
-```javascript
-function updateANote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController, NoteData){
-        var id = '68a5sdf67';
-        var body = 'body';
-
-
-		var result = NotesController.updateANote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-### <a name="delete_a_note"></a>![Method: ](https://apidocs.io/img/method.png ".NotesController.deleteANote") deleteANote
-
-> Delete a single note
-
-
-```javascript
-function deleteANote(id, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | The note ID |
-| body |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, NotesController){
-        var id = '68a5sdf67';
-        var body = 'body';
-
-
-		var result = NotesController.deleteANote(id, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 404 | Unexpected error in API call. See HTTP response body for details. |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="tags_and_tagging_long_title_controller"></a>![Class: ](https://apidocs.io/img/class.png ".TagsAndTaggingLongTitleController") TagsAndTaggingLongTitleController
-
-### Get singleton instance
-
-The singleton instance of the ``` TagsAndTaggingLongTitleController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
-	});
-```
-
-### <a name="get_tags"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getTags") getTags
-
-> Get a list of bars
-
-
-```javascript
-function getTags()
-```
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
-
-
-		var result = TagsAndTaggingLongTitleController.getTags();
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-
-
-### <a name="get_get_one_tag"></a>![Method: ](https://apidocs.io/img/method.png ".TagsAndTaggingLongTitleController.getGetOneTag") getGetOneTag
-
-> Get a single tag
-
-
-```javascript
-function getGetOneTag(id)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Unique tag identifier |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, TagsAndTaggingLongTitleController){
-        var id = 'id';
-
-
-		var result = TagsAndTaggingLongTitleController.getGetOneTag(id);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
 
 
 
