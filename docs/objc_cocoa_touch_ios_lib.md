@@ -11,50 +11,50 @@ Open command prompt and type ```pod --version```. This should display the curren
 Using command line, navigate to the directory containing the generated files (including ```PodFile```) for the SDK. 
 Run the command ```pod install```. This should install all the required dependencies and create the ```pods``` directory in your project directory.
 
-![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Installing dependencies using Cocoapods](https://apidocs.io/illustration/objc?step=AddDependencies&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
-Open the project workspace using the (PurchaseOrderService.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
+Open the project workspace using the (Calculator.xcworkspace) file. Invoke the build process using `Command(⌘)+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Building SDK using Xcode](https://apidocs.io/illustration/objc?step=BuildSDK&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 
 ## How to Use
 
 The generated code is a Cocoa Touch Static Library which can be used in any iOS project. The support for these generated libraries go all the way back to iOS 6.
 
-The following section explains how to use the PurchaseOrderService library in a new iOS project.     
+The following section explains how to use the Calculator library in a new iOS project.     
 ### 1. Starting a new project
 To start a new project, left-click on the ```Create a new Xcode project```.
-![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Create Test Project - Step 1](https://apidocs.io/illustration/objc?step=Test1&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 Next, choose **Single View Application** and click ```Next```.
-![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Create Test Project - Step 2](https://apidocs.io/illustration/objc?step=Test2&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 Provide **Test-Project** as the product name click ```Next```.
-![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Create Test Project - Step 3](https://apidocs.io/illustration/objc?step=Test3&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 Choose the desired location of your project folder and click ```Create```.
-![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Create Test Project - Step 4](https://apidocs.io/illustration/objc?step=Test4&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 ### 2. Adding the static library dependency
 To add this dependency open a terminal and navigate to your project folder. Next, input ```pod init``` and press enter.
-![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Add dependency - Step 1](https://apidocs.io/illustration/objc?step=Add0&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
-Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'PurchaseOrderService', :path => 'Vendor/PurchaseOrderService'
-![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+Next, open the newly created ```PodFile``` in your favourite text editor. Add the following line : pod 'Calculator', :path => 'Vendor/Calculator'
+![Add dependency - Step 2](https://apidocs.io/illustration/objc?step=Add1&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 Execute `pod install` from terminal to install the dependecy in your project. This would add the dependency to the newly created test project.
-![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Add dependency - Step 3](https://apidocs.io/illustration/objc?step=Add2&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 
 ## How to Test
 
 Unit tests in this SDK can be run using Xcode. 
 
-First build the SDK as shown in the steps above and naivgate to the project directory and open the PurchaseOrderService.xcworkspace file.
+First build the SDK as shown in the steps above and naivgate to the project directory and open the Calculator.xcworkspace file.
 
 Go to the test explorer in Xcode as shown in the picture below and click on `run tests` from the menu. 
-![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=PurchaseOrderService-ObjC&workspaceName=PurchaseOrderService&projectName=PurchaseOrderService&rootNamespace=PurchaseOrderService)
+![Run tests](https://apidocs.io/illustration/objc?step=RunTests&workspaceFolder=Calculator-ObjC&workspaceName=Calculator&projectName=Calculator&rootNamespace=Calculator)
 
 
 ## Initialization
@@ -64,16 +64,16 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthClientSecret | OAuth 2 Client Secret |
+| username | your username |
+| key | your api key |
 
 
 
 Configuration variables can be set as following.
 ```Objc
 // Configuration parameters and credentials
-Configuration_OAuthClientId = "Configuration_OAuthClientId"; // OAuth 2 Client ID
-Configuration_OAuthClientSecret = "Configuration_OAuthClientSecret"; // OAuth 2 Client Secret
+Configuration_Username = "Configuration_Username"; // your username
+Configuration_Key = "Configuration_Key"; // your api key
 
 ```
 
@@ -81,157 +81,34 @@ Configuration_OAuthClientSecret = "Configuration_OAuthClientSecret"; // OAuth 2 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [PurchaseOrderBindingController](#purchase_order_binding_controller)
-* [OAuthAuthorizationController](#o_auth_authorization_controller)
+* [HelloworldController](#helloworld_controller)
 
-## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
+## <a name="helloworld_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HelloworldController") HelloworldController
 
 ### Get singleton instance
 ```objc
-PurchaseOrderBinding* purchaseOrderBinding = [[PurchaseOrderBinding alloc]init] ;
+Helloworld* helloworld = [[Helloworld alloc]init] ;
 ```
 
-### <a name="create_order_async_with_body"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderAsyncWithBody") createOrderAsyncWithBody
-
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_helloworld_with_completion_block"></a>![Method: ](https://apidocs.io/img/method.png ".HelloworldController.getHelloworldWithCompletionBlock") getHelloworldWithCompletionBlock
 
 > TODO: Add a method description
 
 
 ```objc
-function createOrderAsyncWithBody:(PurchaseOrder*) body
-                completionBlock:(CompletedPostOrder) onCompleted(body)
+function getHelloworldWithCompletionBlock:(CompletedGetHelloworld) onCompleted()
 ```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 
 
 #### Example Usage
 
 ```objc
-    // Parameters for the API call
-    PurchaseOrder* body = [[PurchaseOrder alloc]init];
 
-    [self.purchaseOrderBinding createOrderAsyncWithBody: body  completionBlock:^(BOOL success, HttpContext* context, OrderConfirmation* response, NSError* error) { 
+    [self.helloworld getHelloworldWithCompletionBlock:  ^(BOOL success, HttpContext* context, HelloWorldResponseModel* response, NSError* error) { 
        //Add code here
     }];
 ```
-
-
-### <a name="create_order_status_async_with_new2"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatusAsyncWithNew2") createOrderStatusAsyncWithNew2
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```objc
-function createOrderStatusAsyncWithNew2:(NSString*) mnew2
-                mnew3:(NSString*) mnew3
-                mnew1:(NSString*) mnew1
-                body:(GetOrderStatus*) body
-                completionBlock:(CompletedPostOrderStatus) onCompleted(mnew2 mnew3 : mnew3 mnew1 : mnew1 body : body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| mnew2 |  ``` Required ```  | TODO: Add a parameter description |
-| mnew3 |  ``` Required ```  | TODO: Add a parameter description |
-| mnew1 |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* mnew2 = @"new2";
-    NSString* mnew3 = @"new3";
-    NSString* mnew1 = @"new1";
-    GetOrderStatus* body = [[GetOrderStatus alloc]init];
-
-    [self.purchaseOrderBinding createOrderStatusAsyncWithNew2: mnew2 mnew3 : mnew3 mnew1 : mnew1 body : body  completionBlock:^(BOOL success, HttpContext* context, GetOrderStatusResponse* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
-
-### Get singleton instance
-```objc
-OAuthAuthorization* oAuthAuthorization = [[OAuthAuthorization alloc]init] ;
-```
-
-### <a name="create_request_token_async_with_authorization"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestTokenAsyncWithAuthorization") createRequestTokenAsyncWithAuthorization
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
-
-
-```objc
-function createRequestTokenAsyncWithAuthorization:(NSString*) authorization
-                scope:(NSString*) scope
-                fieldParameters:(NSDictionary*) fieldParameters
-                completionBlock:(CompletedPostRequestToken) onCompleted(authorization scope : scope  formParameters : formParams)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
-
-
-
-
-
-#### Example Usage
-
-```objc
-    // Parameters for the API call
-    NSString* authorization = @"Authorization";
-    NSString* scope = @"scope";
-    // Dictionary for optional form parameters
-    NSMutableDictionary* formParamsMutable = [[NSMutableDictionary alloc] init];
-    NSDictionary *formParams= [formParamsMutable copy];
-
-    [self.oAuthAuthorization createRequestTokenAsyncWithAuthorization: authorization scope : scope  formParameters : formParams  completionBlock:^(BOOL success, HttpContext* context, OAuthToken* response, NSError* error) { 
-       //Add code here
-    }];
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
-
 
 
 [Back to List of Controllers](#list_of_controllers)

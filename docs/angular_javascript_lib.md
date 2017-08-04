@@ -13,10 +13,10 @@ The following section describes how to use the generated SDK in an existing/new 
 Perform the following steps to configure angular and the SDK:
 + Make a `scripts` folder inside the root folder of the project. If you already have a `scripts` folder, skip to the next step.
 + Move the `angular.min.js` file inside the scripts folder. 
-+ Move the `PurchaseOrderServiceLib` folder inside the scripts folder.
++ Move the `Calculator` folder inside the scripts folder.
 + If any of the Custom Types in your API have `Date`/`Datetime` type fields or any endpoint has `Date`/`Datetime` response, you will need to download angular-moment and moment.js. Move these 2 files into the `scripts` folder as well.
 
-![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=PurchaseOrderService-Angular&projectName=PurchaseOrderServiceLib)
+![folder-structure-image](https://apidocs.io/illustration/angularjs?step=folderStructure&workspaceFolder=Calculator-Angular&projectName=Calculator)
 
 ### 2. Open Project Folder
 Open an IDE/Text Editor for JavaScript like Sublime Text. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.  
@@ -24,7 +24,7 @@ Click on `File` and select `Open Folder`
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=PurchaseOrderService-Angular)
+![open-folder-image](https://apidocs.io/illustration/angularjs?step=openFolder&workspaceFolder=Calculator-Angular)
 
 ### 3. Create an Angular Application
 Since Angular JS is used for client-side web development, in order to use the generated library, you will have to develop an application first.
@@ -61,7 +61,7 @@ Skip to the next step if you are working with an existing project and already ha
 </html>
 ```
 
-![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=PurchaseOrderService-Angular)
+![initial-html-code-image](https://apidocs.io/illustration/angularjs?step=initialCode&workspaceFolder=Calculator-Angular)
 
 ### 5. Including links to Angular in HTML file
 Your HTML file needs to have a link to `angular.min.js` file to use Angular-JS. Add the link using `script` tags inside the `head` section of `index.html` like:
@@ -81,39 +81,24 @@ Import the reference to the generated SDK files inside your html file like:
 <head>
     ...
     <!-- Helper files -->
-    <script src="scripts/PurchaseOrderServiceLib/Module.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Configuration.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/ModelFactory.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/ObjectMapper.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/APIHelper.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Client/RequestClient.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Response/HttpResponse.js"></script>
+    <script src="scripts/Calculator/Module.js"></script>
+    <script src="scripts/Calculator/Configuration.js"></script>
+    <script src="scripts/Calculator/ModelFactory.js"></script>
+    <script src="scripts/Calculator/ObjectMapper.js"></script>
+    <script src="scripts/Calculator/APIHelper.js"></script>
+    <script src="scripts/Calculator/Http/Client/HttpContext.js"></script>
+    <script src="scripts/Calculator/Http/Client/RequestClient.js"></script>
+    <script src="scripts/Calculator/Http/Request/HttpRequest.js"></script>
+    <script src="scripts/Calculator/Http/Response/HttpResponse.js"></script>
 
     <!-- API Controllers -->
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/BaseController.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/PurchaseOrderBindingController.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/OAuthAuthorizationController.js"></script>
+    <script src="scripts/Calculator/Controllers/BaseController.js"></script>
+    <script src="scripts/Calculator/Controllers/HelloworldController.js"></script>
 
 
     <!-- Models -->
-    <script src="scripts/PurchaseOrderServiceLib/Models/BaseModel.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrderType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmationType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponseType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderNotFoundFaultType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmation.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponse.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrder.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatus.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
+    <script src="scripts/Calculator/Models/BaseModel.js"></script>
+    <script src="scripts/Calculator/Models/HelloWorldResponseModel.js"></script>
 
     ...
 </head>
@@ -154,7 +139,7 @@ In order to use the generated SDK's modules, controllers and factories, the proj
 Add the dependency like this:
 
 ```js
-var app = angular.module('myApp', ['PurchaseOrderServiceLib']);
+var app = angular.module('myApp', ['Calculator']);
 ```
 At this point, the SDK has been successfully included in your project. Further steps include using a service/factory from the generated SDK. To see working example of this, please head on [over here](#list-of-controllers) and choose any class to see its functions and example usage.  
 
@@ -168,7 +153,7 @@ To run the app, simply open up the `index.html` file in a browser.
 
 The Angular Application can be initialized as following:
 ```JavaScript
-var app = angular.module('myApp', [PurchaseOrderServiceLib]);
+var app = angular.module('myApp', [Calculator]);
 // now controllers/services can be created which import
 // the factories provided by the sdk
 ```
@@ -177,171 +162,24 @@ In order to setup authentication and initialization of the Angular App, you need
 
 | Parameter | Description |
 |-----------|-------------|
-| oAuthClientId | OAuth 2 Client ID |
-| oAuthClientSecret | OAuth 2 Client Secret |
+| username | your username |
+| key | your api key |
 
 
 
 ```JavaScript
-var app = angular.module('myApp', [PurchaseOrderServiceLib]);
+var app = angular.module('myApp', [Calculator]);
 app.factory('config', function($scope, Configuration) 
 {
     return {
         setConfigVars: function() {
             // Configuration parameters and credentials
-            Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
-            Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
+            Configuration.username = 'username'; // your username
+            Configuration.key = 'key'; // your api key
             
         }
     };
 });
-```
-
-You must now authorize the client.
-
-### Authorizing your client
-
-
-This SDK uses *OAuth 2.0 authorization* to authorize the client.
-
-The `authorize()` method will exchange the OAuth client credentials for an *access token*.
-The access token is an object containing information for authorizing client requests.
-
- You must pass the *[scopes](#scopes)* for which you need permission to access.
-```JavaScript
-var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
-
-app.controller('oauthClientController', function($scope, OAuthManager, OAuthScopeEnum) {
-    var scopes = [OAuthScopeEnum.SF];
-    var promise = OAuthManager.authorize(scopes);
-    promise.then(function(success) {
-        // client successfully authorized
-    });
-});
-```
-
-The client can now make authorized endpoint calls.
-
-
-
-### Scopes
-
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `PurchaseOrderServiceLib/Models/OAuthScopeEnum` enumeration.
-
-| Scope Name | Description |
-| --- | --- |
-| `SF` |  |
-
-
-
-
-### Creating a client from an existing token
-
-To authorize a client from an existing access token, just set the access token in `Configuration` along with the other configuration parameters:
-
-```JavaScript
-var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
-
-app.controller('config', function($scope, Configuration) {
-    Configuration.oAuthToken = sessionStorage.getItem('token'); // the existing token stored in sessionStorage of browser
-});
-```
-
-
-### Complete example
-In this example, `app.js` will check if the access token has been obtained. If it hasn't been, the client needs to be authorized first.
-After authorization, endpoint calls can be made.
-
-#### `app.js`
-
-```JavaScript
-var app = angular.module('OAuthTest', ['PurchaseOrderServiceLib']);
-
-app.controller('oauthClientController', function($scope, OAuthManager, Configuration, OAuthScopeEnum) {
-    Configuration.oAuthClientId = 'oAuthClientId'; // OAuth 2 Client ID
-    Configuration.oAuthClientSecret = 'oAuthClientSecret'; // OAuth 2 Client Secret
-
-    Configuration.oAuthTokenUpdateCallback = function(token) {
-        sessionStorage.setItem('token', token);
-    }
-
-    if (OAuthManager.isTokenSet()) {
-        // token was already set, make API calls as required
-    } else {
-        // since token is not set, client needs to obtain
-        // an access token first
-        var scopes = [OAuthScopeEnum.SF];
-        var promise = OAuthManager.authorize(scopes);
-        promise.then(function(success) {
-            // client successfully authorized
-            // make endpoint calls as required
-        });
-    }
-
-});
-```
-
-#### `index.html`
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>OAuthTest</title>
-    <meta charset="UTF8">
-
-    <script src="scripts/angular.min.js"></script>
-
-    <script src="scripts/PurchaseOrderServiceLib/Module.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Configuration.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/ModelFactory.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/ObjectMapper.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/APIHelper.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Servers.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Environments.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Client/HttpContext.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Request/HttpRequest.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Response/HttpResponse.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Http/Client/RequestClient.js"></script>
-
-    <!-- API Controllers -->
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/BaseController.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/PurchaseOrderBindingController.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Controllers/OAuthAuthorizationController.js"></script>
-
-
-    <!-- Models -->
-    <script src="scripts/PurchaseOrderServiceLib/Models/BaseModel.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrderType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmationType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponseType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderNotFoundFaultType.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OrderConfirmation.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatusResponse.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/PurchaseOrder.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/GetOrderStatus.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthScopeEnum.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthToken.js"></script>
-    <script src="scripts/PurchaseOrderServiceLib/Models/OAuthProviderErrorEnum.js"></script>
-
-
-    <script src="scripts/PurchaseOrderServiceLib/OAuthManager.js"></script>
-    <script src="scripts/app.js"></script>
-
-</head>
-
-
-<body ng-app="OAuthTest">
-    <div ng-controller="oauthClientController">
-
-    </div>
-</body>
-
-</html>
 ```
 
 
@@ -350,48 +188,37 @@ app.controller('oauthClientController', function($scope, OAuthManager, Configura
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [PurchaseOrderBindingController](#purchase_order_binding_controller)
-* [OAuthAuthorizationController](#o_auth_authorization_controller)
+* [HelloworldController](#helloworld_controller)
 
-## <a name="purchase_order_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PurchaseOrderBindingController") PurchaseOrderBindingController
+## <a name="helloworld_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HelloworldController") HelloworldController
 
 ### Get singleton instance
 
-The singleton instance of the ``` PurchaseOrderBindingController ``` class can be accessed via Dependency Injection.
+The singleton instance of the ``` HelloworldController ``` class can be accessed via Dependency Injection.
 
 ```js
-	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation, GetOrderStatusResponse){
+	app.controller("testController", function($scope, HelloworldController, HelloWorldResponseModel){
 	});
 ```
 
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrder") createOrder
-
-> *Tags:*  ``` Skips Authentication ``` 
+### <a name="get_helloworld"></a>![Method: ](https://apidocs.io/img/method.png ".HelloworldController.getHelloworld") getHelloworld
 
 > TODO: Add a method description
 
 
 ```javascript
-function createOrder(body)
+function getHelloworld()
 ```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
 
 #### Example Usage
 
 ```javascript
 
 
-	app.controller("testController", function($scope, PurchaseOrderBindingController, OrderConfirmation){
-        var body = new PurchaseOrder({"key":"value"});
+	app.controller("testController", function($scope, HelloworldController, HelloWorldResponseModel){
 
 
-		var result = PurchaseOrderBindingController.createOrder(body);
+		var result = HelloworldController.getHelloworld();
         //Function call returns a promise
         result.then(function(success){
 			//success case
@@ -403,184 +230,6 @@ function createOrder(body)
 
 	});
 ```
-
-
-
-### <a name="create_order_status"></a>![Method: ](https://apidocs.io/img/method.png ".PurchaseOrderBindingController.createOrderStatus") createOrderStatus
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> TODO: Add a method description
-
-
-```javascript
-function createOrderStatus(new2, new3, new1, body)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| new2 |  ``` Required ```  | TODO: Add a parameter description |
-| new3 |  ``` Required ```  | TODO: Add a parameter description |
-| new1 |  ``` Required ```  | TODO: Add a parameter description |
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, PurchaseOrderBindingController, GetOrderStatusResponse){
-        var new2 = 'new2';
-        var new3 = 'new3';
-        var new1 = 'new1';
-        var body = new GetOrderStatus({"key":"value"});
-
-
-		var result = PurchaseOrderBindingController.createOrderStatus(new2, new3, new1, body);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 500 | Error in retrieving response |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
-
-### Get singleton instance
-
-The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed via Dependency Injection.
-
-```js
-	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
-	});
-```
-
-### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
-
-
-```javascript
-function createRequestToken(authorization, scope, formParams)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
-        var authorization = 'Authorization';
-        var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
-
-
-		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
-
-
-
-
-### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.createRequestToken") createRequestToken
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Create a new OAuth 2 token.
-
-
-```javascript
-function createRequestToken(authorization, scope, formParams)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| authorization |  ``` Required ```  | Authorization header in Basic auth format |
-| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
-| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
-
-
-
-#### Example Usage
-
-```javascript
-
-
-	app.controller("testController", function($scope, OAuthAuthorizationController, OAuthToken){
-        var authorization = 'Authorization';
-        var scope = 'scope';
-    // key-value map for optional form parameters
-    var formParams = [];
-
-
-		var result = OAuthAuthorizationController.createRequestToken(authorization, scope, formParams);
-        //Function call returns a promise
-        result.then(function(success){
-			//success case
-			//getting context of response
-			console.log(success.getContext());
-		},function(err){
-			//failure case
-		});
-
-	});
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | OAuth 2 provider returned an error. |
-| 401 | OAuth 2 provider says client authentication failed. |
-
 
 
 
