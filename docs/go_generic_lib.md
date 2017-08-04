@@ -29,15 +29,15 @@ Now follow the steps mentioned below to build your SDK:
 
 3. In ```Select root directory```, provide path to the unzipped archive for the generated code. Once the path is set and the Project becomes visible under ```Projects``` click ```Finish```
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=Calculator-GoLang&projectName=calculator_lib)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=BibcodeQuery-GoLang&projectName=bibcodequery_lib)
 
 4. The Go library will be imported and its files will be visible in the Project Explorer
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=calculator_lib)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=bibcodequery_lib)
 
 ## How to Use
 
-The following section explains how to use the Calculator library in a new project.
+The following section explains how to use the BibcodequeryLib library in a new project.
 
 ### 1. Add a new Test Project
 
@@ -51,19 +51,19 @@ Name the Project as ```Test``` and click ```Finish```
 
 Create a new directory in the ```src``` directory of this project
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=calculator_lib)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=bibcodequery_lib)
 
 Name it ```test.com```
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=calculator_lib)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=bibcodequery_lib)
 
 Now create a new file inside ```src/test.com```
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=calculator_lib)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=bibcodequery_lib)
 
 Name it ```testsdk.go```
 
-![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=calculator_lib)
+![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=bibcodequery_lib)
 
 In this Go file, you can start adding code to initialize the client library. Sample code to initialize the client library and using its methods is given in the subsequent sections.
 
@@ -73,7 +73,7 @@ You need to import your generated library in this project in order to make use o
 
 Right click on the project name and click on ```Properties```
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=calculator_lib)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=bibcodequery_lib)
 
 Choose ```Go Compiler``` from the side menu. Check ```Use project specific settings``` and uncheck ```Use same value as the GOPATH environment variable.```. By default, the GOPATH value from the environment variables will be visible in ```Eclipse GOPATH```. Do not remove this as this points to the unirest dependency.
 
@@ -81,7 +81,7 @@ Choose ```Go Compiler``` from the side menu. Check ```Use project specific setti
 
 Append the library path to this GOPATH
 
-![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=Calculator-GoLang)
+![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=BibcodeQuery-GoLang)
 
 Once the path is appended, click on ```OK```
 
@@ -89,59 +89,62 @@ Once the path is appended, click on ```OK```
 
 Right click on the project name and click on ```Build Project```
 
-![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=calculator_lib)
+![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=bibcodequery_lib)
 
 ### 4. Run the Test Project
 
 If the build is successful, right click on your Go file and click on ```Run As``` -> ```Go Application```
 
-![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=calculator_lib)
-
-## Initialization
-
-### Authentication
-In order to setup authentication of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| username | your username |
-| key | your api key |
-
-
-To configure these for your generated code, open the file "Configuration.go" and edit it's contents.
-
+![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=bibcodequery_lib)
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [helloworld_pkg](#helloworld_pkg)
+* [bibcodequerybinding_pkg](#bibcodequerybinding_pkg)
 
-## <a name="helloworld_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".helloworld_pkg") helloworld_pkg
+## <a name="bibcodequerybinding_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".bibcodequerybinding_pkg") bibcodequerybinding_pkg
 
 ### Get instance
 
-Factory for the ``` HELLOWORLD ``` interface can be accessed from the package helloworld_pkg.
+Factory for the ``` BIBCODEQUERYBINDING ``` interface can be accessed from the package bibcodequerybinding_pkg.
 
 ```go
-helloworld := helloworld_pkg.NewHELLOWORLD()
+bibcodeQueryBinding := bibcodequerybinding_pkg.NewBIBCODEQUERYBINDING()
 ```
 
-### <a name="get_helloworld"></a>![Method: ](https://apidocs.io/img/method.png ".helloworld_pkg.GetHelloworld") GetHelloworld
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".bibcodequerybinding_pkg.GetBibcode") GetBibcode
+
+> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
 
 ```go
-func (me *HELLOWORLD_IMPL) GetHelloworld()(*models_pkg.HelloWorldResponseModel,error)
+func (me *BIBCODEQUERYBINDING_IMPL) GetBibcode(
+            bibcode string,
+            dbKey string,
+            dataType string)(*models_pkg.ReturnBibcode,error)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
+
 
 #### Example Usage
 
 ```go
+bibcode := "bibcode"
+dbKey := "db_key"
+dataType := "data_type"
 
-var result *models_pkg.HelloWorldResponseModel
-result,_ = helloworld.GetHelloworld()
+var result *models_pkg.ReturnBibcode
+result,_ = bibcodeQueryBinding.GetBibcode(bibcode, dbKey, dataType)
 
 ```
 

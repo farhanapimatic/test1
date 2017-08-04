@@ -4,20 +4,8 @@
 
 ## Base URL
 
-The Base URL for this API is `http://example.com/api`
+The Base URL for this API is `http://adsabs.harvard.edu/`
 
-
-
-## Authentication
-The type of authentication used by this API is: `Basic Authentication`
-### Authentication Parameters
-
-The parameters required for authentication are listed below:
-
-| Parameter | Description | Example | 
-|-----------|-------------| ------- |
-| username | your username | username |
-| key | your api key | key |
 
 
 
@@ -25,27 +13,36 @@ The parameters required for authentication are listed below:
 
 # <a name="api_reference"></a>API Reference
 
-* [helloworld](#helloworld)
+* [BibcodeQueryBinding](#bibcode_query_binding)
 
-## <a name="helloworld"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "helloworld") helloworld
-
-
-### <a name="helloworld"></a>![Endpoint: ](https://apidocs.io/img/method.png "Helloworld") Helloworld
+## <a name="bibcode_query_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "BibcodeQueryBinding") BibcodeQueryBinding
 
 
-**`GET`** `/helloworld`
+### <a name="get_bibcode"></a>![Endpoint: ](https://apidocs.io/img/method.png "getBibcode") getBibcode
+
+
+**`GET`** `/cgi-bin/nph-bib_query`
+
+> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
 
 
+#### Query Parameters
+| Parameter | Type | Tags | Description | Example |
+|-----------|------| ---- |-------------| ------- |
+| bibcode | `string` |  ``` Required ```  | TODO: Add a parameter description | `"bibcode"` | 
+| db_key | `string` |  ``` Required ```  | TODO: Add a parameter description | `"db_key"` | 
+| data_type | `string` |  ``` Required ```  | TODO: Add a parameter description | `"data_type"` | 
+
 #### Responses
 **200** 
 
-Body (_Hello world Response_) 
+Body (_returnBibcode_) 
 ```
 {
-  "message": "Hello world"
+  "body": "body"
 }
 ```
 

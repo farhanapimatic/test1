@@ -11,7 +11,7 @@ To check if node and npm have been successfully installed, write the following c
 * `node --version`
 * `npm -version`
 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=Calculator-Node)
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=BibcodeQuery-Node)
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 
@@ -19,13 +19,13 @@ Now use npm to resolve all dependencies by running the following command in the 
 npm install
 ```
 
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=Calculator-Node)
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=BibcodeQuery-Node)
 
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
 This will install all dependencies in the `node_modules` folder.
 
-Once dependencies are resolved, you will need to move the folder `Calculator ` in to your `node_modules` folder.
+Once dependencies are resolved, you will need to move the folder `BibcodeQueryLib ` in to your `node_modules` folder.
 
 ## How to Use
 
@@ -40,7 +40,7 @@ Click on `File` and select `Open Folder`.
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=Calculator-Node)
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=BibcodeQuery-Node)
 
 ### 2. Creating a Test File
 
@@ -52,9 +52,9 @@ var lib = require('lib');
 
 Save changes.
 
-![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=Calculator-Node)
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=BibcodeQuery-Node)
 
-![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=Calculator-Node)
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=BibcodeQuery-Node)
 
 ### 3. Running The Test File
 
@@ -64,7 +64,7 @@ To run the `index.js` file, open up the command prompt and navigate to the Path 
 node index.js
 ```
 
-![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=Calculator-Node)
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=BibcodeQuery-Node)
 
 
 ## How to Test
@@ -85,32 +85,21 @@ Tests can be run in a number of ways:
 ### Method 3 (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
-2. Type `mocha  Hello worldController`  to run all the tests in that controller file.
+2. Type `mocha  BibcodeQueryController`  to run all the tests in that controller file.
 
 > To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
 
-![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=Hello%20worldController)
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=BibcodeQueryController)
 
 ## Initialization
 
-### Authentication
-In order to setup authentication in the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| username | your username |
-| key | your api key |
-
-
+### 
 
 API client can be initialized as following:
 
 ```JavaScript
 const lib = require('lib');
 
-// Configuration parameters and credentials
-lib.Configuration.username = "username"; // your username
-lib.Configuration.key = "key"; // your api key
 
 ```
 
@@ -120,33 +109,47 @@ lib.Configuration.key = "key"; // your api key
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [HelloworldController](#helloworld_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 
-## <a name="helloworld_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HelloworldController") HelloworldController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` HelloworldController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.HelloworldController;
+var controller = lib.BibcodeQueryBindingController;
 ```
 
-### <a name="get_helloworld"></a>![Method: ](https://apidocs.io/img/method.png ".HelloworldController.getHelloworld") getHelloworld
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
+
+> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
 
 ```javascript
-function getHelloworld(callback)
+function getBibcode(bibcode, dbKey, dataType, callback)
 ```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```javascript
 
+    var bibcode = 'bibcode';
+    var dbKey = db_key;
+    var dataType = data_type;
 
-    controller.getHelloworld(function(error, response, context) {
+    controller.getBibcode(bibcode, dbKey, dataType, function(error, response, context) {
 
     
     });

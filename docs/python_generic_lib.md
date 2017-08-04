@@ -13,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Calculator-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=BibcodeQuery-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Calculator SDK package in a new project.
+The following section explains how to use the Bibcodequery SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -28,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Calculator-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=BibcodeQuery-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Calculator-Python&projectName=calculator)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Calculator-Python&projectName=calculator)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)
 
 Name the directory as "test"
 
@@ -46,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Calculator-Python&projectName=calculator)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)
 
 Name it "testsdk"
 
@@ -55,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from calculator.calculator_client import CalculatorClient
+from bibcodequery.bibcodequery_client import BibcodequeryClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Calculator-Python&libraryName=calculator.calculator_client&projectName=calculator)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=BibcodeQuery-Python&libraryName=bibcodequery.bibcodequery_client&projectName=bibcodequery)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -66,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Calculator-Python&libraryName=calculator.calculator_client&projectName=calculator)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=BibcodeQuery-Python&libraryName=bibcodequery.bibcodequery_client&projectName=bibcodequery)
 
 
 ## How to Test
@@ -81,24 +81,13 @@ runner. You can run the tests as follows:
 
 ## Initialization
 
-### Authentication
-In order to setup authentication and initialization of the API client, you need the following information.
-
-| Parameter | Description |
-|-----------|-------------|
-| username | your username |
-| key | your api key |
-
-
+### 
 
 API client can be initialized as following.
 
 ```python
-# Configuration parameters and credentials
-username = 'username' # your username
-key = 'key' # your api key
 
-client = CalculatorClient(username, key)
+client = BibcodequeryClient()
 ```
 
 
@@ -107,31 +96,49 @@ client = CalculatorClient(username, key)
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [HelloworldController](#helloworld_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 
-## <a name="helloworld_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HelloworldController") HelloworldController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get controller instance
 
-An instance of the ``` HelloworldController ``` class can be accessed from the API Client.
+An instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```python
- helloworld_client = client.helloworld
+ bibcode_query_binding_client = client.bibcode_query_binding
 ```
 
-### <a name="get_helloworld"></a>![Method: ](https://apidocs.io/img/method.png ".HelloworldController.get_helloworld") get_helloworld
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.get_bibcode") get_bibcode
+
+> *Tags:*  ``` Skips Authentication ``` 
 
 > TODO: Add a method description
 
 ```python
-def get_helloworld(self)
+def get_bibcode(self,
+                    bibcode,
+                    db_key,
+                    data_type)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```python
+bibcode = 'bibcode'
+db_key = 'db_key'
+data_type = 'data_type'
 
-result = helloworld_client.get_helloworld()
+result = bibcode_query_binding_client.get_bibcode(bibcode, db_key, data_type)
 
 ```
 
