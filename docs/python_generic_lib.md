@@ -1,7 +1,5 @@
 # Getting started
 
-This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
-
 ## How to Build
 
 
@@ -15,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Swagger%20Petstore-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=AWSECommerceService-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Swaggerpetstore SDK package in a new project.
+The following section explains how to use the Awsecommerceservice SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -30,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Swagger%20Petstore-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=AWSECommerceService-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Swagger%20Petstore-Python&projectName=swaggerpetstore)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Swagger%20Petstore-Python&projectName=swaggerpetstore)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)
 
 Name the directory as "test"
 
@@ -48,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Swagger%20Petstore-Python&projectName=swaggerpetstore)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=AWSECommerceService-Python&projectName=awsecommerceservice)
 
 Name it "testsdk"
 
@@ -57,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from swaggerpetstore.swaggerpetstore_client import SwaggerpetstoreClient
+from awsecommerceservice.awsecommerceservice_client import AwsecommerceserviceClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Swagger%20Petstore-Python&libraryName=swaggerpetstore.swaggerpetstore_client&projectName=swaggerpetstore)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=AWSECommerceService-Python&libraryName=awsecommerceservice.awsecommerceservice_client&projectName=awsecommerceservice)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -68,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Swagger%20Petstore-Python&libraryName=swaggerpetstore.swaggerpetstore_client&projectName=swaggerpetstore)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=AWSECommerceService-Python&libraryName=awsecommerceservice.awsecommerceservice_client&projectName=awsecommerceservice)
 
 
 ## How to Test
@@ -88,7 +86,11 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
+| a_f__ieyt | TODO: add a description |
+| b | TODO: add a description |
+| c | TODO: add a description |
 | o_auth_client_id | OAuth 2 Client ID |
+| o_auth_client_secret | OAuth 2 Client Secret |
 | o_auth_redirect_uri | OAuth 2 Redirection endpoint or Callback Uri |
 
 
@@ -97,84 +99,152 @@ API client can be initialized as following.
 
 ```python
 # Configuration parameters and credentials
+a_f__ieyt = 'a_f__ieyt'
+b = 'b'
+c = 'c'
 o_auth_client_id = 'o_auth_client_id' # OAuth 2 Client ID
+o_auth_client_secret = 'o_auth_client_secret' # OAuth 2 Client Secret
 o_auth_redirect_uri = 'o_auth_redirect_uri' # OAuth 2 Redirection endpoint or Callback Uri
 
-client = SwaggerpetstoreClient(o_auth_client_id, o_auth_redirect_uri)
+client = AwsecommerceserviceClient(a_f__ieyt, b, c, o_auth_client_id, o_auth_client_secret, o_auth_redirect_uri)
 ```
 
+
+You must now authorize the client.
+
+### Authorizing your client
+
+Your application must obtain user authorization before it can execute an endpoint call.
+The SDK uses *OAuth 2.0 authorization* to obtain a user's consent to perform an API request on the user's behalf.
+
+#### 1. Obtain user consent
+
+To obtain user's consent, you must redirect the user to the authorization page. The `get_authorization_url()` method creates the URL to the authorization page. You must pass
+the *[scopes](#scopes)* for which you need permission to access.
+```python
+auth_url = client.auth.get_authorization_url([OAuthScopeEnum.ASDA])
+```
+
+#### 2. Handle the OAuth server response
+
+Once the user responds to the consent request, the OAuth 2.0 server responds to your application's access request by redirecting the user to your redirect URI.
+
+If the user approves the request, the authorization code will be sent as the `code` query string:
+ 
+```
+https://example.com/oauth/callback?code=XXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+If the user does not approve the request, the response contains an `error` query string:
+
+```
+https://example.com/oauth/callback?error=access_denied
+```
+
+#### 3. Authorize the client using the code
+
+After the server receives the code, it can exchange this for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+```python
+try:
+    client.auth.authorize('code')
+except OAuthProviderException as ex:
+    # handle exception
+```
+
+### Scopes
+
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `awsecommerceservice.models.o_auth_scope_enum.OAuthScopeEnum` enumeration.
+
+| Scope Name | Description |
+| --- | --- |
+| `ASDA` |  |
+
+### Refreshing token
+
+An access token may expire after some time. To extend its lifetime, you must refresh the token.
+
+```python
+if client.auth.is_token_expired():
+    try:
+        client.auth.refresh_token()
+    except OAuthProviderException as ex:
+        # handle exception
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in a file or a database.
+
+```python
+# store token
+save_token_to_database(client.config.o_auth_token)
+```
+ 
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```python
+client.config.o_auth_callback = save_token_to_database
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token after creating the client:
+
+```python
+client = AwsecommerceserviceClient()
+client.config.o_auth_token = load_token_from_database()
+```
 
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
-* [PetController](#pet_controller)
+* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png ".UserController") UserController
+## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
 ### Get controller instance
 
-An instance of the ``` UserController ``` class can be accessed from the API Client.
+An instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
 
 ```python
- user_client = client.user
+ awse_commerce_service_binding_client = client.awse_commerce_service_binding
 ```
 
-### <a name="get_logout_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.get_logout_user") get_logout_user
+### <a name="create_cart_clear"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear") create_cart_clear
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> TODO: Add a method description
 
 ```python
-def get_logout_user(self)
-```
-
-#### Example Usage
-
-```python
-
-user_client.get_logout_user()
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-
-### <a name="create_users_with_list_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.create_users_with_list_input") create_users_with_list_input
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-```python
-def create_users_with_list_input(self,
-                                     body)
+def create_cart_clear(self,
+                          body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = [User()]
+body = CartClearRequestMsgModel()
 
-user_client.create_users_with_list_input(body)
+result = awse_commerce_service_binding_client.create_cart_clear(body)
 
 ```
 
@@ -182,262 +252,19 @@ user_client.create_users_with_list_input(body)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 0 | successful operation |
+| 410 | new |
 
 
 
 
-### <a name="create_users_with_array_input"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.create_users_with_array_input") create_users_with_array_input
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-```python
-def create_users_with_array_input(self,
-                                      body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
-
-
-
-#### Example Usage
-
-```python
-body = [User()]
-
-user_client.create_users_with_array_input(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-
-### <a name="create_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.create_user") create_user
+### <a name="create_cart_modify"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify") create_cart_modify
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> TODO: Add a method description
 
 ```python
-def create_user(self,
-                    body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
-
-
-
-#### Example Usage
-
-```python
-body = User()
-
-user_client.create_user(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-
-### <a name="get_login_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.get_login_user") get_login_user
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Logs user into the system
-
-```python
-def get_login_user(self,
-                       username,
-                       password)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-
-#### Example Usage
-
-```python
-username = 'username'
-password = 'password'
-
-result = user_client.get_login_user(username, password)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-
-### <a name="get_user_by_name"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.get_user_by_name") get_user_by_name
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get user by user name
-
-```python
-def get_user_by_name(self,
-                         username)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
-
-
-
-#### Example Usage
-
-```python
-username = 'username'
-
-result = user_client.get_user_by_name(username)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
-
-
-
-
-### <a name="update_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.update_user") update_user
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Updated user
-
-```python
-def update_user(self,
-                    username,
-                    body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | name that need to be updated |
-| body |  ``` Required ```  | Updated user object |
-
-
-
-#### Example Usage
-
-```python
-username = 'username'
-body = User()
-
-user_client.update_user(username, body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid user supplied |
-| 404 | User not found |
-
-
-
-
-### <a name="delete_user"></a>![Method: ](https://apidocs.io/img/method.png ".UserController.delete_user") delete_user
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete user
-
-```python
-def delete_user(self,
-                    username)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
-
-
-
-#### Example Usage
-
-```python
-username = 'username'
-
-user_client.delete_user(username)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
-
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png ".StoreController") StoreController
-
-### Get controller instance
-
-An instance of the ``` StoreController ``` class can be accessed from the API Client.
-
-```python
- store_client = client.store
-```
-
-### <a name="create_place_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.create_place_order") create_place_order
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Place an order for a pet
-
-```python
-def create_place_order(self,
+def create_cart_modify(self,
                            body)
 ```
 
@@ -445,156 +272,2887 @@ def create_place_order(self,
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = Order()
+body = CartModifyRequestMsgModel()
 
-result = store_client.create_place_order(body)
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid Order |
-
-
-
-
-### <a name="get_inventory"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.get_inventory") get_inventory
-
-> Returns pet inventories by status
-
-```python
-def get_inventory(self)
-```
-
-#### Example Usage
-
-```python
-
-result = store_client.get_inventory()
+result = awse_commerce_service_binding_client.create_cart_modify(body)
 
 ```
 
 
-### <a name="get_order_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.get_order_by_id") get_order_by_id
+### <a name="create_cart_create"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create") create_cart_create
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Find purchase order by ID
+> TODO: Add a method description
 
 ```python
-def get_order_by_id(self,
-                        order_id)
+def create_cart_create(self,
+                           body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-order_id = 117
+body = CartCreateRequestMsgModel()
 
-result = store_client.get_order_by_id(order_id)
+result = awse_commerce_service_binding_client.create_cart_create(body)
 
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-
-### <a name="delete_order"></a>![Method: ](https://apidocs.io/img/method.png ".StoreController.delete_order") delete_order
+### <a name="create_cart_add"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add") create_cart_add
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete purchase order by ID
+> TODO: Add a method description
 
 ```python
-def delete_order(self,
-                     order_id)
+def create_cart_add(self,
+                        body)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-order_id = 117
+body = CartAddRequestMsgModel()
 
-store_client.delete_order(order_id)
+result = awse_commerce_service_binding_client.create_cart_add(body)
 
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
+### <a name="create_cart_get"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get") create_cart_get
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get(self,
+                        body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get(body)
+
+```
+
+
+### <a name="create_similarity_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup") create_similarity_lookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup(self,
+                                 body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup(body)
+
+```
+
+
+### <a name="create_browse_node_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup") create_browse_node_lookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup(self,
+                                  body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup(body)
+
+```
+
+
+### <a name="create_item_lookup"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup") create_item_lookup
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup(body)
+
+```
+
+
+### <a name="create_item_search"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search") create_item_search
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search(body)
+
+```
+
+
+### <a name="create_item_search_9"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_9") create_item_search_9
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_9(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_9(body)
+
+```
+
+
+### <a name="create_item_lookup_10"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_10") create_item_lookup_10
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_10(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_10(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_11"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_11") create_browse_node_lookup_11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_11(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_11(body)
+
+```
+
+
+### <a name="create_similarity_lookup_12"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_12") create_similarity_lookup_12
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_12(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_12(body)
+
+```
+
+
+### <a name="create_cart_get_13"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_13") create_cart_get_13
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_13(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_13(body)
+
+```
+
+
+### <a name="create_cart_add_14"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_14") create_cart_add_14
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_14(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_14(body)
+
+```
+
+
+### <a name="create_cart_create_15"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_15") create_cart_create_15
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_15(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_15(body)
+
+```
+
+
+### <a name="create_cart_modify_16"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_16") create_cart_modify_16
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_16(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_16(body)
+
+```
+
+
+### <a name="create_cart_clear_17"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_17") create_cart_clear_17
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_17(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_17(body)
+
+```
+
+
+### <a name="create_item_search_18"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_18") create_item_search_18
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_18(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_18(body)
+
+```
+
+
+### <a name="create_item_lookup_19"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_19") create_item_lookup_19
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_19(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_19(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_20"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_20") create_browse_node_lookup_20
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_20(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_20(body)
+
+```
+
+
+### <a name="create_similarity_lookup_21"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_21") create_similarity_lookup_21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_21(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_21(body)
+
+```
+
+
+### <a name="create_cart_get_22"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_22") create_cart_get_22
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_22(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_22(body)
+
+```
+
+
+### <a name="create_cart_add_23"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_23") create_cart_add_23
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_23(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_23(body)
+
+```
+
+
+### <a name="create_cart_create_24"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_24") create_cart_create_24
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_24(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_24(body)
+
+```
+
+
+### <a name="create_cart_modify_25"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_25") create_cart_modify_25
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_25(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_25(body)
+
+```
+
+
+### <a name="create_cart_clear_26"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_26") create_cart_clear_26
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_26(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_26(body)
+
+```
+
+
+### <a name="create_item_search_27"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_27") create_item_search_27
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_27(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_27(body)
+
+```
+
+
+### <a name="create_item_lookup_28"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_28") create_item_lookup_28
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_28(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_28(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_29"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_29") create_browse_node_lookup_29
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_29(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_29(body)
+
+```
+
+
+### <a name="create_similarity_lookup_30"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_30") create_similarity_lookup_30
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_30(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_30(body)
+
+```
+
+
+### <a name="create_cart_get_31"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_31") create_cart_get_31
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_31(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_31(body)
+
+```
+
+
+### <a name="create_cart_add_32"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_32") create_cart_add_32
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_32(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_32(body)
+
+```
+
+
+### <a name="create_cart_create_33"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_33") create_cart_create_33
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_33(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_33(body)
+
+```
+
+
+### <a name="create_cart_modify_34"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_34") create_cart_modify_34
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_34(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_34(body)
+
+```
+
+
+### <a name="create_cart_clear_35"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_35") create_cart_clear_35
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_35(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_35(body)
+
+```
+
+
+### <a name="create_item_search_36"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_36") create_item_search_36
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_36(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_36(body)
+
+```
+
+
+### <a name="create_item_lookup_37"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_37") create_item_lookup_37
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_37(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_37(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_38"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_38") create_browse_node_lookup_38
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_38(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_38(body)
+
+```
+
+
+### <a name="create_similarity_lookup_39"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_39") create_similarity_lookup_39
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_39(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_39(body)
+
+```
+
+
+### <a name="create_cart_get_40"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_40") create_cart_get_40
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_40(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_40(body)
+
+```
+
+
+### <a name="create_cart_add_41"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_41") create_cart_add_41
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_41(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_41(body)
+
+```
+
+
+### <a name="create_cart_create_42"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_42") create_cart_create_42
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_42(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_42(body)
+
+```
+
+
+### <a name="create_cart_modify_43"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_43") create_cart_modify_43
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_43(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_43(body)
+
+```
+
+
+### <a name="create_cart_clear_44"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_44") create_cart_clear_44
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_44(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_44(body)
+
+```
+
+
+### <a name="create_item_search_45"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_45") create_item_search_45
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_45(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_45(body)
+
+```
+
+
+### <a name="create_item_lookup_46"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_46") create_item_lookup_46
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_46(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_46(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_47"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_47") create_browse_node_lookup_47
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_47(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_47(body)
+
+```
+
+
+### <a name="create_similarity_lookup_48"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_48") create_similarity_lookup_48
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_48(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_48(body)
+
+```
+
+
+### <a name="create_cart_get_49"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_49") create_cart_get_49
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_49(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_49(body)
+
+```
+
+
+### <a name="create_cart_add_50"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_50") create_cart_add_50
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_50(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_50(body)
+
+```
+
+
+### <a name="create_cart_create_51"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_51") create_cart_create_51
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_51(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_51(body)
+
+```
+
+
+### <a name="create_cart_modify_52"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_52") create_cart_modify_52
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_52(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_52(body)
+
+```
+
+
+### <a name="create_cart_clear_53"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_53") create_cart_clear_53
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_53(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_53(body)
+
+```
+
+
+### <a name="create_item_search_54"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_54") create_item_search_54
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_54(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_54(body)
+
+```
+
+
+### <a name="create_item_lookup_55"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_55") create_item_lookup_55
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_55(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_55(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_56"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_56") create_browse_node_lookup_56
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_56(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_56(body)
+
+```
+
+
+### <a name="create_similarity_lookup_57"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_57") create_similarity_lookup_57
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_57(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_57(body)
+
+```
+
+
+### <a name="create_cart_get_58"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_58") create_cart_get_58
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_58(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_58(body)
+
+```
+
+
+### <a name="create_cart_add_59"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_59") create_cart_add_59
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_59(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_59(body)
+
+```
+
+
+### <a name="create_cart_create_60"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_60") create_cart_create_60
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_60(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_60(body)
+
+```
+
+
+### <a name="create_cart_modify_61"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_61") create_cart_modify_61
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_61(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_61(body)
+
+```
+
+
+### <a name="create_cart_clear_62"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_62") create_cart_clear_62
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_62(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_62(body)
+
+```
+
+
+### <a name="create_item_search_63"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_63") create_item_search_63
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_63(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_63(body)
+
+```
+
+
+### <a name="create_item_lookup_64"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_64") create_item_lookup_64
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_64(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_64(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_65"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_65") create_browse_node_lookup_65
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_65(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_65(body)
+
+```
+
+
+### <a name="create_similarity_lookup_66"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_66") create_similarity_lookup_66
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_66(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_66(body)
+
+```
+
+
+### <a name="create_cart_get_67"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_67") create_cart_get_67
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_67(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_67(body)
+
+```
+
+
+### <a name="create_cart_add_68"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_68") create_cart_add_68
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_68(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_68(body)
+
+```
+
+
+### <a name="create_cart_create_69"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_69") create_cart_create_69
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_69(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_69(body)
+
+```
+
+
+### <a name="create_cart_modify_70"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_70") create_cart_modify_70
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_70(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_70(body)
+
+```
+
+
+### <a name="create_cart_clear_71"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_71") create_cart_clear_71
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_71(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_71(body)
+
+```
+
+
+### <a name="create_item_search_72"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_72") create_item_search_72
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_72(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_72(body)
+
+```
+
+
+### <a name="create_item_lookup_73"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_73") create_item_lookup_73
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_73(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_73(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_74"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_74") create_browse_node_lookup_74
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_74(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_74(body)
+
+```
+
+
+### <a name="create_similarity_lookup_75"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_75") create_similarity_lookup_75
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_75(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_75(body)
+
+```
+
+
+### <a name="create_cart_get_76"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_76") create_cart_get_76
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_76(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_76(body)
+
+```
+
+
+### <a name="create_cart_add_77"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_77") create_cart_add_77
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_77(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_77(body)
+
+```
+
+
+### <a name="create_cart_create_78"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_78") create_cart_create_78
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_78(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_78(body)
+
+```
+
+
+### <a name="create_cart_modify_79"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_79") create_cart_modify_79
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_79(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_79(body)
+
+```
+
+
+### <a name="create_cart_clear_80"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_80") create_cart_clear_80
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_80(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_80(body)
+
+```
+
+
+### <a name="create_item_search_81"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_81") create_item_search_81
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_81(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_81(body)
+
+```
+
+
+### <a name="create_item_lookup_82"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_82") create_item_lookup_82
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_82(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_82(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_83"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_83") create_browse_node_lookup_83
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_83(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_83(body)
+
+```
+
+
+### <a name="create_similarity_lookup_84"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_84") create_similarity_lookup_84
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_84(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_84(body)
+
+```
+
+
+### <a name="create_cart_get_85"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_85") create_cart_get_85
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_85(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_85(body)
+
+```
+
+
+### <a name="create_cart_add_86"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_86") create_cart_add_86
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_86(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_86(body)
+
+```
+
+
+### <a name="create_cart_create_87"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_87") create_cart_create_87
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_87(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_87(body)
+
+```
+
+
+### <a name="create_cart_modify_88"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_88") create_cart_modify_88
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_88(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_88(body)
+
+```
+
+
+### <a name="create_cart_clear_89"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_89") create_cart_clear_89
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_89(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_89(body)
+
+```
+
+
+### <a name="create_item_search_90"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_search_90") create_item_search_90
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_search_90(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemSearchRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_search_90(body)
+
+```
+
+
+### <a name="create_item_lookup_91"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_item_lookup_91") create_item_lookup_91
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_item_lookup_91(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = ItemLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_item_lookup_91(body)
+
+```
+
+
+### <a name="create_browse_node_lookup_92"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_browse_node_lookup_92") create_browse_node_lookup_92
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_browse_node_lookup_92(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = BrowseNodeLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_browse_node_lookup_92(body)
+
+```
+
+
+### <a name="create_similarity_lookup_93"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_similarity_lookup_93") create_similarity_lookup_93
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_similarity_lookup_93(self,
+                                    body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = SimilarityLookupRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_similarity_lookup_93(body)
+
+```
+
+
+### <a name="create_cart_get_94"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_get_94") create_cart_get_94
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_get_94(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartGetRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_get_94(body)
+
+```
+
+
+### <a name="create_cart_add_95"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_add_95") create_cart_add_95
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_add_95(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartAddRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_add_95(body)
+
+```
+
+
+### <a name="create_cart_create_96"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_create_96") create_cart_create_96
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_create_96(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartCreateRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_create_96(body)
+
+```
+
+
+### <a name="create_cart_modify_97"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_modify_97") create_cart_modify_97
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_modify_97(self,
+                              body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartModifyRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_modify_97(body)
+
+```
+
+
+### <a name="create_cart_clear_98"></a>![Method: ](https://apidocs.io/img/method.png ".AWSECommerceServiceBindingController.create_cart_clear_98") create_cart_clear_98
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+```python
+def create_cart_clear_98(self,
+                             body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = CartClearRequestMsgModel()
+
+result = awse_commerce_service_binding_client.create_cart_clear_98(body)
+
+```
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png ".PetController") PetController
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png ".OAuthAuthorizationController") OAuthAuthorizationController
 
 ### Get controller instance
 
-An instance of the ``` PetController ``` class can be accessed from the API Client.
+An instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
 
 ```python
- pet_client = client.pet
+ o_auth_authorization_client = client.o_auth_authorization
 ```
 
-### <a name="find_pets_by_tags"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.find_pets_by_tags") find_pets_by_tags
+### <a name="create_request_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token") create_request_token
 
-> Finds Pets by tags
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
 
 ```python
-def find_pets_by_tags(self,
-                          tags)
+def create_request_token(self,
+                             options=dict(),
+                             _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-tags = ['tags']
+collect = {}
 
-result = pet_client.find_pets_by_tags(tags)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token(collect, optional_form_parameters, )
 
 ```
 
@@ -602,34 +3160,54 @@ result = pet_client.find_pets_by_tags(tags)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid tag value |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="add_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.add_pet") add_pet
+### <a name="create_refresh_token"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token") create_refresh_token
 
-> Add a new pet to the store
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
 
 ```python
-def add_pet(self,
-                body)
+def create_refresh_token(self,
+                             options=dict(),
+                             _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-body = Pet()
+collect = {}
 
-pet_client.add_pet(body)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token(collect, optional_form_parameters, )
 
 ```
 
@@ -637,34 +3215,54 @@ pet_client.add_pet(body)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 405 | Invalid input |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="update_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.update_pet") update_pet
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
 
-> Update an existing pet
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
 
 ```python
-def update_pet(self,
-                   body)
+def create_request_token_1(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-body = Pet()
+collect = {}
 
-pet_client.update_pet(body)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_1(collect, optional_form_parameters, )
 
 ```
 
@@ -672,36 +3270,54 @@ pet_client.update_pet(body)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="find_pets_by_status"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.find_pets_by_status") find_pets_by_status
+### <a name="create_refresh_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_1") create_refresh_token_1
 
-> Finds Pets by status
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
 
 ```python
-def find_pets_by_status(self,
-                            status)
+def create_refresh_token_1(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-status = [Status6Enum.AVAILABLE]
+collect = {}
 
-result = pet_client.find_pets_by_status(status)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_1(collect, optional_form_parameters, )
 
 ```
 
@@ -709,34 +3325,54 @@ result = pet_client.find_pets_by_status(status)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid status value |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="get_pet_by_id"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.get_pet_by_id") get_pet_by_id
+### <a name="create_request_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_2") create_request_token_2
 
-> Find pet by ID
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
 
 ```python
-def get_pet_by_id(self,
-                      pet_id)
+def create_request_token_2(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-pet_id = 76
+collect = {}
 
-result = pet_client.get_pet_by_id(pet_id)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_2(collect, optional_form_parameters, )
 
 ```
 
@@ -744,41 +3380,54 @@ result = pet_client.get_pet_by_id(pet_id)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="update_pet_with_form"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.update_pet_with_form") update_pet_with_form
+### <a name="create_refresh_token_2"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_2") create_refresh_token_2
 
-> Updates a pet in the store with form data
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
 
 ```python
-def update_pet_with_form(self,
-                             pet_id,
-                             name=None,
-                             status=None)
+def create_refresh_token_2(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-pet_id = 76
-name = 'name'
-status = 'status'
+collect = {}
 
-pet_client.update_pet_with_form(pet_id, name, status)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_2(collect, optional_form_parameters, )
 
 ```
 
@@ -786,37 +3435,54 @@ pet_client.update_pet_with_form(pet_id, name, status)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 405 | Invalid input |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="delete_pet"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.delete_pet") delete_pet
+### <a name="create_request_token_3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_3") create_request_token_3
 
-> Deletes a pet
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
 
 ```python
-def delete_pet(self,
-                   pet_id,
-                   api_key=None)
+def create_request_token_3(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-pet_id = 76
-api_key = 'api_key'
+collect = {}
 
-pet_client.delete_pet(pet_id, api_key)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_3(collect, optional_form_parameters, )
 
 ```
 
@@ -824,43 +3490,615 @@ pet_client.delete_pet(pet_id, api_key)
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
 
-### <a name="upload_file"></a>![Method: ](https://apidocs.io/img/method.png ".PetController.upload_file") upload_file
+### <a name="create_refresh_token_3"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_3") create_refresh_token_3
 
-> uploads an image
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
 
 ```python
-def upload_file(self,
-                    pet_id,
-                    additional_metadata=None,
-                    file=None)
+def create_refresh_token_3(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 
 #### Example Usage
 
 ```python
-pet_id = 76
-additional_metadata = 'additionalMetadata'
-file = open("pathtofile", 'rb')
+collect = {}
 
-result = pet_client.upload_file(pet_id, additional_metadata, file)
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_3(collect, optional_form_parameters, )
 
 ```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_4"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_4") create_request_token_4
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_4(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_4(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token_4"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_4") create_refresh_token_4
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+```python
+def create_refresh_token_4(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_4(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_5"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_5") create_request_token_5
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_5(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_5(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token_5"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_5") create_refresh_token_5
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+```python
+def create_refresh_token_5(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_5(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_11") create_request_token_11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_11(self,
+                                options=dict(),
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_11(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token_11"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_11") create_refresh_token_11
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+```python
+def create_refresh_token_11(self,
+                                options=dict(),
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_11(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_21") create_request_token_21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_21(self,
+                                options=dict(),
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_21(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token_21"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_21") create_refresh_token_21
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+```python
+def create_refresh_token_21(self,
+                                options=dict(),
+                                _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_21(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_request_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_request_token_1") create_request_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Create a new OAuth 2 token.
+
+```python
+def create_request_token_1(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+code = 'code'
+collect['code'] = code
+
+redirect_uri = 'redirect_uri'
+collect['redirect_uri'] = redirect_uri
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_request_token_1(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
+
+
+### <a name="create_refresh_token_1"></a>![Method: ](https://apidocs.io/img/method.png ".OAuthAuthorizationController.create_refresh_token_1") create_refresh_token_1
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Obtain a new access token using a refresh token
+
+```python
+def create_refresh_token_1(self,
+                               options=dict(),
+                               _optional_form_parameters=None)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| _optional_form_parameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
+
+
+
+#### Example Usage
+
+```python
+collect = {}
+
+authorization = 'Authorization'
+collect['authorization'] = authorization
+
+refresh_token = 'refresh_token'
+collect['refresh_token'] = refresh_token
+
+scope = 'scope'
+collect['scope'] = scope
+
+# key-value map for optional form parameters
+optional_form_parameters = { }
+
+
+result = o_auth_authorization_client.create_refresh_token_1(collect, optional_form_parameters, )
+
+```
+
+#### Errors
+
+| Error Code | Error Description |
+|------------|-------------------|
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
+
+
 
 
 [Back to List of Controllers](#list_of_controllers)

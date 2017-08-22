@@ -1,7 +1,5 @@
 # Getting started
 
-This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
-
 ## How to Build
 
 The generated code uses a few Maven dependencies e.g., Jackson, UniRest,
@@ -11,62 +9,62 @@ you will need internet access for a successful build.
 
 * In order to open the client library in Eclipse click on ``` File -> Import ```.
 
-![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Importing SDK into Eclipse - Step 1](https://apidocs.io/illustration/java?step=import0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 * In the import dialog, select ``` Existing Java Project ``` and click ``` Next ```.
 
-![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Importing SDK into Eclipse - Step 2](https://apidocs.io/illustration/java?step=import1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 * Browse to locate the folder containing the source code. Select the detected location of the project and click ``` Finish ```.
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/java?step=import2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 * Upon successful import, the project will be automatically built by Eclipse after automatically resolving the dependencies.
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/java?step=import3&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 ## How to Use
 
-The following section explains how to use the SwaggerPetstore library in a new console project.
+The following section explains how to use the AWSECommerceService library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, click the menu command ``` File > New > Project ```.
 
-![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Add a new project in Eclipse](https://apidocs.io/illustration/java?step=createNewProject0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 Next, choose ``` Maven > Maven Project ```and click ``` Next ```.
 
-![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Create a new Maven Project - Step 1](https://apidocs.io/illustration/java?step=createNewProject1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 Here, make sure to use the current workspace by choosing ``` Use default Workspace location ```, as shown in the picture below and click ``` Next ```.
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/java?step=createNewProject2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 Following this, select the *quick start* project type to create a simple project with an existing class and a ``` main ``` method. To do this, choose ``` maven-archetype-quickstart ``` item from the list and click ``` Next ```.
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/java?step=createNewProject3&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 In the last step, provide a ``` Group Id ``` and ``` Artifact Id ``` as shown in the picture below and click ``` Finish ```.
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/java?step=createNewProject4&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 ### 2. Add reference of the library project
 
-The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *SwaggerPetstoreLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
+The created Maven project manages its dependencies using its ``` pom.xml ``` file. In order to add a dependency on the *AWSECommerceServiceLib* client library, double click on the ``` pom.xml ``` file in the ``` Package Explorer ```. Opening the ``` pom.xml ``` file will render a graphical view on the cavas. Here, switch to the ``` Dependencies ``` tab and click the ``` Add ``` button as shown in the picture below.
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/java?step=testProject0&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
-Clicking the ``` Add ``` button will open a dialog where you need to specify SwaggerPetstore in ``` Group Id ``` and SwaggerPetstoreLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
+Clicking the ``` Add ``` button will open a dialog where you need to specify AWSECommerceService in ``` Group Id ``` and AWSECommerceServiceLib in the ``` Artifact Id ``` fields. Once added click ``` OK ```. Save the ``` pom.xml ``` file.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject1&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 ### 3. Write sample code
 
 Once the ``` SimpleConsoleApp ``` is created, a file named ``` App.java ``` will be visible in the *Package Explorer* with a ``` main ``` method. This is the entry point for the execution of the created project.
 Here, you can add code to initialize the client library and instantiate a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=Swagger%20Petstore-Java&workspaceName=SwaggerPetstore&projectName=SwaggerPetstoreLib&rootNamespace=io.swagger.petstore)
+![Adding dependency to the client library - Step 2](https://apidocs.io/illustration/java?step=testProject2&workspaceFolder=AWSECommerceService-Java&workspaceName=AWSECommerceService&projectName=AWSECommerceServiceLib&rootNamespace=com.amazon.webservices)
 
 ## How to Test
 
@@ -75,7 +73,7 @@ JUnit is used as the testing framework and test runner.
 
 In Eclipse, for running the tests do the following:
 
-1. Select the project *SwaggerPetstoreLib* from the package explorer.
+1. Select the project *AWSECommerceServiceLib* from the package explorer.
 2. Select "Run -> Run as -> JUnit Test" or use "Alt + Shift + X" followed by "T" to run the Tests.
 
 ## Initialization
@@ -85,7 +83,11 @@ In order to setup authentication and initialization of the API client, you need 
 
 | Parameter | Description |
 |-----------|-------------|
+| aFIeyt | TODO: add a description |
+| b | TODO: add a description |
+| c | TODO: add a description |
 | oAuthClientId | OAuth 2 Client ID |
+| oAuthClientSecret | OAuth 2 Client Secret |
 | oAuthRedirectUri | OAuth 2 Redirection endpoint or Callback Uri |
 
 
@@ -94,10 +96,14 @@ API client can be initialized as following.
 
 ```java
 // Configuration parameters and credentials
+String aFIeyt = "aFIeyt";
+String b = "b";
+String c = "c";
 String oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+String oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
 String oAuthRedirectUri = "oAuthRedirectUri"; // OAuth 2 Redirection endpoint or Callback Uri
 
-SwaggerPetstoreClient client = new SwaggerPetstoreClient(oAuthClientId, oAuthRedirectUri);
+AWSECommerceServiceClient client = new AWSECommerceServiceClient(aFIeyt, b, c, oAuthClientId, oAuthClientSecret, oAuthRedirectUri);
 ```
 
 You must authorize now authorize the client.
@@ -105,41 +111,202 @@ You must authorize now authorize the client.
 ### Authorizing your client
 
 Your application must obtain user authorization before it can execute an endpoint call.
-The SDK uses *OAuth 2.0 Implicit Grant* to obtain a user's consent to perform an API request on user's behalf.
+The SDK uses *OAuth 2.0 authorization* to obtain a user's consent to perform an API request on user's behalf.
 
-This process requires the presence of a client-side JavaScript code on the redirect URI page to 
-receive the *access token* after the consent step is completed.
+#### 1. Obtain user consent
 
-#### 1. Obtain consent
-
-To obtain user's consent, you must redirect the user to the authorization page.
-The `buildAuthorizationUrl()` method creates the URL to the authorization page.
- You must pass the *[scopes](#scopes)* for which you need permission to access.
+To obtain user's consent, you must redirect the user to the authorization page. The `buildAuthorizationUrl()` method creates the URL to the authorization page. You must pass
+the *[scopes](#scopes)* for which you need permission to access.
 ```java
-authUrl = client.auth().buildAuthorizationUrl(scopes);
-httpServletResponse.sendRedirect(authUrl);
+String authUrl = client.auth().buildAuthorizationUrl(scopes); // build auth url
+httpServletResponse.sendRedirect(authUrl); // show user the auth page in a browser or by redirection
 ```
 
 #### 2. Handle the OAuth server response
 
 Once the user responds to the consent request, the OAuth 2.0 server responds to your application's access request by redirecting the user to the redirect URI specified set in `Configuration`.
 
-The redirect URI will receive the *access token* as the `access_token` argument in the URL fragment.
+If the user approves the request, the authorization code will be sent as the `code` query string:
 
 ```
-https://example.com/oauth/callback#access_token=XXXXXXXXXXXXXXXXXXXXXXXXX
+https://example.com/oauth/callback?code=XXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
-The access token must be extracted by the client-side JavaScript code. The access token can be used to authorize any further endpoint calls by the JavaScript code.
+If the user does not approve the request, the response contains an `error` query string:
+
+```
+https://example.com/oauth/callback?error=access_denied
+```
+
+#### 3. Authorize the client using the code
+
+After the server receives the code, it can exchange this for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+
+```java
+try {
+    client.auth().authorize(authorizationCode);
+} catch (Throwable e) {
+    // TODO Handle exception
+}
+```
 
 ### Scopes
 
-Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `io.swagger.petstore.Models.OAuthScopeEnum` enumeration.
+Scopes enable your application to only request access to the resources it needs while enabling users to control the amount of access they grant to your application. Available scopes are defined in the `com.amazon.webservices.Models.OAuthScopeEnum` enumeration.
 
 | Scope Name | Description |
 | --- | --- |
-| `WRITEPETS` | modify pets in your account |
-| `READPETS` | read your pets |
+| `ASDA` |  |
+
+### Refreshing token
+
+An access token may expire after sometime. To extend its lifetime, you must refresh the token.
+
+```java
+if(client.auth().isTokenExpired()) {
+    try {
+        client.auth().refreshToken();
+    } catch (Throwable e) {
+        // TODO Handle exception
+    }
+}
+```
+
+If a token expires, the SDK will attempt to automatically refresh the token before the next endpoint call requiring authentication.
+
+### Storing an access token for reuse
+
+It is recommended that you store the access token for reuse.
+
+You can store the access token in the session if it is a web application:
+
+```java
+// store token
+httpSession.setAttribute("access_token", com.amazon.webservices.Configuration.oAuthToken);
+```
+
+However, since the the SDK will attempt to automatically refresh the token when it expires, it is recommended that you register a *token update callback* to detect any change to the access token.
+
+```java
+com.amazon.webservices.Configuration.oAuthTokenUpdateCallBack = new com.amazon.webservices.OAuthTokenUpdateCallBack() {
+    public void tokenUpdate(OAuthTokenModel oAuthToken) {
+        // use session or some other way to persist the $token
+        httpSession.setAttribute("access_token", oAuthToken);
+    }
+};
+```
+
+The token update callback will be fired upon authorization as well as token refresh.
+
+### Creating a client from a stored token
+
+To authorize a client from a stored access token, just set the access token in `Configuration` along with the other configuration parameters before creating the client:
+
+```java
+// load token later...
+com.amazon.webservices.Configuration.oAuthToken = (OAuthTokenModel) httpSession.getAttribute("access_token");
+
+// Set other configuration, then instantiate client
+client = new AWSECommerceServiceClient();
+```
+
+### Complete example
+
+In this example that uses the Spring framework, the `/callapi` route will first check if an access token is available for the user. If one is not set,
+it redirects the user to `/authcallback` route which will obtain an access token and redirect the user back to the `/callapi` route.
+Now that an access token is set, `/callapi` route can use the client to make authorized calls to the server.
+
+#### `MainController.java`
+
+```java
+package com.example;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.amazon.webservices.AWSECommerceServiceClient;
+import com.amazon.webservices.models.OAuthScopeEnum;
+import com.amazon.webservices.models.OAuthTokenModel;
+
+@Controller
+@RequestMapping("/")
+public class MainController {
+    private final AWSECommerceServiceClient client;
+    private final List<OAuthScopeEnum> scopes;
+
+    public MainController() {
+        // Configuration parameters and credentials
+        String aFIeyt = "aFIeyt";
+        String b = "b";
+        String c = "c";
+        String oAuthClientId = "oAuthClientId"; // OAuth 2 Client ID
+        String oAuthClientSecret = "oAuthClientSecret"; // OAuth 2 Client Secret
+        String oAuthRedirectUri = "oAuthRedirectUri"; // OAuth 2 Redirection endpoint or Callback Uri
+        
+        this.client = new AWSECommerceServiceClient(aFIeyt, b, c, oAuthClientId, oAuthClientSecret, oAuthRedirectUri);
+        this.scopes = new LinkedList<OAuthScopeEnum>();
+        scopes.add(OAuthScopeEnum.ASDA);
+    }
+
+    @RequestMapping(value = "/callapi", method = RequestMethod.GET, produces = "application/json")
+    public String callApi(HttpSession session, HttpServletResponse response) throws Throwable {
+        // redirect if access token is not set
+        if (session.getAttribute("access_token") == null) {
+            response.sendRedirect("authcallback");
+            return null;
+        }
+
+        synchronized (client) {
+            com.amazon.webservices.Configuration.oAuthToken = (OAuthTokenModel) session.getAttribute("access_token");
+
+            // refresh the token if it is expired
+            if(client.auth().isTokenExpired()) {
+                try {
+                    session.setAttribute("access_token", client.auth().refreshToken());
+                } catch (Throwable e) {
+                    // TODO Handle exception
+                }
+            }
+
+            // now you can use client to make endpoint calls
+            // client will automatically refresh the token when it expires
+            return "someView";
+        }
+    }
+
+    @RequestMapping(value = "/authcallback", method = RequestMethod.GET)
+    public void authcallback(HttpSession session, @RequestParam(required = false) String code,
+            HttpServletResponse response) throws Throwable {
+        if (code == null) {
+            String authUrl;
+            
+            synchronized (client) {
+                authUrl = client.auth().buildAuthorizationUrl(this.scopes);
+            }
+            
+            // if authorization code is absent, redirect to authorization page
+            response.sendRedirect(authUrl);
+        } else {
+            OAuthTokenModel token;
+            
+            synchronized (client) {
+                token = client.auth().authorize(code);
+            }
+            
+            session.setAttribute("access_token", token);
+            response.sendRedirect("callapi");
+        }
+    }
+}
+```
 
 
 
@@ -147,82 +314,47 @@ Scopes enable your application to only request access to the resources it needs 
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [UserController](#user_controller)
-* [StoreController](#store_controller)
-* [PetController](#pet_controller)
+* [AWSECommerceServiceBindingController](#awse_commerce_service_binding_controller)
+* [OAuthAuthorizationController](#o_auth_authorization_controller)
 
-## <a name="user_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.UserController") UserController
+## <a name="awse_commerce_service_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController") AWSECommerceServiceBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` UserController ``` class can be accessed from the API Client.
+The singleton instance of the ``` AWSECommerceServiceBindingController ``` class can be accessed from the API Client.
 
 ```java
-UserController user = client.getUser();
+AWSECommerceServiceBindingController aWSECommerceServiceBinding = client.getAWSECommerceServiceBinding();
 ```
 
-### <a name="get_logout_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLogoutUserAsync") getLogoutUserAsync
+### <a name="create_cart_clear_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClearAsync") createCartClearAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs out current logged in user session
+> TODO: Add a method description
 
 
 ```java
-void getLogoutUserAsync(final APICallBack<Object> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-user.getLogoutUserAsync(new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="create_users_with_list_input_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUsersWithListInputAsync") createUsersWithListInputAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Creates list of users with given input array
-
-
-```java
-void createUsersWithListInputAsync(
-        final List<User> body,
-        final APICallBack<Object> callBack)
+void createCartClearAsync(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    List<User> body = new ArrayList<User>();
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
     // Invoking the API call with sample inputs
-    user.createUsersWithListInputAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
+    aWSECommerceServiceBinding.createCartClearAsync(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -239,38 +371,38 @@ try {
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 0 | successful operation |
+| 410 | new |
 
 
 
-### <a name="create_users_with_array_input_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUsersWithArrayInputAsync") createUsersWithArrayInputAsync
+### <a name="create_cart_modify_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModifyAsync") createCartModifyAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Creates list of users with given input array
+> TODO: Add a method description
 
 
 ```java
-void createUsersWithArrayInputAsync(
-        final List<User> body,
-        final APICallBack<Object> callBack)
+void createCartModifyAsync(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  ``` Collection ```  | List of user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    List<User> body = new ArrayList<User>();
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
     // Invoking the API call with sample inputs
-    user.createUsersWithArrayInputAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
+    aWSECommerceServiceBinding.createCartModifyAsync(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -283,42 +415,35 @@ try {
 }
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="create_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.createUserAsync") createUserAsync
+### <a name="create_cart_create_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreateAsync") createCartCreateAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Create user
+> TODO: Add a method description
 
 
 ```java
-void createUserAsync(
-        final User body,
-        final APICallBack<Object> callBack)
+void createCartCreateAsync(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | Created user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    User body = new User();
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
     // Invoking the API call with sample inputs
-    user.createUserAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
+    aWSECommerceServiceBinding.createCartCreateAsync(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -331,137 +456,35 @@ try {
 }
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 0 | successful operation |
-
-
-
-### <a name="get_login_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getLoginUserAsync") getLoginUserAsync
+### <a name="create_cart_add_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAddAsync") createCartAddAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Logs user into the system
+> TODO: Add a method description
 
 
 ```java
-void getLoginUserAsync(
-        final String username,
-        final String password,
-        final APICallBack<String> callBack)
+void createCartAddAsync(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The user name for login |
-| password |  ``` Required ```  | The password for login in clear text |
-
-
-#### Example Usage
-
-```java
-String username = "username";
-String password = "password";
-// Invoking the API call with sample inputs
-user.getLoginUserAsync(username, password, new APICallBack<String>() {
-    public void onSuccess(HttpContext context, String response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username/password supplied |
-
-
-
-### <a name="get_user_by_name_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.getUserByNameAsync") getUserByNameAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get user by user name
-
-
-```java
-void getUserByNameAsync(
-        final String username,
-        final APICallBack<User> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be fetched. Use user1 for testing. |
-
-
-#### Example Usage
-
-```java
-String username = "username";
-// Invoking the API call with sample inputs
-user.getUserByNameAsync(username, new APICallBack<User>() {
-    public void onSuccess(HttpContext context, User response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
-
-
-
-### <a name="update_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.updateUserAsync") updateUserAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Updated user
-
-
-```java
-void updateUserAsync(
-        final String username,
-        final User body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| username |  ``` Required ```  | name that need to be updated |
-| body |  ``` Required ```  | Updated user object |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
 try {
-    String username = "username";
-    User body = new User();
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
     // Invoking the API call with sample inputs
-    user.updateUserAsync(username, body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
+    aWSECommerceServiceBinding.createCartAddAsync(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
             // TODO success callback handler
         }
         public void onFailure(HttpContext context, Throwable error) {
@@ -474,413 +497,4026 @@ try {
 }
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid user supplied |
-| 404 | User not found |
-
-
-
-### <a name="delete_user_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.UserController.deleteUserAsync") deleteUserAsync
+### <a name="create_cart_get_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGetAsync") createCartGetAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Delete user
+> TODO: Add a method description
 
 
 ```java
-void deleteUserAsync(
-        final String username,
-        final APICallBack<Object> callBack)
+void createCartGetAsync(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| username |  ``` Required ```  | The name that needs to be deleted |
+| body |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```java
-String username = "username";
-// Invoking the API call with sample inputs
-user.deleteUserAsync(username, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGetAsync(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
 ```
 
-#### Errors
 
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid username supplied |
-| 404 | User not found |
+### <a name="create_similarity_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookupAsync") createSimilarityLookupAsync
 
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookupAsync(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookupAsync(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookupAsync") createBrowseNodeLookupAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookupAsync(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookupAsync(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookupAsync") createItemLookupAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookupAsync(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookupAsync(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearchAsync") createItemSearchAsync
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearchAsync(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearchAsync(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search9_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch9Async") createItemSearch9Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch9Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch9Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup10_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup10Async") createItemLookup10Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup10Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup10Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup11_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup11Async") createBrowseNodeLookup11Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup11Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup11Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup12_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup12Async") createSimilarityLookup12Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup12Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup12Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get13_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet13Async") createCartGet13Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet13Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet13Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add14_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd14Async") createCartAdd14Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd14Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd14Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create15_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate15Async") createCartCreate15Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate15Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate15Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify16_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify16Async") createCartModify16Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify16Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify16Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear17_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear17Async") createCartClear17Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear17Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear17Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search18_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch18Async") createItemSearch18Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch18Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch18Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup19_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup19Async") createItemLookup19Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup19Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup19Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup20_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup20Async") createBrowseNodeLookup20Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup20Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup20Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup21_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup21Async") createSimilarityLookup21Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup21Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup21Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get22_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet22Async") createCartGet22Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet22Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet22Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add23_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd23Async") createCartAdd23Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd23Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd23Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create24_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate24Async") createCartCreate24Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate24Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate24Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify25_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify25Async") createCartModify25Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify25Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify25Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear26_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear26Async") createCartClear26Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear26Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear26Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search27_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch27Async") createItemSearch27Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch27Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch27Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup28_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup28Async") createItemLookup28Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup28Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup28Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup29_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup29Async") createBrowseNodeLookup29Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup29Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup29Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup30_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup30Async") createSimilarityLookup30Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup30Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup30Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get31_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet31Async") createCartGet31Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet31Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet31Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add32_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd32Async") createCartAdd32Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd32Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd32Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create33_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate33Async") createCartCreate33Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate33Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate33Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify34_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify34Async") createCartModify34Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify34Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify34Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear35_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear35Async") createCartClear35Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear35Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear35Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search36_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch36Async") createItemSearch36Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch36Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch36Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup37_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup37Async") createItemLookup37Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup37Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup37Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup38_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup38Async") createBrowseNodeLookup38Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup38Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup38Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup39_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup39Async") createSimilarityLookup39Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup39Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup39Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get40_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet40Async") createCartGet40Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet40Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet40Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add41_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd41Async") createCartAdd41Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd41Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd41Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create42_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate42Async") createCartCreate42Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate42Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate42Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify43_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify43Async") createCartModify43Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify43Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify43Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear44_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear44Async") createCartClear44Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear44Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear44Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search45_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch45Async") createItemSearch45Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch45Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch45Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup46_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup46Async") createItemLookup46Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup46Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup46Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup47_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup47Async") createBrowseNodeLookup47Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup47Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup47Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup48_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup48Async") createSimilarityLookup48Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup48Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup48Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get49_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet49Async") createCartGet49Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet49Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet49Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add50_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd50Async") createCartAdd50Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd50Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd50Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create51_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate51Async") createCartCreate51Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate51Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate51Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify52_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify52Async") createCartModify52Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify52Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify52Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear53_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear53Async") createCartClear53Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear53Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear53Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search54_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch54Async") createItemSearch54Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch54Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch54Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup55_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup55Async") createItemLookup55Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup55Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup55Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup56_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup56Async") createBrowseNodeLookup56Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup56Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup56Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup57_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup57Async") createSimilarityLookup57Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup57Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup57Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get58_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet58Async") createCartGet58Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet58Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet58Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add59_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd59Async") createCartAdd59Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd59Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd59Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create60_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate60Async") createCartCreate60Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate60Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate60Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify61_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify61Async") createCartModify61Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify61Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify61Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear62_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear62Async") createCartClear62Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear62Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear62Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search63_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch63Async") createItemSearch63Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch63Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch63Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup64_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup64Async") createItemLookup64Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup64Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup64Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup65_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup65Async") createBrowseNodeLookup65Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup65Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup65Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup66_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup66Async") createSimilarityLookup66Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup66Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup66Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get67_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet67Async") createCartGet67Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet67Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet67Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add68_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd68Async") createCartAdd68Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd68Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd68Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create69_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate69Async") createCartCreate69Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate69Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate69Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify70_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify70Async") createCartModify70Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify70Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify70Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear71_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear71Async") createCartClear71Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear71Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear71Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search72_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch72Async") createItemSearch72Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch72Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch72Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup73_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup73Async") createItemLookup73Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup73Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup73Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup74_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup74Async") createBrowseNodeLookup74Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup74Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup74Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup75_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup75Async") createSimilarityLookup75Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup75Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup75Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get76_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet76Async") createCartGet76Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet76Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet76Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add77_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd77Async") createCartAdd77Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd77Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd77Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create78_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate78Async") createCartCreate78Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate78Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate78Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify79_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify79Async") createCartModify79Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify79Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify79Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear80_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear80Async") createCartClear80Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear80Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear80Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search81_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch81Async") createItemSearch81Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch81Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch81Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup82_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup82Async") createItemLookup82Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup82Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup82Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup83_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup83Async") createBrowseNodeLookup83Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup83Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup83Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup84_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup84Async") createSimilarityLookup84Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup84Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup84Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get85_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet85Async") createCartGet85Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet85Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet85Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add86_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd86Async") createCartAdd86Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd86Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd86Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create87_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate87Async") createCartCreate87Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate87Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate87Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify88_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify88Async") createCartModify88Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify88Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify88Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear89_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear89Async") createCartClear89Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear89Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear89Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_search90_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemSearch90Async") createItemSearch90Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemSearch90Async(
+        final ItemSearchRequestMsgModel body,
+        final APICallBack<ItemSearchResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemSearchRequestMsgModel body = new ItemSearchRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemSearch90Async(body, new APICallBack<ItemSearchResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemSearchResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_item_lookup91_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createItemLookup91Async") createItemLookup91Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createItemLookup91Async(
+        final ItemLookupRequestMsgModel body,
+        final APICallBack<ItemLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    ItemLookupRequestMsgModel body = new ItemLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createItemLookup91Async(body, new APICallBack<ItemLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, ItemLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_browse_node_lookup92_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createBrowseNodeLookup92Async") createBrowseNodeLookup92Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createBrowseNodeLookup92Async(
+        final BrowseNodeLookupRequestMsgModel body,
+        final APICallBack<BrowseNodeLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    BrowseNodeLookupRequestMsgModel body = new BrowseNodeLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createBrowseNodeLookup92Async(body, new APICallBack<BrowseNodeLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, BrowseNodeLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_similarity_lookup93_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createSimilarityLookup93Async") createSimilarityLookup93Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createSimilarityLookup93Async(
+        final SimilarityLookupRequestMsgModel body,
+        final APICallBack<SimilarityLookupResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    SimilarityLookupRequestMsgModel body = new SimilarityLookupRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createSimilarityLookup93Async(body, new APICallBack<SimilarityLookupResponseMsgModel>() {
+        public void onSuccess(HttpContext context, SimilarityLookupResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_get94_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartGet94Async") createCartGet94Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartGet94Async(
+        final CartGetRequestMsgModel body,
+        final APICallBack<CartGetResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartGetRequestMsgModel body = new CartGetRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartGet94Async(body, new APICallBack<CartGetResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartGetResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_add95_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartAdd95Async") createCartAdd95Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartAdd95Async(
+        final CartAddRequestMsgModel body,
+        final APICallBack<CartAddResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartAddRequestMsgModel body = new CartAddRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartAdd95Async(body, new APICallBack<CartAddResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartAddResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_create96_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartCreate96Async") createCartCreate96Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartCreate96Async(
+        final CartCreateRequestMsgModel body,
+        final APICallBack<CartCreateResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartCreateRequestMsgModel body = new CartCreateRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartCreate96Async(body, new APICallBack<CartCreateResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartCreateResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_modify97_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartModify97Async") createCartModify97Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartModify97Async(
+        final CartModifyRequestMsgModel body,
+        final APICallBack<CartModifyResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartModifyRequestMsgModel body = new CartModifyRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartModify97Async(body, new APICallBack<CartModifyResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartModifyResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
+
+
+### <a name="create_cart_clear98_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.AWSECommerceServiceBindingController.createCartClear98Async") createCartClear98Async
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> TODO: Add a method description
+
+
+```java
+void createCartClear98Async(
+        final CartClearRequestMsgModel body,
+        final APICallBack<CartClearResponseMsgModel> callBack)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```java
+try {
+    CartClearRequestMsgModel body = new CartClearRequestMsgModel();
+    // Invoking the API call with sample inputs
+    aWSECommerceServiceBinding.createCartClear98Async(body, new APICallBack<CartClearResponseMsgModel>() {
+        public void onSuccess(HttpContext context, CartClearResponseMsgModel response) {
+            // TODO success callback handler
+        }
+        public void onFailure(HttpContext context, Throwable error) {
+            // TODO failure callback handler
+        }
+    });
+} catch(JsonProcessingException e) {
+    // TODO Auto-generated catch block
+    e.printStackTrace();
+}
+```
 
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="store_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.StoreController") StoreController
+## <a name="o_auth_authorization_controller"></a>![Class: ](https://apidocs.io/img/class.png "com.amazon.webservices.controllers.OAuthAuthorizationController") OAuthAuthorizationController
 
 ### Get singleton instance
 
-The singleton instance of the ``` StoreController ``` class can be accessed from the API Client.
+The singleton instance of the ``` OAuthAuthorizationController ``` class can be accessed from the API Client.
 
 ```java
-StoreController store = client.getStore();
+OAuthAuthorizationController oAuthAuthorization = client.getOAuthAuthorization();
 ```
 
-### <a name="create_place_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.createPlaceOrderAsync") createPlaceOrderAsync
+### <a name="create_request_token_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.OAuthAuthorizationController.createRequestTokenAsync") createRequestTokenAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Place an order for a pet
+> Create a new OAuth 2 token.
 
 
 ```java
-void createPlaceOrderAsync(
-        final Order body,
-        final APICallBack<Order> callBack)
+void createRequestTokenAsync(
+        final CreateRequestTokenInput input,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthTokenModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | order placed for purchasing the pet |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| code |  ``` Required ```  | Authorization Code |
+| redirectUri |  ``` Required ```  | Redirect Uri |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 #### Example Usage
 
 ```java
-try {
-    Order body = new Order();
-    // Invoking the API call with sample inputs
-    store.createPlaceOrderAsync(body, new APICallBack<Order>() {
-        public void onSuccess(HttpContext context, Order response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
+CreateRequestTokenInput collect = new CreateRequestTokenInput();
+
+String authorization = "Authorization";
+collect.setAuthorization(authorization);
+
+String code = "code";
+collect.setCode(code);
+
+String redirectUri = "redirect_uri";
+collect.setRedirectUri(redirectUri);
+
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
+// Invoking the API call with sample inputs
+oAuthAuthorization.createRequestTokenAsync(collect, , formParams, new APICallBack<OAuthTokenModel>() {
+    public void onSuccess(HttpContext context, OAuthTokenModel response) {
+        // TODO success callback handler
+    }
+    public void onFailure(HttpContext context, Throwable error) {
+        // TODO failure callback handler
+    }
 }
+);
+
 ```
 
 #### Errors
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid Order |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
 
 
-### <a name="get_inventory_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getInventoryAsync") getInventoryAsync
-
-> Returns pet inventories by status
-
-
-```java
-void getInventoryAsync(final APICallBack<Integer> callBack)
-```
-
-#### Example Usage
-
-```java
-// Invoking the API call with sample inputs
-store.getInventoryAsync(new APICallBack<Integer>() {
-    public void onSuccess(HttpContext context, Integer response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-
-### <a name="get_order_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.getOrderByIdAsync") getOrderByIdAsync
+### <a name="create_refresh_token_async"></a>![Method: ](https://apidocs.io/img/method.png "com.amazon.webservices.controllers.OAuthAuthorizationController.createRefreshTokenAsync") createRefreshTokenAsync
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Find purchase order by ID
+> Obtain a new access token using a refresh token
 
 
 ```java
-void getOrderByIdAsync(
-        final long orderId,
-        final APICallBack<Order> callBack)
+void createRefreshTokenAsync(
+        final CreateRefreshTokenInput input,
+        Map<String, Object> fieldParameters,
+        final APICallBack<OAuthTokenModel> callBack)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of pet that needs to be fetched |
+| authorization |  ``` Required ```  | Authorization header in Basic auth format |
+| refreshToken |  ``` Required ```  | Refresh token |
+| scope |  ``` Optional ```  | Requested scopes as a space-delimited list. |
+| fieldParameters | ``` Optional ``` | Additional optional form parameters are supported by this method |
 
 
 #### Example Usage
 
 ```java
-long orderId = 167;
+CreateRefreshTokenInput collect = new CreateRefreshTokenInput();
+
+String authorization = "Authorization";
+collect.setAuthorization(authorization);
+
+String refreshToken = "refresh_token";
+collect.setRefreshToken(refreshToken);
+
+String scope = "scope";
+collect.setScope(scope);
+
+// key-value map for optional form parameters
+Map<String, Object> formParams = new LinkedHashMap<String, Object>();
 // Invoking the API call with sample inputs
-store.getOrderByIdAsync(orderId, new APICallBack<Order>() {
-    public void onSuccess(HttpContext context, Order response) {
+oAuthAuthorization.createRefreshTokenAsync(collect, , formParams, new APICallBack<OAuthTokenModel>() {
+    public void onSuccess(HttpContext context, OAuthTokenModel response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-### <a name="delete_order_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.StoreController.deleteOrderAsync") deleteOrderAsync
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Delete purchase order by ID
-
-
-```java
-void deleteOrderAsync(
-        final long orderId,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| orderId |  ``` Required ```  | ID of the order that needs to be deleted |
-
-
-#### Example Usage
-
-```java
-long orderId = 167;
-// Invoking the API call with sample inputs
-store.deleteOrderAsync(orderId, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Order not found |
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="pet_controller"></a>![Class: ](https://apidocs.io/img/class.png "io.swagger.petstore.controllers.PetController") PetController
-
-### Get singleton instance
-
-The singleton instance of the ``` PetController ``` class can be accessed from the API Client.
-
-```java
-PetController pet = client.getPet();
-```
-
-### <a name="find_pets_by_tags_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByTagsAsync") findPetsByTagsAsync
-
-> Finds Pets by tags
-
-
-```java
-void findPetsByTagsAsync(
-        final List<String> tags,
-        final APICallBack<List<Pet>> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| tags |  ``` Required ```  ``` Collection ```  | Tags to filter by |
-
-
-#### Example Usage
-
-```java
-List<String> tags = new LinkedList<String>(Arrays.asList("tags"));
-// Invoking the API call with sample inputs
-pet.findPetsByTagsAsync(tags, new APICallBack<List<Pet>>() {
-    public void onSuccess(HttpContext context, List<Pet> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid tag value |
-
-
-
-### <a name="add_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.addPetAsync") addPetAsync
-
-> Add a new pet to the store
-
-
-```java
-void addPetAsync(
-        final Pet body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```java
-try {
-    Pet body = new Pet();
-    // Invoking the API call with sample inputs
-    pet.addPetAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
 }
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="update_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetAsync") updatePetAsync
-
-> Update an existing pet
-
-
-```java
-void updatePetAsync(
-        final Pet body,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Pet object that needs to be added to the store |
-
-
-#### Example Usage
-
-```java
-try {
-    Pet body = new Pet();
-    // Invoking the API call with sample inputs
-    pet.updatePetAsync(body, new APICallBack<void>() {
-        public void onSuccess(HttpContext context, void response) {
-            // TODO success callback handler
-        }
-        public void onFailure(HttpContext context, Throwable error) {
-            // TODO failure callback handler
-        }
-    });
-} catch(JsonProcessingException e) {
-    // TODO Auto-generated catch block
-    e.printStackTrace();
-}
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-| 405 | Validation exception |
-
-
-
-### <a name="find_pets_by_status_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.findPetsByStatusAsync") findPetsByStatusAsync
-
-> Finds Pets by status
-
-
-```java
-void findPetsByStatusAsync(
-        final List<Status6Enum> status,
-        final APICallBack<List<Pet>> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  ``` Collection ```  | Status values that need to be considered for filter |
-
-
-#### Example Usage
-
-```java
-List<Status6Enum> status = Arrays.asList (Status6.AVAILABLE);// Invoking the API call with sample inputs
-pet.findPetsByStatusAsync(status, new APICallBack<List<Pet>>() {
-    public void onSuccess(HttpContext context, List<Pet> response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
+);
 
 ```
 
@@ -888,186 +4524,9 @@ pet.findPetsByStatusAsync(status, new APICallBack<List<Pet>>() {
 
 | Error Code | Error Description |
 |------------|-------------------|
-| 400 | Invalid status value |
+| 400 | OAuth 2 provider returned an error. |
+| 401 | OAuth 2 provider says client authentication failed. |
 
-
-
-### <a name="get_pet_by_id_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.getPetByIdAsync") getPetByIdAsync
-
-> Find pet by ID
-
-
-```java
-void getPetByIdAsync(
-        final long petId,
-        final APICallBack<Pet> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to return |
-
-
-#### Example Usage
-
-```java
-long petId = 167;
-// Invoking the API call with sample inputs
-pet.getPetByIdAsync(petId, new APICallBack<Pet>() {
-    public void onSuccess(HttpContext context, Pet response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="update_pet_with_form_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.updatePetWithFormAsync") updatePetWithFormAsync
-
-> Updates a pet in the store with form data
-
-
-```java
-void updatePetWithFormAsync(
-        final long petId,
-        final String name,
-        final String status,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet that needs to be updated |
-| name |  ``` Optional ```  | Updated name of the pet |
-| status |  ``` Optional ```  | Updated status of the pet |
-
-
-#### Example Usage
-
-```java
-long petId = 167;
-String name = "name";
-String status = "status";
-// Invoking the API call with sample inputs
-pet.updatePetWithFormAsync(petId, name, status, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 405 | Invalid input |
-
-
-
-### <a name="delete_pet_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.deletePetAsync") deletePetAsync
-
-> Deletes a pet
-
-
-```java
-void deletePetAsync(
-        final long petId,
-        final String apiKey,
-        final APICallBack<Object> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | Pet id to delete |
-| apiKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```java
-long petId = 167;
-String apiKey = "api_key";
-// Invoking the API call with sample inputs
-pet.deletePetAsync(petId, apiKey, new APICallBack<void>() {
-    public void onSuccess(HttpContext context, void response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
-
-#### Errors
-
-| Error Code | Error Description |
-|------------|-------------------|
-| 400 | Invalid ID supplied |
-| 404 | Pet not found |
-
-
-
-### <a name="upload_file_async"></a>![Method: ](https://apidocs.io/img/method.png "io.swagger.petstore.controllers.PetController.uploadFileAsync") uploadFileAsync
-
-> uploads an image
-
-
-```java
-void uploadFileAsync(
-        final long petId,
-        final String additionalMetadata,
-        final File file,
-        final APICallBack<ApiResponse> callBack)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| petId |  ``` Required ```  | ID of pet to update |
-| additionalMetadata |  ``` Optional ```  | Additional data to pass to server |
-| file |  ``` Optional ```  | file to upload |
-
-
-#### Example Usage
-
-```java
-long petId = 167;
-String additionalMetadata = "additionalMetadata";
-File file = new File("PathToFile");
-// Invoking the API call with sample inputs
-pet.uploadFileAsync(petId, additionalMetadata, file, new APICallBack<ApiResponse>() {
-    public void onSuccess(HttpContext context, ApiResponse response) {
-        // TODO success callback handler
-    }
-    public void onFailure(HttpContext context, Throwable error) {
-        // TODO failure callback handler
-    }
-});
-
-```
 
 
 [Back to List of Controllers](#list_of_controllers)
